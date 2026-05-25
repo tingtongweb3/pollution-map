@@ -1,5 +1,6 @@
 # Runtime caches
 cache/
+data/*/*_city_cache.json
 
 # Generated images
 data/*/images/
