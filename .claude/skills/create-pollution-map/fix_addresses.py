@@ -39,6 +39,7 @@ from utils import (
     extract_district_hint,
     district_match,
     write_yaml_config,
+    load_config_with_defaults,
 )
 
 
@@ -94,8 +95,7 @@ def _reverse_check_district(lat, lon, key, expected_district):
 
 
 def fix_addresses(config_path, apply=False, rate_limit=0.15):
-    with open(config_path, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_config_with_defaults(config_path)
 
     key = get_gaode_key(config["gaode"].get("key", ""))
     if not key:

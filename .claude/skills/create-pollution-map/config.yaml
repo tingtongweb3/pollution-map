@@ -1,130 +1,49 @@
 # ============================================================
-# 污染源企业分布图 — 配置文件示例
-# 复制此文件，填入你的数据后运行：python create_map.py -c your_config.yaml
+# 污染源企业分布图 — 配置文件示例（精简版）
+#
+# 只需填写与 defaults.yaml 的差异字段：
+#   meta.title / subtitle / output_path
+#   gaode.city / cache_file
+#   enterprises
+#
+# 其他字段（map、risk_zones、categories、boundary）自动从 defaults.yaml 继承。
+# 如需覆盖，在对应节点下显式写出即可。
+#
+# 运行：python create_map.py -c your_config.yaml
 # ============================================================
 
 meta:
-  # 地图标题与副标题
-  title: "福州市仓山区2025年重点污染源单位地理分布图"
-  subtitle: "数据来源：福州市生态环境局2025年度环境监管重点单位名录、福建省生态环境厅执法案例  |  共20家  |  坐标：高德地图"
-
-  # 输出图片路径
-  # 相对路径会自动路由到 outputs/<gaode.city>/images/ 目录下
-  # 例如 ./cangshan_output.png → outputs/福州/images/cangshan_output.png
-  output_path: "./cangshan_pollution_sources_2025.png"
-
-  # DPI（越大越清晰，文件也越大）
-  dpi: 200
-
-map:
-  # 画布尺寸（英寸）
-  figsize: [18, 14]
-
-  # 地图边界外扩 padding（米，Web Mercator 单位）
-  padding: 500
-
-  # 高德瓦片 zoom 级别（建议 11-15）
-  zoom: 13
-
-  # 底图透明度
-  basemap_alpha: 0.95
+  title: "福州市仓山区2026年重点污染源单位地理分布图"
+  subtitle: "数据来源：福州市生态环境局2026年度环境监管重点单位名录  |  共15家  |  坐标：高德地图"
+  output_path: "./福州_仓山区_2026_output.png"
+  # dpi: 200  # 可选，默认 200
 
 gaode:
-  # 高德 Web 服务 Key（用于地理编码和瓦片）
-  # 申请地址：https://lbs.amap.com/api/webservice/guide/api/georegeo
-  key: "YOUR_GAODE_KEY_HERE"
+  city: 福州
+  cache_file: "./geocode_cache_福州.json"
+  # key: ""        # 可选，默认从 GAODE_API_KEY 环境变量读取
+  # rate_limit: 0.15  # 可选，默认 0.15
 
-  # 地理编码缓存文件路径（自动保存/加载，避免重复调用 API）
-  # 相对路径自动路由到 outputs/<gaode.city>/ 目录下
-  cache_file: "./geocode_cache.json"
+# 如需覆盖 defaults 中的类别配置，可在此写出：
+# categories:
+#   水环境:
+#     display: "水环境重点排污"
+#     color: "#CC0000"
+#     marker: "o"
 
-  # 每次 API 调用间隔（秒），防止触发限流
-  rate_limit: 0.15
-
-boundary:
-  # 行政区边界坐标（GCJ-02，[lon, lat] 列表）
-  # 如果留空 []，则自动根据企业坐标计算最小外接矩形并外扩 padding
-  coords: [
-    [119.220, 26.065], [119.245, 26.078], [119.275, 26.082], [119.305, 26.078],
-    [119.330, 26.072], [119.355, 26.068], [119.380, 26.060], [119.395, 26.050],
-    [119.398, 26.035], [119.390, 26.015], [119.375, 26.000], [119.360, 25.990],
-    [119.340, 25.982], [119.310, 25.978], [119.280, 25.975], [119.250, 25.978],
-    [119.230, 25.990], [119.218, 26.010], [119.215, 26.030], [119.218, 26.050],
-  ]
-
-categories:
-  # 企业类别配置：
-  #   key: 类别标识（与 enterprises 中 category 字段匹配）
-  #   display: 图例中显示的名称
-  #   color: 地图标注颜色（HEX）
-  #   marker: 标记形状（可选），支持 o(圆点) ^(三角) s(方块) D(菱形) *(星形)
-  #           不同形状便于区分数据来源类型，如投诉数据用三角、许可证用星形
-  水环境重点排污:
-    display: "水环境重点排污"
-    color: "#CC0000"
-    marker: "o"
-  大气环境重点排污:
-    display: "大气环境重点排污"
-    color: "#FF2200"
-    marker: "o"
-  土壤污染重点监管:
-    display: "土壤污染重点监管"
-    color: "#FF6600"
-    marker: "o"
-  噪声污染投诉:
-    display: "噪声污染投诉点"
-    color: "#0066CC"
-    marker: "^"
-  光污染投诉:
-    display: "光污染投诉点"
-    color: "#FFCC00"
-    marker: "s"
-  辐射安全许可证:
-    display: "辐射安全许可证"
-    color: "#9933CC"
-    marker: "*"
-  环保违规曝光:
-    display: "环保违规被曝光"
-    color: "#990033"
-    marker: "D"
+# 如需调整地图参数，可在此写出：
+# map:
+#   figsize: [18, 14]
+#   zoom: 12
+#   padding: 500
+#   basemap_alpha: 0.95
 
 enterprises:
-  # 企业列表：
-  #   name:        企业名称
-  #   address:     完整地址（用于高德地理编码）
-  #   category:    类别标识（必须在 categories 中定义）
-  #   label:       图例中显示的文字（支持 \n 换行）
-  #   lat / lon:   可选；若已提供则跳过地理编码
-  #   data_source: 数据来源（必填，出图前脚本自动检查覆盖率）
-  #   source_type: 数据来源类型（可选），用于图例统计：
-  #                official=官方监管名录, license=许可证信息,
-  #                complaint=群众投诉/信访, exposure=违规曝光, eia=环评批复
-  #   data_date:   数据日期（如 "2025-03" 或 "2023-12"）
-  #   geocode_level: 地理编码精度（门址/道路/村庄/区县/未知），缓存自动填充
-  #   status:      经营状态（在营/待核实/未找到），可由 verify_status.py 自动填充
   - name: "奥力根工具（福州）有限公司"
     address: "福州市仓山区金山工业区长埕路263号"
-    category: "水环境重点排污"
     label: "奥力根工具（福州）有限公司\n金山工业区长埕路263号"
-    data_source: "福州市生态环境局2025年度环境监管重点单位名录"
+    categories:
+      - 水环境
+    data_source: "福州市生态环境局2026年度环境监管重点单位名录"
     source_type: "official"
-    data_date: "2025-03"
-    geocode_level: "门址"
-
-  - name: "永辉彩食鲜供应链管理有限公司"
-    address: "福州市仓山区福湾工业园台屿路99号"
-    category: "水环境重点排污"
-    label: "永辉彩食鲜供应链管理有限公司\n福湾工业园台屿路99号"
-    data_source: "福州市生态环境局2025年度环境监管重点单位名录"
-    source_type: "official"
-    data_date: "2025-03"
-    geocode_level: "门址"
-
-  - name: "福建航升塑料包装材料有限公司"
-    address: "福州市仓山区建新镇镜浦路9号2号楼"
-    category: "环保违规曝光"
-    label: "福建航升塑料包装材料有限公司\n建新镇镜浦路9号2号楼"
-    data_source: "福建省生态环境厅2024年7月执法典型案例"
-    source_type: "exposure"
-    data_date: "2023-12"
-    geocode_level: "门址"
+    data_date: "2026-03"

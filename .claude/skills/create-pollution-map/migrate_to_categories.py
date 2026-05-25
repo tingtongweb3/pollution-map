@@ -11,7 +11,11 @@ Removes the old `category` field in favor of `categories`.
 
 import argparse
 import os
+import sys
 import yaml
+
+sys.path.insert(0, os.path.dirname(__file__))
+from utils import load_config_with_defaults
 
 
 GEOCODE_PRECISION_ORDER = {
@@ -98,8 +102,7 @@ def migrate_config(config: dict) -> dict:
 
 
 def migrate_file(filepath: str):
-    with open(filepath, 'r', encoding='utf-8') as f:
-        config = yaml.safe_load(f)
+    config = load_config_with_defaults(filepath)
 
     old_count = len(config.get('enterprises', []))
     config = migrate_config(config)

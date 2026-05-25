@@ -30,6 +30,7 @@ from utils import (
     geocode_address, get_gaode_key, write_yaml_config, _names_match,
     extract_district_hint, extract_target_district, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir,
+    load_config_with_defaults,
 )
 
 
@@ -287,8 +288,7 @@ def save_cache(cache_file: str, cache: dict):
 
 
 def run_geocode(config_path: str, force: bool = False):
-    with open(config_path, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_config_with_defaults(config_path)
 
     config_dir = os.path.dirname(os.path.abspath(config_path))
     cache_file = resolve_cache_path(

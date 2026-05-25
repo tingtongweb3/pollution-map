@@ -16,6 +16,33 @@ def get_gaode_key(config_key: str = "") -> str:
     return os.environ.get("GAODE_API_KEY", config_key)
 
 
+def _deep_merge(base: dict, override: dict) -> dict:
+    """Recursively merge override into base. Lists and scalars are replaced, not appended."""
+    result = dict(base)
+    for key, val in override.items():
+        if key in result and isinstance(result[key], dict) and isinstance(val, dict):
+            result[key] = _deep_merge(result[key], val)
+        else:
+            result[key] = val
+    return result
+
+
+def load_config_with_defaults(config_path: str) -> dict:
+    """Load a city YAML and merge with defaults.yaml.
+
+    City YAML values override defaults. Defaults are looked up next to this file.
+    """
+    with open(config_path, "r", encoding="utf-8") as f:
+        user_cfg = yaml.safe_load(f)
+
+    defaults_path = os.path.join(os.path.dirname(__file__), "defaults.yaml")
+    if os.path.exists(defaults_path):
+        with open(defaults_path, "r", encoding="utf-8") as f:
+            defaults = yaml.safe_load(f)
+        return _deep_merge(defaults, user_cfg)
+    return user_cfg
+
+
 # ---------------------------------------------------------------------------
 # Name matching & district extraction
 # ---------------------------------------------------------------------------

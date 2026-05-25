@@ -23,7 +23,7 @@ from PIL import Image, ImageDraw
 from shapely.geometry import Point, Polygon
 
 sys.path.insert(0, os.path.dirname(__file__))
-from utils import get_font, resolve_image_path, resolve_cache_path, ensure_dir, get_city_from_config
+from utils import get_font, resolve_image_path, resolve_cache_path, ensure_dir, get_city_from_config, load_config_with_defaults
 
 matplotlib.use('Agg')
 warnings.filterwarnings('ignore')
@@ -33,10 +33,9 @@ plt.rcParams['axes.unicode_minus'] = False
 
 
 def load_config(path: str) -> dict:
-    with open(path, 'r', encoding='utf-8') as f:
-        config = yaml.safe_load(f)
+    config = load_config_with_defaults(path)
     # Resolve relative paths against config file's directory, not CWD,
-    # and route dynamic outputs into outputs/<city>/ automatically.
+    # and route dynamic outputs into data/<city>/ automatically.
     config_dir = os.path.dirname(os.path.abspath(path))
     config['meta']['output_path'] = resolve_image_path(
         config, config_dir, config['meta']['output_path']

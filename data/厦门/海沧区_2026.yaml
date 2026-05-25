@@ -2,46 +2,9 @@ meta:
   title: 厦门市海沧区2025年重点污染源单位地理分布图
   subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共61家  |  坐标：高德地图
   output_path: ./xiamen_haicang_output.png
-  dpi: 200
-map:
-  figsize:
-  - 18
-  - 14
-  padding: 500
-  zoom: 12
-  basemap_alpha: 0.95
 gaode:
-  key: ''
   cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
-  rate_limit: 0.15
   city: 厦门
-risk_zones:
-  enabled: true
-  radius_meters: 1000
-  fill_color: '#FF4444'
-  fill_alpha: 0.12
-  edge_color: '#CC0000'
-  edge_width: 0.8
-  edge_alpha: 0.25
-boundary:
-  coords: []
-categories:
-  水环境:
-    display: 水环境重点排污
-    color: '#CC0000'
-    marker: o
-  大气环境:
-    display: 大气环境重点排污
-    color: '#FF2200'
-    marker: o
-  土壤污染:
-    display: 土壤污染重点监管
-    color: '#FF6600'
-    marker: o
-  环境风险:
-    display: 环境风险重点管控
-    color: '#9933CC'
-    marker: o
 enterprises:
 - name: 厦门丰泰国际新能源汽车有限公司
   address: 厦门市海沧区丰泰国际新能源汽车

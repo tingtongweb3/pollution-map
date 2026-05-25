@@ -15,7 +15,7 @@ import requests
 import yaml
 
 sys.path.insert(0, os.path.dirname(__file__))
-from utils import get_gaode_key, write_yaml_config, _names_match, extract_district_hint, district_match, reverse_geocode_district
+from utils import get_gaode_key, write_yaml_config, _names_match, extract_district_hint, district_match, reverse_geocode_district, load_config_with_defaults
 
 KEY = get_gaode_key("")
 RATE_LIMIT = 0.12
@@ -70,8 +70,7 @@ def geocode_address(address, city="福州"):
 
 
 def audit_config(path: str, fix: bool = False):
-    with open(path, "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_config_with_defaults(path)
 
     enterprises = config["enterprises"]
     # Filter out enterprises without coordinates (geocode failed)
