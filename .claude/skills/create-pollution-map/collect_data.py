@@ -1,0 +1,937 @@
+#!/usr/bin/env python3
+"""
+Environmental data collection: extract enterprise records from government
+websites (HTML tables, PDFs) and enrich addresses via Gaode POI search.
+
+This module is designed to be called by auto_pipeline.py or directly
+from the CLI. It does NOT perform web searches itself — URLs must be
+provided by the caller (e.g. Claude Code using WebSearch MCP tool).
+
+Usage:
+    # Extract from HTML table
+    python collect_data.py --url https://www.xxx.gov.cn/... --source-type official
+
+    # Extract from PDF
+    python collect_data.py --url https://www.xxx.gov.cn/.../file.pdf --source-type official
+
+    # Enrich addresses for extracted enterprises
+    python collect_data.py --input ./extracted.json --city 福州 --enrich
+"""
+
+import argparse
+import io
+import json
+import os
+import re
+import sys
+import time
+import urllib.parse
+from dataclasses import dataclass, field, asdict
+from typing import List, Optional
+
+import requests
+import yaml
+from bs4 import BeautifulSoup
+
+sys.path.insert(0, os.path.dirname(__file__))
+from utils import (
+    get_gaode_key, _names_match, extract_district_hint, district_match,
+    reverse_geocode_district, resolve_cache_path, ensure_dir, get_city_from_config,
+)
+
+try:
+    from pypdf import PdfReader
+except ImportError:
+    PdfReader = None
+
+
+# ---------------------------------------------------------------------------
+# Data models
+# ---------------------------------------------------------------------------
+
+@dataclass
+class Source:
+    url: str
+    title: str = ""
+    source_type: str = "official"   # official | license | complaint | exposure
+    format: str = "html"            # html | pdf
+
+
+@dataclass
+class Enterprise:
+    name: str = ""
+    address: str = ""
+    district: str = ""              # district from source table (e.g. 鼓楼区, 仓山区)
+    category: str = ""              # single category from source
+    categories: List[str] = field(default_factory=list)
+    label: str = ""
+    data_source: str = ""
+    source_type: str = "official"
+    data_date: str = ""
+    lat: Optional[float] = None
+    lon: Optional[float] = None
+    geocode_level: str = ""
+    raw_text: str = ""              # original text for debugging
+
+    def to_dict(self):
+        d = asdict(self)
+        # Remove None values for cleaner YAML
+        return {k: v for k, v in d.items() if v is not None and v != ""}
+
+
+# ---------------------------------------------------------------------------
+# Category inference
+# ---------------------------------------------------------------------------
+
+_CATEGORY_KEYWORDS = [
+    # More specific categories first to avoid substring false positives
+    # e.g., "地下水污染" contains "水污染" but should match "地下水" not "水环境"
+    ("地下水", ["地下水", "地下水污染"]),
+    ("水环境", ["水环境", "水重点", "废水", "污水", "水污染", "排污单位(水)"]),
+    ("大气环境", ["大气环境", "大气", "废气", "大气重点", "大气污染", "排污单位(大气)"]),
+    ("土壤污染", ["土壤", "土壤污染", "土壤重点", "污染监管"]),
+    ("噪声", ["噪声", "噪音", "声环境"]),
+    ("辐射安全", ["辐射", "放射", "核技术", "射线装置", "放射源", "电磁辐射"]),
+    ("环境风险", ["环境风险", "风险管控", "风险重点"]),
+    ("固废", ["固废", "危险废物", "危废", "污泥"]),
+]
+
+
+def infer_category(text: str) -> str:
+    """Infer pollution category from text context."""
+    if not text:
+        return ""
+    text = text.strip()
+    for cat, keywords in _CATEGORY_KEYWORDS:
+        for kw in keywords:
+            if kw in text:
+                return cat
+    return ""
+
+
+# ---------------------------------------------------------------------------
+# DataExtractor
+# ---------------------------------------------------------------------------
+
+class DataExtractor:
+    """Extract enterprise records from HTML pages or PDFs."""
+
+    def __init__(self, timeout: int = 30):
+        self.timeout = timeout
+        self.session = requests.Session()
+        self.session.headers.update({
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            )
+        })
+
+    # -- HTML extraction --------------------------------------------------
+
+    def extract_from_html(self, url: str, source: Source = None) -> List[Enterprise]:
+        """Fetch HTML page and extract tables containing enterprise names."""
+        try:
+            resp = self.session.get(url, timeout=self.timeout)
+            resp.encoding = resp.apparent_encoding or "utf-8"
+            soup = BeautifulSoup(resp.text, "html.parser")
+        except Exception as e:
+            print(f"ERROR: Failed to fetch {url}: {e}")
+            return []
+
+        enterprises = []
+
+        # Strategy 1: Find tables with enterprise-related headers
+        tables = soup.find_all("table")
+
+        # Build a category map for each table by analyzing document text
+        table_categories = self._build_table_category_map(soup, tables)
+
+        for tidx, table in enumerate(tables):
+            rows = table.find_all("tr")
+            if len(rows) < 2:
+                continue
+
+            # Try to identify header row and column indices
+            header_row = rows[0]
+            headers = [th.get_text(strip=True) for th in header_row.find_all(["th", "td"])]
+
+            name_idx = self._find_column_index(headers, ["企业名称", "单位名称", "企业详细名称", "企业", "单位", "名称", "排污单位名称"])
+            addr_idx = self._find_column_index(headers, ["地址", "详细地址", "经营地址", "生产地址", "住所"])
+            cat_idx = self._find_column_index(headers, ["类别", "要素类别", "监管类别", "行业类别", "要素", "环境要素"])
+            district_idx = self._find_column_index(headers, ["区县", "县(市、区)", "县(区)", "区/县", "所在区县", "行政区"])
+
+            if name_idx is None:
+                continue
+
+            # Get table-level category (from document context or heading)
+            table_category = table_categories.get(tidx, "")
+
+            # Extract data rows
+            for row in rows[1:]:
+                cells = row.find_all(["td", "th"])
+                if len(cells) <= name_idx:
+                    continue
+
+                name = self._clean_text(cells[name_idx].get_text())
+                if not name or len(name) < 4:
+                    continue
+
+                # Skip header-like rows that appear in tbody
+                if self._is_header_row(name):
+                    continue
+
+                address = ""
+                if addr_idx is not None and addr_idx < len(cells):
+                    address = self._clean_text(cells[addr_idx].get_text())
+
+                district = ""
+                if district_idx is not None and district_idx < len(cells):
+                    district = self._clean_text(cells[district_idx].get_text())
+
+                category = ""
+                if cat_idx is not None and cat_idx < len(cells):
+                    category = infer_category(self._clean_text(cells[cat_idx].get_text()))
+
+                # If no category in table, use table-level category from document context
+                if not category:
+                    category = table_category
+
+                # Skip rows that are clearly not enterprise names
+                if self._is_likely_not_enterprise(name):
+                    continue
+
+                ent = Enterprise(
+                    name=name,
+                    address=address,
+                    district=district,
+                    category=category,
+                    data_source=source.title if source else url,
+                    source_type=source.source_type if source else "official",
+                    raw_text=name + (" | " + district if district else ""),
+                )
+                enterprises.append(ent)
+
+        # Strategy 2: If no tables found, look for structured lists
+        if not enterprises:
+            enterprises = self._extract_from_list_structure(soup, source)
+
+        print(f"HTML extraction: {len(enterprises)} enterprises from {url}")
+        return enterprises
+
+    def _find_column_index(self, headers: List[str], keywords: List[str]) -> Optional[int]:
+        """Find column index matching any of the keywords."""
+        for i, h in enumerate(headers):
+            h_clean = h.strip().replace(" ", "").replace("\n", "")
+            for kw in keywords:
+                if kw in h or kw in h_clean:
+                    return i
+        return None
+
+    def _clean_text(self, text: str) -> str:
+        """Clean extracted text."""
+        if not text:
+            return ""
+        text = text.strip()
+        # Remove extra whitespace
+        text = re.sub(r"\s+", " ", text)
+        return text
+
+    def _is_header_row(self, name: str) -> bool:
+        """Check if this looks like a header row that leaked into tbody."""
+        header_patterns = ["企业名称", "单位名称", "序号", "名称", "地址", "类别", "备注"]
+        return name in header_patterns or len(name) < 3
+
+    def _is_likely_not_enterprise(self, name: str) -> bool:
+        """Filter out obvious non-enterprise entries."""
+        # Skip pure numbers, single words, or obvious headers
+        if re.match(r"^\d+$", name):
+            return True
+        if len(name) < 4:
+            return True
+        # Skip if it's just an address without company name
+        if "路" in name and "公司" not in name and "厂" not in name and "单位" not in name:
+            # Could be just an address, but let's be lenient
+            pass
+        return False
+
+    def _build_table_category_map(self, soup: BeautifulSoup, tables: list) -> dict:
+        """Build a mapping from table index to category by analyzing document text.
+
+        Government pages often have headings like "水环境重点排污单位（251家）"
+        before each table. We analyze the full text to find these headings and
+        map them to the nearest following table.
+        """
+        # Get full text and find all category headings with their positions
+        full_text = soup.get_text()
+        lines = full_text.split("\n")
+
+        # Find category heading lines and their line indices
+        category_headings = []  # list of (line_index, category)
+        for i, line in enumerate(lines):
+            line = line.strip()
+            if not line:
+                continue
+            # Look for patterns like "水环境重点排污单位（251家）"
+            # or "大气环境重点排污单位"
+            cat = infer_category(line)
+            if cat and ("重点" in line or "排污" in line or "监管" in line or "管控" in line):
+                category_headings.append((i, cat))
+
+        if not category_headings:
+            return {}
+
+        # Alternative approach: walk through all relevant elements in document order
+        # and track the last seen category heading before each table.
+        all_elements = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span', 'table'])
+
+        table_categories = {}
+        current_category = ""
+        tidx = 0
+
+        for elem in all_elements:
+            if elem.name == 'table':
+                # Check if this is one of our target tables
+                if tidx < len(tables) and elem is tables[tidx]:
+                    if current_category:
+                        table_categories[tidx] = current_category
+                    tidx += 1
+            else:
+                # Check if this element contains a category heading
+                text = elem.get_text(strip=True)
+                cat = infer_category(text)
+                if cat and ("重点" in text or "排污" in text or "监管" in text or "管控" in text):
+                    current_category = cat
+
+        return table_categories
+
+    def _extract_from_list_structure(self, soup: BeautifulSoup, source: Source = None) -> List[Enterprise]:
+        """Fallback: extract from list structures (ul/li, p tags with numbers)."""
+        enterprises = []
+
+        # Try ordered/unordered lists
+        for ul in soup.find_all(["ul", "ol"]):
+            for li in ul.find_all("li"):
+                text = self._clean_text(li.get_text())
+                ent = self._parse_free_text(text, source)
+                if ent:
+                    enterprises.append(ent)
+
+        # Try paragraphs that look like numbered enterprise lists
+        for p in soup.find_all("p"):
+            text = self._clean_text(p.get_text())
+            # Pattern: "1. 企业名称..." or "（1）企业名称..."
+            if re.match(r"^[（(]?\d+[)）]?[、.\s]", text):
+                ent = self._parse_free_text(text, source)
+                if ent:
+                    enterprises.append(ent)
+
+        return enterprises
+
+    def _parse_free_text(self, text: str, source: Source = None) -> Optional[Enterprise]:
+        """Try to parse an enterprise name from free text."""
+        # Remove leading numbers and punctuation
+        text = re.sub(r"^[（(]?\d+[)）]?[、.\s]*", "", text)
+        text = text.strip()
+
+        if len(text) < 4:
+            return None
+
+        # Look for company name patterns
+        # Chinese company names typically contain 公司, 厂, 集团, 中心
+        if not re.search(r"[公司厂集团中心院部所店]", text):
+            return None
+
+        # Try to split name and address
+        name = text
+        address = ""
+
+        # Common split patterns
+        for sep in ["，地址：", " 地址：", "，位于", " 位于", "，经营地址", " 经营地址"]:
+            if sep in text:
+                parts = text.split(sep, 1)
+                name = parts[0].strip()
+                address = parts[1].strip() if len(parts) > 1 else ""
+                break
+
+        # Clean up name
+        name = name.strip("，、；;.")
+        if len(name) < 4:
+            return None
+
+        category = infer_category(text)
+
+        return Enterprise(
+            name=name,
+            address=address,
+            category=category,
+            data_source=source.title if source else "",
+            source_type=source.source_type if source else "official",
+            raw_text=text,
+        )
+
+    # -- PDF extraction ---------------------------------------------------
+
+    def extract_from_pdf(self, url_or_path: str, source: Source = None) -> List[Enterprise]:
+        """Download and extract text from a PDF file."""
+        if PdfReader is None:
+            print("ERROR: pypdf not installed. Run: pip install pypdf")
+            return []
+
+        # Download if URL
+        pdf_bytes = None
+        if url_or_path.startswith(("http://", "https://")):
+            try:
+                resp = self.session.get(url_or_path, timeout=self.timeout)
+                pdf_bytes = io.BytesIO(resp.content)
+            except Exception as e:
+                print(f"ERROR: Failed to download PDF {url_or_path}: {e}")
+                return []
+        else:
+            pdf_bytes = url_or_path
+
+        # Extract text
+        try:
+            reader = PdfReader(pdf_bytes)
+            full_text = ""
+            for page in reader.pages:
+                text = page.extract_text()
+                if text:
+                    full_text += text + "\n"
+        except Exception as e:
+            print(f"ERROR: Failed to parse PDF: {e}")
+            return []
+
+        if not full_text.strip():
+            print("WARNING: PDF appears to be scanned/image-based. Text extraction failed.")
+            return []
+
+        return self._extract_from_text(full_text, source, url_or_path)
+
+    def _extract_from_text(self, text: str, source: Source = None, source_url: str = "") -> List[Enterprise]:
+        """Extract enterprise records from raw text (from PDF or other sources)."""
+        enterprises = []
+        lines = text.split("\n")
+
+        # Try to find lines that look like enterprise entries
+        # Pattern: numbered list with company names
+        for line in lines:
+            line = line.strip()
+            if not line or len(line) < 4:
+                continue
+
+            # Skip obvious non-data lines
+            if self._is_noise_line(line):
+                continue
+
+            # Try to extract enterprise name
+            ent = self._parse_free_text(line, source)
+            if ent and ent.name:
+                # Avoid duplicates
+                if not any(e.name == ent.name for e in enterprises):
+                    enterprises.append(ent)
+
+        # Also try table-like structures in the text
+        table_ents = self._extract_tables_from_text(text, source)
+        for ent in table_ents:
+            if not any(e.name == ent.name for e in enterprises):
+                enterprises.append(ent)
+
+        print(f"Text extraction: {len(enterprises)} enterprises from {source_url}")
+        return enterprises
+
+    def _is_noise_line(self, line: str) -> bool:
+        """Check if a line is just noise (headers, footers, page numbers)."""
+        noise_patterns = [
+            r"^\s*\d+\s*$",           # Just a number
+            r"^\s*第\s*\d+\s*页",      # Page number
+            r"^\s*附件",               # Appendix
+            r"^\s*附表",               # Attached table
+            r"^\s*说明",               # Note
+            r"^\s*备注",               # Remark
+            r"^\s*单位：",             # Unit
+            r"^\s*\d{4}年\d{1,2}月",   # Date
+        ]
+        for pat in noise_patterns:
+            if re.match(pat, line):
+                return True
+        return False
+
+    def _extract_tables_from_text(self, text: str, source: Source = None) -> List[Enterprise]:
+        """Try to find table structures in plain text (space/tab aligned)."""
+        enterprises = []
+        lines = text.split("\n")
+
+        # Look for lines with multiple columns separated by 2+ spaces
+        for line in lines:
+            # Try tab-separated or multi-space separated
+            parts = re.split(r"\t|\s{2,}", line.strip())
+            if len(parts) >= 2:
+                # First non-empty part might be the name
+                for part in parts:
+                    part = part.strip()
+                    if len(part) >= 4 and re.search(r"[公司厂集团中心院部所店]", part):
+                        ent = self._parse_free_text(part, source)
+                        if ent:
+                            enterprises.append(ent)
+                            break
+
+        return enterprises
+
+    def extract(self, source: Source) -> List[Enterprise]:
+        """Route to appropriate extractor based on source format."""
+        if source.format == "pdf":
+            return self.extract_from_pdf(source.url, source)
+        else:
+            return self.extract_from_html(source.url, source)
+
+
+# ---------------------------------------------------------------------------
+# AddressEnricher
+# ---------------------------------------------------------------------------
+
+class AddressEnricher:
+    """Enrich enterprise records with addresses via Gaode POI search."""
+
+    def __init__(self, key: str, city: str = "福州", rate_limit: float = 0.15):
+        self.key = key
+        self.city = city
+        self.rate_limit = rate_limit
+
+    # ------------------------------------------------------------------
+    # Smart search query generation based on enterprise type + district
+    # ------------------------------------------------------------------
+
+    _TYPE_KEYWORDS = {
+        "固废处置": {
+            "keywords": ["固废", "危废", "废物处置", "废物处理", "垃圾焚烧"],
+            "suffixes": ["处置场", "处理厂", "焚烧厂", "填埋场"],
+        },
+        "污水处理": {
+            "keywords": ["水务", "污水", "水处理", "净水", "排水"],
+            "suffixes": ["污水处理厂", "污水厂", "水处理厂", "净水厂"],
+        },
+        "能源发电": {
+            "keywords": ["发电", "能源", "清洁能源", "热电", "光伏", "风电"],
+            "suffixes": ["发电厂", "电厂", "电站", "能源基地"],
+        },
+        "畜牧养殖": {
+            "keywords": ["畜牧", "养殖", "农牧", "猪场", "鸡场", "奶牛", "肉牛", "家禽"],
+            "suffixes": ["养殖场", "养殖基地", "牧场", "养殖小区"],
+        },
+        "屠宰": {
+            "keywords": ["屠宰"],
+            "suffixes": ["屠宰场", "屠宰厂"],
+        },
+        "医院": {
+            "keywords": ["医院", "卫生院", "防治院", "疗养院", "疾控中心"],
+            "suffixes": ["院区", "分院"],
+        },
+        "工厂制造": {
+            "keywords": ["机械", "制造", "电子", "纺织", "鞋业", "陶瓷", "建材", "化工", "制药", "食品"],
+            "suffixes": ["厂区", "工厂", "工业园", "生产基地"],
+        },
+    }
+
+    def _detect_enterprise_type(self, name: str) -> tuple:
+        """Detect enterprise type from name. Returns (type_label, core_name)."""
+        core = name
+        for suffix in ["有限公司", "有限责任公司", "股份有限公司", "公司", "集团", "厂"]:
+            core = core.replace(suffix, "")
+        core = core.strip()
+        for type_label, cfg in self._TYPE_KEYWORDS.items():
+            for kw in cfg["keywords"]:
+                if kw in name:
+                    return type_label, core
+        return "通用", core
+
+    def _build_search_queries(self, name: str, district: str) -> list:
+        """Build POI search queries that include the target district.
+        The district from the government roster is the authoritative anchor.
+        """
+        queries = []
+        type_label, core = self._detect_enterprise_type(name)
+        cfg = self._TYPE_KEYWORDS.get(type_label, {})
+
+        # Primary: full name + district (most specific)
+        queries.append(f"{name} {district}")
+
+        # Type-specific: core + suffix + district
+        for suffix in cfg.get("suffixes", []):
+            queries.append(f"{core}{suffix} {district}")
+            queries.append(f"{name}{suffix} {district}")
+
+        # Fallback: core name + district
+        if core != name:
+            queries.append(f"{core} {district}")
+
+        # Deduplicate while preserving order
+        seen = set()
+        unique = []
+        for q in queries:
+            if q not in seen and len(q) >= 4:
+                seen.add(q)
+                unique.append(q)
+        return unique
+
+    def _reverse_check_district(self, lat: float, lon: float, expected_district: str) -> bool:
+        """Reverse geocode to verify coordinate falls in expected district."""
+        from utils import reverse_geocode_district, district_match
+        try:
+            actual = reverse_geocode_district(lat, lon, self.key)
+            if not actual:
+                return False  # Cannot verify district — unsafe to accept
+            if expected_district and not district_match(expected_district, actual):
+                return False
+            return True
+        except Exception:
+            return False  # Cannot verify — reject rather than risk cross-district errors
+
+    def _poi_search(self, queries: list, district_filter: str = None) -> tuple:
+        """Search Gaode POI with a list of candidate queries.
+
+        Strategy:
+          1. Use district in query keywords to bias results toward target area
+          2. Accept results even if address string doesn't contain district
+             (industrial POIs often use road names, e.g. "S7021(五虎山大桥)")
+          3. Verify with reverse geocoding that the coordinate is in the target district
+
+        Returns (poi_name, poi_addr, lon, lat, matched_query) or Nones.
+        """
+        for q in queries:
+            url = (
+                f"https://restapi.amap.com/v3/place/text"
+                f"?keywords={urllib.parse.quote(q)}"
+                f"&city={urllib.parse.quote(self.city)}"
+                f"&offset=1&page=1&key={self.key}&extensions=all"
+            )
+            try:
+                resp = requests.get(url, timeout=10).json()
+                if resp.get("status") == "1" and resp.get("pois"):
+                    p = resp["pois"][0]
+                    poi_name = p.get("name", "")
+                    # Gaode sometimes returns address as a JSON list instead of string
+                    addr_raw = p.get("address", "")
+                    if isinstance(addr_raw, list):
+                        poi_addr = addr_raw[0] if addr_raw else ""
+                    else:
+                        poi_addr = str(addr_raw).strip()
+                    loc = p.get("location", "")
+                    if not loc or "," not in loc:
+                        continue
+
+                    lon, lat = map(float, loc.split(","))
+
+                    # Name matching: POI must relate to the enterprise
+                    match_ok = False
+                    for candidate in queries:
+                        clean = candidate.replace(district_filter or "", "").strip() if district_filter else candidate
+                        if poi_name and _names_match(clean, poi_name):
+                            match_ok = True
+                            break
+
+                    if not match_ok:
+                        continue
+
+                    # Cross-district validation via reverse geocoding
+                    if district_filter:
+                        if not self._reverse_check_district(lat, lon, district_filter):
+                            continue
+                        time.sleep(self.rate_limit)
+
+                    return poi_name, poi_addr, lon, lat, q
+            except Exception:
+                continue
+        return None, None, None, None, None
+
+    def enrich(self, enterprises: List[Enterprise]) -> dict:
+        """Enrich addresses for all enterprises without a real address.
+        Uses the enterprise's district (from government roster) as the
+        authoritative geographic anchor.
+        Returns enrichment report dict.
+        """
+        fixed = []
+        failed = []
+        skipped = []
+
+        for ent in enterprises:
+            # Skip if already has a good address
+            if ent.address and len(ent.address) > 5:
+                from utils import is_pseudo_address
+                if not is_pseudo_address(ent.address, ent.name):
+                    skipped.append(ent.name)
+                    continue
+
+            # The district from the roster is the authoritative anchor
+            district = ent.district or extract_district_hint(ent.name) or ""
+            if not district:
+                failed.append({
+                    "name": ent.name,
+                    "reason": "无法确定目标区县",
+                })
+                continue
+
+            # Build smart search queries that include the district
+            queries = self._build_search_queries(ent.name, district)
+
+            poi_name, poi_addr, lon, lat, matched_q = self._poi_search(
+                queries, district_filter=district
+            )
+            time.sleep(self.rate_limit)
+
+            if lon is not None and lat is not None:
+                # Build full address with city prefix if missing
+                new_addr = poi_addr
+                if new_addr and self.city not in new_addr:
+                    new_addr = f"{self.city}{new_addr}"
+
+                ent.address = new_addr
+                ent.lat = lat
+                ent.lon = lon
+                ent.geocode_level = "POI"
+                fixed.append({
+                    "name": ent.name,
+                    "address": new_addr or f"POI坐标({lat:.5f},{lon:.5f})",
+                    "matched_query": matched_q,
+                })
+            else:
+                failed.append({
+                    "name": ent.name,
+                    "reason": f"POI搜索未找到位于{district}的匹配结果",
+                    "tried_queries": queries,
+                })
+
+        return {
+            "fixed": fixed,
+            "failed": failed,
+            "skipped": skipped,
+        }
+
+
+# ---------------------------------------------------------------------------
+# Merge and deduplicate
+# ---------------------------------------------------------------------------
+
+def merge_sources(sources_results: dict) -> List[Enterprise]:
+    """Merge enterprises from multiple sources, deduplicate by name+district.
+
+    Args:
+        sources_results: dict mapping source_type -> list of Enterprise
+
+    Returns:
+        Deduplicated list with categories merged.
+    """
+    by_key = {}  # key = (name, district)
+
+    for source_type, enterprises in sources_results.items():
+        for ent in enterprises:
+            key = (ent.name, ent.district)
+            if key not in by_key:
+                by_key[key] = ent
+            else:
+                # Merge categories
+                existing = by_key[key]
+                if ent.category and ent.category not in existing.categories:
+                    existing.categories.append(ent.category)
+                # Merge source_type if different
+                if ent.source_type != existing.source_type:
+                    existing.data_source += f"; {ent.data_source}"
+
+    # Set categories for single-category enterprises
+    for ent in by_key.values():
+        if not ent.categories and ent.category:
+            ent.categories = [ent.category]
+        elif not ent.categories:
+            ent.categories = ["未分类"]
+
+    # Sort by name for stable output
+    return sorted(by_key.values(), key=lambda e: e.name)
+
+
+# ---------------------------------------------------------------------------
+# Config generator
+# ---------------------------------------------------------------------------
+
+def generate_config(
+    city: str,
+    district: str,
+    year: int,
+    enterprises: List[Enterprise],
+    output_dir: str,
+) -> str:
+    """Generate a YAML config file from extracted enterprises.
+    Returns the path to the generated config.
+    """
+    config = {
+        "meta": {
+            "title": f"{city}{district}{year}年重点污染源单位地理分布图",
+            "subtitle": f"数据来源：{city}生态环境局{year}年度环境监管重点单位名录  |  共{len(enterprises)}家  |  坐标：高德地图",
+            "output_path": f"./{city}_{district}_{year}_output.png",
+            "dpi": 200,
+        },
+        "map": {
+            "figsize": [18, 14],
+            "padding": 500,
+            "zoom": 12,
+            "basemap_alpha": 0.95,
+        },
+        "gaode": {
+            "key": "",
+            "cache_file": f"./geocode_cache_{city}.json",
+            "rate_limit": 0.15,
+            "city": city,
+        },
+        "risk_zones": {
+            "enabled": True,
+            "radius_meters": 1000,
+            "fill_color": "#FF4444",
+            "fill_alpha": 0.12,
+            "edge_color": "#CC0000",
+            "edge_width": 0.8,
+            "edge_alpha": 0.25,
+        },
+        "boundary": {
+            "coords": [],
+        },
+        "categories": {
+            "水环境": {
+                "display": "水环境重点排污",
+                "color": "#CC0000",
+                "marker": "o",
+            },
+            "大气环境": {
+                "display": "大气环境重点排污",
+                "color": "#FF2200",
+                "marker": "o",
+            },
+            "土壤污染": {
+                "display": "土壤污染重点监管",
+                "color": "#FF6600",
+                "marker": "o",
+            },
+            "环境风险": {
+                "display": "环境风险重点管控",
+                "color": "#9933CC",
+                "marker": "o",
+            },
+            "噪声": {
+                "display": "噪声重点排污",
+                "color": "#0066CC",
+                "marker": "^",
+            },
+            "辐射安全": {
+                "display": "辐射安全许可证",
+                "color": "#9933CC",
+                "marker": "*",
+            },
+            "地下水": {
+                "display": "地下水污染防治",
+                "color": "#0099CC",
+                "marker": "s",
+            },
+        },
+        "enterprises": [],
+    }
+
+    # Build enterprise entries
+    for ent in enterprises:
+        entry = {
+            "name": ent.name,
+            "address": ent.address,
+            "label": ent.name,
+            "data_source": ent.data_source or f"{city}生态环境局{year}年度环境监管重点单位名录",
+            "source_type": ent.source_type,
+            "data_date": f"{year}-03",
+            "categories": ent.categories,
+        }
+        # Only include lat/lon if they were enriched
+        if ent.lat is not None and ent.lon is not None:
+            entry["lat"] = ent.lat
+            entry["lon"] = ent.lon
+            entry["geocode_level"] = ent.geocode_level
+
+        config["enterprises"].append(entry)
+
+    # Write config
+    city_dir = os.path.join(output_dir, city)
+    os.makedirs(city_dir, exist_ok=True)
+    config_path = os.path.join(city_dir, f"{city}_{district}_{year}.yaml")
+
+    with open(config_path, "w", encoding="utf-8") as f:
+        yaml.dump(config, f, default_flow_style=False, allow_unicode=True, sort_keys=False, width=200)
+
+    return config_path
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def main():
+    parser = argparse.ArgumentParser(description="Extract environmental enterprise data from URLs")
+    parser.add_argument("--url", required=True, help="URL to extract data from")
+    parser.add_argument("--source-type", default="official", choices=["official", "license", "complaint", "exposure"])
+    parser.add_argument("--format", default="auto", choices=["auto", "html", "pdf"])
+    parser.add_argument("--output", "-o", help="Output JSON file for extracted enterprises")
+    parser.add_argument("--enrich", action="store_true", help="Enrich addresses via Gaode POI")
+    parser.add_argument("--city", default="福州", help="City for address enrichment and POI search")
+    parser.add_argument("--key", default="", help="Gaode API key (or set GAODE_API_KEY env var)")
+    args = parser.parse_args()
+
+    # Detect format
+    fmt = args.format
+    if fmt == "auto":
+        fmt = "pdf" if args.url.lower().endswith(".pdf") else "html"
+
+    source = Source(url=args.url, source_type=args.source_type, format=fmt)
+
+    # Extract
+    extractor = DataExtractor()
+    enterprises = extractor.extract(source)
+
+    if not enterprises:
+        print("No enterprises extracted.")
+        return 1
+
+    print(f"\nExtracted {len(enterprises)} enterprises:")
+    for i, ent in enumerate(enterprises[:10], 1):
+        print(f"  {i}. {ent.name}")
+        if ent.address:
+            print(f"     地址: {ent.address}")
+        if ent.category:
+            print(f"     类别: {ent.category}")
+    if len(enterprises) > 10:
+        print(f"     ... and {len(enterprises) - 10} more")
+
+    # Enrich addresses
+    if args.enrich:
+        key = args.key or get_gaode_key("")
+        if not key:
+            print("ERROR: No Gaode API key. Set GAODE_API_KEY or pass --key")
+            return 1
+
+        enricher = AddressEnricher(key=key, city=args.city)
+        report = enricher.enrich(enterprises)
+
+        print(f"\n地址补全结果:")
+        print(f"  成功: {len(report['fixed'])} 家")
+        print(f"  失败: {len(report['failed'])} 家")
+        print(f"  跳过: {len(report['skipped'])} 家")
+
+        if report["failed"]:
+            print("\n  补全失败的企业:")
+            for item in report["failed"]:
+                print(f"    - {item['name']}: {item['reason']}")
+
+    # Save output
+    if args.output:
+        data = [asdict(ent) for ent in enterprises]
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"\nSaved to {args.output}")
+
+    return 0
+
+
+if __name__ == "__main__":
+    exit(main())

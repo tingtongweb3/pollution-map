@@ -1,0 +1,359 @@
+meta:
+  title: 厦门市思明区+湖里区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共28家  |  坐标：高德地图
+  output_path: ./xiamen_siming_huli_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
+  rate_limit: 0.15
+  city: 厦门
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 厦门市政思明排水管理有限公司（前埔处理站）
+  address: 厦门市思明区前埔污水处理厂
+  label: 厦门市政思明排水管理有限公司（前埔处理站）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.473333
+  lon: 118.172673
+  geocode_level: 兴趣点
+  categories:
+  - 水环境
+- name: 厦门市政思明排水管理有限公司（筼筜处理站）
+  address: 厦门市思明区筼筜污水处理厂
+  label: 厦门市政思明排水管理有限公司（筼筜处理站）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.474585
+  lon: 118.081739
+  geocode_level: 住宅区
+  categories:
+  - 水环境
+- name: 厦门市政思明排水管理有限公司（黄家渡处理站）
+  address: 厦门市思明区环岛路黄家渡
+  label: 厦门市政思明排水管理有限公司（黄家渡处理站）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.430066
+  lon: 118.141122
+  geocode_level: 道路
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司（前埔水质净化厂）
+  address: 厦门市思明区前埔水质净化厂
+  label: 厦门水务中环污水处理有限公司（前埔水质净化厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.473433
+  lon: 118.172573
+  geocode_level: 兴趣点
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司（筼筜水质净化厂）
+  address: 厦门市思明区筼筜路1号
+  label: 厦门水务中环污水处理有限公司（筼筜水质净化厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.475427
+  lon: 118.08091
+  geocode_level: 门址
+  categories:
+  - 水环境
+- name: 林德（中国）叉车有限公司
+  address: 厦门市思明区林德叉车
+  label: 林德（中国）叉车有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.487393
+  lon: 118.142575
+  geocode_level: POI
+  categories:
+  - 土壤污染
+- name: 瑞华高科技电子工业园（厦门）有限公司
+  address: 厦门市思明区瑞华高科技电子工业园
+  label: 瑞华高科技电子工业园（厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.482045
+  lon: 118.178401
+  geocode_level: POI
+  categories:
+  - 土壤污染
+- name: 厦门大学附属中山医院
+  address: 厦门市思明区厦门大学附属中山医院
+  label: 厦门大学附属中山医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.471519
+  lon: 118.097611
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门大学附属第一医院
+  address: 厦门市思明区厦门大学附属第一医院
+  label: 厦门大学附属第一医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.45094
+  lon: 118.08818
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门市妇幼保健院
+  address: 厦门市思明区厦门市妇幼保健院
+  label: 厦门市妇幼保健院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.450167
+  lon: 118.081308
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 陆军第73集团军医院
+  address: 厦门市思明区文园路94号
+  label: 陆军第73集团军医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.458356
+  lon: 118.09497
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 中国铁塔股份有限公司厦门市分公司
+  address: 厦门市思明区中国铁塔厦门分公司
+  label: 中国铁塔股份有限公司厦门市分公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.482356
+  lon: 118.186695
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 中国移动通信集团福建有限公司厦门分公司
+  address: 厦门市思明区中国移动厦门分公司
+  label: 中国移动通信集团福建有限公司厦门分公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.489558
+  lon: 118.184502
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门太古起落架维修服务有限公司
+  address: 厦门市湖里区太古起落架维修
+  label: 厦门太古起落架维修服务有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.538363
+  lon: 118.145602
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 水环境
+- name: 厦门太古飞机工程有限公司
+  address: 厦门市湖里区太古飞机工程
+  label: 厦门太古飞机工程有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.535131
+  lon: 118.137164
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 水环境
+- name: 厦门港务集团石湖山码头有限公司
+  address: 厦门市湖里区石湖山码头
+  label: 厦门港务集团石湖山码头有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.52492
+  lon: 118.095454
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 瑞达宇航（厦门）起落架系统有限公司
+  address: 厦门市湖里区瑞达宇航起落架
+  label: 瑞达宇航（厦门）起落架系统有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.537115
+  lon: 118.146396
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 水环境
+  - 环境风险
+- name: 厦门水务中环污水处理有限公司（高崎水质净化厂）
+  address: 厦门高崎污水处理厂
+  label: 厦门水务中环污水处理有限公司（高崎水质净化厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.547799
+  lon: 118.109489
+  geocode_level: 村庄
+  categories:
+  - 水环境
+- name: 未名生物医药有限公司
+  address: 厦门市湖里区未名生物医药
+  label: 未名生物医药有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.485773
+  lon: 118.146537
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 宸鸿科技（厦门）有限公司
+  address: 厦门市湖里区宸鸿科技
+  label: 宸鸿科技（厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.527825
+  lon: 118.142599
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 施耐德电气（厦门）开关设备有限公司
+  address: 厦门市湖里区施耐德电气开关设备
+  label: 施耐德电气（厦门）开关设备有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.519379
+  lon: 118.124272
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门厦顺铝箔有限公司湖里铝箔厂
+  address: 厦门市湖里区厦顺铝箔
+  label: 厦门厦顺铝箔有限公司湖里铝箔厂
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.509613
+  lon: 118.104298
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门大学附属心血管病医院
+  address: 厦门市湖里区厦门大学附属心血管病医院
+  label: 厦门大学附属心血管病医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.508707
+  lon: 118.172321
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门市中医院
+  address: 厦门市湖里区厦门市中医院
+  label: 厦门市中医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.500654
+  lon: 118.140896
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门市儿童医院
+  address: 厦门市湖里区厦门市儿童医院
+  label: 厦门市儿童医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.50572
+  lon: 118.112275
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门弘爱医院
+  address: 厦门市湖里区厦门弘爱医院
+  label: 厦门弘爱医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.506175
+  lon: 118.171482
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 复旦大学附属中山医院厦门医院
+  address: 厦门市湖里区复旦大学附属中山医院厦门医院
+  label: 复旦大学附属中山医院厦门医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.512311
+  lon: 118.164004
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 皇基（厦门）塑胶工业有限公司
+  address: 厦门市湖里区皇基塑胶工业
+  label: 皇基（厦门）塑胶工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.520707
+  lon: 118.095401
+  geocode_level: POI
+  categories:
+  - 环境风险

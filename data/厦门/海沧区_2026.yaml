@@ -1,0 +1,744 @@
+meta:
+  title: 厦门市海沧区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共61家  |  坐标：高德地图
+  output_path: ./xiamen_haicang_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
+  rate_limit: 0.15
+  city: 厦门
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 厦门丰泰国际新能源汽车有限公司
+  address: 厦门市海沧区丰泰国际新能源汽车
+  label: 厦门丰泰国际新能源汽车有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.473441
+  lon: 118.022551
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门华夏国际电力发展有限公司
+  address: 厦门市海沧区建港路702号
+  label: 厦门华夏国际电力发展有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.444058
+  lon: 118.02734
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门厦钨新能源材料股份有限公司
+  address: 厦门市海沧区厦钨新能源材料
+  label: 厦门厦钨新能源材料股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.466526
+  lon: 117.979629
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 水环境
+- name: 厦门厦顺铝箔有限公司板带
+  address: 厦门市海沧区厦顺铝箔板带
+  label: 厦门厦顺铝箔有限公司板带
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.527563
+  lon: 117.958611
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门厦顺铝箔有限公司海沧铝箔厂
+  address: 厦门市海沧区厦顺铝箔海沧铝箔厂
+  label: 厦门厦顺铝箔有限公司海沧铝箔厂
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.516268
+  lon: 118.008962
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门市政环能股份有限公司海沧厂
+  address: 厦门市海沧区海沧南大道369号
+  label: 厦门市政环能股份有限公司海沧厂
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.48088
+  lon: 117.989965
+  geocode_level: 道路
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 环境风险
+- name: 厦门敦海艺品有限公司
+  address: 厦门市海沧区敦海艺品
+  label: 厦门敦海艺品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.493704
+  lon: 117.996488
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门欧米克生物科技有限公司
+  address: 厦门市海沧区欧米克生物科技
+  label: 厦门欧米克生物科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.508371
+  lon: 117.972264
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 水环境
+  - 环境风险
+- name: 厦门正新实业有限公司
+  address: 厦门市海沧区正新实业
+  label: 厦门正新实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.519178
+  lon: 117.969029
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门正新海燕轮胎有限公司
+  address: 厦门市海沧区正新海燕轮胎
+  label: 厦门正新海燕轮胎有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.518486
+  lon: 117.975645
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门海发环保能源股份有限公司
+  address: 厦门市海沧区海发环保能源
+  label: 厦门海发环保能源股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.514222
+  lon: 117.977578
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门烟草工业有限责任公司
+  address: 厦门市海沧区烟草工业
+  label: 厦门烟草工业有限责任公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.527205
+  lon: 117.991333
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门翔鹭化纤股份有限公司
+  address: 厦门市海沧区翔鹭化纤
+  label: 厦门翔鹭化纤股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.487219
+  lon: 118.013342
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 水环境
+- name: 厦门船舶重工股份有限公司
+  address: 厦门市海沧区船舶重工
+  label: 厦门船舶重工股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.503843
+  lon: 118.069
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门金达威维生素有限公司(新厂)
+  address: 厦门市海沧区金达威维生素
+  label: 厦门金达威维生素有限公司(新厂)
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.51085
+  lon: 117.974046
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 福建鑫叶投资管理集团有限公司
+  address: 厦门市海沧区鑫叶投资管理
+  label: 福建鑫叶投资管理集团有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.524688
+  lon: 117.992585
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 诚展光学(厦门)有限公司
+  address: 厦门市海沧区东孚南路8号
+  label: 诚展光学(厦门)有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.522854
+  lon: 117.97226
+  geocode_level: 门址
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 环境风险
+- name: 通达(厦门)科技有限公司
+  address: 厦门市海沧区通达科技
+  label: 通达(厦门)科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.512964
+  lon: 117.987277
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 金旸(厦门)新材料科技有限公司
+  address: 厦门市海沧区金旸新材料
+  label: 金旸(厦门)新材料科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.524154
+  lon: 117.964998
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 明达实业(厦门)有限公司
+  address: 厦门市海沧区明达实业
+  label: 明达实业(厦门)有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.4636
+  lon: 118.00085
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 腾龙特种树脂(厦门)有限公司
+  address: 厦门市海沧区腾龙特种树脂
+  label: 腾龙特种树脂(厦门)有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.485725
+  lon: 118.00574
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 环境风险
+- name: 厦门嘉鹭金属工业有限公司
+  address: 厦门市海沧区嘉鹭金属工业
+  label: 厦门嘉鹭金属工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.475223
+  lon: 118.018775
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门士兰明镓化合物半导体有限公司
+  address: 厦门市海沧区士兰明镓化合物半导体
+  label: 厦门士兰明镓化合物半导体有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.479038
+  lon: 118.003496
+  geocode_level: POI
+  categories:
+  - 水环境
+  - 环境风险
+- name: 厦门士兰集科微电子有限公司
+  address: 厦门市海沧区士兰集科微电子
+  label: 厦门士兰集科微电子有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.479981
+  lon: 118.000612
+  geocode_level: POI
+  categories:
+  - 水环境
+  - 环境风险
+- name: 厦门松霖科技股份有限公司
+  address: 厦门市海沧区松霖科技
+  label: 厦门松霖科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.519419
+  lon: 117.979709
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+- name: 厦门钨业股份有限公司
+  address: 厦门市海沧区钨业股份
+  label: 厦门钨业股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.467333
+  lon: 117.979236
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 水环境
+- name: 德彦纸业(厦门)有限公司
+  address: 厦门市海沧区德彦纸业
+  label: 德彦纸业(厦门)有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.520164
+  lon: 118.019838
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司（海沧水质净化厂）
+  address: 厦门市海沧区兴港路601号
+  label: 厦门水务中环污水处理有限公司（海沧水质净化厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.463126
+  lon: 118.03059
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司（马銮湾水质净化厂）
+  address: 厦门市海沧区马銮湾水质净化厂
+  label: 厦门水务中环污水处理有限公司（马銮湾水质净化厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.530163
+  lon: 118.009172
+  geocode_level: 住宅区
+  categories:
+  - 水环境
+- name: 厦门通富微电子有限公司
+  address: 厦门市海沧区通富微电子
+  label: 厦门通富微电子有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.484481
+  lon: 117.99807
+  geocode_level: POI
+  categories:
+  - 水环境
+  - 环境风险
+- name: 厦门凯立五金企业有限公司
+  address: 厦门市海沧区凯立五金
+  label: 厦门凯立五金企业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.517632
+  lon: 118.019772
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 厦门宜境环保科技有限公司
+  address: 厦门市海沧区宜境环保科技
+  label: 厦门宜境环保科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.525656
+  lon: 117.982727
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 鹏威(厦门)工业有限公司
+  address: 厦门市海沧区鹏威工业
+  label: 鹏威(厦门)工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.522546
+  lon: 117.976621
+  geocode_level: POI
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 厦门市榕鑫达实业有限公司
+  address: 厦门市海沧区东孚大道1199号
+  label: 厦门市榕鑫达实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.539021
+  lon: 117.914331
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 厦门市铂联科技股份有限公司
+  address: 厦门市海沧区铂联科技
+  label: 厦门市铂联科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.475192
+  lon: 118.001916
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门油保宝环保科技有限公司
+  address: 厦门市海沧区阳和路56号
+  label: 厦门油保宝环保科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.51799
+  lon: 118.017136
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 厦门福泉钢业有限公司
+  address: 厦门市海沧区福泉钢业
+  label: 厦门福泉钢业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.494003
+  lon: 117.990875
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门金龙旅行车有限公司(海沧)
+  address: 厦门市海沧区金龙旅行车
+  label: 厦门金龙旅行车有限公司(海沧)
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.52061
+  lon: 118.011297
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门长塑实业有限公司
+  address: 厦门市海沧区长塑实业
+  label: 厦门长塑实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.521206
+  lon: 117.963953
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 柯达(中国)图文影像有限公司
+  address: 厦门市海沧区新阳工业区翁角路308号
+  label: 柯达(中国)图文影像有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.51811
+  lon: 117.990857
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 锐珂(厦门)医疗器材有限公司
+  address: 厦门市海沧区翁角路308号91号楼
+  label: 锐珂(厦门)医疗器材有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.51821
+  lon: 117.990857
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 高利宝(厦门)科技发展有限公司
+  address: 厦门市海沧区高利宝科技发展
+  label: 高利宝(厦门)科技发展有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.549406
+  lon: 117.933625
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门云天半导体科技有限公司-海沧半导体产业基地厂
+  address: 厦门市海沧区云天半导体
+  label: 厦门云天半导体科技有限公司-海沧半导体产业基地厂
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.47277
+  lon: 117.996014
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门法拉电子股份有限公司(新能源)
+  address: 厦门市海沧区法拉电子新能源
+  label: 厦门法拉电子股份有限公司(新能源)
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.518649
+  lon: 117.983873
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门金鹭硬质合金有限公司
+  address: 厦门市海沧区金鹭硬质合金
+  label: 厦门金鹭硬质合金有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.53427
+  lon: 117.943207
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 大博医疗科技股份有限公司
+  address: 厦门市海沧区大博医疗科技
+  label: 大博医疗科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.525586
+  lon: 117.953728
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 福建盛迪医药有限公司
+  address: 厦门市海沧区盛迪医药
+  label: 福建盛迪医药有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.518127
+  lon: 117.990501
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门医学院附属海沧医院
+  address: 厦门市海沧区厦门医学院附属海沧医院
+  label: 厦门医学院附属海沧医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.490629
+  lon: 118.038931
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门法拉电子股份有限公司(新园厂区)
+  address: 厦门市海沧区新园路99号
+  label: 厦门法拉电子股份有限公司(新园厂区)
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.518749
+  lon: 117.983873
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门长庚医院有限公司
+  address: 厦门市海沧区霞飞路123号
+  label: 厦门长庚医院有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.533983
+  lon: 118.009899
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 厦门四合微电子有限公司
+  address: 厦门市海沧区四合微电子
+  label: 厦门四合微电子有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.472401
+  lon: 117.996745
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门海沧信息产业发展有限公司
+  address: 厦门市海沧区雍厝路103号
+  label: 厦门海沧信息产业发展有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.473309
+  lon: 117.997925
+  geocode_level: 道路
+  categories:
+  - 环境风险
+- name: 厦门瑞尔特卫浴科技股份有限公司
+  address: 厦门市海沧区瑞尔特卫浴
+  label: 厦门瑞尔特卫浴科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.512419
+  lon: 117.981564
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门当盛新材料有限公司
+  address: 厦门市海沧区孚莲西二路277号
+  label: 厦门当盛新材料有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.540607
+  lon: 117.945229
+  geocode_level: 道路
+  categories:
+  - 环境风险
+- name: 厦门中油港务仓储有限公司
+  address: 厦门市海沧区中油港务仓储
+  label: 厦门中油港务仓储有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.451042
+  lon: 118.002052
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门海澳石化仓储有限公司
+  address: 厦门市海沧区海澳石化仓储
+  label: 厦门海澳石化仓储有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.452682
+  lon: 117.994144
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 柯达(中国)有限责任公司
+  address: 厦门市海沧区翁角路308号55号楼
+  label: 柯达(中国)有限责任公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.515822
+  lon: 117.989152
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 捷太格特转向系统(厦门)有限公司
+  address: 厦门市海沧区捷太格特转向系统
+  label: 捷太格特转向系统(厦门)有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.524249
+  lon: 117.98125
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门博坦仓储有限公司
+  address: 厦门市海沧区博坦仓储
+  label: 厦门博坦仓储有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.451251
+  lon: 118.041443
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 中国电信股份有限公司厦门分公司海沧存放点
+  address: 厦门市海沧区海发路69号
+  label: 中国电信股份有限公司厦门分公司海沧存放点
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.493759
+  lon: 118.036069
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 厦门连科工业有限公司
+  address: 厦门市海沧区连科工业
+  label: 厦门连科工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.525122
+  lon: 117.974525
+  geocode_level: POI
+  categories:
+  - 环境风险

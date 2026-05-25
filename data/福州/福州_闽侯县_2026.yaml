@@ -1,0 +1,556 @@
+meta:
+  title: 福州闽侯县2026年重点污染源单位地理分布图
+  subtitle: 数据来源：福州生态环境局2026年度环境监管重点单位名录  |  共45家  |  坐标：高德地图
+  output_path: ./福州_闽侯县_2026_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_福州.json
+  rate_limit: 0.15
+  city: 福州
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 东南（福建）汽车工业股份有限公司
+  address: 福州东南大道66号青口东南汽车城
+  label: 东南（福建）汽车工业股份有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.883412
+  lon: 119.367749
+  geocode_level: POI
+- name: 爱德克斯（福州）汽车零部件有限公司
+  address: 福州S7021(五虎山大桥)
+  label: 爱德克斯（福州）汽车零部件有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.910513
+  lon: 119.335928
+  geocode_level: POI
+- name: 福州六和机械有限公司
+  address: ''
+  label: 福州六和机械有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.888299
+  lon: 119.3826
+  geocode_level: POI
+- name: 福州医科大学附属协和医院（旗山院区）
+  address: 福州上街镇学府南路6号
+  label: 福州医科大学附属协和医院（旗山院区）
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.047071
+  lon: 119.19115
+  geocode_level: POI
+- name: 福州协源金属表面处理有限公司
+  address: 福州青口镇前洋1号
+  label: 福州协源金属表面处理有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 25.877987
+  lon: 119.352671
+  geocode_level: POI
+- name: 福州大兴油墨有限公司
+  address: 福州洋屿路2号
+  label: 福州大兴油墨有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  lat: 26.151715
+  lon: 119.177331
+  geocode_level: POI
+- name: 福州天宇电气股份有限公司
+  address: 福州南屿镇玉田村生物和医药机电产业园
+  label: 福州天宇电气股份有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.949014
+  lon: 119.209604
+  geocode_level: POI
+- name: 福州市邑丰农业发展有限公司
+  address: 福州大湖乡西宅村
+  label: 福州市邑丰农业发展有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.35368
+  lon: 119.079398
+  geocode_level: POI
+- name: 福州市闽侯县康恒再生能源有限公司
+  address: ''
+  label: 福州市闽侯县康恒再生能源有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.167696
+  lon: 119.020577
+  geocode_level: POI
+- name: 福州新易制模有限公司
+  address: 福州青口镇吉山村
+  label: 福州新易制模有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  lat: 25.875486
+  lon: 119.353779
+  geocode_level: POI
+- name: 福州泉运制版有限公司
+  address: 福州青口镇青口投资区
+  label: 福州泉运制版有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  lat: 25.908507
+  lon: 119.347796
+  geocode_level: POI
+- name: 福州澳星同方净水业有限公司(福州大学城污水处理厂)
+  address: 福州117县道与新保路交叉口西北160米
+  label: 福州澳星同方净水业有限公司(福州大学城污水处理厂)
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.011343
+  lon: 119.20844
+  geocode_level: POI
+- name: 福州炼石水泥有限公司
+  address: 福州龙山路东50米
+  label: 福州炼石水泥有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 26.120019
+  lon: 119.228528
+  geocode_level: POI
+- name: 福州瑞华印制线路板有限公司
+  address: 福州荆溪镇光明下宅37号
+  label: 福州瑞华印制线路板有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 26.120373
+  lon: 119.199028
+  geocode_level: POI
+- name: 福州金牛水泥有限公司
+  address: 福州203省道附近
+  label: 福州金牛水泥有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.93909
+  lon: 119.366608
+  geocode_level: POI
+- name: 福建亿民再生物资回收有限公司
+  address: 福州高新区南屿镇白漫溪路111号艾密克园区C号楼一层
+  label: 福建亿民再生物资回收有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.958202
+  lon: 119.230546
+  geocode_level: 道路
+- name: 福建侯官海峡环保有限公司
+  address: 福州洽浦村道与荆溪大道交叉口东北40米
+  label: 福建侯官海峡环保有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.129732
+  lon: 119.162197
+  geocode_level: POI
+- name: 福建傲农食品有限公司
+  address: 福州闽侯经济技术开发区长龙中路35号
+  label: 福建傲农食品有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.159773
+  lon: 119.188768
+  geocode_level: POI
+- name: 福建兆元光电有限公司
+  address: ''
+  label: 福建兆元光电有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.939847
+  lon: 119.231565
+  geocode_level: POI
+- name: 福建光华农牧科技开发有限公司
+  address: 福州大湖乡后洋村
+  label: 福建光华农牧科技开发有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.338589
+  lon: 119.03803
+  geocode_level: POI
+- name: 福建兴盛天兆猪业有限公司
+  address: 福州甘小线东北侧
+  label: 福建兴盛天兆猪业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.308525
+  lon: 119.139275
+  geocode_level: POI
+- name: 福建奔驰汽车有限公司
+  address: 福州青口奔驰大道1号
+  label: 福建奔驰汽车有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.894923
+  lon: 119.361498
+  geocode_level: POI
+- name: 福建广利丰环保科技有限公司
+  address: 福州-青口镇梅溪路6号4号厂房
+  label: 福建广利丰环保科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.874706
+  lon: 119.366173
+  geocode_level: POI
+- name: 福建旺捷生态环保科技有限公司
+  address: 福州闽侯县尚干镇东升村祥通路42号第2栋1层102
+  label: 福建旺捷生态环保科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.918712
+  lon: 119.377061
+  geocode_level: 门址
+- name: 福建泉头畜牧综合养殖有限公司
+  address: 福州闽侯县白沙镇林柄村80号
+  label: 福建泉头畜牧综合养殖有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.24658
+  lon: 119.058311
+  geocode_level: 村庄
+- name: 福建省固体废物处置有限公司
+  address: 福州闽侯县青口镇青圃岭村61号
+  label: 福建省固体废物处置有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 25.886302
+  lon: 119.414706
+  geocode_level: 村庄
+- name: 福建祥鑫新材料科技有限公司
+  address: 福州青口镇东台桐洋34号
+  label: 福建祥鑫新材料科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.846019
+  lon: 119.323517
+  geocode_level: POI
+- name: 福建祥鑫股份有限公司
+  address: 福州尚干镇蓝脚盛工业区良安路22号S203
+  label: 福建祥鑫股份有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.919439
+  lon: 119.3798
+  geocode_level: POI
+- name: 福建福老酒业有限公司
+  address: 福州甘蔗街道长龙西路1号铁岭工业区甘蔗镇2期
+  label: 福建福老酒业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.157976
+  lon: 119.153888
+  geocode_level: POI
+- name: 福建融创不锈钢制品有限公司
+  address: 福州海源复合材料科技股份有限公司东南2门旁
+  label: 福建融创不锈钢制品有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.148347
+  lon: 119.179726
+  geocode_level: POI
+- name: 福建长基畜牧有限公司
+  address: 福州闽侯县洋里乡长基村香厂山
+  label: 福建长基畜牧有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.417596
+  lon: 118.981405
+  geocode_level: 村庄
+- name: 福建青口海峡环保有限公司(青口新区污水处理厂)
+  address: 福州辅前路5号
+  label: 福建青口海峡环保有限公司(青口新区污水处理厂)
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.906496
+  lon: 119.346445
+  geocode_level: POI
+- name: 福建青口海峡环保有限公司(青口汽车工业开发区污水处理厂)
+  address: 福州辅前路5号
+  label: 福建青口海峡环保有限公司(青口汽车工业开发区污水处理厂)
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.906496
+  lon: 119.346445
+  geocode_level: POI
+- name: 福建麦特新铝业科技有限公司
+  address: 福州合金路3号
+  label: 福建麦特新铝业科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.903203
+  lon: 119.343837
+  geocode_level: POI
+- name: 贝奇（福建）食品有限公司
+  address: 福州九号西路1号铁岭工业区一区
+  label: 贝奇（福建）食品有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.150741
+  lon: 119.174585
+  geocode_level: POI
+- name: 闽侯北美水务有限公司
+  address: 福州甘洪路159号
+  label: 闽侯北美水务有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.124619
+  lon: 119.195712
+  geocode_level: POI
+- name: 闽侯县宏兴农业专业合作社
+  address: 福州闽侯县洋里乡廷洋村洋坪自然村
+  label: 闽侯县宏兴农业专业合作社
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.303136
+  lon: 119.014459
+  geocode_level: 村庄
+- name: 闽侯县宏盛农牧有限公司
+  address: 福州闽侯县竹岐乡里洋村大山顶
+  label: 闽侯县宏盛农牧有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.024087
+  lon: 119.013249
+  geocode_level: 村庄
+- name: 闽侯县总医院（闽侯县医院）
+  address: 福州甘蔗街道昙石山东大道123号
+  label: 闽侯县总医院（闽侯县医院）
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.145745
+  lon: 119.160779
+  geocode_level: POI
+- name: 闽侯县扬帆农业发展有限公司
+  address: 福州闽侯县洋里乡林洋村四斗
+  label: 闽侯县扬帆农业发展有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.396306
+  lon: 118.960016
+  geocode_level: 村庄
+- name: 闽侯县盛源农牧发展有限公司
+  address: 福州洋里乡仙门村
+  label: 闽侯县盛源农牧发展有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.344301
+  lon: 119.011498
+  geocode_level: POI
+- name: 闽侯县连富农牧发展有限公司
+  address: 福州闽侯县大湖乡箬洋村林雷山
+  label: 闽侯县连富农牧发展有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.321176
+  lon: 119.105775
+  geocode_level: 村庄
+- name: 闽侯县长盛农业发展有限公司
+  address: 福州闽侯县洋里乡花桥村666号
+  label: 闽侯县长盛农业发展有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.360112
+  lon: 118.961633
+  geocode_level: 村庄
+- name: 闽侯金源达副食品开发有限公司
+  address: 福州闽侯县洋里乡长基村过山67号
+  label: 闽侯金源达副食品开发有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.410336
+  lon: 118.978726
+  geocode_level: 村庄
+- name: 颖明（福州）标准件企业有限公司
+  address: 福州东长路3号
+  label: 颖明（福州）标准件企业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.875116
+  lon: 119.35014
+  geocode_level: POI

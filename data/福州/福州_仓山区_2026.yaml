@@ -1,0 +1,223 @@
+meta:
+  title: 福州仓山区2026年重点污染源单位地理分布图
+  subtitle: 数据来源：福州生态环境局2026年度环境监管重点单位名录  |  共15家  |  坐标：高德地图
+  output_path: ./福州_仓山区_2026_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_福州.json
+  rate_limit: 0.15
+  city: 福州
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 利莱森玛电机科技（福州）有限公司
+  address: 福州盖山镇艾默生路1号(吴山地铁站C口步行470米)
+  label: 利莱森玛电机科技（福州）有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.99612
+  lon: 119.312576
+  geocode_level: POI
+- name: 奥力根工具（福州）有限公司
+  address: 福州长埕路263号
+  label: 奥力根工具（福州）有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 26.007791
+  lon: 119.286033
+  geocode_level: POI
+- name: 福州创源同方水务有限公司（福州市连坂污水处理厂一、二期）
+  address: 福州城门镇祠堂边5号
+  label: 福州创源同方水务有限公司（福州市连坂污水处理厂一、二期）
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.009975
+  lon: 119.363575
+  geocode_level: POI
+- name: 福州创源同方水务有限公司（福州市金山污水处理厂）
+  address: 福州城门镇祠堂边5号
+  label: 福州创源同方水务有限公司（福州市金山污水处理厂）
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.009975
+  lon: 119.363575
+  geocode_level: POI
+- name: 福州大学附属省立医院金山院区
+  address: 福州金山街道金榕南路516号
+  label: 福州大学附属省立医院金山院区
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.039761
+  lon: 119.27061
+  geocode_level: POI
+- name: 福州奥特帕斯工业有限公司
+  address: 福州金山大道618号橘园洲工业区仓山园2号楼
+  label: 福州奥特帕斯工业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  lat: 26.057482
+  lon: 119.234561
+  geocode_level: POI
+- name: 福州市第二总医院
+  address: 福州临江街道观海新村上藤路47号
+  label: 福州市第二总医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.046181
+  lon: 119.319849
+  geocode_level: POI
+- name: 福州骏时泡绵制品有限公司
+  address: 福州仓山区金山工业区金华路18号
+  label: 福州骏时泡绵制品有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.054388
+  lon: 119.257363
+  geocode_level: 门址
+- name: 福建三丰鞋业有限公司
+  address: 福州城门镇城门街399号
+  label: 福建三丰鞋业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.000387
+  lon: 119.359282
+  geocode_level: POI
+- name: 福建卓森源环保科技有限公司
+  address: 福州官洲路与吴屿路交叉口南200米
+  label: 福建卓森源环保科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.992689
+  lon: 119.309996
+  geocode_level: POI
+- name: 福建欧中电子有限公司
+  address: 福州盖山镇盘屿路869号金山工业集中区福湾园29号楼
+  label: 福建欧中电子有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.001439
+  lon: 119.292871
+  geocode_level: POI
+- name: 福建省福州结核病防治院
+  address: 福州仓山区北园路8号
+  label: 福建省福州结核病防治院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.02313
+  lon: 119.32944
+  geocode_level: 门址
+- name: 福建福顺半导体制造有限公司
+  address: 福州盖山投资区高旺路11号
+  label: 福建福顺半导体制造有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 26.021044
+  lon: 119.34955
+  geocode_level: POI
+- name: 福建福顺微电子有限公司
+  address: 福州城门镇城楼260号
+  label: 福建福顺微电子有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.997752
+  lon: 119.364064
+  geocode_level: POI
+- name: 福建连坂海峡环保科技有限公司
+  address: 福州连坂村前街66号
+  label: 福建连坂海峡环保科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 26.012825
+  lon: 119.368175
+  geocode_level: POI

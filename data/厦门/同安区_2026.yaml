@@ -1,0 +1,524 @@
+meta:
+  title: 厦门市同安区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共53家  |  坐标：高德地图
+  output_path: ./xiamen_tongan_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
+  rate_limit: 0.15
+  city: 厦门
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 厦门明佑电镀有限公司
+  address: 厦门集安路187号
+  label: 厦门明佑电镀有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+- name: 厦门欧士佩电镀厂有限公司
+  address: 厦门工业集中区集安路183号
+  label: 厦门欧士佩电镀厂有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+- name: 厦门同恒金属有限公司
+  address: 厦门新民镇梧侣村同辉路666号
+  label: 厦门同恒金属有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 百路达(厦门）工业有限公司
+  address: 厦门市同安区百路达(厦门）工业有限公司
+  label: 百路达(厦门）工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.679247
+  lon: 118.129877
+  geocode_level: POI
+  categories:
+  - 土壤污染
+- name: 厦门中禾实业有限公司
+  address: 厦门金富路97号
+  label: 厦门中禾实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+- name: 厦门同集热电有限公司
+  address: 厦门轻工食品园美禾三路399号
+  label: 厦门同集热电有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+- name: 厦门惠尔康食品有限公司
+  address: 厦门市同安区朝元路1801号
+  label: 厦门惠尔康食品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.758992
+  lon: 118.143069
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门银祥油脂有限公司
+  address: 厦门市同安区厦门银祥油脂有限公司
+  label: 厦门银祥油脂有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.659592
+  lon: 118.125496
+  geocode_level: 兴趣点
+  categories:
+  - 大气环境
+- name: 厦门东环能源科技有限公司
+  address: 厦门市同安区厦门东环能源科技有限公司
+  label: 厦门东环能源科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.723299
+  lon: 118.150823
+  geocode_level: POI
+  categories:
+  - 大气环境
+- name: 厦门保沣集团有限公司
+  address: 厦门五显镇布塘中路1668号
+  label: 厦门保沣集团有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+- name: 厦门力隆氨纶有限公司
+  address: 厦门城东工业区思同路199号
+  label: 厦门力隆氨纶有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+- name: 厦门三安光电有限公司
+  address: 福州市民安大道841-899号
+  label: 厦门三安光电有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.678957
+  lon: 118.198688
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门兴向阳工贸有限公司
+  address: 厦门工业区思明园42号一楼
+  label: 厦门兴向阳工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门华弘昌科技有限公司
+  address: 厦门新民镇集银路98号
+  label: 厦门华弘昌科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门华诚实业有限公司
+  address: 厦门溪林路358号
+  label: 厦门华诚实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门古龙食品有限公司
+  address: 厦门同集中路1666号
+  label: 厦门古龙食品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门同安民利电器有限公司
+  address: 厦门朝元路755号
+  label: 厦门同安民利电器有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门宏赢工贸有限公司
+  address: 厦门同安工业集中区湖里园38号第一层
+  label: 厦门宏赢工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门币三妥集成电路有限公司
+  address: 厦门市同安区厦门币三妥集成电路有限公司
+  label: 厦门币三妥集成电路有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.675001
+  lon: 118.191777
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门市广和源工贸有限公司
+  address: 厦门杏林镇杏滨街道光华路15号
+  label: 厦门市广和源工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门搏捷电镀有限公司
+  address: 厦门集安路189号
+  label: 厦门搏捷电镀有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门欣建雅工业有限公司
+  address: 厦门新民镇同安工业集中区思明园19号
+  label: 厦门欣建雅工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司
+  address: 厦门市同安区厦门水务中环污水处理有限公司
+  label: 厦门水务中环污水处理有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.728949
+  lon: 118.147227
+  geocode_level: 兴趣点
+  categories:
+  - 水环境
+- name: 厦门鑫鸿丰五金制品有限公司
+  address: 厦门市同安区厦门鑫鸿丰五金制品有限公司
+  label: 厦门鑫鸿丰五金制品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.690975
+  lon: 118.129125
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门银祥肉业有限公司
+  address: 福州市洪塘镇石浔工业区石浔路139号
+  label: 厦门银祥肉业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.699947
+  lon: 118.17708
+  geocode_level: 兴趣点
+  categories:
+  - 水环境
+- name: 双桥(厦门）有限公司
+  address: 厦门美禾三路409号
+  label: 双桥(厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 青岛啤酒(厦门）有限公司
+  address: 厦门环城东路161号
+  label: 青岛啤酒(厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门同安城建水务环境有限公司
+  address: 厦门西柯镇美林街道美峰创谷7号楼4楼
+  label: 厦门同安城建水务环境有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门华虹光学科技有限公司
+  address: 厦门大同街道新民镇四口圳路99号
+  label: 厦门华虹光学科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门嘉弘科技有限公司
+  address: 厦门新民镇同安集安路197号
+  label: 厦门嘉弘科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门市达超工贸有限公司
+  address: 福州市集成路与同辉路交叉口东北120米
+  label: 厦门市达超工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.699621
+  lon: 118.120462
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 雪花啤酒(福建）有限公司
+  address: 厦门市同安区同安大道888号
+  label: 雪花啤酒(福建）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.699
+  lon: 118.127
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门华信安电子科技有限公司
+  address: 厦门翔岳路66号
+  label: 厦门华信安电子科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+- name: 厦门三元鑫环保科技有限公司
+  address: 福州市同明路同安园(同盛路)
+  label: 厦门三元鑫环保科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.686691
+  lon: 118.123941
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门东亚机械工业股份有限公司
+  address: 厦门市同安区厦门东亚机械工业股份有限公司
+  label: 厦门东亚机械工业股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.677031
+  lon: 118.15775
+  geocode_level: 兴趣点
+  categories:
+  - 环境风险
+- name: 厦门侨兴工业有限公司
+  address: 厦门新民镇集银路348-356号
+  label: 厦门侨兴工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门安恒钢材有限公司
+  address: 厦门集贤路222号
+  label: 厦门安恒钢材有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门市同力发工贸有限公司
+  address: 厦门集安路与双埔路交叉口西120米
+  label: 厦门市同力发工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门币腾盛夹电子技禾有限公司
+  address: 厦门市同安区厦门币腾盛夹电子技禾有限公司
+  label: 厦门币腾盛夹电子技禾有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.668681
+  lon: 118.156837
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门新安泰发工业有限公司
+  address: 厦门同安园(同盛路)305号楼
+  label: 厦门新安泰发工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门日上金属有限公司
+  address: 厦门二环南路199号
+  label: 厦门日上金属有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门日上钢圈有限公司
+  address: 厦门同辉路888号
+  label: 厦门日上钢圈有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门海辰储能科技股份有限公司
+  address: 福州市火炬高新区同翔高新城本源路1号
+  label: 厦门海辰储能科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.721724
+  lon: 118.217679
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门群鑫机械工业有限公司
+  address: 厦门新民镇同安工业集中区集银路170号
+  label: 厦门群鑫机械工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门金鹭特种合金有限公司
+  address: 福州市同安工业集中区集成路1601-1629号
+  label: 厦门金鹭特种合金有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.69672
+  lon: 118.138693
+  geocode_level: 兴趣点
+  categories:
+  - 环境风险
+- name: 厦门新能安科技有限公司
+  address: 厦门洪塘路600号
+  label: 厦门新能安科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门海辰新材料科技有限公司
+  address: 厦门城东中路62号海辰储能G2门岗
+  label: 厦门海辰新材料科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门市笫三医院
+  address: 厦门市同安区厦门市笫三医院
+  label: 厦门市笫三医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.705729
+  lon: 118.147249
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门市苏颂医院
+  address: 厦门通福路988号
+  label: 厦门市苏颂医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门太平货柜制造有限公司
+  address: 厦门同安区工业集中区梧侣路9号
+  label: 厦门太平货柜制造有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 厦门市华五电子科技有限公司
+  address: 厦门市同安区华五电子科技有限公司
+  label: 厦门市华五电子科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.699002
+  lon: 118.127152
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 朋诺惠利电子材料（厦门）有限公司
+  address: 厦门同宏路28号
+  label: 朋诺惠利电子材料（厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+- name: 中创新航新能源（厦门）有限公司
+  address: 厦门民安大道6666号
+  label: 中创新航新能源（厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险

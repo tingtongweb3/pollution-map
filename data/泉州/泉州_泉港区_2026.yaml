@@ -1,0 +1,646 @@
+meta:
+  title: 泉州泉港区2026年重点污染源单位地理分布图
+  subtitle: 数据来源：泉州生态环境局2026年度环境监管重点单位名录  |  共51家  |  坐标：高德地图
+  output_path: ./泉州_泉港区_2026_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  rate_limit: 0.15
+  city: 泉州
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 中化学天辰（泉州）新材料有限公司
+  address: 泉州园南路17号
+  label: 中化学天辰（泉州）新材料有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 25.120399
+  lon: 118.915804
+  geocode_level: 区县
+- name: 中平神马（福建）科技发展有限公司
+  address: 泉州驿峰西路与明德路交叉口南180米
+  label: 中平神马（福建）科技发展有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.124884
+  lon: 118.850541
+  geocode_level: POI
+- name: 佳化化学泉州有限公司
+  address: 泉州石化工业区南山片区C区
+  label: 佳化化学泉州有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 25.193787
+  lon: 118.920993
+  geocode_level: POI
+- name: 北瑞药业（福建）有限公司
+  address: 泉州新民街22-11号(旧司法局院内)
+  label: 北瑞药业（福建）有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 25.131875
+  lon: 118.915875
+  geocode_level: POI
+- name: 国家石油天然气管网集团有限公司华东分公司泉港油库
+  address: 福建省泉州市泉港区后龙镇许厝村许厝315号
+  label: 国家石油天然气管网集团有限公司华东分公司泉港油库
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.110468
+  lon: 118.842952
+  geocode_level: 村庄
+- name: 国能（泉州）热电有限公司
+  address: ''
+  label: 国能（泉州）热电有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 25.201698
+  lon: 118.949041
+  geocode_level: POI
+- name: 松道化工（福建）有限公司
+  address: 泉州石化园区天盈路
+  label: 松道化工（福建）有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.195528
+  lon: 118.935635
+  geocode_level: POI
+- name: 泉州丰鹏环保科技有限公司
+  address: 泉州园南路与经三路交叉口东240米
+  label: 泉州丰鹏环保科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 25.120399
+  lon: 118.915804
+  geocode_level: 区县
+- name: 泉州凯平肯拓化工有限公司
+  address: 泉州南埔镇石化园区南山片区园南路3号
+  label: 泉州凯平肯拓化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.194792
+  lon: 118.92301
+  geocode_level: POI
+- name: 泉州华尔宝树脂有限公司
+  address: 泉州前黄镇前烧村驿峰路
+  label: 泉州华尔宝树脂有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.125494
+  lon: 118.842461
+  geocode_level: POI
+- name: 泉州友福船舶服务有限责任公司
+  address: 泉州峰尾镇郭厝村圭峰路400号鑫顺商住楼4橦217室
+  label: 泉州友福船舶服务有限责任公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.123261
+  lon: 118.940516
+  geocode_level: POI
+- name: 泉州国亨化学有限公司
+  address: 泉州天丰路5号
+  label: 泉州国亨化学有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 25.207295
+  lon: 118.927181
+  geocode_level: POI
+- name: 泉州宇极新材料科技有限公司
+  address: 泉州南埔镇石化园区南山片区南渠路9号(消防特勤站对面)
+  label: 泉州宇极新材料科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 25.193755
+  lon: 118.933574
+  geocode_level: POI
+- name: 泉州宏海石化仓储有限公司（原泉州振戎石化仓储有限公司）
+  address: 泉州S201(滨海东路)后龙镇上西化工码头
+  label: 泉州宏海石化仓储有限公司（原泉州振戎石化仓储有限公司）
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.17132
+  lon: 118.977296
+  geocode_level: POI
+- name: 泉州市中青新型建材有限公司
+  address: 福建省泉州市泉港区涂岭镇前欧村
+  label: 泉州市中青新型建材有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.156109
+  lon: 118.82732
+  geocode_level: 村庄
+- name: 泉州市昊云贸易有限公司
+  address: 泉州驿峰西路8号
+  label: 泉州市昊云贸易有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.114675
+  lon: 118.875125
+  geocode_level: POI
+- name: 泉州市泉港区水务环保科技有限责任公司
+  address: ''
+  label: 泉州市泉港区水务环保科技有限责任公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 25.204656
+  lon: 118.938918
+  geocode_level: POI
+- name: 泉州市泉港区食品有限公司
+  address: ''
+  label: 泉州市泉港区食品有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.123304
+  lon: 118.84348
+  geocode_level: POI
+- name: 泉州市泉港厦日建材有限公司
+  address: 福建省泉州市泉港区前黄镇前烧村驿峰西路1289号
+  label: 泉州市泉港厦日建材有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.125316
+  lon: 118.832735
+  geocode_level: 门址
+- name: 泉州市通用新材料科技有限公司
+  address: 泉州福盛路与福佳路交叉口东240米
+  label: 泉州市通用新材料科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.190147
+  lon: 118.928451
+  geocode_level: POI
+- name: 泉州德立化工有限公司
+  address: 泉州前黄镇前烧村
+  label: 泉州德立化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.127157
+  lon: 118.838781
+  geocode_level: POI
+- name: 泉州新华福合成材料有限公司
+  address: 泉州福盛路与福佳路交叉口东北180米
+  label: 泉州新华福合成材料有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 25.191205
+  lon: 118.926665
+  geocode_level: POI
+- name: 泉州泉港区正源新材料有限公司
+  address: ''
+  label: 泉州泉港区正源新材料有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.194761
+  lon: 118.93476
+  geocode_level: POI
+- name: 泉州清能新能源科技有限公司
+  address: 泉州驿峰西路28号
+  label: 泉州清能新能源科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.117418
+  lon: 118.878426
+  geocode_level: POI
+- name: 泉州玺堡家居科技有限公司
+  address: ''
+  label: 泉州玺堡家居科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.124646
+  lon: 118.827342
+  geocode_level: POI
+- name: 泉州盈源环保有限公司
+  address: 泉州新东路103号
+  label: 泉州盈源环保有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.116878
+  lon: 118.966081
+  geocode_level: POI
+- name: 泉州盛宝利化工有限公司
+  address: 泉州泉港石化园区南山片区
+  label: 泉州盛宝利化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.189662
+  lon: 118.923991
+  geocode_level: POI
+- name: 泉州福海粮油工业有限公司
+  address: 泉州南埔镇通港路2号
+  label: 泉州福海粮油工业有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.203866
+  lon: 118.967171
+  geocode_level: POI
+- name: 福州冠健环保工程有限公司泉港分公司
+  address: 泉州泉港区烟草专卖局西门旁
+  label: 福州冠健环保工程有限公司泉港分公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.126584
+  lon: 118.913489
+  geocode_level: POI
+- name: 福建万家鑫轻工发展有限公司
+  address: 福建省泉州市泉港区前黄镇普安开发区525号
+  label: 福建万家鑫轻工发展有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.121837
+  lon: 118.868576
+  geocode_level: 住宅区
+- name: 福建东港石油化工实业有限公司
+  address: 泉州南埔镇肖厝村
+  label: 福建东港石油化工实业有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.180921
+  lon: 118.973044
+  geocode_level: POI
+- name: 福建中建新材科技有限公司
+  address: 泉州天盈路6号
+  label: 福建中建新材科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.120399
+  lon: 118.915804
+  geocode_level: 区县
+- name: 福建光启化学有限公司
+  address: 泉州石化园区园西路9号
+  label: 福建光启化学有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  lat: 25.187528
+  lon: 118.925395
+  geocode_level: POI
+- name: 福建凯美特气体有限公司
+  address: 泉州石化园区南山片区天盈路1号
+  label: 福建凯美特气体有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 25.192684
+  lon: 118.936206
+  geocode_level: POI
+- name: 福建华星石化有限公司
+  address: 福建省泉州市泉港区油港路287号
+  label: 福建华星石化有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.164073
+  lon: 118.952675
+  geocode_level: 道路
+- name: 福建南光轻工有限公司
+  address: 泉州南北四路中心工业区
+  label: 福建南光轻工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.134884
+  lon: 118.923411
+  geocode_level: 住宅区
+- name: 福建坚石电力线路器材有限公司
+  address: 福建省泉州市泉港区前黄镇前烧村驿峰路边德和工业园
+  label: 福建坚石电力线路器材有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 25.126408
+  lon: 118.84689
+  geocode_level: 道路
+- name: 福建天原化工有限公司
+  address: 泉州南埔镇陆岛路
+  label: 福建天原化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  lat: 25.176016
+  lon: 118.910481
+  geocode_level: 乡镇
+- name: 福建泉昇新材料有限责任公司
+  address: 泉州南埔镇先锋村枫厝
+  label: 福建泉昇新材料有限责任公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.17709
+  lon: 118.953504
+  geocode_level: POI
+- name: 福建瑞远生物科技有限公司
+  address: 福建省泉州市泉港区天丰路7号
+  label: 福建瑞远生物科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.205575
+  lon: 118.932525
+  geocode_level: POI
+- name: 福建百宏化学有限公司
+  address: 泉州界山镇石化工业园区园中路8号
+  label: 福建百宏化学有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.201453
+  lon: 118.924716
+  geocode_level: POI
+- name: 福建百宏石化有限公司
+  address: 泉州南埔镇石化园区南山片区园中路9号
+  label: 福建百宏石化有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 25.19454
+  lon: 118.926375
+  geocode_level: POI
+- name: 福建省天骄化学材料有限公司
+  address: 泉州园南路与经三路交叉口东南240米
+  label: 福建省天骄化学材料有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 25.120399
+  lon: 118.915804
+  geocode_level: 区县
+- name: 福建省环境工程有限公司
+  address: 泉州市泉港区福建联合石化厂区界内
+  label: 福建省环境工程有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 25.169548
+  lon: 118.942831
+  geocode_level: 住宅区
+- name: 福建省百川资源再生科技股份有限公司（二厂区）
+  address: 泉州驿峰西路1号
+  label: 福建省百川资源再生科技股份有限公司（二厂区）
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.13061
+  lon: 118.823805
+  geocode_level: 门址
+- name: 福建省钜港环保科技有限公司
+  address: 泉州石化工业园区南山片区东邱路D区8号
+  label: 福建省钜港环保科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.200238
+  lon: 118.936409
+  geocode_level: POI
+- name: 福建立亚化学有限公司
+  address: 泉州石化园区南山片区园中路1号
+  label: 福建立亚化学有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.189898
+  lon: 118.932513
+  geocode_level: POI
+- name: 福建联合石油化工有限公司
+  address: 泉州祥云北路12号
+  label: 福建联合石油化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 25.177643
+  lon: 118.941907
+  geocode_level: POI
+- name: 福建路桥翔通建材科技有限公司
+  address: 泉州福佳路与福盛路交叉口西北220米
+  label: 福建路桥翔通建材科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.191402
+  lon: 118.924491
+  geocode_level: POI
+- name: 福建钟山化工有限公司
+  address: 泉州后龙镇石化工业区南山片区B区1号
+  label: 福建钟山化工有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 25.198682
+  lon: 118.92478
+  geocode_level: POI
+- name: 蓝海博达科技有限公司
+  address: ''
+  label: 蓝海博达科技有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.196993
+  lon: 118.92202
+  geocode_level: POI

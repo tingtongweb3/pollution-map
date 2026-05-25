@@ -1,0 +1,17 @@
+name: create-pollution-map
+description: >
+  Generate high-resolution pollution-source distribution maps for any Chinese
+  city/district using Gaode Maps as the basemap. Supports YAML-based config,
+  batch geocoding with JSON cache, category-based color coding, and PIL-rendered
+  Chinese legends.
+
+  NEW: Auto-data-collection pipeline — can automatically extract enterprise lists
+  from government environmental supervision unit rosters (环境监管重点单位名录)
+  published on ecology bureau websites. Supports HTML table and PDF text extraction.
+
+  Use when the user needs to:
+  - Create a geographic distribution map of pollution sources / regulated enterprises
+  - Visualize enterprise locations on a Gaode/AMap basemap with Chinese labels
+  - Generate maps for any city/district, not just Fuzhou Cangshan
+  - Batch geocode Chinese addresses to GCJ-02 coordinates
+  - Auto-collect official environmental data from government websites

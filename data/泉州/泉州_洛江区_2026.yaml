@@ -1,0 +1,169 @@
+meta:
+  title: 泉州洛江区2026年重点污染源单位地理分布图
+  subtitle: 数据来源：泉州生态环境局2026年度环境监管重点单位名录  |  共10家  |  坐标：高德地图
+  output_path: ./泉州_洛江区_2026_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  rate_limit: 0.15
+  city: 泉州
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 泉州市医疗废物处置中心
+  address: 泉州双阳街道昔仔前35
+  label: 泉州市医疗废物处置中心
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  lat: 24.963675
+  lon: 118.638525
+  geocode_level: POI
+- name: 泉州市广兴环保发展有限公司
+  address: 福建省泉州市洛江区河市镇庄田村下庄285号
+  label: 泉州市广兴环保发展有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 25.030283
+  lon: 118.635821
+  geocode_level: 村庄
+- name: 泉州市森鑫水产培殖有限公司
+  address: ''
+  label: 泉州市森鑫水产培殖有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 泉州市洛江区副食品有限公司
+  address: 泉州市洛江区河市镇河格头105号
+  label: 泉州市洛江区副食品有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.046165
+  lon: 118.618297
+  geocode_level: 村庄
+- name: 泉州市洛江雅志新能源有限公司
+  address: 泉州河市镇(标准厂房旁)
+  label: 泉州市洛江雅志新能源有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 土壤污染
+  lat: 25.020189
+  lon: 118.627615
+  geocode_level: POI
+- name: 泉州市洛江鸿发畜牧有限公司
+  address: ''
+  label: 泉州市洛江鸿发畜牧有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.123713
+  lon: 118.581874
+  geocode_level: POI
+- name: 泉州市环境卫生中心
+  address: 泉州市洛江区双阳街道新南社区室仔前生活垃圾卫生填埋场
+  label: 泉州市环境卫生中心
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 地下水
+  - 土壤污染
+  - 环境风险
+  lat: 24.968255
+  lon: 118.641818
+  geocode_level: 公交地铁站点
+- name: 泉州市达发织造有限责任公司
+  address: 泉州市洛江区双阳华侨经济开发区旗牌王工业园区
+  label: 泉州市达发织造有限责任公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.003529
+  lon: 118.627097
+  geocode_level: 住宅区
+- name: 泉州市鑫弘环保材料有限公司
+  address: 泉州河市镇白洋村工业区(南洋企业隔壁)
+  label: 泉州市鑫弘环保材料有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 25.058315
+  lon: 118.625669
+  geocode_level: POI
+- name: 泉州绿之园农林业开发有限公司
+  address: 泉州市洛江区罗溪镇三合村林地大坪山
+  label: 泉州绿之园农林业开发有限公司
+  data_source: 泉州市生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 25.204471
+  lon: 118.612727
+  geocode_level: 村庄

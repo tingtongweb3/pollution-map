@@ -1,0 +1,750 @@
+meta:
+  title: 厦门市集美区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共62家  |  坐标：高德地图
+  output_path: ./xiamen_jimei_output.png
+  dpi: 200
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
+  rate_limit: 0.15
+  city: 厦门
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 厦门建霖健康家居股份有限公司
+  address: 厦门北部工业区天凤路69号
+  label: 厦门建霖健康家居股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 水环境
+  lat: 24.598889
+  lon: 118.105368
+  geocode_level: POI
+- name: 厦门惟精丝钉电镀有限公司
+  address: 厦门锦亭北路265-297号
+  label: 厦门惟精丝钉电镀有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 水环境
+  lat: 24.601832
+  lon: 118.023128
+  geocode_level: POI
+- name: 厦门泰利眼镜工业有限公司
+  address: 厦门杏美路11号
+  label: 厦门泰利眼镜工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.57627
+  lon: 118.022144
+  geocode_level: POI
+- name: 路达（厦门）工业有限公司
+  address: 厦门杏林南路61号
+  label: 路达（厦门）工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.55508
+  lon: 118.041715
+  geocode_level: POI
+- name: 路达（厦门）工业有限公司（日新厂）
+  address: 厦门市集美区杏林日新路13号
+  label: 路达（厦门）工业有限公司（日新厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.559833
+  lon: 118.033407
+  geocode_level: 门址
+- name: 厦门厦杏摩托有限公司
+  address: 厦门集美区西滨路
+  label: 厦门厦杏摩托有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 24.556262
+  lon: 118.027919
+  geocode_level: POI
+- name: 厦门宇诠复材科技有限公司
+  address: 厦门永兴北路1号
+  label: 厦门宇诠复材科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 24.561425
+  lon: 118.025475
+  geocode_level: POI
+- name: 厦门宏发先科新型建材有限公司
+  address: 厦门后溪镇后溪大道1512号
+  label: 厦门宏发先科新型建材有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 24.667292
+  lon: 118.050286
+  geocode_level: POI
+- name: 厦门新凯复材科技有限公司
+  address: 厦门后溪大道399号
+  label: 厦门新凯复材科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 24.640842
+  lon: 118.024031
+  geocode_level: POI
+- name: 厦门民兴工业有限公司
+  address: 厦门市集美区灌口南路608号
+  label: 厦门民兴工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.595521
+  lon: 117.986474
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 厦门理研工业有限公司
+  address: 厦门市集美区灌口中路465号
+  label: 厦门理研工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.594234
+  lon: 117.985167
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 水环境
+  - 环境风险
+- name: 厦门瑞新热电有限公司
+  address: 厦门杏林湾路474号杏林湾营运中心2号楼19层
+  label: 厦门瑞新热电有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 24.593309
+  lon: 118.063011
+  geocode_level: POI
+- name: 厦门金龙联合汽车工业有限公司
+  address: 厦门市集美区金龙路9号
+  label: 厦门金龙联合汽车工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.594265
+  lon: 117.97549
+  geocode_level: POI
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 分厂多玛得（厦门）精细化工有限公司
+  address: 厦门三社路450-458号
+  label: 分厂多玛得（厦门）精细化工有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 24.603134
+  lon: 118.010095
+  geocode_level: POI
+- name: 厦门正新橡胶工业有限公司
+  address: 厦门杏林西滨路15号
+  label: 厦门正新橡胶工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  - 水环境
+  - 环境风险
+  lat: 24.573807
+  lon: 118.024089
+  geocode_level: POI
+- name: 东洲(厦门）纺织有限公司东金电子科技(厦门）有限公司
+  address: 厦门杏林日新路9号
+  label: 东洲(厦门）纺织有限公司东金电子科技(厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.557991
+  lon: 118.03626
+  geocode_level: POI
+- name: 先锋（厦门）电镀开发有限公司
+  address: 厦门市集美区灌口镇灌南工业区铁山路28号
+  label: 先锋（厦门）电镀开发有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.592092
+  lon: 117.995569
+  geocode_level: 门址
+- name: 厦门TDK有限公司
+  address: 厦门市集美区同集南路321-339号
+  label: 厦门TDK有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 24.604906
+  lon: 118.114711
+  geocode_level: 门址
+- name: 厦门TDK有限公司集美厂
+  address: 厦门市集美区北部工业区连胜路1-21号
+  label: 厦门TDK有限公司集美厂
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.595674
+  lon: 118.095916
+  geocode_level: 门址
+- name: 厦门吉顺芯微电子有限公司
+  address: 厦门集美北部工业区环珠路501号
+  label: 厦门吉顺芯微电子有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 24.609581
+  lon: 118.114142
+  geocode_level: POI
+- name: 厦门圣源金属制造有限公司
+  address: 厦门杏滨街道西滨路17-19号
+  label: 厦门圣源金属制造有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 24.569965
+  lon: 118.02129
+  geocode_level: POI
+- name: 厦门夏商黄金香食品有限公司
+  address: 厦门市集美区北部工业区环珠路93-95号
+  label: 厦门夏商黄金香食品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.515364
+  lon: 117.974724
+  geocode_level: POI
+  categories:
+  - 水环境
+- name: 厦门姚明织带饰品有限公司
+  address: 厦门东岭路68号
+  label: 厦门姚明织带饰品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.650383
+  lon: 118.019908
+  geocode_level: POI
+- name: 厦门宏发电声股份有限公司
+  address: 厦门英瑶路与孙坂南路交叉口西北160米
+  label: 厦门宏发电声股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 24.599275
+  lon: 118.096555
+  geocode_level: POI
+- name: 厦门市政水环境有限公司
+  address: 厦门市集美区灌口镇海翔大道前场污水处理厂
+  label: 厦门市政水环境有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.583176
+  lon: 118.009227
+  geocode_level: 村庄
+- name: 厦门成联五金制造有限公司
+  address: 厦门市集美区杏前路203号
+  label: 厦门成联五金制造有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.587063
+  lon: 118.014064
+  geocode_level: 门址
+  categories:
+  - 水环境
+- name: 厦门水务中环污水处理有限公司
+  address: 厦门市集美区乐海路868号
+  label: 厦门水务中环污水处理有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.58214
+  lon: 118.10984
+  geocode_level: 门址
+- name: 厦门瑞京金属制品有限公司
+  address: 厦门市集美区灌口南路598号
+  label: 厦门瑞京金属制品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.598065
+  lon: 117.983297
+  geocode_level: POI
+  categories:
+  - 水环境
+  - 环境风险
+- name: 厦门谊瑞智能制造有限公司
+  address: 厦门杏林街道杏林镇中宛路5号宜瑞货架有限公司
+  label: 厦门谊瑞智能制造有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.579075
+  lon: 118.036342
+  geocode_level: POI
+- name: 后溪工业组团污水处理站新格（厦门）化纤织造染整
+  address: 厦门杏林杏前路197号
+  label: 后溪工业组团污水处理站新格（厦门）化纤织造染整
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.587487
+  lon: 118.013646
+  geocode_level: POI
+- name: 有限公司朗美（厦门）健身器材有限公司
+  address: 厦门杏林北二路27-29号
+  label: 有限公司朗美（厦门）健身器材有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.58432
+  lon: 118.035049
+  geocode_level: POI
+- name: 裕兴螺丝(厦门）工业有限公司
+  address: 厦门天凤路123-129号
+  label: 裕兴螺丝(厦门）工业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.606515
+  lon: 118.104021
+  geocode_level: POI
+- name: 厦门力卓药业有限公司
+  address: 厦门锦亭北路55号
+  label: 厦门力卓药业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.591944
+  lon: 118.014989
+  geocode_level: POI
+- name: 厦门求特新材料有限公司
+  address: 厦门后溪镇石星路601号
+  label: 厦门求特新材料有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 24.649012
+  lon: 118.023648
+  geocode_level: POI
+- name: 厦门市金宝源实业有限公司
+  address: 厦门杏滨街道杏林光华路13号
+  label: 厦门市金宝源实业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 24.556122
+  lon: 118.036496
+  geocode_level: POI
+- name: 厦门银华机械有限公司
+  address: 厦门市集美区灌口西路69号
+  label: 厦门银华机械有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.59997
+  lon: 117.967955
+  geocode_level: POI
+  categories:
+  - 水环境
+  - 环境风险
+- name: 合锋卫浴（厦门）有限公司
+  address: 厦门市集美区灌口镇航天路656号
+  label: 合锋卫浴（厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.588974
+  lon: 117.986884
+  geocode_level: 门址
+  categories:
+  - 水环境
+  - 环境风险
+- name: 华懋（厦门）特种材料有限公司
+  address: 厦门杏林街道杏林北路28号
+  label: 华懋（厦门）特种材料有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.574411
+  lon: 118.047339
+  geocode_level: POI
+- name: 厦门TDK有限公司集美厂厦门利德宝电子科技股份有限公司
+  address: 厦门山美路662号
+  label: 厦门TDK有限公司集美厂厦门利德宝电子科技股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.58138
+  lon: 117.98146
+  geocode_level: POI
+- name: 厦门华天华电子有限公司
+  address: 厦门集美北区天安路158号
+  label: 厦门华天华电子有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.605302
+  lon: 118.103008
+  geocode_level: POI
+- name: 厦门日上集团股份有限公司
+  address: 厦门市集美区杏林杏北路30号
+  label: 厦门日上集团股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.574895
+  lon: 118.04513
+  geocode_level: 门牌号
+- name: 厦门松元电子股份有限公司
+  address: 厦门杏林锦亭路1199-1205号
+  label: 厦门松元电子股份有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.596613
+  lon: 118.024628
+  geocode_level: POI
+- name: 厦门金汇峰新型包装材料股
+  address: 厦门后溪工业组团新田路12号
+  label: 厦门金汇峰新型包装材料股
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.643926
+  lon: 118.024122
+  geocode_level: POI
+- name: 厦门金汇聚废旧物资回收有限公司
+  address: 厦门市集美区灌口镇东辉东寨社168号
+  label: 厦门金汇聚废旧物资回收有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.637892
+  lon: 118.000142
+  geocode_level: 村庄
+  categories:
+  - 环境风险
+- name: 厦门顺再顺环保科技有限公司
+  address: 厦门市集美区山美路81号
+  label: 厦门顺再顺环保科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.587052
+  lon: 117.982006
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门飞鹏高科技铝业有限公司
+  address: 厦门市集美区后溪镇后溪大道513-515号
+  label: 厦门飞鹏高科技铝业有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.645151
+  lon: 118.028152
+  geocode_level: 门牌号
+- name: 国际铝业(厦门）有限公司
+  address: 厦门杏林杏美路10号
+  label: 国际铝业(厦门）有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.574272
+  lon: 118.029594
+  geocode_level: POI
+- name: 朗力（厦门）机械制造有限公司
+  address: 厦门市集美区杏林九天湖西二路151号
+  label: 朗力（厦门）机械制造有限公司（曾用名：朗万）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.588027
+  lon: 118.034039
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 蓝保（厦门）水处理科技有限公司
+  address: 厦门后溪工业组团东岭路8号
+  label: 蓝保（厦门）水处理科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.645852
+  lon: 118.023385
+  geocode_level: POI
+- name: 路达（厦门）工业有限公司（杏南一厂）
+  address: 厦门市集美区杏林南路68号
+  label: 路达（厦门）工业有限公司（杏南一厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.55508
+  lon: 118.041715
+  geocode_level: POI
+- name: 路达（厦门）工业有限公司（西滨厂）
+  address: 厦门市集美区杏林西滨路
+  label: 路达（厦门）工业有限公司（西滨厂）
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.55508
+  lon: 118.041715
+  geocode_level: POI
+- name: 四川大学华西厦门医院
+  address: 厦门后浦西路188号
+  label: 四川大学华西厦门医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.603035
+  lon: 118.03484
+  geocode_level: POI
+- name: 厦门医学院附属第二医院
+  address: 盛光路566号厦门市第二医院内
+  label: 厦门医学院附属第二医院
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.584459
+  lon: 118.104523
+  geocode_level: POI
+- name: 厦门宝晟鑫电子科技有限公司
+  address: 厦门市集美区灌口镇铁山路28号
+  label: 厦门宝晟鑫电子科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.591148
+  lon: 117.994761
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门邦源能源科技有限公司
+  address: 厦门市集美区灌口镇清溪路6号
+  label: 厦门邦源能源科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.582346
+  lon: 117.975876
+  geocode_level: 门址
+  categories:
+  - 环境风险
+- name: 厦门统元树脂化学有限公司
+  address: 厦门北部工业区天凤路106-110号
+  label: 厦门统元树脂化学有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.604911
+  lon: 118.105597
+  geocode_level: POI
+- name: 厦门洁霖工贸有限公司际诺思（厦门）轻工制品有限公司
+  address: 厦门环珠路461-471号
+  label: 厦门洁霖工贸有限公司际诺思（厦门）轻工制品有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.610777
+  lon: 118.112062
+  geocode_level: POI
+- name: 林德气体(厦门）有限公司绿滔（厦门）环境科技有限公司
+  address: 厦门孙坂南路75-89号
+  label: 林德气体(厦门）有限公司绿滔（厦门）环境科技有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.598373
+  lon: 118.097945
+  geocode_level: POI
+- name: 厦门钇胜鑫工贸有限公司
+  address: 厦门灌口镇三社路382号之三
+  label: 厦门钇胜鑫工贸有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.600901
+  lon: 118.009951
+  geocode_level: POI
+- name: 厦门革新金属制造有限公司
+  address: 厦门锦园西三路18-1号
+  label: 厦门革新金属制造有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.594556
+  lon: 118.014187
+  geocode_level: POI
+- name: 厦门金龙江申车架有限公司
+  address: 厦门市集美区灌口镇金龙路699号
+  label: 厦门金龙江申车架有限公司
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  lat: 24.596645
+  lon: 117.979716
+  geocode_level: POI
+  categories:
+  - 环境风险
+- name: 厦门市妇幼保健院集美院区
+  address: 厦门后溪镇黄庚山路555号
+  label: 厦门市妇幼保健院集美院区
+  data_source: 厦门市生态环境局2025年度环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 24.617979
+  lon: 118.055149
+  geocode_level: POI

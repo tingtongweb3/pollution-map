@@ -1,0 +1,25 @@
+# Runtime caches
+cache/
+
+# Generated images
+data/*/images/
+
+# Legacy files
+archive/
+
+# Local indexes
+.codegraph/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env
