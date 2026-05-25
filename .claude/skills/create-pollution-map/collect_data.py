@@ -37,12 +37,23 @@ sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
     get_gaode_key, _names_match, extract_district_hint, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir, get_city_from_config,
+    _DISTRICT_KEYWORDS,
 )
 
 try:
     from pypdf import PdfReader
 except ImportError:
     PdfReader = None
+
+try:
+    import fitz  # PyMuPDF
+except ImportError:
+    fitz = None
+
+try:
+    import easyocr
+except ImportError:
+    easyocr = None
 
 
 # ---------------------------------------------------------------------------
@@ -107,6 +118,45 @@ def infer_category(text: str) -> str:
             if kw in text:
                 return cat
     return ""
+
+
+# ---------------------------------------------------------------------------
+# OCR helpers for scanned PDFs
+# ---------------------------------------------------------------------------
+
+def _group_ocr_by_rows(ocr_result, y_tolerance=25):
+    """Group OCR text blocks by row (Y coordinate).
+
+    Args:
+        ocr_result: easyocr result list [(bbox, text, confidence), ...]
+        y_tolerance: pixel tolerance for considering blocks on the same row
+
+    Returns:
+        List of strings, each representing one row of text (left to right).
+    """
+    rows = {}
+    for item in ocr_result:
+        bbox, text, conf = item
+        y_center = (bbox[0][1] + bbox[2][1]) / 2
+        x_center = (bbox[0][0] + bbox[1][0]) / 2
+
+        found_y = None
+        for row_y in list(rows.keys()):
+            if abs(row_y - y_center) < y_tolerance:
+                found_y = row_y
+                break
+        if found_y is None:
+            found_y = y_center
+            rows[found_y] = []
+        rows[found_y].append((x_center, text, conf))
+
+    # Sort each row by X and join cells into lines
+    sorted_rows = []
+    for y in sorted(rows.keys()):
+        cells = sorted(rows[y], key=lambda x: x[0])
+        line_text = " ".join([c[1] for c in cells])
+        sorted_rows.append(line_text)
+    return sorted_rows
 
 
 # ---------------------------------------------------------------------------
@@ -403,8 +453,20 @@ class DataExtractor:
             return []
 
         if not full_text.strip():
-            print("WARNING: PDF appears to be scanned/image-based. Text extraction failed.")
-            return []
+            print("WARNING: PDF appears to be scanned/image-based. pypdf text extraction returned empty.")
+
+            if fitz is None:
+                print("ERROR: PyMuPDF (fitz) not installed. Cannot render scanned PDF pages.")
+                print("  Install: pip install pymupdf")
+                return []
+
+            if easyocr is None:
+                print("ERROR: easyocr not installed. Cannot OCR scanned PDF pages.")
+                print("  Install: pip install easyocr")
+                return []
+
+            print("Attempting OCR fallback (this may take a while)...")
+            return self._extract_from_scanned_pdf(pdf_bytes, source)
 
         return self._extract_from_text(full_text, source, url_or_path)
 
@@ -476,6 +538,144 @@ class DataExtractor:
                             enterprises.append(ent)
                             break
 
+        return enterprises
+
+    def _parse_ocr_table_line(self, line: str, source: Source = None) -> Optional[Enterprise]:
+        """Parse a single line of OCR table text into an Enterprise.
+
+        Handles patterns like:
+          '201 南安市 913505837549629194 固美金属股份有限公司'
+        """
+        line = line.strip()
+        if not line or len(line) < 4:
+            return None
+
+        if self._is_noise_line(line) or self._is_header_row(line):
+            return None
+
+        # Skip lines that are just a number or just a code
+        if re.match(r'^\d+$', line) or re.match(r'^[A-Z0-9]{18}$', line):
+            return None
+
+        # Skip parenthetical continuations like "(北峰污水处理厂"
+        if line.startswith('(') or line.startswith('（'):
+            if not re.search(r'[公司厂集团中心院部所店]', line):
+                return None
+
+        # Pattern 1: 序号 区县 18位代码 名称 (full table row)
+        m = re.search(r'([^\s]{2,4}(?:区|县|市))\s+([A-Z0-9]{18})\s+(.+)$', line)
+        if m:
+            district, code, name = m.groups()
+            name = name.strip()
+            name = re.sub(r'[\s]+[（(].*?[）)]?\s*$', '', name)
+            if len(name) >= 4:
+                return Enterprise(
+                    name=name,
+                    district=district,
+                    data_source=source.title if source else "",
+                    source_type=source.source_type if source else "official",
+                    raw_text=line,
+                )
+
+        # Pattern 2: 区县 + 公司名称 (code may be OCR garbled)
+        m2 = re.search(r'([^\s]{2,4}(?:区|县|市))\s+([^，。\s]{4,}(?:有限公司|有限责任公司|股份有限公司|公司|集团|厂|中心|院))', line)
+        if m2:
+            district, name = m2.groups()
+            return Enterprise(
+                name=name,
+                district=district,
+                data_source=source.title if source else "",
+                source_type=source.source_type if source else "official",
+                raw_text=line,
+            )
+
+        # Pattern 3: just company name (fallback)
+        m3 = re.search(r'([^，。\s]{4,}(?:有限公司|有限责任公司|股份有限公司|公司|集团|厂|中心|院))', line)
+        if m3:
+            name = m3.group(1)
+            district = ""
+            for kw in _DISTRICT_KEYWORDS:
+                if kw in line:
+                    district = kw
+                    break
+            return Enterprise(
+                name=name,
+                district=district,
+                data_source=source.title if source else "",
+                source_type=source.source_type if source else "official",
+                raw_text=line,
+            )
+
+        return None
+
+    def _extract_from_scanned_pdf(self, pdf_bytes, source: Source = None) -> List[Enterprise]:
+        """Extract enterprises from a scanned/image-based PDF using OCR."""
+        import tempfile
+
+        print("Initializing OCR engine (first run may download models)...")
+        ocr_reader = easyocr.Reader(['ch_sim', 'en'], gpu=False)
+
+        if isinstance(pdf_bytes, str):
+            # Local file path
+            doc = fitz.open(pdf_bytes)
+        else:
+            if hasattr(pdf_bytes, 'seek'):
+                pdf_bytes.seek(0)
+            raw = pdf_bytes.read() if hasattr(pdf_bytes, 'read') else pdf_bytes
+            doc = fitz.open(stream=raw, filetype="pdf")
+
+        enterprises = []
+        total_pages = len(doc)
+        current_category = ""  # Track category across pages in the PDF
+
+        for page_num in range(total_pages):
+            print(f"  OCR page {page_num + 1}/{total_pages}...", end="", flush=True)
+            page = doc[page_num]
+
+            pix = page.get_pixmap(dpi=300)
+            img_bytes = pix.tobytes("png")
+
+            with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as f:
+                f.write(img_bytes)
+                img_path = f.name
+
+            result = ocr_reader.readtext(img_path, detail=1)
+            os.unlink(img_path)
+
+            rows = _group_ocr_by_rows(result)
+
+            # Process rows line-by-line, updating category whenever a heading
+            # is encountered. Some pages contain multiple sections (e.g. 噪声
+            # followed by 土壤污染), so we must track category per-row rather
+            # than per-page.
+            page_ents = []
+            for line in rows:
+                # Check if this line is a category heading
+                cat = infer_category(line)
+                if cat and ("重点" in line or "排污" in line or "监管" in line or "管控" in line):
+                    current_category = cat
+                    continue
+
+                ent = self._parse_ocr_table_line(line, source)
+                if ent:
+                    if current_category and not ent.category:
+                        ent.category = current_category
+                    page_ents.append(ent)
+
+            # Deduplicate within page
+            seen = set()
+            unique_page_ents = []
+            for ent in page_ents:
+                key = ent.name
+                if key not in seen:
+                    seen.add(key)
+                    unique_page_ents.append(ent)
+
+            enterprises.extend(unique_page_ents)
+            print(f" {len(unique_page_ents)} enterprises")
+
+        doc.close()
+        print(f"OCR extraction complete: {len(enterprises)} enterprises from {total_pages} pages")
         return enterprises
 
     def extract(self, source: Source) -> List[Enterprise]:
@@ -706,6 +906,42 @@ class AddressEnricher:
             "failed": failed,
             "skipped": skipped,
         }
+
+
+# ---------------------------------------------------------------------------
+# City-level cache (avoid re-extracting for multiple districts)
+# ---------------------------------------------------------------------------
+
+def get_city_cache_path(city: str, year: int, output_dir: str) -> str:
+    """Return the path for the city-level enterprise cache file."""
+    return os.path.join(output_dir, city, f"{city}_{year}_city_cache.json")
+
+
+def save_city_cache(city: str, year: int, enterprises: List[Enterprise], output_dir: str) -> str:
+    """Save the full city-wide enterprise list to a JSON cache file.
+
+    This allows subsequent runs for different districts of the same city
+    to skip re-extraction from the original data source (e.g. OCR on a PDF).
+    """
+    path = get_city_cache_path(city, year, output_dir)
+    ensure_dir(path)
+    data = [asdict(ent) for ent in enterprises]
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    return path
+
+
+def load_city_cache(city: str, year: int, output_dir: str) -> Optional[List[Enterprise]]:
+    """Load the city-wide enterprise list from the JSON cache file.
+
+    Returns None if the cache file does not exist.
+    """
+    path = get_city_cache_path(city, year, output_dir)
+    if not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return [Enterprise(**item) for item in data]
 
 
 # ---------------------------------------------------------------------------

@@ -38,6 +38,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from collect_data import (
     DataExtractor, AddressEnricher, Source, Enterprise,
     merge_sources, generate_config, get_gaode_key,
+    save_city_cache, load_city_cache, get_city_cache_path,
 )
 
 
@@ -187,6 +188,14 @@ def main():
         "--key", default="",
         help="Gaode API key (or set GAODE_API_KEY env var)"
     )
+    parser.add_argument(
+        "--save-city-cache", action="store_true",
+        help="Save the full city-wide enterprise list to a cache file after extraction"
+    )
+    parser.add_argument(
+        "--city-cache", action="store_true",
+        help="Load city-wide data from cache instead of extracting from URLs"
+    )
     args = parser.parse_args()
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -194,13 +203,24 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     # ------------------------------------------------------------------
-    # Step 1: Extract data
+    # Step 1: Extract or load data
     # ------------------------------------------------------------------
-    if args.input:
+    if args.city_cache:
+        print(f"\n{'='*60}")
+        print(f"Loading city cache for {args.city} {args.year}...")
+        print("=" * 60)
+        all_enterprises = load_city_cache(args.city, args.year, output_dir)
+        if all_enterprises is None:
+            cache_path = get_city_cache_path(args.city, args.year, output_dir)
+            print(f"ERROR: City cache not found: {cache_path}")
+            print(f"  Run with --save-city-cache first, or provide --urls")
+            return 1
+        results = {"cache": all_enterprises}
+        print(f"  -> Loaded {len(all_enterprises)} enterprises from cache")
+    elif args.input:
         print(f"\nLoading enterprises from {args.input}")
         with open(args.input, "r", encoding="utf-8") as f:
             data = json.load(f)
-        # Convert dicts back to Enterprise objects
         all_enterprises = [Enterprise(**item) for item in data]
         results = {"manual": all_enterprises}
     elif args.urls:
@@ -210,7 +230,7 @@ def main():
             return 1
         results = extract_all(sources)
     else:
-        print("ERROR: Must provide either --urls or --input")
+        print("ERROR: Must provide either --urls, --input, or --city-cache")
         return 1
 
     if not any(results.values()):
@@ -227,7 +247,19 @@ def main():
     print(f"  -> {sum(len(v) for v in results.values())} raw -> {len(all_enterprises)} unique")
 
     # ------------------------------------------------------------------
-    # Step 2.5: Filter by target district
+    # Step 2.5: Save city cache (if requested)
+    # ------------------------------------------------------------------
+    if args.save_city_cache:
+        cache_path = save_city_cache(args.city, args.year, all_enterprises, output_dir)
+        print(f"\n{'='*60}")
+        print("City cache saved")
+        print("=" * 60)
+        print(f"  -> {cache_path}")
+        print(f"  -> {len(all_enterprises)} enterprises cached")
+        print(f"  -> Subsequent runs can use: --city-cache --district <区县>")
+
+    # ------------------------------------------------------------------
+    # Step 2.6: Filter by target district
     # ------------------------------------------------------------------
     target_district = args.district
     if target_district:
@@ -235,8 +267,6 @@ def main():
         print(f"Filtering for district: {target_district}")
         print("=" * 60)
         before_count = len(all_enterprises)
-        # Filter: keep enterprises whose district field matches target district,
-        # or if district field is empty, keep them (might be from district-level page)
         filtered = []
         for ent in all_enterprises:
             if ent.district and ent.district != target_district:
