@@ -1,0 +1,307 @@
+meta:
+  dpi: 200
+  title: 泉州晋江市东石中队2026年重点污染源单位地理分布图
+  subtitle: 数据来源：泉州市晋江生态环境局2026年度环境监管重点单位名录  |  共23家  |  坐标：高德地图
+  output_path: ./泉州_晋江市_东石_2026_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  city: 泉州
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 晋江连捷纺织印染实业有限公司
+  address: ''
+  label: 晋江连捷纺织印染实业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 水环境
+  lat: 24.666013
+  lon: 118.474818
+  geocode_level: POI
+- name: 泉州市华澳环保科技有限公司
+  address: ''
+  label: 泉州市华澳环保科技有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.642706
+  lon: 118.507556
+  geocode_level: POI
+- name: 锦兴皮业科技有限公司
+  address: ''
+  label: 锦兴皮业科技有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.677077
+  lon: 118.47003
+  geocode_level: POI
+- name: 晋江华峰织造印染实业有限公司
+  address: ''
+  label: 晋江华峰织造印染实业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.676161
+  lon: 118.469623
+  geocode_level: POI
+- name: 晋江市威立织造实业有限公司
+  address: ''
+  label: 晋江市威立织造实业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.670257
+  lon: 118.463174
+  geocode_level: POI
+- name: 晋江市三友涂料油墨有限公司
+  address: ''
+  label: 晋江市三友涂料油墨有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 24.63815
+  lon: 118.475256
+  geocode_level: POI
+- name: 福建省晋江万泰涂料有限公司
+  address: ''
+  label: 福建省晋江万泰涂料有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 24.648646
+  lon: 118.465173
+  geocode_level: POI
+- name: 晋江市宜星服装织造有限公司
+  address: ''
+  label: 晋江市宜星服装织造有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 24.635425
+  lon: 118.494375
+  geocode_level: POI
+- name: 福建省晋江市东石三和泰涂料有限公司
+  address: ''
+  label: 福建省晋江市东石三和泰涂料有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+- name: 晋江豪富电镀有限公司
+  address: ''
+  label: 晋江豪富电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.680832
+  lon: 118.466267
+  geocode_level: POI
+- name: 晋江璞邦电镀有限公司
+  address: ''
+  label: 晋江璞邦电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 晋江市务实环保科技有限公司（中懋厂区）
+  address: ''
+  label: 晋江市务实环保科技有限公司（中懋厂区）
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  lat: 24.677574
+  lon: 118.465817
+  geocode_level: POI
+- name: 晋江成旺电镀有限公司
+  address: ''
+  label: 晋江成旺电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.681013
+  lon: 118.4682
+  geocode_level: POI
+- name: 晋江东翔电镀有限公司
+  address: ''
+  label: 晋江东翔电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.681304
+  lon: 118.466504
+  geocode_level: POI
+- name: 晋江东全电镀有限公司
+  address: ''
+  label: 晋江东全电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.68067
+  lon: 118.468485
+  geocode_level: POI
+- name: 晋江公盈电镀有限公司
+  address: ''
+  label: 晋江公盈电镀有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 晋江市带路金属制品有限公司
+  address: ''
+  label: 晋江市带路金属制品有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.679132
+  lon: 118.467925
+  geocode_level: POI
+- name: 晋江隆圣矿物油贸易有限公司
+  address: ''
+  label: 晋江隆圣矿物油贸易有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+- name: 晋江市众茂五金制品有限公司
+  address: ''
+  label: 晋江市众茂五金制品有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.758033
+  lon: 118.607287
+  geocode_level: POI
+- name: 福建雨丝梦洋伞实业有限公司
+  address: ''
+  label: 福建雨丝梦洋伞实业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.61367
+  lon: 118.522739
+  geocode_level: POI
+- name: 雨中鸟（福建）户外用品有限公司
+  address: ''
+  label: 雨中鸟（福建）户外用品有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.861638
+  lon: 118.599413
+  geocode_level: POI
+- name: 泉州市皇佳隆铁制品有限公司
+  address: ''
+  label: 泉州市皇佳隆铁制品有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+- name: 福建晋江市锨宇金属表面处理有限公司
+  address: ''
+  label: 福建晋江市锨宇金属表面处理有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.679682
+  lon: 118.466069
+  geocode_level: POI

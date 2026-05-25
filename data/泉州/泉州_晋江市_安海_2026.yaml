@@ -1,0 +1,249 @@
+meta:
+  dpi: 200
+  title: 泉州晋江市安海中队2026年重点污染源单位地理分布图
+  subtitle: 数据来源：泉州市晋江生态环境局2026年度环境监管重点单位名录  |  共18家  |  坐标：高德地图
+  output_path: ./泉州_晋江市_安海_2026_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  city: 泉州
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 兴业皮革科技股份有限公司
+  address: ''
+  label: 兴业皮革科技股份有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.711702
+  lon: 118.487075
+  geocode_level: POI
+- name: 泉州松志环保科技有限公司（可慕污水厂）
+  address: ''
+  label: 泉州松志环保科技有限公司（可慕污水厂）
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+  lat: 24.859886
+  lon: 118.590353
+  geocode_level: POI
+- name: 晋江联兴农牧有限公司
+  address: ''
+  label: 晋江联兴农牧有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.677591
+  lon: 118.513346
+  geocode_level: POI
+- name: 福建晋江良兴染织厂有限公司
+  address: ''
+  label: 福建晋江良兴染织厂有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+- name: 联邦印染（泉州）有限公司
+  address: ''
+  label: 联邦印染（泉州）有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.678772
+  lon: 118.513437
+  geocode_level: POI
+- name: 晋江市闽益印染织造有限公司
+  address: ''
+  label: 晋江市闽益印染织造有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建晋江鸿裕涂层织物有限公司
+  address: ''
+  label: 福建晋江鸿裕涂层织物有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 晋江市安海医院
+  address: ''
+  label: 晋江市安海医院
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.717413
+  lon: 118.464981
+  geocode_level: POI
+- name: 福建省晋江市协兴洗染有限公司
+  address: ''
+  label: 福建省晋江市协兴洗染有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.699901
+  lon: 118.533823
+  geocode_level: POI
+- name: 晋江市华联印铁制罐有限公司（新厂）
+  address: ''
+  label: 晋江市华联印铁制罐有限公司（新厂）
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 24.734744
+  lon: 118.493004
+  geocode_level: POI
+- name: 福建省晋江市锦帮制革有限公司
+  address: ''
+  label: 福建省晋江市锦帮制革有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 慕盛皮革新科技（福建）有限公司
+  address: ''
+  label: 慕盛皮革新科技（福建）有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+- name: 福建省晋江市雄峰制革有限公司
+  address: ''
+  label: 福建省晋江市雄峰制革有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.736908
+  lon: 118.526595
+  geocode_level: POI
+- name: 福建省晋江市聚泰制革有限公司
+  address: ''
+  label: 福建省晋江市聚泰制革有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 环境风险
+  lat: 24.686825
+  lon: 118.460725
+  geocode_level: POI
+- name: 泉州共进皮革有限公司
+  address: ''
+  label: 泉州共进皮革有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.687517
+  lon: 118.461976
+  geocode_level: POI
+- name: 晋江鸿安皮业有限公司
+  address: ''
+  label: 晋江鸿安皮业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.727573
+  lon: 118.511628
+  geocode_level: POI
+- name: 晋江紫滨农牧实业有限公司
+  address: ''
+  label: 晋江紫滨农牧实业有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.676372
+  lon: 118.514362
+  geocode_level: POI
+- name: 泉州市天马星环保科技有限公司
+  address: ''
+  label: 泉州市天马星环保科技有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.752955
+  lon: 118.452771
+  geocode_level: POI

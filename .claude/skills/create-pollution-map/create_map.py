@@ -141,7 +141,7 @@ def validate_coord_reasonableness(enterprises: list) -> tuple:
         if (d_lat > 3 * std_lat + 0.001 or d_lon > 3 * std_lon + 0.001):
             # Calculate approximate distance from centroid
             dist_m = ((d_lat * 111000) ** 2 + (d_lon * 111000 * math.cos(math.radians(centroid_lat))) ** 2) ** 0.5
-            if dist_m > 15000:  # Only flag if >15km from centroid
+            if dist_m > 30000:  # Only flag if >30km from centroid
                 outliers.append((e['name'], lat, lon, dist_m, e.get('actual_address_verified', False)))
 
     verified_count = sum(1 for e in enterprises if e.get('actual_address_verified'))

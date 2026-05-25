@@ -1,0 +1,97 @@
+meta:
+  title: 泉州晋江市陈埭中队2026年重点污染源单位地理分布图
+  subtitle: 数据来源：泉州市晋江生态环境局2026年度环境监管重点单位名录  |  共8家  |  坐标：高德地图
+  output_path: ./泉州_晋江市_陈埭_2026_output.png
+gaode:
+  city: 泉州
+  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+enterprises:
+- name: 晋江市南港污水处理有限公司
+  address: ''
+  label: 晋江市南港污水处理有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.849375
+  lon: 118.519625
+  geocode_level: POI
+- name: 福建凤竹环保有限公司
+  address: ''
+  label: 福建凤竹环保有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.854959
+  lon: 118.63702
+  geocode_level: POI
+- name: 金丰（晋江）染整有限公司
+  address: ''
+  label: 金丰（晋江）染整有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  lat: 24.786965
+  lon: 118.632191
+  geocode_level: POI
+- name: 晋江市南港污水处理有限公司（二期工程）
+  address: ''
+  label: 晋江市南港污水处理有限公司（二期工程）
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.807076
+  lon: 118.640985
+  geocode_level: POI
+- name: 晋江市陈埭镇豫春橡胶加工厂
+  address: ''
+  label: 晋江市陈埭镇豫春橡胶加工厂
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.826625
+  lon: 118.615186
+  geocode_level: POI
+- name: 晋江市西滨丰威废塑加工厂
+  address: ''
+  label: 晋江市西滨丰威废塑加工厂
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  lat: 24.79048
+  lon: 118.632538
+  geocode_level: POI
+- name: 晋江市西滨镇万康塑胶厂
+  address: ''
+  label: 晋江市西滨镇万康塑胶厂
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  lat: 24.801173
+  lon: 118.643701
+  geocode_level: POI
+- name: 晋江一三鞋材有限公司
+  address: ''
+  label: 晋江一三鞋材有限公司
+  data_source: 泉州市晋江生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+  lat: 24.839484
+  lon: 118.60448
+  geocode_level: POI
