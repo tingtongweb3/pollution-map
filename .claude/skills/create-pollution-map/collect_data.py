@@ -994,13 +994,23 @@ def generate_config(
     year: int,
     enterprises: List[Enterprise],
     output_dir: str,
+    district_parts: List[str] = None,
 ) -> str:
     """Generate a YAML config file from extracted enterprises.
+
+    Args:
+        district_parts: If given, appended to the title in parentheses
+                        (e.g. ["玄武","秦淮"] → "主城区(玄武+秦淮)").
     Returns the path to the generated config.
     """
+    if district_parts:
+        district_label = f"{district}({'+'.join(district_parts)})"
+    else:
+        district_label = district
+
     config = {
         "meta": {
-            "title": f"{city}{district}{year}年重点污染源单位地理分布图",
+            "title": f"{city}{district_label}{year}年重点污染源单位地理分布图",
             "subtitle": f"数据来源：{city}生态环境局{year}年度环境监管重点单位名录  |  共{len(enterprises)}家  |  坐标：高德地图",
             "output_path": f"./{city}_{district}_{year}_output.png",
             "dpi": 200,
@@ -1080,6 +1090,9 @@ def generate_config(
             "data_date": f"{year}-03",
             "categories": ent.categories,
         }
+        # Preserve district for downstream partitioning / validation
+        if ent.district:
+            entry["district"] = ent.district
         # Only include lat/lon if they were enriched
         if ent.lat is not None and ent.lon is not None:
             entry["lat"] = ent.lat
@@ -1097,6 +1110,78 @@ def generate_config(
         yaml.dump(config, f, default_flow_style=False, allow_unicode=True, sort_keys=False, width=200)
 
     return config_path
+
+
+# ---------------------------------------------------------------------------
+# Auto-partition districts (merge small adjacent districts)
+# ---------------------------------------------------------------------------
+
+def auto_partition_districts(enterprises: list, min_standalone: int = 20,
+                              max_merged: int = 40) -> dict:
+    """Auto-partition districts based on enterprise count thresholds.
+
+    Rules:
+      1. Districts with >= min_standalone enterprises get their own map.
+      2. Districts with < min_standalone are greedily merged into groups,
+         each group having <= max_merged enterprises total.
+
+    Args:
+        enterprises: List of Enterprise objects or dicts with a 'district' field.
+        min_standalone: Minimum count for a district to get its own map.
+        max_merged: Maximum total count for a merged group.
+
+    Returns:
+        dict: {partition_name: {"parts": [district_names],
+                                 "enterprises": [Enterprise/dict, ...]}}
+    """
+    from collections import defaultdict
+
+    district_counts = defaultdict(int)
+    district_ents = defaultdict(list)
+
+    for ent in enterprises:
+        if hasattr(ent, 'district'):
+            d = ent.district or "未知区"
+        else:
+            d = ent.get("district", "") or "未知区"
+        district_counts[d] += 1
+        district_ents[d].append(ent)
+
+    result = {}
+    small = []
+
+    # Stable sort by district name
+    for d, count in sorted(district_counts.items(), key=lambda x: x[0]):
+        if count >= min_standalone:
+            result[d] = {"parts": [d], "enterprises": district_ents[d]}
+        else:
+            small.append((d, count, district_ents[d]))
+
+    # Greedily merge small districts (smallest first to maximize packing)
+    small.sort(key=lambda x: x[1])
+    current_group = []
+    current_count = 0
+    current_ents = []
+
+    for d, count, ents in small:
+        if not current_group or current_count + count <= max_merged:
+            current_group.append(d)
+            current_count += count
+            current_ents.extend(ents)
+        else:
+            # Flush current group
+            name = "+".join(current_group)
+            result[name] = {"parts": list(current_group), "enterprises": current_ents}
+            current_group = [d]
+            current_count = count
+            current_ents = list(ents)
+
+    # Flush remaining
+    if current_group:
+        name = "+".join(current_group)
+        result[name] = {"parts": list(current_group), "enterprises": current_ents}
+
+    return result
 
 
 # ---------------------------------------------------------------------------

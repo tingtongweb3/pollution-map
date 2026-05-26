@@ -10,6 +10,11 @@ import requests
 import yaml
 from PIL import ImageFont
 
+try:
+    from shapely.geometry import Polygon
+except ImportError:
+    Polygon = None
+
 
 def get_gaode_key(config_key: str = "") -> str:
     """Return Gaode API key: env var GAODE_API_KEY takes priority, else config value."""
@@ -41,6 +46,164 @@ def load_config_with_defaults(config_path: str) -> dict:
             defaults = yaml.safe_load(f)
         return _deep_merge(defaults, user_cfg)
     return user_cfg
+
+
+# ---------------------------------------------------------------------------
+# City / district bounds (auto-inference)
+# ---------------------------------------------------------------------------
+
+# Lightweight city center lookup — only ~80 major cities.
+# Boundaries are inferred as center ± 2° when no enterprise coords exist.
+_CITY_CENTERS = {
+    "福州": (26.08, 119.30), "厦门": (24.48, 118.09), "泉州": (24.91, 118.68),
+    "漳州": (24.51, 117.65), "莆田": (25.45, 119.01), "龙岩": (25.08, 117.03),
+    "三明": (26.27, 117.64), "南平": (27.29, 118.17), "宁德": (26.67, 119.55),
+    "南京": (32.06, 118.78), "苏州": (31.30, 120.58), "无锡": (31.57, 120.30),
+    "常州": (31.78, 119.95), "南通": (32.01, 120.86), "扬州": (32.39, 119.42),
+    "徐州": (34.26, 117.28), "淮安": (33.60, 119.02), "盐城": (33.38, 120.15),
+    "镇江": (32.19, 119.43), "泰州": (32.49, 119.92), "宿迁": (33.96, 118.28),
+    "杭州": (30.27, 120.15), "宁波": (29.87, 121.55), "温州": (28.00, 120.70),
+    "嘉兴": (30.75, 120.75), "湖州": (30.86, 120.10), "绍兴": (30.00, 120.58),
+    "金华": (29.08, 119.65), "衢州": (28.93, 118.87), "舟山": (30.00, 122.10),
+    "台州": (28.66, 121.42), "丽水": (28.45, 119.92),
+    "广州": (23.13, 113.26), "深圳": (22.54, 114.06), "东莞": (23.05, 113.75),
+    "佛山": (23.02, 113.12), "中山": (22.52, 113.39), "珠海": (22.27, 113.57),
+    "惠州": (23.08, 114.42), "江门": (22.58, 113.08), "肇庆": (23.05, 112.47),
+    "汕头": (23.35, 116.71), "潮州": (23.66, 116.63), "揭阳": (23.55, 116.37),
+    "湛江": (21.27, 110.36), "茂名": (21.66, 110.92), "阳江": (21.86, 111.98),
+    "清远": (23.68, 113.06), "韶关": (24.81, 113.60), "梅州": (24.29, 116.12),
+    "河源": (23.74, 114.70), "汕尾": (22.79, 115.37), "云浮": (22.92, 112.04),
+    "成都": (30.57, 104.07), "绵阳": (31.47, 104.68), "德阳": (31.13, 104.40),
+    "重庆": (29.56, 106.55), "武汉": (30.59, 114.31), "长沙": (28.23, 112.98),
+    "郑州": (34.75, 113.63), "西安": (34.34, 108.94), "沈阳": (41.80, 123.43),
+    "大连": (38.91, 121.62), "长春": (43.82, 125.32), "哈尔滨": (45.80, 126.53),
+    "济南": (36.65, 117.00), "青岛": (36.07, 120.38), "烟台": (37.46, 121.45),
+    "天津": (39.13, 117.20), "北京": (39.90, 116.41), "上海": (31.23, 121.47),
+    "石家庄": (38.04, 114.51), "太原": (37.87, 112.55), "合肥": (31.82, 117.23),
+    "南昌": (28.68, 115.89), "昆明": (25.04, 102.71), "贵阳": (26.65, 106.63),
+    "南宁": (22.82, 108.32), "兰州": (36.06, 103.83), "海口": (20.02, 110.35),
+    "乌鲁木齐": (43.83, 87.62), "拉萨": (29.65, 91.12), "呼和浩特": (40.84, 111.75),
+    "银川": (38.49, 106.23), "西宁": (36.62, 101.78), "三亚": (18.25, 109.51),
+}
+
+
+def estimate_city_bounds(city: str, enterprises: list = None) -> tuple:
+    """Estimate reasonable coordinate bounds for a city.
+
+    Strategy:
+      1. If enterprises with lat/lon exist, use median ± 2°.
+      2. Fallback to _CITY_CENTERS lookup (center ± 2°).
+      3. Ultimate fallback: China-wide bounds.
+
+    Returns (lat_min, lat_max, lon_min, lon_max).
+    """
+    if enterprises:
+        lats = [e['lat'] for e in enterprises if 'lat' in e and e['lat'] is not None]
+        lons = [e['lon'] for e in enterprises if 'lon' in e and e['lon'] is not None]
+        if len(lats) >= 3:
+            lats_sorted = sorted(lats)
+            lons_sorted = sorted(lons)
+            median_lat = lats_sorted[len(lats_sorted) // 2]
+            median_lon = lons_sorted[len(lons_sorted) // 2]
+            return (median_lat - 2.0, median_lat + 2.0, median_lon - 2.0, median_lon + 2.0)
+
+    center = _CITY_CENTERS.get(city)
+    if center:
+        lat_c, lon_c = center
+        return (lat_c - 2.0, lat_c + 2.0, lon_c - 2.0, lon_c + 2.0)
+
+    # Ultimate fallback: China-wide
+    return (18.0, 54.0, 73.0, 135.0)
+
+
+def get_district_bounds(city: str, district: str, enterprises: list = None) -> "Polygon | None":
+    """Estimate a district boundary from enterprise coordinates or city center.
+
+    Strategy:
+      1. If enterprises with coords exist for this district, use their bbox + 10% padding.
+      2. Fallback: city center ± 0.18° (~20 km).
+
+    Returns shapely Polygon or None.
+    """
+    if Polygon is None:
+        return None
+
+    if enterprises:
+        coords = []
+        for e in enterprises:
+            d = e.get("district", "") if isinstance(e, dict) else getattr(e, "district", "")
+            name = e.get("name", "") if isinstance(e, dict) else getattr(e, "name", "")
+            lat = e.get("lat") if isinstance(e, dict) else getattr(e, "lat", None)
+            lon = e.get("lon") if isinstance(e, dict) else getattr(e, "lon", None)
+            if district in d or district in name:
+                if lat is not None and lon is not None:
+                    coords.append((lon, lat))
+        if len(coords) >= 3:
+            lons = [c[0] for c in coords]
+            lats = [c[1] for c in coords]
+            lon_pad = max((max(lons) - min(lons)) * 0.1, 0.02)
+            lat_pad = max((max(lats) - min(lats)) * 0.1, 0.02)
+            return Polygon([
+                (min(lons) - lon_pad, min(lats) - lat_pad),
+                (max(lons) + lon_pad, min(lats) - lat_pad),
+                (max(lons) + lon_pad, max(lats) + lat_pad),
+                (min(lons) - lon_pad, max(lats) + lat_pad),
+            ])
+
+    # Fallback: city center + rough radius
+    center = _CITY_CENTERS.get(city)
+    if center:
+        lat_c, lon_c = center
+        r = 0.18  # ~20 km
+        return Polygon([
+            (lon_c - r, lat_c - r), (lon_c + r, lat_c - r),
+            (lon_c + r, lat_c + r), (lon_c - r, lat_c + r),
+        ])
+    return None
+
+
+def coord_in_bounds(lat: float, lon: float, bounds: tuple) -> bool:
+    """Check if a coordinate is within bounds (lat_min, lat_max, lon_min, lon_max)."""
+    return bounds[0] <= lat <= bounds[1] and bounds[2] <= lon <= bounds[3]
+
+
+def infer_address_from_name(name: str, city: str, district: str) -> str:
+    """Generate a candidate address from enterprise name when address is empty.
+
+    Rules (in priority order):
+      1. Public utilities (污水处理厂/净水厂) → "{city}{district}{name}"
+      2. Name contains explicit road/street → extract it
+      3. Branch company (分公司/分厂) → use parent company name
+      4. POI-friendly types (医院/学校/研究所) → "{city}{district}{name}"
+      5. Default → "{city}{district}{name}"
+    """
+    if not name:
+        return ""
+
+    # Rule 1: public utilities — always construct full address
+    utility_keywords = ["污水处理厂", "污水厂", "水处理厂", "净水厂", "自来水厂",
+                        "垃圾处理厂", "垃圾焚烧厂", "固废处置", "危废处置"]
+    if any(kw in name for kw in utility_keywords):
+        return f"{city}{district}{name}"
+
+    # Rule 2: explicit road/street in name
+    road_match = re.search(r'([^\s,，]{2,8}(?:路|街|道|大道|巷|胡同)[^\s,，]*(?:\d+号?)?)', name)
+    if road_match:
+        return f"{city}{district}{road_match.group(1)}"
+
+    # Rule 3: branch company — try parent name
+    if "分公司" in name or "分厂" in name:
+        parent = name.replace("分公司", "").replace("分厂", "").strip()
+        if len(parent) >= 4:
+            return f"{city}{district}{parent}"
+
+    # Rule 4: POI-friendly types (hospitals, schools, research institutes)
+    poi_friendly = ["医院", "大学", "学院", "中学", "小学", "研究所", "研究院"]
+    if any(kw in name for kw in poi_friendly):
+        return f"{city}{district}{name}"
+
+    # Rule 5: default
+    return f"{city}{district}{name}"
 
 
 # ---------------------------------------------------------------------------
@@ -84,26 +247,53 @@ def extract_district_hint(name: str):
     return None
 
 
-def extract_target_district(config: dict) -> str:
-    """Extract target district from config title or enterprise names.
+def extract_target_district(config: dict, filename_hint: str = "") -> str:
+    """Extract target district from config title, explicit fields, or enterprise names.
 
-    Tries config['target_district'] first, then title, then enterprise names.
+    Priority order:
+      1. config['target_district']
+      2. config['meta']['district']
+      3. Title (e.g. "厦门市集美区2025年..." → "集美区")
+      4. Filename hint (e.g. "南京_鼓楼区_2025.yaml" → "鼓楼区")
+      5. Enterprise records' district field (if all same)
+      6. First enterprise name
     """
     # 1. Explicit config
     td = config.get("target_district", "").strip()
     if td:
         return td
 
-    # 2. From meta title, e.g. "厦门市集美区2025年..." → "集美区"
-    title = config.get("meta", {}).get("title", "")
+    # 2. From meta.district
+    meta = config.get("meta", {})
+    td = meta.get("district", "").strip()
+    if td:
+        return td
+
+    # 3. From meta title, e.g. "厦门市集美区2025年..." → "集美区"
+    title = meta.get("title", "")
     for kw in _DISTRICT_KEYWORDS:
         if kw in title:
             return kw
 
-    # 3. From first enterprise name
+    # 4. From filename hint
+    if filename_hint:
+        for kw in _DISTRICT_KEYWORDS:
+            if kw in filename_hint:
+                return kw
+
+    # 5. From enterprises' district field (only if unanimous)
     enterprises = config.get("enterprises", [])
+    districts = set()
+    for ent in enterprises:
+        d = ent.get("district", "") if isinstance(ent, dict) else getattr(ent, "district", "")
+        if d:
+            districts.add(d)
+    if len(districts) == 1:
+        return districts.pop()
+
+    # 6. From first enterprise name
     if enterprises:
-        hint = extract_district_hint(enterprises[0].get("name", ""))
+        hint = extract_district_hint(enterprises[0].get("name", "") if isinstance(enterprises[0], dict) else getattr(enterprises[0], "name", ""))
         if hint:
             return hint
 

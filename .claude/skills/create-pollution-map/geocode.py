@@ -25,12 +25,19 @@ import urllib.parse
 import requests
 import yaml
 
+try:
+    from shapely.geometry import Polygon, Point
+except ImportError:
+    Polygon = None
+    Point = None
+
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
     geocode_address, get_gaode_key, write_yaml_config, _names_match,
     extract_district_hint, extract_target_district, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir,
-    load_config_with_defaults,
+    load_config_with_defaults, infer_address_from_name,
+    get_district_bounds, coord_in_bounds, estimate_city_bounds,
 )
 
 
@@ -103,13 +110,18 @@ def haversine(lat1, lon1, lat2, lon2):
     return 2 * R * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
-def poi_search(name, key, city="福州", district_filter=None, target_district=None):
+def poi_search(name, key, city="福州", district_filter=None, target_district=None,
+               city_bounds=None, district_bounds=None):
     """Search Gaode POI by enterprise name with name-matching and district filtering.
 
     Args:
         district_filter: Obsolete, kept for compatibility.
         target_district: If given, use reverse geocoding to verify the coordinate
                          falls in this district (e.g. "丰泽区").
+        city_bounds: Optional (lat_min, lat_max, lon_min, lon_max) to filter out
+                     POI hits in other cities.
+        district_bounds: Optional shapely Polygon for faster district rejection
+                         (checked before expensive reverse geocoding).
 
     Returns (lon, lat, address, level) or (None, None, None, None).
     """
@@ -117,7 +129,7 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
         f"https://restapi.amap.com/v3/place/text"
         f"?keywords={urllib.parse.quote(name)}"
         f"&city={urllib.parse.quote(city)}"
-        f"&offset=3&page=1&key={key}&extensions=all"
+        f"&offset=5&page=1&key={key}&extensions=all"
     )
     try:
         resp = requests.get(url, timeout=10).json()
@@ -134,12 +146,21 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
                     continue
                 lon, lat = map(float, loc.split(","))
 
+                # City bounds quick check (cheap — no API call)
+                if city_bounds and not coord_in_bounds(lat, lon, city_bounds):
+                    continue
+
+                # District bounds quick check (cheap — local polygon)
+                if district_bounds and Polygon is not None and Point is not None:
+                    if not district_bounds.contains(Point(lon, lat)):
+                        continue
+
                 # Name mismatch check (strict first, then loose)
                 if poi_name and not _names_match(name, poi_name):
                     if not _names_match_loose(name, poi_name):
                         continue
 
-                # District validation via reverse geocoding
+                # District validation via reverse geocoding (authoritative but slow)
                 if target_district:
                     actual = reverse_geocode_district(lat, lon, key)
                     time.sleep(0.15)
@@ -154,8 +175,12 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
     return None, None, None, None
 
 
-def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15, target_district=None):
+def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
+                             target_district=None, enterprises=None):
     """Dual-validation geocoding: name POI search + address geocoding with cross-check.
+
+    Args:
+        enterprises: Optional list of enterprise dicts for district bounds inference.
 
     Returns a dict:
       {
@@ -168,23 +193,37 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15, 
     result = {"lat": None, "lon": None, "level": None, "method": "failed", "warnings": [], "poi_addr": ""}
 
     has_address = bool(address and address.strip())
+    original_empty = not has_address
+
+    # Auto-infer bounds for this city/district
+    city_bounds = estimate_city_bounds(city)
+    district_bounds = None
+    if target_district:
+        district_bounds = get_district_bounds(city, target_district, enterprises)
+
+    # If address is empty, infer one from name + city + district
+    inferred_address = ""
+    if not has_address and target_district:
+        inferred_address = infer_address_from_name(name, city, target_district)
+        if inferred_address:
+            address = inferred_address
+            has_address = True
 
     # Enrich generic addresses with target district to improve accuracy
     if has_address and target_district:
         district_base = target_district.replace("区", "").replace("县", "").replace("市", "")
-        all_districts = ["丰泽", "鲤城", "洛江", "泉港", "晋江", "石狮", "南安",
-                         "惠安", "安溪", "永春", "德化", "仓山", "鼓楼", "台江",
-                         "晋安", "马尾", "闽侯", "长乐", "福清", "连江", "罗源",
-                         "闽清", "永泰"]
-        has_district = any(d in address for d in all_districts + [target_district, district_base])
+        has_district = district_base in address or target_district in address
         if not has_district:
-            if address.startswith("泉州"):
-                address = address.replace("泉州", f"泉州市{target_district}", 1)
+            if address.startswith(city):
+                address = address.replace(city, f"{city}{target_district}", 1)
             else:
-                address = f"泉州市{target_district}{address}"
+                address = f"{city}{target_district}{address}"
 
-    # Step 1: Name-based POI search (with district filtering + name matching)
-    poi_lon, poi_lat, poi_addr, poi_level = poi_search(name, key, city, target_district=target_district)
+    # Step 1: Name-based POI search (with district filtering + name matching + bounds)
+    poi_lon, poi_lat, poi_addr, poi_level = poi_search(
+        name, key, city, target_district=target_district,
+        city_bounds=city_bounds, district_bounds=district_bounds,
+    )
     time.sleep(rate_limit)
 
     if poi_lon is not None:
@@ -194,7 +233,7 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15, 
         result["method"] = "POI"
         result["poi_addr"] = poi_addr
 
-    # If no address, we cannot cross-validate. Rely solely on POI (which already passed name+district checks).
+    # If no address (and no inferred address), rely solely on POI
     if not has_address:
         if poi_lon is None:
             result["warnings"].append(
@@ -219,15 +258,24 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15, 
             result["warnings"].append("地址编码失败，采用POI坐标")
         return result
 
+    # Validate address geocoding against city bounds
+    if not coord_in_bounds(addr_lat, addr_lon, city_bounds):
+        result["warnings"].append(
+            f"地址编码结果({addr_lat:.5f},{addr_lon:.5f})超出城市范围，"
+            f"可能是地址错误。"
+        )
+        if poi_lon is not None:
+            # Revert to POI since address geocoding is clearly wrong
+            result["warnings"][-1] += " 采用POI坐标替代。"
+            result["method"] = "POI+cross-check"
+            return result
+
     # Step 3: Cross-validation when both methods succeed
     if poi_lon is not None:
         dist = haversine(poi_lat, poi_lon, addr_lat, addr_lon)
         if dist > 5000:
             # Large deviation often means POI is the registered office while
-            # the provided address is the actual facility. For pollution-source
-            # maps, the actual facility location matters more.
-            # BUT if the address geocoded outside the target district, the POI
-            # is more likely correct (address string may be too generic).
+            # the provided address is the actual facility.
             prefer_address = True
             if target_district:
                 addr_actual = reverse_geocode_district(addr_lat, addr_lon, key)
@@ -263,6 +311,8 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15, 
     result["lon"] = addr_lon
     result["level"] = addr_level
     result["method"] = "address"
+    if original_empty and inferred_address:
+        result["method"] = "address(inferred)"
 
     # Step 5: Fuzzy address quality check
     fuzzy_levels = {"区县", "乡镇", "村庄", "未知", "兴趣点"}
@@ -305,7 +355,8 @@ def run_geocode(config_path: str, force: bool = False):
 
     cache = {} if force else load_cache(cache_file)
     enterprises = config.get("enterprises", [])
-    target_district = extract_target_district(config)
+    filename_hint = os.path.basename(config_path) if config_path else ""
+    target_district = extract_target_district(config, filename_hint=filename_hint)
 
     need_geocode = [e for e in enterprises if "lat" not in e or "lon" not in e or force]
 
@@ -334,7 +385,7 @@ def run_geocode(config_path: str, force: bool = False):
             fixed_count += 1
             continue
 
-        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district)
+        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district, enterprises=enterprises)
 
         if result["lat"] is None:
             print(f"\n{i}. ✗ FAILED: {name}")

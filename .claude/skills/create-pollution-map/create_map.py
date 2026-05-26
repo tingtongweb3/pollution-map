@@ -23,7 +23,9 @@ from PIL import Image, ImageDraw
 from shapely.geometry import Point, Polygon
 
 sys.path.insert(0, os.path.dirname(__file__))
-from utils import get_font, resolve_image_path, resolve_cache_path, ensure_dir, get_city_from_config, load_config_with_defaults
+from utils import (get_font, resolve_image_path, resolve_cache_path, ensure_dir,
+                   get_city_from_config, load_config_with_defaults, estimate_city_bounds,
+                   coord_in_bounds)
 
 matplotlib.use('Agg')
 warnings.filterwarnings('ignore')
@@ -107,8 +109,8 @@ def validate_data_sources(enterprises: list) -> dict:
     return source_summary
 
 
-def validate_coord_reasonableness(enterprises: list) -> tuple:
-    """Check if coordinates are reasonable: within expected bounds and not extreme outliers.
+def validate_coord_reasonableness(enterprises: list, city: str = "") -> tuple:
+    """Check if coordinates are reasonable: within expected city bounds and not extreme outliers.
 
     Returns (out_of_bounds_count, outlier_count).
     """
@@ -118,12 +120,14 @@ def validate_coord_reasonableness(enterprises: list) -> tuple:
     lats = [e['lat'] for e in enterprises]
     lons = [e['lon'] for e in enterprises]
 
-    # 1. Check all coords are within Fujian province rough bounds
+    # Auto-infer bounds from enterprise coords or city center lookup
+    bounds = estimate_city_bounds(city, enterprises)
+
+    # 1. Check all coords are within city rough bounds
     out_of_bounds = []
     for e in enterprises:
         lat, lon = e['lat'], e['lon']
-        # Rough bounds for Fujian: lat 23-29, lon 115-121
-        if not (23.0 <= lat <= 29.0 and 115.0 <= lon <= 121.0):
+        if not coord_in_bounds(lat, lon, bounds):
             out_of_bounds.append((e['name'], lat, lon))
 
     # 2. Outlier detection: points >3 std dev from centroid
@@ -152,12 +156,12 @@ def validate_coord_reasonableness(enterprises: list) -> tuple:
         print("=" * 50)
 
         if out_of_bounds:
-            print(f"\n🚨 严重错误: {len(out_of_bounds)} 家企业坐标超出福建省范围：")
+            print(f"\n🚨 严重错误: {len(out_of_bounds)} 家企业坐标超出{city or '合理'}范围：")
             for name, lat, lon in out_of_bounds:
                 print(f"   - {name}: ({lat:.5f}, {lon:.5f})")
 
         if outliers:
-            print(f"\n⚠️ 异常偏离: {len(outliers)} 家企业坐标距中心点>15km，可能是编码错误：")
+            print(f"\n⚠️ 异常偏离: {len(outliers)} 家企业坐标距中心点>30km，可能是编码错误：")
             for name, lat, lon, dist, verified in outliers:
                 tag = " [已核实实际经营地址]" if verified else " [可能为注册地址，需核实实际经营地址]"
                 print(f"   - {name}: ({lat:.5f}, {lon:.5f}) 距中心{dist/1000:.1f}km{tag}")
@@ -468,10 +472,24 @@ def _draw_marker(draw, cx, cy, size, color, marker):
         draw.ellipse([(x0, y0), (x1, y1)], fill=color)
 
 
-def render_legend(enterprises: list, config: dict) -> Image.Image:
-    """Render PIL legend panel with category stats, enterprise list, and data sources."""
-    cat_cfg = config['categories']
+def render_legend(enterprises: list, config: dict, map_width: int = 0) -> Image.Image:
+    """Render PIL legend panel with category stats, enterprise list, and data sources.
 
+    When enterprise count > 60, switches to horizontal layout (full-width, multi-column
+    enterprise list) to avoid excessively tall images.
+    """
+    cat_cfg = config['categories']
+    total_count = len(enterprises)
+    horizontal_mode = total_count > 60 and map_width > 0
+
+    if horizontal_mode:
+        return _render_legend_horizontal(enterprises, config, map_width)
+    return _render_legend_vertical(enterprises, config)
+
+
+def _render_legend_vertical(enterprises: list, config: dict) -> Image.Image:
+    """Original vertical legend for <=60 enterprises (placed on the right)."""
+    cat_cfg = config['categories']
     legend_width = 650
     legend_height = 5000
     legend_img = Image.new('RGB', (legend_width, legend_height), 'white')
@@ -533,7 +551,7 @@ def render_legend(enterprises: list, config: dict) -> Image.Image:
     draw.text((x, y), '【企业列表】', fill='#333333', font=font_header)
     y += 40
 
-    # Build source index: assign ①②③... to each unique data_source
+    # Build source index
     circled_nums = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
     source_list = []
     source_index = {}
@@ -616,19 +634,210 @@ def render_legend(enterprises: list, config: dict) -> Image.Image:
     return legend_img
 
 
-def combine_images(map_path: str, legend_img: Image.Image, output_path: str) -> str:
-    """Combine map and legend into final image, vertically centered."""
+def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -> Image.Image:
+    """Horizontal legend for >60 enterprises (placed below the map).
+
+    Layout: title + stats on top, enterprise list in multi-column grid below.
+    """
+    cat_cfg = config['categories']
+    legend_width = map_width
+    legend_height = 2000  # initial buffer, will crop
+    legend_img = Image.new('RGB', (legend_width, legend_height), 'white')
+    draw = ImageDraw.Draw(legend_img)
+
+    font_title = get_font(32)
+    font_header = get_font(22)
+    font_body = get_font(18)
+    font_small = get_font(17)
+    font_tiny = get_font(15)
+
+    margin = 30
+    x = margin
+    y = 30
+
+    # Title (left-aligned)
+    total_count = len(enterprises)
+    draw.text((x, y), '图例', fill='#333333', font=font_title)
+    y += 50
+
+    # Total count + risk zone in one row
+    draw.text((x, y), '●', fill='#CC0000', font=font_header)
+    draw.text((x + 30, y), f'重点污染源单位（{total_count}家）', fill='#333333', font=font_body)
+
+    risk_cfg = config.get('risk_zones', {})
+    if risk_cfg.get('enabled', False):
+        rz_color = risk_cfg.get('fill_color', '#FF4444')
+        rz_alpha = risk_cfg.get('fill_alpha', 0.12)
+        blended = _blend_with_white(rz_color, rz_alpha)
+        draw.ellipse([(x + 320, y - 2), (x + 348, y + 26)], fill=blended)
+        draw.text((x + 355, y), '环境潜在压力区（1km缓冲重叠）', fill='#333333', font=font_body)
+    y += 40
+
+    # Category stats (horizontal row)
+    cats_count = {}
+    for e in enterprises:
+        for cat in e['categories']:
+            cats_count[cat] = cats_count.get(cat, 0) + 1
+
+    cat_x = x
+    for cat_key, cat_info in cat_cfg.items():
+        if cat_key in cats_count:
+            marker = cat_info.get('marker', 'o')
+            _draw_marker(draw, cat_x + 8, y + 10, 16, cat_info['color'], marker)
+            draw.text((cat_x + 24, y), f"{cat_info['display']}：{cats_count[cat_key]}家", fill='#333333', font=font_body)
+            # estimate text width and advance
+            bbox = draw.textbbox((0, 0), f"{cat_info['display']}：{cats_count[cat_key]}家", font=font_body)
+            cat_x += (bbox[2] - bbox[0]) + 40
+            if cat_x > legend_width - 200:
+                cat_x = x
+                y += 28
+
+    if cat_x > x:
+        y += 28
+    y += 20
+
+    # Enterprise list header
+    draw.text((x, y), '【企业列表】', fill='#333333', font=font_header)
+    y += 35
+
+    # Build source index
+    circled_nums = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
+    source_list = []
+    source_index = {}
+    for e in enterprises:
+        src = e.get('data_source', '').strip()
+        if src and src not in source_index:
+            idx = len(source_list)
+            source_index[src] = circled_nums[idx] if idx < len(circled_nums) else f'[{idx+1}]'
+            source_list.append(src)
+
+    # Calculate columns: target ~30 entries per column, min 3 columns
+    entries_per_col = 30
+    num_cols = max(3, (total_count + entries_per_col - 1) // entries_per_col)
+    col_width = (legend_width - 2 * margin) // num_cols
+    col_gap = 10
+
+    # Render entries column by column
+    col_heights = [0] * num_cols
+    entries = list(enumerate(enterprises))
+
+    for col_idx in range(num_cols):
+        col_x = margin + col_idx * col_width
+        col_y = y
+        start_idx = col_idx * entries_per_col
+        end_idx = min(start_idx + entries_per_col, total_count)
+
+        for i in range(start_idx, end_idx):
+            e = enterprises[i]
+            lines = e['label'].split('\n')
+            cat_keys = e['categories']
+            num_color = cat_cfg.get(cat_keys[0], {}).get('color', '#CC0000')
+            src_ref = source_index.get(e.get('data_source', '').strip(), '')
+
+            draw.text((col_x, col_y), f'{i + 1}', fill=num_color, font=font_small)
+            draw.text((col_x + 26, col_y), lines[0], fill='#333333', font=font_small)
+            col_y += 24
+
+            for line in lines[1:]:
+                draw.text((col_x + 26, col_y), line, fill='#555555', font=font_tiny)
+                col_y += 20
+
+            display_names = [cat_cfg.get(c, {}).get('display', c) for c in cat_keys]
+            tag = '【' + '】【'.join(display_names) + '】'
+            if src_ref:
+                tag += f' {src_ref}'
+            draw.text((col_x + 26, col_y), tag, fill='#888888', font=font_tiny)
+            col_y += 24
+
+        col_heights[col_idx] = col_y - y
+
+    y += max(col_heights) + 20
+
+    # Source type grouping
+    source_type_labels = {
+        'official': '官方监管名录',
+        'license': '许可证信息',
+        'complaint': '群众投诉/信访',
+        'exposure': '违规曝光',
+    }
+    source_type_counts = {}
+    for e in enterprises:
+        st = e.get('source_type', '').strip()
+        if st:
+            source_type_counts[st] = source_type_counts.get(st, 0) + 1
+
+    if source_type_counts:
+        draw.text((x, y), '数据来源分布：', fill='#888888', font=font_tiny)
+        y += 22
+        st_x = x + 20
+        for st, count in sorted(source_type_counts.items(), key=lambda x: -x[1]):
+            label = source_type_labels.get(st, st)
+            text = f'[{count}家] {label}'
+            draw.text((st_x, y), text, fill='#888888', font=font_tiny)
+            bbox = draw.textbbox((0, 0), text, font=font_tiny)
+            st_x += (bbox[2] - bbox[0]) + 30
+            if st_x > legend_width - 200:
+                st_x = x + 20
+                y += 20
+        if st_x > x + 20:
+            y += 20
+
+    # Data source footer
+    y += 15
+    draw.text((x, y), '数据来源:', fill='#888888', font=font_tiny)
+    y += 20
+    for src in source_list:
+        ref = source_index[src]
+        draw.text((x, y), f'{ref} {src}', fill='#888888', font=font_tiny)
+        y += 18
+
+    # Conditional radiation footnote
+    has_radiation = any('辐射安全' in e.get('categories', []) for e in enterprises)
+    if has_radiation:
+        y += 10
+        draw.text((x, y), '注：辐射单位为射线装置使用单位', fill='#888888', font=font_tiny)
+        y += 20
+
+    # Crop to actual content
+    actual_height = y + margin
+    legend_img = legend_img.crop((0, 0, legend_width, actual_height))
+    draw_final = ImageDraw.Draw(legend_img)
+    draw_final.rectangle([(0, 0), (legend_width - 1, actual_height - 1)], outline='#cccccc', width=2)
+
+    legend_path = os.path.join(os.path.dirname(config['meta']['output_path']) or '.', 'legend_only.png')
+    ensure_dir(legend_path)
+    legend_img.save(legend_path)
+    print(f'Legend-only image saved: {legend_path} ({legend_width}x{actual_height})')
+    return legend_img
+
+
+def combine_images(map_path: str, legend_img: Image.Image, output_path: str, horizontal: bool = False) -> str:
+    """Combine map and legend into final image.
+
+    Default (vertical legend): map on left, legend on right, vertically centered.
+    Horizontal mode (legend below map): map on top, legend below.
+    """
     map_img = Image.open(map_path)
     legend_w, legend_h = legend_img.size
-    final_height = max(map_img.height, legend_h)
 
-    map_y = (final_height - map_img.height) // 2
-    legend_y = (final_height - legend_h) // 2
-
-    total_width = map_img.width + legend_w
-    combined = Image.new('RGB', (total_width, final_height), 'white')
-    combined.paste(map_img, (0, map_y))
-    combined.paste(legend_img, (map_img.width, legend_y))
+    if horizontal:
+        total_width = max(map_img.width, legend_w)
+        final_height = map_img.height + legend_h
+        combined = Image.new('RGB', (total_width, final_height), 'white')
+        # Center map horizontally
+        map_x = (total_width - map_img.width) // 2
+        combined.paste(map_img, (map_x, 0))
+        # Legend at bottom, centered
+        legend_x = (total_width - legend_w) // 2
+        combined.paste(legend_img, (legend_x, map_img.height))
+    else:
+        final_height = max(map_img.height, legend_h)
+        map_y = (final_height - map_img.height) // 2
+        legend_y = (final_height - legend_h) // 2
+        total_width = map_img.width + legend_w
+        combined = Image.new('RGB', (total_width, final_height), 'white')
+        combined.paste(map_img, (0, map_y))
+        combined.paste(legend_img, (map_img.width, legend_y))
 
     ensure_dir(output_path)
     combined.save(output_path, quality=95)
@@ -647,8 +856,18 @@ def generate_map(config: dict, enterprises: list) -> str:
     """Orchestrate map generation: build data → render map → render legend → combine."""
     gdf_boundary_wm, gdf_wm = build_geodataframes(config, enterprises)
     map_path = render_basemap(gdf_boundary_wm, gdf_wm, config)
-    legend_img = render_legend(enterprises, config)
-    return combine_images(map_path, legend_img, config['meta']['output_path'])
+
+    # Determine layout mode based on enterprise count
+    total_count = len(enterprises)
+    horizontal_mode = total_count > 60
+
+    # Get map width for horizontal legend sizing
+    map_img = Image.open(map_path)
+    map_width = map_img.width
+    map_img.close()
+
+    legend_img = render_legend(enterprises, config, map_width=map_width)
+    return combine_images(map_path, legend_img, config['meta']['output_path'], horizontal=horizontal_mode)
 
 
 def main():
@@ -677,7 +896,8 @@ def main():
 
     validate_data_sources(enterprises)
     lp, dup = validate_coords(enterprises)
-    oob, out = validate_coord_reasonableness(enterprises)
+    city = get_city_from_config(config)
+    oob, out = validate_coord_reasonableness(enterprises, city)
     boundary_coords = config.get('boundary', {}).get('coords', [])
     outside = validate_coords_in_boundary(enterprises, boundary_coords)
 
@@ -687,7 +907,7 @@ def main():
     severe_errors = oob + out
     if severe_errors > 0:
         print(f"\n{'='*50}")
-        print(f"地图生成已中止：发现 {severe_errors} 家企业坐标严重异常（超出福建省范围或极端偏离）")
+        print(f"地图生成已中止：发现 {severe_errors} 家企业坐标严重异常（超出城市范围或极端偏离）")
         print(f"{'='*50}")
         print("请先修正上述问题后重新运行本脚本。")
         print("修正方式：")
