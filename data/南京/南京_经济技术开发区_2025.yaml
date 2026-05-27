@@ -1,0 +1,604 @@
+meta:
+  dpi: 200
+  title: 南京经济技术开发区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：南京生态环境局2025年度环境监管重点单位名录  |  共48家  |  坐标：高德地图
+  output_path: ./南京_经济技术开发区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/南京/geocode_cache_南京.json
+  city: 南京
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 南京夏普电子有限公司
+  address: ''
+  label: 南京夏普电子有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.146808
+  lon: 118.869624
+  geocode_level: POI
+- name: 南京京东方显示技术有限公司
+  address: ''
+  label: 南京京东方显示技术有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 32.133656
+  lon: 119.000067
+  geocode_level: POI
+- name: 南京宝日钢丝制品有限公司
+  address: ''
+  label: 南京宝日钢丝制品有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 土壤污染
+  - 环境风险
+  lat: 32.150704
+  lon: 118.855101
+  geocode_level: POI
+- name: 爱尔集新能源（南京）有限公司
+  address: ''
+  label: 爱尔集新能源（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.156134
+  lon: 118.884525
+  geocode_level: POI
+- name: 博世汽车技术服务（中国）有限公司
+  address: ''
+  label: 博世汽车技术服务（中国）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.159021
+  lon: 119.025446
+  geocode_level: POI
+- name: 邦基（南京）粮油有限公司
+  address: ''
+  label: 邦基（南京）粮油有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.168872
+  lon: 118.876824
+  geocode_level: POI
+- name: 乐金显示（南京）有限公司
+  address: ''
+  label: 乐金显示（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.149428
+  lon: 118.893759
+  geocode_level: POI
+- name: 杉金光电（南京）有限公司
+  address: ''
+  label: 杉金光电（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.156451
+  lon: 118.882046
+  geocode_level: POI
+- name: 南京绿联环境科技发展有限公司
+  address: ''
+  label: 南京绿联环境科技发展有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.16761
+  lon: 118.909129
+  geocode_level: POI
+- name: 南京臣功制药股份有限公司
+  address: ''
+  label: 南京臣功制药股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.164794
+  lon: 118.890798
+  geocode_level: POI
+- name: 南京正大天晴制药有限公司
+  address: ''
+  label: 南京正大天晴制药有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.139688
+  lon: 118.887974
+  geocode_level: POI
+- name: 南京正大天晴制药有限公司新厂
+  address: ''
+  label: 南京正大天晴制药有限公司新厂
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.139688
+  lon: 118.887974
+  geocode_level: POI
+- name: 盛禾（中国）生物制药有限公司
+  address: ''
+  label: 盛禾（中国）生物制药有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.138936
+  lon: 118.855342
+  geocode_level: POI
+- name: 南京新百药业有限公司
+  address: ''
+  label: 南京新百药业有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  lat: 32.167451
+  lon: 118.880936
+  geocode_level: POI
+- name: 南京优科制药有限公司
+  address: ''
+  label: 南京优科制药有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  lat: 32.137407
+  lon: 118.873596
+  geocode_level: POI
+- name: 南京制药厂有限公司
+  address: ''
+  label: 南京制药厂有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.169417
+  lon: 118.89002
+  geocode_level: POI
+- name: 南京诺唯赞生物科技股份有限公司
+  address: ''
+  label: 南京诺唯赞生物科技股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.149865
+  lon: 119.008604
+  geocode_level: POI
+- name: 中建五洲工程装备有限公司（南厂区）
+  address: ''
+  label: 中建五洲工程装备有限公司（南厂区）
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 32.161701
+  lon: 119.024881
+  geocode_level: POI
+- name: 中建五洲工程装备有限公司(北厂区)
+  address: ''
+  label: 中建五洲工程装备有限公司(北厂区)
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 32.161701
+  lon: 119.024881
+  geocode_level: POI
+- name: 喜星电子（南京）有限公司
+  address: ''
+  label: 喜星电子（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.153666
+  lon: 118.886525
+  geocode_level: POI
+- name: 乐金显示（南京）有限公司（南厂区）
+  address: ''
+  label: 乐金显示（南京）有限公司（南厂区）
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.149428
+  lon: 118.893759
+  geocode_level: POI
+- name: 江苏金翔石油化工有限公司
+  address: ''
+  label: 江苏金翔石油化工有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 地下水
+  - 土壤污染
+  - 大气环境
+  lat: 32.168992
+  lon: 118.893397
+  geocode_level: POI
+- name: 南京康尼机电股份有限公司
+  address: ''
+  label: 南京康尼机电股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.070967
+  lon: 118.760098
+  geocode_level: POI
+- name: 南京正科医药股份有限公司
+  address: ''
+  label: 南京正科医药股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.166126
+  lon: 118.879857
+  geocode_level: POI
+- name: 南京海辰药业股份有限公司
+  address: ''
+  label: 南京海辰药业股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.136589
+  lon: 118.875744
+  geocode_level: POI
+- name: 南京美瑞制药有限公司
+  address: ''
+  label: 南京美瑞制药有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.169064
+  lon: 118.882311
+  geocode_level: POI
+- name: 南京圣和药业股份有限公司
+  address: ''
+  label: 南京圣和药业股份有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.017926
+  lon: 118.88106
+  geocode_level: POI
+- name: 博西华电器（江苏）有限公司
+  address: ''
+  label: 博西华电器（江苏）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.134667
+  lon: 118.871035
+  geocode_level: POI
+- name: 江苏嘉汇再生资源利用有限公司
+  address: ''
+  label: 江苏嘉汇再生资源利用有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.163505
+  lon: 118.896039
+  geocode_level: POI
+- name: 南京东区污水处理管理有限公司（东阳污水处理厂）
+  address: ''
+  label: 南京东区污水处理管理有限公司（东阳污水处理厂）
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: POI
+- name: 金陵药业股份有限公司南京金陵制药厂
+  address: ''
+  label: 金陵药业股份有限公司南京金陵制药厂
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.075024
+  lon: 118.784351
+  geocode_level: POI
+- name: 江苏金陵环境股份有限公司铁北污水处理厂
+  address: ''
+  label: 江苏金陵环境股份有限公司铁北污水处理厂
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.145225
+  lon: 118.852275
+  geocode_level: POI
+- name: 江苏金陵环境股份有限公司铁北污水处理厂三期
+  address: ''
+  label: 江苏金陵环境股份有限公司铁北污水处理厂三期
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.145225
+  lon: 118.852275
+  geocode_level: POI
+- name: 南京博肽生物科技有限公司
+  address: ''
+  label: 南京博肽生物科技有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 32.169821
+  lon: 118.884853
+  geocode_level: POI
+- name: 南京白敬宇制药有限责任公司
+  address: ''
+  label: 南京白敬宇制药有限责任公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 环境风险
+  lat: 32.04051
+  lon: 118.763643
+  geocode_level: POI
+- name: 南京高科环境科技有限公司
+  address: ''
+  label: 南京高科环境科技有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 32.144867
+  lon: 118.854769
+  geocode_level: POI
+- name: 美药星（南京）制药有限公司
+  address: ''
+  label: 美药星（南京）制药有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  lat: 32.150083
+  lon: 118.875686
+  geocode_level: POI
+- name: 南京乐韬生物科技有限公司
+  address: ''
+  label: 南京乐韬生物科技有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  lat: 32.130785
+  lon: 118.959871
+  geocode_level: POI
+- name: 南京东区污水处理管理有限公司（南京龙潭污水处理厂）
+  address: ''
+  label: 南京东区污水处理管理有限公司（南京龙潭污水处理厂）
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: POI
+- name: 爱尔集新能源电池（南京）有限公司
+  address: ''
+  label: 爱尔集新能源电池（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.148422
+  lon: 118.890581
+  geocode_level: POI
+- name: 南京华信藤仓光通信有限公司
+  address: ''
+  label: 南京华信藤仓光通信有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.165865
+  lon: 118.877029
+  geocode_level: POI
+- name: 博世华域转向系统有限公司南京分公司
+  address: ''
+  label: 博世华域转向系统有限公司南京分公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.137199
+  lon: 118.910237
+  geocode_level: POI
+- name: 埃瓦默泵技术服务（南京）有限公司
+  address: ''
+  label: 埃瓦默泵技术服务（南京）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.158721
+  lon: 119.02544
+  geocode_level: POI
+- name: 江苏龙蟠新材料科技有限公司
+  address: ''
+  label: 江苏龙蟠新材料科技有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.144665
+  lon: 118.856914
+  geocode_level: POI
+- name: 南京恩梯恩精密机电有限公司
+  address: ''
+  label: 南京恩梯恩精密机电有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.157144
+  lon: 118.904497
+  geocode_level: POI
+- name: 弓箭玻璃器皿（中国）有限公司
+  address: ''
+  label: 弓箭玻璃器皿（中国）有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  - 环境风险
+  lat: 32.149159
+  lon: 118.899081
+  geocode_level: POI
+- name: 南京熊猫电子制造有限公司
+  address: ''
+  label: 南京熊猫电子制造有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  lat: 32.147177
+  lon: 118.854755
+  geocode_level: POI
+- name: 南京华格电汽塑业有限公司
+  address: ''
+  label: 南京华格电汽塑业有限公司
+  data_source: 南京市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  lat: 32.148108
+  lon: 118.854572
+  geocode_level: POI

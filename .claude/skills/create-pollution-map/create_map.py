@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate high-resolution pollution-source distribution map with Gaode basemap.
+Generate high-resolution pollution-source distribution map with basemap.
 
 Usage:
     python create_map.py -c config.yaml
@@ -25,7 +25,7 @@ from shapely.geometry import Point, Polygon
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (get_font, resolve_image_path, resolve_cache_path, ensure_dir,
                    get_city_from_config, load_config_with_defaults, estimate_city_bounds,
-                   coord_in_bounds)
+                   coord_in_bounds, get_map_provider)
 
 matplotlib.use('Agg')
 warnings.filterwarnings('ignore')
@@ -427,8 +427,16 @@ def render_basemap(gdf_boundary_wm, gdf_wm, config: dict) -> str:
         )
 
     ax.set_axis_off()
+
+    # Dynamically update map provider name in subtitle
+    provider = config.get('gaode', {}).get('provider', '') or get_map_provider()
+    provider_name = '腾讯地图' if provider == 'tencent' else '高德地图'
+    subtitle = meta.get('subtitle', '').replace('高德地图', provider_name).replace('{map_provider}', provider_name)
+    if '坐标：' not in subtitle and '地图' not in subtitle:
+        subtitle += f"  |  坐标：{provider_name}"
+
     fig.text(0.5, 0.95, meta['title'], ha='center', fontsize=20, fontweight='bold', color='#1a1a1a')
-    fig.text(0.5, 0.93, meta['subtitle'], ha='center', fontsize=10, color='#666666')
+    fig.text(0.5, 0.93, subtitle, ha='center', fontsize=10, color='#666666')
 
     map_path = os.path.join(os.path.dirname(meta['output_path']) or '.', 'map_only.png')
     ensure_dir(map_path)

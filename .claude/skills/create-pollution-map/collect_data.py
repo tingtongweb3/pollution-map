@@ -35,7 +35,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    get_map_key, _names_match, extract_district_hint, district_match,
+    get_map_key, get_map_provider, _names_match, extract_district_hint, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir, get_city_from_config,
     _DISTRICT_KEYWORDS,
 )
@@ -1076,6 +1076,7 @@ def generate_config(
             "cache_file": f"./geocode_cache_{city}.json",
             "rate_limit": 0.15,
             "city": city,
+            "provider": get_map_provider(),
         },
         "risk_zones": {
             "enabled": True,
