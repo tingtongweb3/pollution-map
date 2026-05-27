@@ -16,7 +16,7 @@ import requests
 import yaml
 
 sys.path.insert(0, os.path.dirname(__file__))
-from utils import get_gaode_key, load_config_with_defaults
+from utils import get_map_key, load_config_with_defaults
 
 
 def search_poi(name: str, city: str, key: str, timeout: int = 10) -> dict:
@@ -47,7 +47,7 @@ def search_poi(name: str, city: str, key: str, timeout: int = 10) -> dict:
 def run_verify(config_path: str):
     config = load_config_with_defaults(config_path)
 
-    key = get_gaode_key(config["gaode"]["key"])
+    key = get_map_key(config["gaode"]["key"])
     if not key:
         print("ERROR: No Gaode API key. Set GAODE_API_KEY env var or set gaode.key in config.")
         return

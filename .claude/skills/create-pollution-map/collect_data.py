@@ -35,7 +35,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    get_gaode_key, _names_match, extract_district_hint, district_match,
+    get_map_key, _names_match, extract_district_hint, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir, get_city_from_config,
     _DISTRICT_KEYWORDS,
 )
@@ -691,12 +691,14 @@ class DataExtractor:
 # ---------------------------------------------------------------------------
 
 class AddressEnricher:
-    """Enrich enterprise records with addresses via Gaode POI search."""
+    """Enrich enterprise records with addresses via map POI search."""
 
-    def __init__(self, key: str, city: str = "福州", rate_limit: float = 0.15):
+    def __init__(self, key: str, city: str = "福州", rate_limit: float = 0.15,
+                 provider: str = "gaode"):
         self.key = key
         self.city = city
         self.rate_limit = rate_limit
+        self.provider = provider
 
     # ------------------------------------------------------------------
     # Smart search query generation based on enterprise type + district
@@ -778,7 +780,7 @@ class AddressEnricher:
         """Reverse geocode to verify coordinate falls in expected district."""
         from utils import reverse_geocode_district, district_match
         try:
-            actual = reverse_geocode_district(lat, lon, self.key)
+            actual = reverse_geocode_district(lat, lon, self.key, provider=self.provider)
             if not actual:
                 return False  # Cannot verify district — unsafe to accept
             if expected_district and not district_match(expected_district, actual):
@@ -787,8 +789,93 @@ class AddressEnricher:
         except Exception:
             return False  # Cannot verify — reject rather than risk cross-district errors
 
+    def _poi_search_gaode(self, q: str, district_filter: str, queries: list) -> tuple:
+        """Single Gaode POI query. Returns (poi_name, poi_addr, lon, lat) or Nones."""
+        url = (
+            f"https://restapi.amap.com/v3/place/text"
+            f"?keywords={urllib.parse.quote(q)}"
+            f"&city={urllib.parse.quote(self.city)}"
+            f"&offset=1&page=1&key={self.key}&extensions=all"
+        )
+        try:
+            resp = requests.get(url, timeout=10).json()
+            if resp.get("status") == "1" and resp.get("pois"):
+                p = resp["pois"][0]
+                poi_name = p.get("name", "")
+                addr_raw = p.get("address", "")
+                if isinstance(addr_raw, list):
+                    poi_addr = addr_raw[0] if addr_raw else ""
+                else:
+                    poi_addr = str(addr_raw).strip()
+                loc = p.get("location", "")
+                if not loc or "," not in loc:
+                    return None
+                lon, lat = map(float, loc.split(","))
+
+                # Name matching
+                match_ok = False
+                for candidate in queries:
+                    clean = candidate.replace(district_filter or "", "").strip() if district_filter else candidate
+                    if poi_name and _names_match(clean, poi_name):
+                        match_ok = True
+                        break
+                if not match_ok:
+                    return None
+
+                # Cross-district validation
+                if district_filter:
+                    if not self._reverse_check_district(lat, lon, district_filter):
+                        return None
+                    time.sleep(self.rate_limit)
+
+                return poi_name, poi_addr, lon, lat
+        except Exception:
+            pass
+        return None
+
+    def _poi_search_tencent(self, q: str, district_filter: str, queries: list) -> tuple:
+        """Single Tencent POI query. Returns (poi_name, poi_addr, lon, lat) or Nones."""
+        url = (
+            f"https://apis.map.qq.com/ws/place/v1/search"
+            f"?keyword={urllib.parse.quote(q)}"
+            f"&boundary=region({urllib.parse.quote(self.city)},0)"
+            f"&page_size=1&page_index=1"
+            f"&key={self.key}"
+        )
+        try:
+            resp = requests.get(url, timeout=10).json()
+            if resp.get("status") == 0 and resp.get("data"):
+                p = resp["data"][0]
+                poi_name = p.get("title", "")
+                poi_addr = str(p.get("address", "")).strip()
+                loc = p.get("location", {})
+                if not loc or "lat" not in loc or "lng" not in loc:
+                    return None
+                lat, lon = loc["lat"], loc["lng"]
+
+                # Name matching
+                match_ok = False
+                for candidate in queries:
+                    clean = candidate.replace(district_filter or "", "").strip() if district_filter else candidate
+                    if poi_name and _names_match(clean, poi_name):
+                        match_ok = True
+                        break
+                if not match_ok:
+                    return None
+
+                # Cross-district validation
+                if district_filter:
+                    if not self._reverse_check_district(lat, lon, district_filter):
+                        return None
+                    time.sleep(self.rate_limit)
+
+                return poi_name, poi_addr, lon, lat
+        except Exception:
+            pass
+        return None
+
     def _poi_search(self, queries: list, district_filter: str = None) -> tuple:
-        """Search Gaode POI with a list of candidate queries.
+        """Search POI with a list of candidate queries.
 
         Strategy:
           1. Use district in query keywords to bias results toward target area
@@ -799,49 +886,12 @@ class AddressEnricher:
         Returns (poi_name, poi_addr, lon, lat, matched_query) or Nones.
         """
         for q in queries:
-            url = (
-                f"https://restapi.amap.com/v3/place/text"
-                f"?keywords={urllib.parse.quote(q)}"
-                f"&city={urllib.parse.quote(self.city)}"
-                f"&offset=1&page=1&key={self.key}&extensions=all"
-            )
-            try:
-                resp = requests.get(url, timeout=10).json()
-                if resp.get("status") == "1" and resp.get("pois"):
-                    p = resp["pois"][0]
-                    poi_name = p.get("name", "")
-                    # Gaode sometimes returns address as a JSON list instead of string
-                    addr_raw = p.get("address", "")
-                    if isinstance(addr_raw, list):
-                        poi_addr = addr_raw[0] if addr_raw else ""
-                    else:
-                        poi_addr = str(addr_raw).strip()
-                    loc = p.get("location", "")
-                    if not loc or "," not in loc:
-                        continue
-
-                    lon, lat = map(float, loc.split(","))
-
-                    # Name matching: POI must relate to the enterprise
-                    match_ok = False
-                    for candidate in queries:
-                        clean = candidate.replace(district_filter or "", "").strip() if district_filter else candidate
-                        if poi_name and _names_match(clean, poi_name):
-                            match_ok = True
-                            break
-
-                    if not match_ok:
-                        continue
-
-                    # Cross-district validation via reverse geocoding
-                    if district_filter:
-                        if not self._reverse_check_district(lat, lon, district_filter):
-                            continue
-                        time.sleep(self.rate_limit)
-
-                    return poi_name, poi_addr, lon, lat, q
-            except Exception:
-                continue
+            if self.provider == "tencent":
+                result = self._poi_search_tencent(q, district_filter, queries)
+            else:
+                result = self._poi_search_gaode(q, district_filter, queries)
+            if result:
+                return (*result, q)
         return None, None, None, None, None
 
     def enrich(self, enterprises: List[Enterprise]) -> dict:
@@ -1196,7 +1246,9 @@ def main():
     parser.add_argument("--output", "-o", help="Output JSON file for extracted enterprises")
     parser.add_argument("--enrich", action="store_true", help="Enrich addresses via Gaode POI")
     parser.add_argument("--city", default="福州", help="City for address enrichment and POI search")
-    parser.add_argument("--key", default="", help="Gaode API key (or set GAODE_API_KEY env var)")
+    parser.add_argument("--key", default="", help="API key (or set GAODE_API_KEY / TENCENT_MAP_KEY env var)")
+    parser.add_argument("--provider", default="", choices=["gaode", "tencent"],
+                        help="Map provider (gaode or tencent). Overrides MAP_PROVIDER env var.")
     args = parser.parse_args()
 
     # Detect format
@@ -1226,12 +1278,13 @@ def main():
 
     # Enrich addresses
     if args.enrich:
-        key = args.key or get_gaode_key("")
+        provider = args.provider or get_map_provider()
+        key = args.key or get_map_key(provider, "")
         if not key:
-            print("ERROR: No Gaode API key. Set GAODE_API_KEY or pass --key")
+            print(f"ERROR: No API key for provider '{provider}'. Set GAODE_API_KEY / TENCENT_MAP_KEY or pass --key")
             return 1
 
-        enricher = AddressEnricher(key=key, city=args.city)
+        enricher = AddressEnricher(key=key, city=args.city, provider=provider)
         report = enricher.enrich(enterprises)
 
         print(f"\n地址补全结果:")

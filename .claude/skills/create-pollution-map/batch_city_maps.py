@@ -28,7 +28,7 @@ SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SKILL_DIR)
 
 from collect_data import auto_partition_districts, generate_config, Enterprise
-from utils import get_gaode_key, ensure_dir
+from utils import get_map_key, ensure_dir, get_map_provider
 
 
 def _dict_to_enterprise(d: dict) -> Enterprise:
@@ -48,14 +48,20 @@ def load_city_cache(cache_path: str) -> list:
     return data
 
 
-def run_geocode_for_config(config_path: str, key: str = ""):
+def run_geocode_for_config(config_path: str, key: str = "", provider: str = ""):
     """Run geocode.py for a single config."""
     script = os.path.join(SKILL_DIR, "geocode.py")
     env = os.environ.copy()
+    provider = provider or get_map_provider()
     if key:
-        env["GAODE_API_KEY"] = key
+        if provider == "tencent":
+            env["TENCENT_MAP_KEY"] = key
+        else:
+            env["GAODE_API_KEY"] = key
+    if provider:
+        env["MAP_PROVIDER"] = provider
     result = subprocess.run(
-        [sys.executable, script, "-c", config_path],
+        [sys.executable, script, "-c", config_path, "--provider", provider],
         env=env,
         capture_output=True,
         text=True,
@@ -103,7 +109,9 @@ def main():
     parser.add_argument("--alias", action="append",
                         help="Alias for merged partition (format: 主城区=玄武区+秦淮区+鼓楼区)")
     parser.add_argument("--key", default="",
-                        help="Gaode API key (or set GAODE_API_KEY env var)")
+                        help="API key (or set GAODE_API_KEY / TENCENT_MAP_KEY env var)")
+    parser.add_argument("--provider", default="", choices=["gaode", "tencent"],
+                        help="Map provider (gaode or tencent). Overrides MAP_PROVIDER env var.")
     parser.add_argument("--skip-geocode", action="store_true",
                         help="Skip geocoding step (use existing cache)")
     parser.add_argument("--skip-map", action="store_true",
@@ -154,10 +162,11 @@ def main():
         parts_str = ", ".join(info["parts"])
         print(f"  {name}: {len(info['enterprises'])} enterprises (parts: {parts_str})")
 
-    key = args.key or get_gaode_key("")
+    provider = args.provider or get_map_provider()
+    key = args.key or get_map_key(provider, "")
     if not key and not args.skip_geocode:
-        print("\nWARNING: No Gaode API key. Geocoding will likely fail.")
-        print("  Set GAODE_API_KEY env var or pass --key.")
+        print(f"\nWARNING: No API key for provider '{provider}'. Geocoding will likely fail.")
+        print("  Set GAODE_API_KEY / TENCENT_MAP_KEY env var or pass --key.")
 
     reports = []
 
@@ -199,7 +208,7 @@ def main():
         # Step 1: Geocode
         if not args.skip_geocode:
             print("\n-- Geocoding --")
-            geo_result = run_geocode_for_config(config_path, key)
+            geo_result = run_geocode_for_config(config_path, key, provider)
             print(geo_result.stdout)
             if geo_result.returncode != 0:
                 print(f"Geocode stderr: {geo_result.stderr}")

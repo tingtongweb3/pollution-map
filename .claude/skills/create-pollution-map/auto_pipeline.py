@@ -37,7 +37,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(__file__))
 from collect_data import (
     DataExtractor, AddressEnricher, Source, Enterprise,
-    merge_sources, generate_config, get_gaode_key,
+    merge_sources, generate_config, get_map_key,
     save_city_cache, load_city_cache, get_city_cache_path,
 )
 
@@ -280,7 +280,7 @@ def main():
     # ------------------------------------------------------------------
     enriched_report = None
     if not args.skip_enrich:
-        key = args.key or get_gaode_key("")
+        key = args.key or get_map_key("")
         if key:
             enricher = AddressEnricher(key=key, city=args.city)
             print(f"\n{'='*60}")

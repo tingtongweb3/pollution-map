@@ -33,7 +33,7 @@ except ImportError:
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    geocode_address, get_gaode_key, write_yaml_config, _names_match,
+    geocode_address, get_map_key, write_yaml_config, _names_match,
     extract_district_hint, extract_target_district, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir,
     load_config_with_defaults, infer_address_from_name,
@@ -112,8 +112,8 @@ def haversine(lat1, lon1, lat2, lon2):
 
 
 def _try_poi_single_query(query, key, city, city_bounds, district_bounds,
-                          target_district, name_for_match):
-    """Try one POI query and return all valid candidates as dicts."""
+                          target_district, name_for_match, provider="gaode"):
+    """Try one POI query via Gaode Maps and return all valid candidates."""
     url = (
         f"https://restapi.amap.com/v3/place/text"
         f"?keywords={urllib.parse.quote(query)}"
@@ -136,27 +136,63 @@ def _try_poi_single_query(query, key, city, city_bounds, district_bounds,
                     continue
                 lon, lat = map(float, loc.split(","))
 
-                # City bounds quick check
                 if city_bounds and not coord_in_bounds(lat, lon, city_bounds):
                     continue
-
-                # District bounds quick check
                 if district_bounds and Polygon is not None and Point is not None:
                     if not district_bounds.contains(Point(lon, lat)):
                         continue
-
-                # Name mismatch check (strict first, then loose)
                 if poi_name and not _names_match(name_for_match, poi_name):
                     if not _names_match_loose(name_for_match, poi_name):
                         continue
-
-                # District validation via reverse geocoding
                 if target_district:
-                    actual = reverse_geocode_district(lat, lon, key)
+                    actual = reverse_geocode_district(lat, lon, key, provider=provider)
                     time.sleep(0.15)
-                    if not actual:
+                    if not actual or not district_match(target_district, actual):
                         continue
-                    if not district_match(target_district, actual):
+
+                candidates.append({
+                    "lon": lon, "lat": lat, "address": poi_addr,
+                    "name": poi_name, "query": query,
+                })
+    except Exception:
+        pass
+    return candidates
+
+
+def _try_poi_single_query_tencent(query, key, city, city_bounds, district_bounds,
+                                  target_district, name_for_match):
+    """Try one POI query via Tencent Map and return all valid candidates."""
+    url = (
+        f"https://apis.map.qq.com/ws/place/v1/search"
+        f"?keyword={urllib.parse.quote(query)}"
+        f"&boundary=region({urllib.parse.quote(city)},0)"
+        f"&page_size=5&page_index=1"
+        f"&key={key}"
+    )
+    candidates = []
+    try:
+        resp = requests.get(url, timeout=10).json()
+        if resp.get("status") == 0 and resp.get("data"):
+            for p in resp["data"]:
+                poi_name = p.get("title", "")
+                poi_addr = str(p.get("address", "")).strip()
+                loc = p.get("location", {})
+                if not loc or "lat" not in loc or "lng" not in loc:
+                    continue
+                lat, lon = loc["lat"], loc["lng"]
+
+                if city_bounds and not coord_in_bounds(lat, lon, city_bounds):
+                    continue
+                if district_bounds and Polygon is not None and Point is not None:
+                    if not district_bounds.contains(Point(lon, lat)):
+                        continue
+                if poi_name and not _names_match(name_for_match, poi_name):
+                    if not _names_match_loose(name_for_match, poi_name):
+                        continue
+                if target_district:
+                    actual = reverse_geocode_district(lat, lon, key, provider="tencent")
+                    time.sleep(0.15)
+                    if not actual or not district_match(target_district, actual):
                         continue
 
                 candidates.append({
@@ -169,17 +205,11 @@ def _try_poi_single_query(query, key, city, city_bounds, district_bounds,
 
 
 def poi_search(name, key, city="福州", district_filter=None, target_district=None,
-               city_bounds=None, district_bounds=None, variant_queries=None):
-    """Search Gaode POI by enterprise name with name-matching and district filtering.
+               city_bounds=None, district_bounds=None, variant_queries=None,
+               provider="gaode"):
+    """Search POI by enterprise name with name-matching and district filtering.
 
-    When variant_queries are provided (e.g. production-address variants like
-    "XX厂区"), searches both the standard name and variants, then returns the
-    best candidate based on production-location heuristics.
-
-    Args:
-        variant_queries: Optional list of additional POI queries to try
-                         when the standard name might match the headquarters
-                         instead of the production facility.
+    Supports both Gaode and Tencent map providers.
 
     Returns (lon, lat, address, level) or (None, None, None, None).
     """
@@ -187,12 +217,17 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
     if variant_queries:
         all_queries.extend(variant_queries)
 
-    # Collect candidates from all queries
     all_candidates = []
     for q in all_queries:
-        candidates = _try_poi_single_query(
-            q, key, city, city_bounds, district_bounds, target_district, name
-        )
+        if provider == "tencent":
+            candidates = _try_poi_single_query_tencent(
+                q, key, city, city_bounds, district_bounds, target_district, name
+            )
+        else:
+            candidates = _try_poi_single_query(
+                q, key, city, city_bounds, district_bounds, target_district, name,
+                provider=provider,
+            )
         all_candidates.extend(candidates)
 
     if not all_candidates:
@@ -202,7 +237,6 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
         c = all_candidates[0]
         return c["lon"], c["lat"], c["address"], "POI"
 
-    # Score candidates: prefer production-related POI names
     _PROD_KWS = ["厂", "基地", "园区", "工业区", "产业园", "处理厂", "电厂",
                  "电站", "院区", "校区", "实验中心", "科创园", "科技园",
                  "屠宰场", "养殖场", "牧场", "风电场"]
@@ -211,12 +245,10 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
         score = 0
         poi_name = c["name"]
         query = c["query"]
-        # Slight preference for standard query (conservative)
         if query == name:
             score += 3
         else:
             score -= 2
-        # Strong bonus for production-related keywords in POI name
         for kw in _PROD_KWS:
             if kw in poi_name:
                 score += 10
@@ -228,11 +260,13 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
 
 
 def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
-                             target_district=None, enterprises=None):
+                             target_district=None, enterprises=None,
+                             provider="gaode"):
     """Dual-validation geocoding: name POI search + address geocoding with cross-check.
 
     Args:
         enterprises: Optional list of enterprise dicts for district bounds inference.
+        provider: 'gaode' or 'tencent'. If empty, uses MAP_PROVIDER env var.
 
     Returns a dict:
       {
@@ -242,6 +276,9 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
         "poi_addr": str,  # POI address if POI found
       }
     """
+    from utils import get_map_provider
+    provider = provider or get_map_provider()
+
     result = {"lat": None, "lon": None, "level": None, "method": "failed", "warnings": [], "poi_addr": ""}
 
     has_address = bool(address and address.strip())
@@ -279,6 +316,7 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
         name, key, city, target_district=target_district,
         city_bounds=city_bounds, district_bounds=district_bounds,
         variant_queries=variant_queries,
+        provider=provider,
     )
     time.sleep(rate_limit)
 
@@ -304,7 +342,7 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
         return result
 
     # Step 2: Address geocoding (city-restricted to avoid cross-province matches)
-    addr_lon, addr_lat, addr_level = geocode_address(address, key, city=city)
+    addr_lon, addr_lat, addr_level = geocode_address(address, key, city=city, provider=provider)
     time.sleep(rate_limit)
 
     if addr_lon is None:
@@ -334,7 +372,7 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
             # the provided address is the actual facility.
             prefer_address = True
             if target_district:
-                addr_actual = reverse_geocode_district(addr_lat, addr_lon, key)
+                addr_actual = reverse_geocode_district(addr_lat, addr_lon, key, provider=provider)
                 time.sleep(rate_limit)
                 if addr_actual and not district_match(target_district, addr_actual):
                     prefer_address = False
@@ -402,9 +440,10 @@ def run_geocode(config_path: str, force: bool = False):
     )
     config["gaode"]["cache_file"] = cache_file
 
-    key = get_gaode_key(config["gaode"]["key"])
+    provider = config["gaode"].get("provider", "") or get_map_provider()
+    key = get_map_key(provider, config["gaode"]["key"])
     if not key:
-        print("ERROR: No Gaode API key. Set GAODE_API_KEY env var or set gaode.key in config.")
+        print(f"ERROR: No API key for provider '{provider}'. Set GAODE_API_KEY or TENCENT_MAP_KEY env var, or set gaode.key in config.")
         return
     rate_limit = config["gaode"].get("rate_limit", 0.15)
     city = config["gaode"].get("city", "福州")
@@ -441,7 +480,7 @@ def run_geocode(config_path: str, force: bool = False):
             fixed_count += 1
             continue
 
-        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district, enterprises=enterprises)
+        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district, enterprises=enterprises, provider=provider)
 
         if result["lat"] is None:
             print(f"\n{i}. ✗ FAILED: {name}")
@@ -493,7 +532,7 @@ def run_geocode(config_path: str, force: bool = False):
         for e in enterprises:
             if "lat" not in e or "lon" not in e:
                 continue
-            actual = reverse_geocode_district(e["lat"], e["lon"], key)
+            actual = reverse_geocode_district(e["lat"], e["lon"], key, provider=provider)
             time.sleep(rate_limit)
             if actual and not district_match(target_district, actual):
                 cross_district.append({
@@ -528,6 +567,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Batch geocode with dual validation")
     parser.add_argument("-c", "--config", required=True, help="Path to config YAML file")
     parser.add_argument("--force", action="store_true", help="Force re-geocode (ignore cache)")
+    parser.add_argument("--provider", default="", choices=["gaode", "tencent"],
+                        help="Map provider (gaode or tencent). Overrides MAP_PROVIDER env var.")
     args = parser.parse_args()
 
+    if args.provider:
+        os.environ["MAP_PROVIDER"] = args.provider
     run_geocode(args.config, force=args.force)

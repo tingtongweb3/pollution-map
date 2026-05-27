@@ -32,7 +32,7 @@ import yaml
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    get_gaode_key,
+    get_map_key,
     is_pseudo_address,
     address_quality_score,
     _names_match,
@@ -97,7 +97,7 @@ def _reverse_check_district(lat, lon, key, expected_district):
 def fix_addresses(config_path, apply=False, rate_limit=0.15):
     config = load_config_with_defaults(config_path)
 
-    key = get_gaode_key(config["gaode"].get("key", ""))
+    key = get_map_key(config["gaode"].get("key", ""))
     if not key:
         print("ERROR: No Gaode API key. Set GAODE_API_KEY env var.")
         return

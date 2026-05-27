@@ -15,9 +15,9 @@ import requests
 import yaml
 
 sys.path.insert(0, os.path.dirname(__file__))
-from utils import get_gaode_key, write_yaml_config, _names_match, extract_district_hint, district_match, reverse_geocode_district, load_config_with_defaults
+from utils import get_map_key, write_yaml_config, _names_match, extract_district_hint, district_match, reverse_geocode_district, load_config_with_defaults
 
-KEY = get_gaode_key("")
+KEY = get_map_key("")
 RATE_LIMIT = 0.12
 
 

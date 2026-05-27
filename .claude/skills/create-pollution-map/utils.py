@@ -16,9 +16,30 @@ except ImportError:
     Polygon = None
 
 
-def get_gaode_key(config_key: str = "") -> str:
-    """Return Gaode API key: env var GAODE_API_KEY takes priority, else config value."""
+def get_map_provider() -> str:
+    """Return the active map provider ('gaode' or 'tencent').
+
+    Reads from MAP_PROVIDER env var, defaults to 'gaode'.
+    """
+    return os.environ.get("MAP_PROVIDER", "gaode").lower()
+
+
+def get_map_key(provider: str = "", config_key: str = "") -> str:
+    """Return the API key for the given provider.
+
+    Args:
+        provider: 'gaode' or 'tencent'. If empty, uses get_map_provider().
+        config_key: Fallback key from config file.
+    """
+    provider = provider or get_map_provider()
+    if provider == "tencent":
+        return os.environ.get("TENCENT_MAP_KEY", config_key)
     return os.environ.get("GAODE_API_KEY", config_key)
+
+
+def get_gaode_key(config_key: str = "") -> str:
+    """Backward-compatible alias for get_map_key('gaode')."""
+    return get_map_key("gaode", config_key)
 
 
 def _deep_merge(base: dict, override: dict) -> dict:
@@ -581,15 +602,8 @@ def _names_match(a: str, b: str) -> bool:
 # Geocoding & reverse geocoding
 # ---------------------------------------------------------------------------
 
-def geocode_address(address: str, key: str, city: str = "", timeout: int = 10):
-    """Geocode a single address via Gaode Maps API.
-
-    Args:
-        city: Restrict geocoding to this city (e.g. "福州", "泉州").
-              Prevents generic addresses like "园南路" from matching other provinces.
-
-    Returns (lon, lat, level) or (None, None, None) on failure.
-    """
+def _geocode_address_gaode(address: str, key: str, city: str = "", timeout: int = 10):
+    """Gaode Maps geocoding implementation."""
     encoded = urllib.parse.quote(address)
     url = f"https://restapi.amap.com/v3/geocode/geo?address={encoded}&key={key}"
     if city:
@@ -606,11 +620,51 @@ def geocode_address(address: str, key: str, city: str = "", timeout: int = 10):
     return None, None, None
 
 
-def reverse_geocode_district(lat: float, lon: float, key: str, timeout: int = 10) -> str:
-    """Reverse geocode to get the district name for a coordinate.
+def _geocode_address_tencent(address: str, key: str, city: str = "", timeout: int = 10):
+    """Tencent Map geocoding implementation."""
+    url = (
+        f"https://apis.map.qq.com/ws/geocoder/v1/"
+        f"?address={urllib.parse.quote(address)}"
+        f"&key={key}"
+    )
+    if city:
+        url += f"&region={urllib.parse.quote(city)}"
+    try:
+        resp = requests.get(url, timeout=timeout).json()
+        if resp.get("status") == 0 and resp.get("result"):
+            loc = resp["result"]["location"]
+            lat, lon = loc["lat"], loc["lng"]
+            t_level = resp["result"].get("level", 0)
+            if t_level == 11:
+                level = "POI"
+            elif t_level >= 5:
+                level = "兴趣点"
+            else:
+                level = "区县"
+            return float(lon), float(lat), level
+    except Exception:
+        pass
+    return None, None, None
 
-    Returns district name like '闽侯县' or empty string on failure.
+
+def geocode_address(address: str, key: str, city: str = "", provider: str = "",
+                    timeout: int = 10):
+    """Geocode a single address via the active map provider.
+
+    Args:
+        provider: 'gaode' or 'tencent'. If empty, uses MAP_PROVIDER env var.
+        city: Restrict geocoding to this city.
+
+    Returns (lon, lat, level) or (None, None, None) on failure.
     """
+    provider = provider or get_map_provider()
+    if provider == "tencent":
+        return _geocode_address_tencent(address, key, city, timeout)
+    return _geocode_address_gaode(address, key, city, timeout)
+
+
+def _reverse_geocode_district_gaode(lat: float, lon: float, key: str, timeout: int = 10) -> str:
+    """Gaode Maps reverse geocoding implementation."""
     url = (
         f"https://restapi.amap.com/v3/geocode/regeo"
         f"?location={lon},{lat}&key={key}&extensions=all"
@@ -623,6 +677,38 @@ def reverse_geocode_district(lat: float, lon: float, key: str, timeout: int = 10
     except Exception:
         pass
     return ""
+
+
+def _reverse_geocode_district_tencent(lat: float, lon: float, key: str, timeout: int = 10) -> str:
+    """Tencent Map reverse geocoding implementation."""
+    url = (
+        f"https://apis.map.qq.com/ws/geocoder/v1/"
+        f"?location={lat},{lon}"
+        f"&key={key}"
+    )
+    try:
+        resp = requests.get(url, timeout=timeout).json()
+        if resp.get("status") == 0 and resp.get("result"):
+            comp = resp["result"].get("address_component", {})
+            return comp.get("district", "")
+    except Exception:
+        pass
+    return ""
+
+
+def reverse_geocode_district(lat: float, lon: float, key: str, provider: str = "",
+                             timeout: int = 10) -> str:
+    """Reverse geocode to get the district name for a coordinate.
+
+    Args:
+        provider: 'gaode' or 'tencent'. If empty, uses MAP_PROVIDER env var.
+
+    Returns district name like '闽侯县' or empty string on failure.
+    """
+    provider = provider or get_map_provider()
+    if provider == "tencent":
+        return _reverse_geocode_district_tencent(lat, lon, key, timeout)
+    return _reverse_geocode_district_gaode(lat, lon, key, timeout)
 
 
 def fetch_boundary_datav(adcode: str, timeout: int = 30):
