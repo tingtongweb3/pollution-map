@@ -261,12 +261,15 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
 
 def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
                              target_district=None, enterprises=None,
-                             provider="gaode"):
+                             provider="gaode", enterprise_district=None):
     """Dual-validation geocoding: name POI search + address geocoding with cross-check.
 
     Args:
         enterprises: Optional list of enterprise dicts for district bounds inference.
         provider: 'gaode' or 'tencent'. If empty, uses MAP_PROVIDER env var.
+        enterprise_district: The district this specific enterprise belongs to
+            (from source roster). Takes priority over target_district for
+            district-level validation to avoid cross-district mismatches.
 
     Returns a dict:
       {
@@ -284,6 +287,10 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
     has_address = bool(address and address.strip())
     original_empty = not has_address
 
+    # Use enterprise's own district for validation if available;
+    # fallback to config-level target_district for bounds inference.
+    effective_district = enterprise_district or target_district
+
     # Auto-infer bounds for this city/district
     city_bounds = estimate_city_bounds(city)
     district_bounds = None
@@ -292,28 +299,28 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
 
     # If address is empty, infer one from name + city + district
     inferred_address = ""
-    if not has_address and target_district:
-        inferred_address = infer_address_from_name(name, city, target_district)
+    if not has_address and effective_district:
+        inferred_address = infer_address_from_name(name, city, effective_district)
         if inferred_address:
             address = inferred_address
             has_address = True
 
     # Enrich generic addresses with target district to improve accuracy
-    if has_address and target_district:
-        district_base = target_district.replace("区", "").replace("县", "").replace("市", "")
-        has_district = district_base in address or target_district in address
+    if has_address and effective_district:
+        district_base = effective_district.replace("区", "").replace("县", "").replace("市", "")
+        has_district = district_base in address or effective_district in address
         if not has_district:
             if address.startswith(city):
-                address = address.replace(city, f"{city}{target_district}", 1)
+                address = address.replace(city, f"{city}{effective_district}", 1)
             else:
-                address = f"{city}{target_district}{address}"
+                address = f"{city}{effective_district}{address}"
 
     # Step 1: Name-based POI search (with district filtering + name matching + bounds)
     # Also try production-address variants (e.g. "XX厂区", "XX生产基地")
     # to avoid matching the headquarters office instead of the actual facility.
-    variant_queries = build_production_queries(name, city, target_district or "")
+    variant_queries = build_production_queries(name, city, effective_district or "")
     poi_lon, poi_lat, poi_addr, poi_level = poi_search(
-        name, key, city, target_district=target_district,
+        name, key, city, target_district=effective_district,
         city_bounds=city_bounds, district_bounds=district_bounds,
         variant_queries=variant_queries,
         provider=provider,
@@ -371,10 +378,10 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
             # Large deviation often means POI is the registered office while
             # the provided address is the actual facility.
             prefer_address = True
-            if target_district:
+            if effective_district:
                 addr_actual = reverse_geocode_district(addr_lat, addr_lon, key, provider=provider)
                 time.sleep(rate_limit)
-                if addr_actual and not district_match(target_district, addr_actual):
+                if addr_actual and not district_match(effective_district, addr_actual):
                     prefer_address = False
                     result["warnings"].append(
                         f"POI与地址编码相距{dist:.0f}m，但地址编码结果位于{addr_actual}"
@@ -480,7 +487,8 @@ def run_geocode(config_path: str, force: bool = False):
             fixed_count += 1
             continue
 
-        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district, enterprises=enterprises, provider=provider)
+        enterprise_district = e.get("district", "")
+        result = geocode_with_validation(name, address, key, city=city, rate_limit=rate_limit, target_district=target_district, enterprises=enterprises, provider=provider, enterprise_district=enterprise_district)
 
         if result["lat"] is None:
             print(f"\n{i}. ✗ FAILED: {name}")
@@ -524,7 +532,7 @@ def run_geocode(config_path: str, force: bool = False):
     print("=" * 60)
 
     # ── Cross-district validation (pre-condition) ──
-    if target_district and key:
+    if key:
         print("\n" + "=" * 60)
         print(f"跨区校验: 目标区 = {target_district}")
         print("=" * 60)
@@ -534,11 +542,16 @@ def run_geocode(config_path: str, force: bool = False):
                 continue
             actual = reverse_geocode_district(e["lat"], e["lon"], key, provider=provider)
             time.sleep(rate_limit)
-            if actual and not district_match(target_district, actual):
+            # Use enterprise's own district for validation if available;
+            # fallback to config-level target_district.
+            expected = e.get("district", "") or target_district
+            if not expected:
+                continue
+            if actual and not district_match(expected, actual):
                 cross_district.append({
                     "name": e["name"],
                     "address": e.get("address", ""),
-                    "target": target_district,
+                    "target": expected,
                     "actual": actual,
                     "lat": e["lat"],
                     "lon": e["lon"],
