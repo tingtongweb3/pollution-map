@@ -206,6 +206,115 @@ def infer_address_from_name(name: str, city: str, district: str) -> str:
     return f"{city}{district}{name}"
 
 
+# Production-address variant query rules.
+# When an enterprise may have separate office vs production addresses,
+# these rules generate alternative POI search queries that target
+# the production / facility location rather than the headquarters.
+_PRODUCTION_QUERY_RULES = {
+    "factory": {
+        "keywords": ["制药", "化工", "制造", "机械", "电子", "纺织", "食品", "建材",
+                     "钢铁", "冶金", "造纸", "印染", "鞋业", "陶瓷", "玻璃", "塑胶",
+                     "印刷", "涂装", "电镀", "皮革", "橡塑", "化纤", "水泥", "砖瓦",
+                     "装备", "航空", "船舶", "汽车", "电机", "汽轮", "重工", "轻工",
+                     "材料", "金属", "矿业", "采选", "冶炼", "轧制", "铸造", "锻造",
+                     "碳业", "纤维", "复合材料", "新能源", "新材料"],
+        "suffixes": ["厂区", "生产基地", "工厂", "产业园", "工业园", "工业区", "制造基地"],
+    },
+    "hospital": {
+        "keywords": ["医院", "卫生院", "防治院", "疗养院", "疾控中心"],
+        "suffixes": ["院区", "分院", "新院区", "南院区", "北院区", "东院区", "西院区"],
+    },
+    "university": {
+        "keywords": ["大学", "学院", "研究所", "研究院"],
+        "suffixes": ["校区", "实验中心", "实验室", "中试基地", "科创园", "科技园"],
+    },
+    "sewage": {
+        "keywords": ["污水处理", "污水厂", "水处理", "净水厂", "自来水厂", "排水"],
+        "suffixes": ["处理厂", "厂", "处理站", "净水厂", "净化厂"],
+    },
+    "power": {
+        "keywords": ["发电", "热电", "能源", "电厂", "电站", "光伏", "风电", "水电"],
+        "suffixes": ["发电厂", "电厂", "电站", "能源基地", "风电场", "光伏基地"],
+    },
+    "slaughter": {
+        "keywords": ["屠宰"],
+        "suffixes": ["屠宰场", "屠宰厂", "加工厂"],
+    },
+    "livestock": {
+        "keywords": ["养殖", "畜牧", "猪场", "鸡场", "奶牛", "肉牛", "家禽"],
+        "suffixes": ["养殖场", "养殖基地", "牧场", "养殖小区"],
+    },
+}
+
+
+def build_production_queries(name: str, city: str, district: str, max_variants: int = 3) -> list:
+    """Generate production-address variant queries for POI search.
+
+    When an enterprise has separate office and production addresses,
+    searching for "XX公司厂区" or "XX生产基地" often yields the actual
+    pollution-source location instead of the headquarters office.
+
+    Returns a list of variant query strings (may be empty).
+    """
+    if not name:
+        return []
+
+    # Strip common corporate suffixes to get the core name
+    core = name
+    for suffix in ["有限公司", "有限责任公司", "股份有限公司", "股份公司", "公司", "集团", "总厂", "厂"]:
+        if core.endswith(suffix):
+            core = core[: -len(suffix)].strip()
+            break
+
+    # Detect enterprise type
+    ent_type = None
+    for type_key, cfg in _PRODUCTION_QUERY_RULES.items():
+        if any(kw in name for kw in cfg["keywords"]):
+            ent_type = type_key
+            break
+
+    if not ent_type:
+        return []
+
+    def _make_variant(base, suffix):
+        """Combine base + suffix, skipping if suffix would create duplication."""
+        if not base:
+            return None
+        # Skip bare "厂" after corporate names — produces useless queries like "XX公司厂"
+        if suffix == "厂" and (base.endswith("公司") or base.endswith("有限") or base.endswith("集团")):
+            return None
+        if suffix in base:
+            return f"{base} {city}{district}"
+        combined = base + suffix
+        # Check for consecutive duplicate 2-grams (e.g. "处理处理", "厂厂")
+        for i in range(len(combined) - 3):
+            if combined[i:i+2] == combined[i+2:i+4]:
+                return f"{base} {city}{district}"
+        return f"{base}{suffix} {city}{district}"
+
+    variants = []
+    suffixes = _PRODUCTION_QUERY_RULES[ent_type]["suffixes"]
+    for suffix in suffixes[:max_variants]:
+        # Core name + suffix + location
+        if core:
+            v = _make_variant(core, suffix)
+            if v:
+                variants.append(v)
+        # Full name + suffix + location
+        v = _make_variant(name, suffix)
+        if v:
+            variants.append(v)
+
+    # Deduplicate
+    seen = set()
+    unique = []
+    for q in variants:
+        if q not in seen and len(q) >= 6:
+            seen.add(q)
+            unique.append(q)
+    return unique
+
+
 # ---------------------------------------------------------------------------
 # Name matching & district extraction
 # ---------------------------------------------------------------------------

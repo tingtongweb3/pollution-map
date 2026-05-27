@@ -38,6 +38,7 @@ from utils import (
     reverse_geocode_district, resolve_cache_path, ensure_dir,
     load_config_with_defaults, infer_address_from_name,
     get_district_bounds, coord_in_bounds, estimate_city_bounds,
+    build_production_queries,
 )
 
 
@@ -110,27 +111,16 @@ def haversine(lat1, lon1, lat2, lon2):
     return 2 * R * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
-def poi_search(name, key, city="福州", district_filter=None, target_district=None,
-               city_bounds=None, district_bounds=None):
-    """Search Gaode POI by enterprise name with name-matching and district filtering.
-
-    Args:
-        district_filter: Obsolete, kept for compatibility.
-        target_district: If given, use reverse geocoding to verify the coordinate
-                         falls in this district (e.g. "丰泽区").
-        city_bounds: Optional (lat_min, lat_max, lon_min, lon_max) to filter out
-                     POI hits in other cities.
-        district_bounds: Optional shapely Polygon for faster district rejection
-                         (checked before expensive reverse geocoding).
-
-    Returns (lon, lat, address, level) or (None, None, None, None).
-    """
+def _try_poi_single_query(query, key, city, city_bounds, district_bounds,
+                          target_district, name_for_match):
+    """Try one POI query and return all valid candidates as dicts."""
     url = (
         f"https://restapi.amap.com/v3/place/text"
-        f"?keywords={urllib.parse.quote(name)}"
+        f"?keywords={urllib.parse.quote(query)}"
         f"&city={urllib.parse.quote(city)}"
         f"&offset=5&page=1&key={key}&extensions=all"
     )
+    candidates = []
     try:
         resp = requests.get(url, timeout=10).json()
         if resp.get("status") == "1" and resp.get("pois"):
@@ -146,33 +136,95 @@ def poi_search(name, key, city="福州", district_filter=None, target_district=N
                     continue
                 lon, lat = map(float, loc.split(","))
 
-                # City bounds quick check (cheap — no API call)
+                # City bounds quick check
                 if city_bounds and not coord_in_bounds(lat, lon, city_bounds):
                     continue
 
-                # District bounds quick check (cheap — local polygon)
+                # District bounds quick check
                 if district_bounds and Polygon is not None and Point is not None:
                     if not district_bounds.contains(Point(lon, lat)):
                         continue
 
                 # Name mismatch check (strict first, then loose)
-                if poi_name and not _names_match(name, poi_name):
-                    if not _names_match_loose(name, poi_name):
+                if poi_name and not _names_match(name_for_match, poi_name):
+                    if not _names_match_loose(name_for_match, poi_name):
                         continue
 
-                # District validation via reverse geocoding (authoritative but slow)
+                # District validation via reverse geocoding
                 if target_district:
                     actual = reverse_geocode_district(lat, lon, key)
                     time.sleep(0.15)
                     if not actual:
-                        continue  # Cannot verify district — unsafe to accept
+                        continue
                     if not district_match(target_district, actual):
                         continue
 
-                return lon, lat, poi_addr, "POI"
+                candidates.append({
+                    "lon": lon, "lat": lat, "address": poi_addr,
+                    "name": poi_name, "query": query,
+                })
     except Exception:
         pass
-    return None, None, None, None
+    return candidates
+
+
+def poi_search(name, key, city="福州", district_filter=None, target_district=None,
+               city_bounds=None, district_bounds=None, variant_queries=None):
+    """Search Gaode POI by enterprise name with name-matching and district filtering.
+
+    When variant_queries are provided (e.g. production-address variants like
+    "XX厂区"), searches both the standard name and variants, then returns the
+    best candidate based on production-location heuristics.
+
+    Args:
+        variant_queries: Optional list of additional POI queries to try
+                         when the standard name might match the headquarters
+                         instead of the production facility.
+
+    Returns (lon, lat, address, level) or (None, None, None, None).
+    """
+    all_queries = [name]
+    if variant_queries:
+        all_queries.extend(variant_queries)
+
+    # Collect candidates from all queries
+    all_candidates = []
+    for q in all_queries:
+        candidates = _try_poi_single_query(
+            q, key, city, city_bounds, district_bounds, target_district, name
+        )
+        all_candidates.extend(candidates)
+
+    if not all_candidates:
+        return None, None, None, None
+
+    if len(all_candidates) == 1:
+        c = all_candidates[0]
+        return c["lon"], c["lat"], c["address"], "POI"
+
+    # Score candidates: prefer production-related POI names
+    _PROD_KWS = ["厂", "基地", "园区", "工业区", "产业园", "处理厂", "电厂",
+                 "电站", "院区", "校区", "实验中心", "科创园", "科技园",
+                 "屠宰场", "养殖场", "牧场", "风电场"]
+
+    def _score(c):
+        score = 0
+        poi_name = c["name"]
+        query = c["query"]
+        # Slight preference for standard query (conservative)
+        if query == name:
+            score += 3
+        else:
+            score -= 2
+        # Strong bonus for production-related keywords in POI name
+        for kw in _PROD_KWS:
+            if kw in poi_name:
+                score += 10
+                break
+        return score
+
+    best = max(all_candidates, key=_score)
+    return best["lon"], best["lat"], best["address"], "POI"
 
 
 def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
@@ -220,9 +272,13 @@ def geocode_with_validation(name, address, key, city="福州", rate_limit=0.15,
                 address = f"{city}{target_district}{address}"
 
     # Step 1: Name-based POI search (with district filtering + name matching + bounds)
+    # Also try production-address variants (e.g. "XX厂区", "XX生产基地")
+    # to avoid matching the headquarters office instead of the actual facility.
+    variant_queries = build_production_queries(name, city, target_district or "")
     poi_lon, poi_lat, poi_addr, poi_level = poi_search(
         name, key, city, target_district=target_district,
         city_bounds=city_bounds, district_bounds=district_bounds,
+        variant_queries=variant_queries,
     )
     time.sleep(rate_limit)
 
