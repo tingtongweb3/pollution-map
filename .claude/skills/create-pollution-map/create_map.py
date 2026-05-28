@@ -117,15 +117,16 @@ def validate_coord_reasonableness(enterprises: list, city: str = "") -> tuple:
     if len(enterprises) < 2:
         return 0, 0
 
-    lats = [e['lat'] for e in enterprises]
-    lons = [e['lon'] for e in enterprises]
+    valid_ents = [e for e in enterprises if e.get('lat') is not None and e.get('lon') is not None]
+    lats = [e['lat'] for e in valid_ents]
+    lons = [e['lon'] for e in valid_ents]
 
     # Auto-infer bounds from enterprise coords or city center lookup
-    bounds = estimate_city_bounds(city, enterprises)
+    bounds = estimate_city_bounds(city, valid_ents)
 
     # 1. Check all coords are within city rough bounds
     out_of_bounds = []
-    for e in enterprises:
+    for e in valid_ents:
         lat, lon = e['lat'], e['lon']
         if not coord_in_bounds(lat, lon, bounds):
             out_of_bounds.append((e['name'], lat, lon))
@@ -137,7 +138,7 @@ def validate_coord_reasonableness(enterprises: list, city: str = "") -> tuple:
     std_lon = (sum((x - centroid_lon) ** 2 for x in lons) / len(lons)) ** 0.5
 
     outliers = []
-    for e in enterprises:
+    for e in valid_ents:
         lat, lon = e['lat'], e['lon']
         d_lat = abs(lat - centroid_lat)
         d_lon = abs(lon - centroid_lon)
@@ -145,10 +146,10 @@ def validate_coord_reasonableness(enterprises: list, city: str = "") -> tuple:
         if (d_lat > 3 * std_lat + 0.001 or d_lon > 3 * std_lon + 0.001):
             # Calculate approximate distance from centroid
             dist_m = ((d_lat * 111000) ** 2 + (d_lon * 111000 * math.cos(math.radians(centroid_lat))) ** 2) ** 0.5
-            if dist_m > 30000:  # Only flag if >30km from centroid
+            if dist_m > 50000:  # Only flag if >50km from centroid
                 outliers.append((e['name'], lat, lon, dist_m, e.get('actual_address_verified', False)))
 
-    verified_count = sum(1 for e in enterprises if e.get('actual_address_verified'))
+    verified_count = sum(1 for e in valid_ents if e.get('actual_address_verified'))
 
     if out_of_bounds or outliers:
         print("\n" + "=" * 50)
@@ -202,6 +203,8 @@ def validate_coords(enterprises: list) -> tuple:
     coord_map = {}
     duplicates = []
     for e in enterprises:
+        if e.get('lat') is None or e.get('lon') is None:
+            continue
         key = (round(e['lat'], 5), round(e['lon'], 5))
         if key in coord_map:
             # After migration, same name + same coords means merged entry is correct.
@@ -719,15 +722,43 @@ def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -
             source_index[src] = circled_nums[idx] if idx < len(circled_nums) else f'[{idx+1}]'
             source_list.append(src)
 
-    # Calculate columns: target ~30 entries per column, min 3 columns
-    entries_per_col = 30
+    # Calculate columns: dynamically adjust entries per column based on total
+    # count to keep legend height reasonable and balanced.
+    if total_count <= 80:
+        entries_per_col = 15
+    elif total_count <= 120:
+        entries_per_col = 20
+    else:
+        entries_per_col = 25
     num_cols = max(3, (total_count + entries_per_col - 1) // entries_per_col)
     col_width = (legend_width - 2 * margin) // num_cols
     col_gap = 10
 
+    # Helper: wrap text to fit column width (max 2 lines, truncate with ...)
+    def _wrap_label(text, font, max_w):
+        """Split text into lines that fit within max_w."""
+        # Measure average character width using a sample
+        bbox = draw.textbbox((0, 0), "中文字", font=font)
+        avg_char_w = (bbox[2] - bbox[0]) / 3
+        max_chars = max(5, int(max_w / avg_char_w))
+        if len(text) <= max_chars:
+            return [text], 24
+        # Try to find a good break point (prefer breaking at punctuation)
+        break_at = max_chars
+        for j in range(max_chars, max_chars // 2, -1):
+            if text[j] in '、，,()（）':
+                break_at = j + 1
+                break
+        first = text[:break_at]
+        rest = text[break_at:]
+        if len(rest) > max_chars:
+            rest = rest[:max_chars - 1] + '…'
+        return [first, rest], 44  # 2 lines need extra height
+
     # Render entries column by column
     col_heights = [0] * num_cols
     entries = list(enumerate(enterprises))
+    label_max_w = col_width - 30  # leave padding for number + margin
 
     for col_idx in range(num_cols):
         col_x = margin + col_idx * col_width
@@ -737,16 +768,17 @@ def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -
 
         for i in range(start_idx, end_idx):
             e = enterprises[i]
-            lines = e['label'].split('\n')
             cat_keys = e['categories']
             num_color = cat_cfg.get(cat_keys[0], {}).get('color', '#CC0000')
             src_ref = source_index.get(e.get('data_source', '').strip(), '')
 
+            label_lines, label_h = _wrap_label(e['label'], font_small, label_max_w)
+
             draw.text((col_x, col_y), f'{i + 1}', fill=num_color, font=font_small)
-            draw.text((col_x + 26, col_y), lines[0], fill='#333333', font=font_small)
+            draw.text((col_x + 26, col_y), label_lines[0], fill='#333333', font=font_small)
             col_y += 24
 
-            for line in lines[1:]:
+            for line in label_lines[1:]:
                 draw.text((col_x + 26, col_y), line, fill='#555555', font=font_tiny)
                 col_y += 20
 
@@ -893,6 +925,13 @@ def main():
 
     # Normalize legacy single category to categories list
     _normalize_categories(enterprises)
+
+    # Filter out enterprises with no valid coordinates
+    original_count = len(enterprises)
+    enterprises = [e for e in enterprises if e.get("lat") is not None and e.get("lon") is not None]
+    no_coord_count = original_count - len(enterprises)
+    if no_coord_count:
+        print(f"\n⚠️  已过滤 {no_coord_count} 家无坐标企业（geocode 失败）")
 
     # Filter out cross-district enterprises (geocode_level == '跨区')
     # These are enterprises whose coordinates fall outside the target district.

@@ -430,16 +430,44 @@ def extract_target_district(config: dict, filename_hint: str = "") -> str:
     return ""
 
 
+# Functional zones that span multiple administrative districts.
+# When an enterprise is assigned to one of these zones, coordinates
+# in any of the listed actual districts are considered valid.
+_FUNCTIONAL_ZONE_ALIASES = {
+    "江北新区": ["浦口", "六合"],
+    "南京江北新区": ["浦口", "六合"],
+    "经济技术开发区": ["栖霞", "玄武", "建邺"],
+    "开发区": ["栖霞", "玄武", "建邺"],
+    "经开区": ["栖霞", "玄武", "建邺"],
+    "高新区": ["栖霞", "玄武", "建邺", "江宁"],
+    "武汉化工区": ["青山", "洪山"],
+    "化工区": ["青山", "洪山"],
+}
+
+
 def district_match(name_hint: str, addr_district: str) -> bool:
     """Check if name district hint matches address district.
 
-    Handles aliases like 长乐市 vs 长乐区.
+    Handles aliases like 长乐市 vs 长乐区, and functional zones
+    like 江北新区 which spans 浦口区 + 六合区.
     """
     if not name_hint or not addr_district:
         return True
     nh = name_hint.replace("市", "").replace("区", "").replace("县", "")
     ad = addr_district.replace("市", "").replace("区", "").replace("县", "")
-    return nh in ad or ad in nh
+
+    # Direct match
+    if nh in ad or ad in nh:
+        return True
+
+    # Functional zone aliases
+    for zone_key, allowed in _FUNCTIONAL_ZONE_ALIASES.items():
+        zone_key_clean = zone_key.replace("市", "").replace("区", "").replace("县", "")
+        if nh == zone_key_clean or zone_key_clean in nh:
+            if ad in allowed:
+                return True
+
+    return False
 
 
 # ---------------------------------------------------------------------------

@@ -33,7 +33,7 @@ except ImportError:
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    geocode_address, get_map_key, write_yaml_config, _names_match,
+    geocode_address, get_map_key, get_map_provider, write_yaml_config, _names_match,
     extract_district_hint, extract_target_district, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir,
     load_config_with_defaults, infer_address_from_name,
@@ -460,7 +460,36 @@ def run_geocode(config_path: str, force: bool = False):
     filename_hint = os.path.basename(config_path) if config_path else ""
     target_district = extract_target_district(config, filename_hint=filename_hint)
 
-    need_geocode = [e for e in enterprises if "lat" not in e or "lon" not in e or force]
+    # Build need_geocode list, also re-geocode existing coords that are
+    # in the wrong district (enterprise.district takes priority).
+    need_geocode = []
+    cross_district_recode = []
+    for e in enterprises:
+        if e.get("lat") is None or e.get("lon") is None or force:
+            need_geocode.append(e)
+            continue
+        ed = e.get("district", "")
+        if ed and key and e.get("lat") is not None and e.get("lon") is not None:
+            actual = reverse_geocode_district(e["lat"], e["lon"], key, provider=provider)
+            time.sleep(rate_limit)
+            if actual and not district_match(ed, actual):
+                cross_district_recode.append({
+                    "name": e["name"],
+                    "expected": ed,
+                    "actual": actual,
+                })
+                # Clear stale coords so they get re-geocoded
+                del e["lat"]
+                del e["lon"]
+                if "geocode_level" in e:
+                    del e["geocode_level"]
+                need_geocode.append(e)
+
+    if cross_district_recode:
+        print("=" * 60)
+        print(f"发现 {len(cross_district_recode)} 家企业现有坐标与归属区不匹配，将重新编码:")
+        for item in cross_district_recode:
+            print(f"  - {item['name']} (归属: {item['expected']}, 实际: {item['actual']})")
 
     print("=" * 60)
     print(f"Geocoding {len(need_geocode)} enterprises (POI search优先 + 地址编码交叉验证)")
@@ -547,7 +576,8 @@ def run_geocode(config_path: str, force: bool = False):
             expected = e.get("district", "") or target_district
             if not expected:
                 continue
-            if actual and not district_match(expected, actual):
+            is_cross = actual and not district_match(expected, actual)
+            if is_cross:
                 cross_district.append({
                     "name": e["name"],
                     "address": e.get("address", ""),
@@ -557,6 +587,10 @@ def run_geocode(config_path: str, force: bool = False):
                     "lon": e["lon"],
                 })
                 e["geocode_level"] = "跨区"
+            elif e.get("geocode_level") == "跨区":
+                # Previously marked cross-district but now valid (e.g. after
+                # district_match rule update for functional zones)
+                e["geocode_level"] = "POI"
 
         if cross_district:
             print(f"\n🚨 发现 {len(cross_district)} 家企业坐标不在目标区：")
