@@ -68,6 +68,7 @@ enterprises:
   lat: 31.972591
   lon: 118.538523
   geocode_level: POI
+  district: 浦口区
 - name: 南京依维柯汽车有限公司
   address: ''
   label: 南京依维柯汽车有限公司
@@ -82,6 +83,7 @@ enterprises:
   lat: 31.984337
   lon: 118.556709
   geocode_level: POI
+  district: 浦口区
 - name: 南京同凯兆业生物技术有限责任公司
   address: ''
   label: 南京同凯兆业生物技术有限责任公司
@@ -93,6 +95,7 @@ enterprises:
   lat: 31.975644
   lon: 118.548955
   geocode_level: POI
+  district: 浦口区
 - name: 江苏雨润肉食品有限公司
   address: ''
   label: 江苏雨润肉食品有限公司
@@ -104,6 +107,7 @@ enterprises:
   lat: 31.969046
   lon: 118.545975
   geocode_level: POI
+  district: 浦口区
 - name: 南京宽能半导体有限公司
   address: ''
   label: 南京宽能半导体有限公司
@@ -116,6 +120,7 @@ enterprises:
   lat: 31.97892
   lon: 118.564933
   geocode_level: POI
+  district: 浦口区
 - name: 南京江北环保电力有限公司
   address: ''
   label: 南京江北环保电力有限公司
@@ -128,6 +133,7 @@ enterprises:
   lat: 32.062517
   lon: 118.445449
   geocode_level: POI
+  district: 浦口区
 - name: 华天科技（南京）有限公司
   address: ''
   label: 华天科技（南京）有限公司
@@ -142,6 +148,7 @@ enterprises:
   lat: 31.970413
   lon: 118.52206
   geocode_level: POI
+  district: 浦口区
 - name: 南京卓越环保科技有限公司
   address: ''
   label: 南京卓越环保科技有限公司
@@ -156,6 +163,7 @@ enterprises:
   lat: 32.058272
   lon: 118.454766
   geocode_level: POI
+  district: 浦口区
 - name: 光大工业废水处理南京有限公司
   address: ''
   label: 光大工业废水处理南京有限公司
@@ -167,6 +175,7 @@ enterprises:
   lat: 31.966366
   lon: 118.532049
   geocode_level: POI
+  district: 浦口区
 - name: 江苏信宁新型建材有限公司
   address: ''
   label: 江苏信宁新型建材有限公司
@@ -176,6 +185,10 @@ enterprises:
   categories:
   - 土壤污染
   - 大气环境
+  lat: 32.039127
+  lon: 118.430777
+  geocode_level: 兴趣点
+  district: 浦口区
 - name: 南京水务集团资源再生科技有限公司
   address: ''
   label: 南京水务集团资源再生科技有限公司
@@ -188,6 +201,7 @@ enterprises:
   lat: 32.056721
   lon: 118.445783
   geocode_level: POI
+  district: 浦口区
 - name: 南京环境集团有限公司（江北灰渣填埋场）
   address: ''
   label: 南京环境集团有限公司（江北灰渣填埋场）
@@ -196,9 +210,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.087282
-  lon: 118.830144
-  geocode_level: POI
+  district: 浦口区
+  lat: 32.105425
+  lon: 118.836069
+  geocode_level: 跨区
 - name: 南京环境再生能源有限公司
   address: ''
   label: 南京环境再生能源有限公司
@@ -211,6 +226,7 @@ enterprises:
   lat: 32.059136
   lon: 118.444915
   geocode_level: POI
+  district: 浦口区
 - name: 东爵有机硅（南京）有限公司
   address: ''
   label: 东爵有机硅（南京）有限公司
@@ -223,6 +239,7 @@ enterprises:
   lat: 31.937578
   lon: 118.477668
   geocode_level: POI
+  district: 浦口区
 - name: 江苏乾江环境科技有限公司（危险废物综合处置中心）
   address: ''
   label: 江苏乾江环境科技有限公司（危险废物综合处置中心）
@@ -234,9 +251,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.071905
-  lon: 118.764234
-  geocode_level: POI
+  district: 浦口区
+  lat: 32.056895
+  lon: 118.452374
+  geocode_level: 兴趣点
 - name: 江苏乾江环境科技有限公司（填埋）
   address: ''
   label: 江苏乾江环境科技有限公司（填埋）
@@ -250,6 +268,7 @@ enterprises:
   lat: 32.057225
   lon: 118.452025
   geocode_level: POI
+  district: 浦口区
 - name: 江苏华水污水处理有限公司（南京浦口经济开发区污水处理厂）
   address: ''
   label: 江苏华水污水处理有限公司（南京浦口经济开发区污水处理厂）
@@ -261,6 +280,7 @@ enterprises:
   lat: 31.965823
   lon: 118.623498
   geocode_level: POI
+  district: 浦口区
 - name: 南京浦口中燃智慧能源有限公司
   address: ''
   label: 南京浦口中燃智慧能源有限公司
@@ -273,6 +293,7 @@ enterprises:
   lat: 31.980889
   lon: 118.545364
   geocode_level: POI
+  district: 浦口区
 - name: 南京锦湖轮胎有限公司
   address: ''
   label: 南京锦湖轮胎有限公司
@@ -287,6 +308,7 @@ enterprises:
   lat: 31.992981
   lon: 118.548504
   geocode_level: POI
+  district: 浦口区
 - name: 江苏盘古半导体科技股份有限公司
   address: ''
   label: 江苏盘古半导体科技股份有限公司
@@ -299,6 +321,7 @@ enterprises:
   lat: 31.955275
   lon: 118.531025
   geocode_level: POI
+  district: 浦口区
 - name: 光大水务（南京）有限公司
   address: ''
   label: 光大水务（南京）有限公司
@@ -307,6 +330,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 浦口区
+  lat: 32.059796
+  lon: 118.627165
+  geocode_level: 区县
 - name: 光大中水利用（南京）有限公司
   address: ''
   label: 光大中水利用（南京）有限公司
@@ -315,6 +342,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 浦口区
+  lat: 32.059796
+  lon: 118.627165
+  geocode_level: 区县
 - name: 江苏海硕再生资源有限公司
   address: ''
   label: 江苏海硕再生资源有限公司
@@ -326,6 +357,7 @@ enterprises:
   lat: 32.033676
   lon: 118.463158
   geocode_level: POI
+  district: 浦口区
 - name: 南京尧盛包装制桶有限公司
   address: ''
   label: 南京尧盛包装制桶有限公司
@@ -338,6 +370,7 @@ enterprises:
   lat: 32.145509
   lon: 118.569529
   geocode_level: POI
+  district: 浦口区
 - name: 南京飞浦电子材料有限公司
   address: ''
   label: 南京飞浦电子材料有限公司
@@ -349,6 +382,7 @@ enterprises:
   lat: 32.033385
   lon: 118.46426
   geocode_level: POI
+  district: 浦口区
 - name: 芯爱科技（南京）有限公司
   address: ''
   label: 芯爱科技（南京）有限公司
@@ -362,6 +396,7 @@ enterprises:
   lat: 31.98138
   lon: 118.562347
   geocode_level: POI
+  district: 浦口区
 - name: 华天科技（江苏）有限公司
   address: ''
   label: 华天科技（江苏）有限公司
@@ -375,6 +410,7 @@ enterprises:
   lat: 31.965711
   lon: 118.518729
   geocode_level: POI
+  district: 浦口区
 - name: 江苏芯德半导体科技有限公司
   address: ''
   label: 江苏芯德半导体科技有限公司
@@ -388,6 +424,7 @@ enterprises:
   lat: 31.976547
   lon: 118.551078
   geocode_level: POI
+  district: 浦口区
 - name: 南京市城市管理生活废弃物处置指导中心（天井洼管理科）
   address: ''
   label: 南京市城市管理生活废弃物处置指导中心（天井洼管理科）
@@ -396,9 +433,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.089436
-  lon: 118.762904
-  geocode_level: POI
+  district: 浦口区
 - name: 南京市浦口区中心医院
   address: ''
   label: 南京市浦口区中心医院
@@ -410,6 +445,7 @@ enterprises:
   lat: 32.048946
   lon: 118.6363
   geocode_level: POI
+  district: 浦口区
 - name: 南京市浦口区中医院
   address: ''
   label: 南京市浦口区中医院
@@ -422,6 +458,7 @@ enterprises:
   lat: 32.064543
   lon: 118.628679
   geocode_level: POI
+  district: 浦口区
 - name: 南京润浦建设发展有限公司乌江污水处理厂
   address: ''
   label: 南京润浦建设发展有限公司乌江污水处理厂
@@ -430,9 +467,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
-  geocode_level: POI
+  district: 浦口区
+  lat: 31.865945
+  lon: 118.469891
+  geocode_level: 住宅区
 - name: 南京润浦建设发展有限公司石桥污水处理厂
   address: ''
   label: 南京润浦建设发展有限公司石桥污水处理厂
@@ -441,9 +479,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.996375
-  lon: 118.855375
-  geocode_level: POI
+  district: 浦口区
+  lat: 32.178474
+  lon: 118.576526
+  geocode_level: 村庄
 - name: 南京润浦建设发展有限公司星甸污水处理厂
   address: ''
   label: 南京润浦建设发展有限公司星甸污水处理厂
@@ -452,6 +491,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 浦口区
+  lat: 32.032604
+  lon: 118.454596
+  geocode_level: 乡镇
 - name: 南京润浦建设发展有限公司汤泉污水处理厂
   address: ''
   label: 南京润浦建设发展有限公司汤泉污水处理厂
@@ -460,9 +503,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
-  geocode_level: POI
+  district: 浦口区
+  lat: 32.090259
+  lon: 118.511754
+  geocode_level: 住宅区
 - name: 南京润浦建设发展有限公司永宁污水处理厂
   address: ''
   label: 南京润浦建设发展有限公司永宁污水处理厂
@@ -471,9 +515,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 浦口区
   lat: 31.95289
   lon: 118.798615
-  geocode_level: POI
+  geocode_level: 跨区
 - name: 南京大吉铁塔制造有限公司
   address: ''
   label: 南京大吉铁塔制造有限公司
@@ -486,6 +531,7 @@ enterprises:
   lat: 31.971115
   lon: 118.560349
   geocode_level: POI
+  district: 浦口区
 - name: 南京神六机械设备制造有限公司
   address: ''
   label: 南京神六机械设备制造有限公司
@@ -497,6 +543,7 @@ enterprises:
   lat: 31.954464
   lon: 118.549483
   geocode_level: POI
+  district: 浦口区
 - name: 南京米格过滤材料有限公司
   address: ''
   label: 南京米格过滤材料有限公司
@@ -508,6 +555,7 @@ enterprises:
   lat: 31.953285
   lon: 118.550188
   geocode_level: POI
+  district: 浦口区
 - name: 南京康尼环网开关设备有限公司（原南京瑞吾电气有限公司）
   address: ''
   label: 南京康尼环网开关设备有限公司（原南京瑞吾电气有限公司）
@@ -516,6 +564,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
+  district: 浦口区
+  lat: 32.059796
+  lon: 118.627165
+  geocode_level: 区县
 - name: 南京迅驰彩色印刷有限公司
   address: ''
   label: 南京迅驰彩色印刷有限公司
@@ -527,3 +579,4 @@ enterprises:
   lat: 31.953378
   lon: 118.543594
   geocode_level: POI
+  district: 浦口区

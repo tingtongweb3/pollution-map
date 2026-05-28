@@ -1,0 +1,379 @@
+meta:
+  dpi: 200
+  title: 武汉市黄陂区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：武汉市生态环境局2025年环境监管重点单位名录  |  共27家  |  坐标：高德地图
+  output_path: ./武汉_黄陂区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  city: 武汉
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司木兰客运加油站
+  address: ''
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司木兰客运加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司盘龙城加油站
+  address: ''
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司盘龙城加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司盘龙大道加油站
+  address: ''
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司盘龙大道加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉上实府河污水处理有限公司
+  address: ''
+  label: 武汉上实府河污水处理有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉上实谌家墩污水处理有限公司
+  address: ''
+  label: 武汉上实谌家墩污水处理有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉凯迪新龙污水处理有限公司
+  address: ''
+  label: 武汉凯迪新龙污水处理有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉天河机场有限责任公司
+  address: ''
+  label: 武汉天河机场有限责任公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉宝钢包装有限公司
+  address: ''
+  label: 武汉宝钢包装有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市欣慕沛环保有限公司
+  address: ''
+  label: 武汉市欣慕沛环保有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市黄陂区中医医院
+  address: ''
+  label: 武汉市黄陂区中医医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市黄陂区人民医院
+  address: ''
+  label: 武汉市黄陂区人民医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市黄陂区荣中石油化工有限公司滠口加油站
+  address: ''
+  label: 武汉市黄陂区荣中石油化工有限公司滠口加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉明瑶再生物资有限公司
+  address: ''
+  label: 武汉明瑶再生物资有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉鑫运伦能源工程有限公司
+  address: ''
+  label: 武汉鑫运伦能源工程有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北精工钢结构有限公司
+  address: ''
+  label: 湖北精工钢结构有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 程力重工股份有限公司
+  address: ''
+  label: 程力重工股份有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 翰宇药业（武汉）有限公司
+  address: ''
+  label: 翰宇药业（武汉）有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市黄陂区科净生物环保有限责任公司
+  address: ''
+  label: 武汉市黄陂区科净生物环保有限责任公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉弗迪电池有限公司
+  address: ''
+  label: 武汉弗迪电池有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 周大福珠宝文化产业园（武汉）有限公司
+  address: ''
+  label: 周大福珠宝文化产业园（武汉）有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉上实新川污水处理有限公司
+  address: ''
+  label: 武汉上实新川污水处理有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市中西医结合医院（武汉市第一医院）盘龙城院区
+  address: ''
+  label: 武汉市中西医结合医院（武汉市第一医院）盘龙城院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市华发羽绒制品有限公司
+  address: ''
+  label: 武汉市华发羽绒制品有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市明翔肉类食品有限公司
+  address: ''
+  label: 武汉市明翔肉类食品有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市黄陂区人民医院（中心院区）
+  address: ''
+  label: 武汉市黄陂区人民医院（中心院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉汉口绿色能源有限公司
+  address: ''
+  label: 武汉汉口绿色能源有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  - 大气环境
+  - 土壤污染
+  - 环境风险
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉益业肉类食品有限公司
+  address: ''
+  label: 武汉益业肉类食品有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  - 大气环境
+  district: 黄陂区
+  lat: null
+  lon: null
+  geocode_level: ''

@@ -66,6 +66,7 @@ enterprises:
   lat: 24.774852
   lon: 118.606247
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋华集成电路有限公司
   address: ''
   label: 福建省晋华集成电路有限公司
@@ -80,6 +81,7 @@ enterprises:
   lat: 24.762244
   lon: 118.586524
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市医院（上海市第六人民医院福建医院）
   address: ''
   label: 晋江市医院（上海市第六人民医院福建医院）

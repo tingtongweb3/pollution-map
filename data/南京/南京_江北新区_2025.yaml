@@ -67,8 +67,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.228753
-  lon: 118.765127
+  district: 江北新区
+  lat: 32.22879
+  lon: 118.764525
   geocode_level: POI
 - name: 伊士曼化学品（南京）有限公司
   address: ''
@@ -81,8 +82,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.267677
-  lon: 118.828937
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 扬子石化-巴斯夫有限责任公司
   address: ''
@@ -96,8 +98,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.243377
-  lon: 118.806978
+  district: 江北新区
+  lat: 32.238007
+  lon: 118.775498
   geocode_level: POI
 - name: 亚什兰化工（南京）有限公司
   address: ''
@@ -110,6 +113,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.28118
   lon: 118.827822
   geocode_level: POI
@@ -124,6 +128,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
+  geocode_level: POI
 - name: 南京钛白化工有限责任公司
   address: ''
   label: 南京钛白化工有限责任公司
@@ -136,6 +144,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.255878
+  lon: 118.821163
+  geocode_level: POI
 - name: 南京金陵亨斯迈新材料有限责任公司
   address: ''
   label: 南京金陵亨斯迈新材料有限责任公司
@@ -147,8 +159,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.197798
-  lon: 118.923389
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京化学工业园热电有限公司
   address: ''
@@ -159,6 +172,7 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.268163
   lon: 118.821545
   geocode_level: POI
@@ -174,6 +188,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.276921
+  lon: 118.811476
+  geocode_level: POI
 - name: 南京钢铁股份有限公司
   address: ''
   label: 南京钢铁股份有限公司
@@ -186,8 +204,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.201854
-  lon: 118.748515
+  district: 江北新区
+  lat: 32.174699
+  lon: 118.76504
   geocode_level: POI
 - name: 南京福邦特东方化工有限公司
   address: ''
@@ -200,6 +219,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.212284
   lon: 118.764048
   geocode_level: POI
@@ -214,6 +234,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.285593
   lon: 118.834402
   geocode_level: POI
@@ -228,8 +249,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.284577
-  lon: 118.806509
+  district: 江北新区
+  lat: 32.283303
+  lon: 118.803486
   geocode_level: POI
 - name: 江苏中旗科技股份有限公司
   address: ''
@@ -243,8 +265,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.270946
-  lon: 118.8339
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 江苏南热发电有限责任公司
   address: ''
@@ -255,6 +278,10 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
+  geocode_level: POI
 - name: 江苏太古可口可乐饮料有限公司
   address: ''
   label: 江苏太古可口可乐饮料有限公司
@@ -263,8 +290,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.025303
-  lon: 118.823785
+  district: 江北新区
+  lat: 32.034825
+  lon: 118.639825
   geocode_level: POI
 - name: 南京金陵化工厂有限责任公司
   address: ''
@@ -276,6 +304,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.283565
   lon: 118.811896
   geocode_level: POI
@@ -291,8 +320,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.263619
-  lon: 118.821705
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 瓦克化学（南京）有限公司
   address: ''
@@ -305,6 +335,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.253613
   lon: 118.828745
   geocode_level: POI
@@ -318,8 +349,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.04387
-  lon: 118.716033
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京华狮新材料有限公司
   address: ''
@@ -331,6 +363,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.274873
   lon: 118.829694
   geocode_level: POI
@@ -344,6 +377,7 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.267651
   lon: 118.842307
   geocode_level: POI
@@ -357,6 +391,7 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.271783
   lon: 118.815077
   geocode_level: POI
@@ -370,8 +405,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.203094
-  lon: 118.877986
+  district: 江北新区
+  lat: 32.28538
+  lon: 118.78556
   geocode_level: POI
 - name: 江苏南化永大实业有限责任公司
   address: ''
@@ -382,6 +418,7 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  district: 江北新区
   lat: 32.228533
   lon: 118.755998
   geocode_level: POI
@@ -396,6 +433,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.260925
   lon: 118.830875
   geocode_level: POI
@@ -407,6 +445,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
   lat: 32.255694
   lon: 118.700665
   geocode_level: POI
@@ -419,6 +458,7 @@ enterprises:
   categories:
   - 水环境
   - 土壤污染
+  district: 江北新区
   lat: 32.276775
   lon: 118.828782
   geocode_level: POI
@@ -433,6 +473,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.276775
   lon: 118.828782
   geocode_level: POI
@@ -447,6 +488,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.254037
   lon: 118.84329
   geocode_level: POI
@@ -460,8 +502,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.283291
-  lon: 118.838971
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京太化化工有限公司
   address: ''
@@ -473,6 +516,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.265554
   lon: 118.806502
   geocode_level: POI
@@ -487,6 +531,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
+  geocode_level: POI
 - name: 圣莱科特化工（南京）有限公司
   address: ''
   label: 圣莱科特化工（南京）有限公司
@@ -498,6 +546,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.250418
   lon: 118.834862
   geocode_level: POI
@@ -509,6 +558,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
   lat: 32.19593
   lon: 118.683132
   geocode_level: POI
@@ -522,6 +572,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.259545
   lon: 118.827773
   geocode_level: POI
@@ -536,6 +587,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.260075
   lon: 118.823627
   geocode_level: POI
@@ -549,6 +601,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.277218
   lon: 118.84351
   geocode_level: POI
@@ -561,8 +614,9 @@ enterprises:
   categories:
   - 水环境
   - 土壤污染
-  lat: 32.283291
-  lon: 118.838971
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京诺奥新材料有限公司
   address: ''
@@ -575,6 +629,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.26927
   lon: 118.844468
   geocode_level: POI
@@ -589,8 +644,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.123375
-  lon: 118.709325
+  district: 江北新区
+  lat: 32.120538
+  lon: 118.717109
   geocode_level: POI
 - name: 中石化南京化工研究院有限公司
   address: ''
@@ -602,6 +658,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.237787
   lon: 118.750989
   geocode_level: POI
@@ -616,8 +673,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.27385
-  lon: 118.809194
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 南京瑞固聚合物有限公司
   address: ''
@@ -629,6 +687,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.270105
   lon: 118.828683
   geocode_level: POI
@@ -643,8 +702,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.277379
-  lon: 118.804838
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京健友生化制药股份有限公司（FDF厂区）
   address: ''
@@ -655,6 +715,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 江北新区
   lat: 32.172086
   lon: 118.716226
   geocode_level: POI
@@ -669,6 +730,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.271123
   lon: 118.837291
   geocode_level: POI
@@ -684,6 +746,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.27131
   lon: 118.799806
   geocode_level: POI
@@ -698,6 +761,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.271993
   lon: 118.829028
   geocode_level: POI
@@ -712,6 +776,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.277452
   lon: 118.837167
   geocode_level: POI
@@ -725,6 +790,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.27239
   lon: 118.843741
   geocode_level: POI
@@ -740,6 +806,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.069827
+  lon: 118.821278
+  geocode_level: 跨区
 - name: 中国石化扬子石油化工有限公司（橡胶厂）
   address: ''
   label: 中国石化扬子石油化工有限公司（橡胶厂）
@@ -751,8 +821,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.263619
-  lon: 118.821705
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 中国石化集团资产经营管理有限公司扬子石化分公司
   address: ''
@@ -764,6 +835,10 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.238279
+  lon: 118.772761
+  geocode_level: POI
 - name: 中国石化销售股份有限公司江苏南京石油分公司（玉带油库）
   address: ''
   label: 中国石化销售股份有限公司江苏南京石油分公司（玉带油库）
@@ -774,8 +849,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
-  lat: 32.109494
-  lon: 118.876884
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京驯鹿生物医药有限公司
   address: ''
@@ -785,8 +861,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.18977
-  lon: 118.670557
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 华能南京热电有限公司
   address: ''
@@ -797,6 +874,7 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.199841
   lon: 118.885189
   geocode_level: POI
@@ -809,8 +887,9 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.198128
-  lon: 118.672898
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京江北水务发展有限公司-南京江北新区葛塘污水处理厂
   address: ''
@@ -820,8 +899,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.256025
-  lon: 118.726425
+  district: 江北新区
+  lat: 32.247176
+  lon: 118.749828
   geocode_level: POI
 - name: 南京江北水务发展有限公司-南京江北新区盘城污水处理厂
   address: ''
@@ -831,8 +911,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.256025
-  lon: 118.726425
+  district: 江北新区
+  lat: 32.210351
+  lon: 118.722022
   geocode_level: POI
 - name: 南京绿叶制药有限公司
   address: ''
@@ -845,6 +926,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.197268
   lon: 118.677928
   geocode_level: POI
@@ -857,6 +939,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 江北新区
   lat: 32.234996
   lon: 118.757543
   geocode_level: POI
@@ -871,6 +954,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.272804
   lon: 118.801511
   geocode_level: POI
@@ -885,6 +969,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.256212
   lon: 118.823899
   geocode_level: POI
@@ -896,6 +981,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
   lat: 32.139204
   lon: 118.740783
   geocode_level: POI
@@ -907,6 +993,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 土壤污染
+  district: 江北新区
   lat: 32.261038
   lon: 118.82689
   geocode_level: POI
@@ -921,6 +1008,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.274179
   lon: 118.833423
   geocode_level: POI
@@ -936,8 +1024,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.250613
-  lon: 118.837053
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 南京海润医药有限公司
   address: ''
@@ -950,8 +1039,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.251775
-  lon: 118.841225
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 南京长江江宇环保科技股份有限公司（普桥路157号）
   address: ''
@@ -964,8 +1054,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.270137
-  lon: 118.830668
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京汽车集团有限公司
   address: ''
@@ -978,8 +1069,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.078377
-  lon: 118.781155
+  district: 江北新区
+  lat: 32.164985
+  lon: 118.692278
   geocode_level: POI
 - name: 南京金栖化工集团有限公司
   address: ''
@@ -992,6 +1084,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.275203
   lon: 118.840232
   geocode_level: POI
@@ -1005,6 +1098,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.287537
   lon: 118.822043
   geocode_level: POI
@@ -1016,8 +1110,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.189246
-  lon: 118.672333
+  district: 江北新区
+  lat: 32.189762
+  lon: 118.67103
   geocode_level: POI
 - name: 南京扬子昕特玛化工有限公司
   address: ''
@@ -1030,6 +1125,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.260784
   lon: 118.7778
   geocode_level: POI
@@ -1044,6 +1140,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.27722
   lon: 118.840472
   geocode_level: POI
@@ -1057,6 +1154,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.133847
   lon: 118.715838
   geocode_level: POI
@@ -1069,6 +1167,10 @@ enterprises:
   categories:
   - 水环境
   - 土壤污染
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
+  geocode_level: POI
 - name: 江苏康倍得药业股份有限公司
   address: 南京市江北新区中鑫路709号
   label: 江苏康倍得药业股份有限公司
@@ -1077,9 +1179,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.28
-  lon: 118.75
-  geocode_level: manual
+  district: 江北新区
+  lat: 32.261635
+  lon: 118.715997
+  geocode_level: POI
 - name: 南京海鲸药业股份有限公司
   address: ''
   label: 南京海鲸药业股份有限公司
@@ -1089,8 +1192,9 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.198216
-  lon: 118.689036
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京诺尔曼生物技术股份有限公司
   address: ''
@@ -1100,8 +1204,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.199691
-  lon: 118.683078
+  district: 江北新区
+  lat: 32.198999
+  lon: 118.683425
   geocode_level: POI
 - name: 南京夜视丽精细化工有限责任公司
   address: ''
@@ -1113,6 +1218,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.284296
   lon: 118.798575
   geocode_level: POI
@@ -1127,6 +1233,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.285081
   lon: 118.818351
   geocode_level: POI
@@ -1141,8 +1248,9 @@ enterprises:
   - 地下水
   - 土壤污染
   - 环境风险
-  lat: 32.274138
-  lon: 118.814771
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京化学工业园天宇固体废物处置有限公司
   address: ''
@@ -1155,6 +1263,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.198624
+  lon: 118.915483
+  geocode_level: POI
 - name: 斯泰潘（南京）化学有限公司
   address: ''
   label: 斯泰潘（南京）化学有限公司
@@ -1166,6 +1278,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.277031
   lon: 118.833788
   geocode_level: POI
@@ -1180,8 +1293,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.279041
-  lon: 118.796054
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 金浦新材料股份有限公司
   address: ''
@@ -1193,6 +1307,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.258856
   lon: 118.821729
   geocode_level: POI
@@ -1204,6 +1319,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
+  lat: 32.125866
+  lon: 118.737631
+  geocode_level: POI
 - name: 巴斯夫特性化学品（南京）有限公司-HH
   address: ''
   label: 巴斯夫特性化学品（南京）有限公司-HH
@@ -1215,6 +1334,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.24893
   lon: 118.822011
   geocode_level: POI
@@ -1228,6 +1348,7 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.193303
   lon: 118.908808
   geocode_level: POI
@@ -1242,8 +1363,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.275764
-  lon: 118.822432
+  district: 江北新区
+  lat: 32.265256
+  lon: 118.805169
   geocode_level: POI
 - name: 江苏新瀚新材料股份有限公司
   address: ''
@@ -1256,8 +1378,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.252866
-  lon: 118.851198
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 南京扬子石化炼化有限责任公司
   address: ''
@@ -1270,6 +1393,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.282438
   lon: 118.785402
   geocode_level: POI
@@ -1284,8 +1408,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.266775
-  lon: 118.838175
+  district: 江北新区
+  lat: 32.266536
+  lon: 118.837918
   geocode_level: POI
 - name: 江苏先声生物制药有限公司
   address: ''
@@ -1295,6 +1420,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
   lat: 32.192687
   lon: 118.670344
   geocode_level: POI
@@ -1308,6 +1434,7 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.19504
   lon: 118.91152
   geocode_level: POI
@@ -1320,9 +1447,10 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.117084
   lon: 118.765214
-  geocode_level: POI
+  geocode_level: 跨区
 - name: 南京康明服饰有限责任公司水洗分公司
   address: ''
   label: 南京康明服饰有限责任公司水洗分公司
@@ -1331,8 +1459,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.215125
-  lon: 118.754425
+  district: 江北新区
+  lat: 32.215347
+  lon: 118.754487
   geocode_level: POI
 - name: 南京齐东化工有限公司
   address: ''
@@ -1344,6 +1473,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.256952
   lon: 118.834532
   geocode_level: POI
@@ -1358,6 +1488,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.289947
   lon: 118.823876
   geocode_level: POI
@@ -1372,6 +1503,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.27275
   lon: 118.840884
   geocode_level: POI
@@ -1387,8 +1519,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.25198
-  lon: 118.827957
+  district: 江北新区
+  lat: 32.248982
+  lon: 118.831774
   geocode_level: POI
 - name: 南京柯菲平信欧制药有限公司
   address: ''
@@ -1401,8 +1534,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.272378
-  lon: 118.82684
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 江苏省农药研究所股份有限公司
   address: ''
@@ -1416,9 +1550,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.138339
   lon: 118.870722
-  geocode_level: POI
+  geocode_level: 跨区
 - name: 南京利邦化工有限公司
   address: ''
   label: 南京利邦化工有限公司
@@ -1430,6 +1565,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.269753
   lon: 118.842245
   geocode_level: POI
@@ -1442,6 +1578,10 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.018105
+  lon: 118.606964
+  geocode_level: POI
 - name: 南京南钢产业发展有限公司
   address: ''
   label: 南京南钢产业发展有限公司
@@ -1452,6 +1592,10 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  district: 江北新区
+  lat: 32.165252
+  lon: 118.761529
+  geocode_level: POI
 - name: 南京博特新材料有限公司
   address: ''
   label: 南京博特新材料有限公司
@@ -1463,6 +1607,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.285688
   lon: 118.82208
   geocode_level: POI
@@ -1476,8 +1621,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.274392
-  lon: 118.837904
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 先声药业有限公司
   address: ''
@@ -1490,8 +1636,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.194912
-  lon: 118.674272
+  district: 江北新区
+  lat: 32.194244
+  lon: 118.672092
   geocode_level: POI
 - name: 中车南京浦镇车辆有限公司
   address: ''
@@ -1503,8 +1650,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.121404
-  lon: 118.71348
+  district: 江北新区
+  lat: 32.120538
+  lon: 118.717109
   geocode_level: POI
 - name: 南京长澳制药有限公司
   address: ''
@@ -1515,8 +1663,9 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.265009
-  lon: 118.699267
+  district: 江北新区
+  lat: 32.264652
+  lon: 118.700747
   geocode_level: POI
 - name: 南京海纳制药有限公司
   address: ''
@@ -1527,6 +1676,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 江北新区
   lat: 32.264325
   lon: 118.702408
   geocode_level: POI
@@ -1540,6 +1690,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.204459
   lon: 118.9089
   geocode_level: POI
@@ -1552,6 +1703,7 @@ enterprises:
   categories:
   - 水环境
   - 土壤污染
+  district: 江北新区
   lat: 32.28146
   lon: 118.81493
   geocode_level: POI
@@ -1565,8 +1717,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
-  lat: 32.2713
-  lon: 118.809185
+  district: 江北新区
+  lat: 32.282325
+  lon: 118.784675
   geocode_level: POI
 - name: 南京凯信航空附件有限公司
   address: ''
@@ -1578,6 +1731,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.168941
   lon: 118.71503
   geocode_level: POI
@@ -1593,6 +1747,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.27131
   lon: 118.799806
   geocode_level: POI
@@ -1606,6 +1761,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
+  district: 江北新区
   lat: 32.173696
   lon: 118.716058
   geocode_level: POI
@@ -1619,8 +1775,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
-  lat: 32.256651
-  lon: 118.827936
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 金陵力联思树脂有限公司
   address: ''
@@ -1633,9 +1790,10 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.266991
-  lon: 118.8398
-  geocode_level: POI
+  district: 江北新区
+  lat: 31.990384
+  lon: 118.737811
+  geocode_level: 跨区
 - name: 南京市浦口区老幼岗电镀厂
   address: ''
   label: 南京市浦口区老幼岗电镀厂
@@ -1644,6 +1802,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 土壤污染
+  district: 江北新区
   lat: 32.201863
   lon: 118.695024
   geocode_level: POI
@@ -1658,6 +1817,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.265532
   lon: 118.803373
   geocode_level: POI
@@ -1672,8 +1832,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.260984
-  lon: 118.842922
+  district: 江北新区
+  lat: 32.261616
+  lon: 118.840055
   geocode_level: POI
 - name: 南京鼓楼医院江北院区
   address: ''
@@ -1683,8 +1844,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.092656
-  lon: 118.669315
+  district: 江北新区
+  lat: 32.094011
+  lon: 118.670764
   geocode_level: POI
 - name: 南京南大药业有限责任公司
   address: ''
@@ -1694,6 +1856,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 江北新区
   lat: 32.168975
   lon: 118.713657
   geocode_level: POI
@@ -1708,8 +1871,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.257591
-  lon: 118.839541
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京力博维制药有限公司
   address: ''
@@ -1720,6 +1884,7 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  district: 江北新区
   lat: 32.279522
   lon: 118.840485
   geocode_level: POI
@@ -1734,8 +1899,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.25382
-  lon: 118.835917
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 江苏新瀚新材料股份有限公司（罐区南路86号）
   address: ''
@@ -1748,8 +1914,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.252866
-  lon: 118.851198
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 南京红宝丽醇胺化学有限公司
   address: ''
@@ -1762,6 +1929,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.277233
   lon: 118.801282
   geocode_level: POI
@@ -1776,6 +1944,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.273069
   lon: 118.786896
   geocode_level: POI
@@ -1787,8 +1956,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.238247
-  lon: 118.735025
+  district: 江北新区
+  lat: 32.237716
+  lon: 118.735207
   geocode_level: POI
 - name: 南京汇科高分子材料有限公司
   address: ''
@@ -1800,8 +1970,9 @@ enterprises:
   - 水环境
   - 土壤污染
   - 大气环境
-  lat: 32.258475
-  lon: 118.849025
+  district: 江北新区
+  lat: 32.258175
+  lon: 118.848975
   geocode_level: POI
 - name: 南京宏川石化仓储有限公司
   address: ''
@@ -1812,6 +1983,7 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 江北新区
   lat: 32.215268
   lon: 118.86852
   geocode_level: POI
@@ -1823,6 +1995,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 江北新区
   lat: 32.266649
   lon: 118.809065
   geocode_level: POI
@@ -1834,6 +2007,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 江北新区
   lat: 32.237195
   lon: 118.822275
   geocode_level: POI
@@ -1845,8 +2019,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.243603
-  lon: 118.827539
+  district: 江北新区
+  lat: 32.242814
+  lon: 118.826148
   geocode_level: POI
 - name: 欧德优创（南京）仓储有限责任公司
   address: ''
@@ -1857,8 +2032,9 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
-  lat: 32.189853
-  lon: 118.912814
+  district: 江北新区
+  lat: 32.158538
+  lon: 118.712691
   geocode_level: POI
 - name: 蓝星安迪苏南京有限公司
   address: ''
@@ -1872,8 +2048,9 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
-  lat: 32.286938
-  lon: 118.828475
+  district: 江北新区
+  lat: 32.241493
+  lon: 118.74858
   geocode_level: POI
 - name: 南京南农农药科技发展有限公司
   address: ''
@@ -1883,8 +2060,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 土壤污染
-  lat: 32.270067
-  lon: 118.827227
+  district: 江北新区
+  lat: 32.269999
+  lon: 118.826772
   geocode_level: POI
 - name: 纳尔科工业服务（南京）有限公司
   address: ''
@@ -1895,6 +2073,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.253786
   lon: 118.831953
   geocode_level: POI
@@ -1907,6 +2086,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.273363
   lon: 118.829039
   geocode_level: POI
@@ -1919,8 +2099,9 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
-  lat: 32.219375
-  lon: 118.902142
+  district: 江北新区
+  lat: 32.224077
+  lon: 118.908789
   geocode_level: POI
 - name: 巴斯夫特性化学品（南京）有限公司-SR
   address: ''
@@ -1931,6 +2112,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 江北新区
   lat: 32.24893
   lon: 118.822011
   geocode_level: POI
@@ -1942,8 +2124,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.174449
-  lon: 118.693511
+  district: 江北新区
+  lat: 32.190062
+  lon: 118.67622
   geocode_level: POI
 - name: 南京威尔药业科技有限公司
   address: ''
@@ -1953,6 +2136,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 江北新区
   lat: 32.274872
   lon: 118.844125
   geocode_level: POI
@@ -1964,6 +2148,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 江北新区
   lat: 32.160542
   lon: 118.718844
   geocode_level: POI
@@ -1975,9 +2160,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.196258
-  lon: 118.680282
-  geocode_level: POI
+  district: 江北新区
+  lat: 32.029707
+  lon: 118.756534
+  geocode_level: 跨区
 - name: 南京工业大学（浦口校区）
   address: ''
   label: 南京工业大学（浦口校区）
@@ -1986,8 +2172,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.082481
-  lon: 118.640105
+  district: 江北新区
+  lat: 32.066794
+  lon: 118.648245
   geocode_level: POI
 - name: 中外运化工国际物流有限公司南京分公司
   address: ''
@@ -1997,9 +2184,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.191707
-  lon: 119.067961
-  geocode_level: POI
+  district: 江北新区
+  lat: 32.022738
+  lon: 118.780791
+  geocode_level: 跨区
 - name: 南京巨龙钢管有限公司
   address: ''
   label: 南京巨龙钢管有限公司
@@ -2008,6 +2196,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 江北新区
   lat: 32.185473
   lon: 118.687008
   geocode_level: POI
@@ -2019,6 +2208,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
+  district: 江北新区
   lat: 32.250182
   lon: 118.824957
   geocode_level: POI
@@ -2030,6 +2220,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.18392
-  lon: 118.691631
-  geocode_level: POI
+  district: 江北新区
+  lat: 32.029707
+  lon: 118.756534
+  geocode_level: 跨区

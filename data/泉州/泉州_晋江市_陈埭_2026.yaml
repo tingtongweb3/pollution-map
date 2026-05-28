@@ -17,6 +17,7 @@ enterprises:
   lat: 24.849375
   lon: 118.519625
   geocode_level: POI
+  district: 晋江市
 - name: 福建凤竹环保有限公司
   address: ''
   label: 福建凤竹环保有限公司
@@ -28,6 +29,7 @@ enterprises:
   lat: 24.854959
   lon: 118.63702
   geocode_level: POI
+  district: 晋江市
 - name: 金丰（晋江）染整有限公司
   address: ''
   label: 金丰（晋江）染整有限公司
@@ -62,6 +64,7 @@ enterprises:
   lat: 24.826625
   lon: 118.615186
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市西滨丰威废塑加工厂
   address: ''
   label: 晋江市西滨丰威废塑加工厂
@@ -73,6 +76,7 @@ enterprises:
   lat: 24.79048
   lon: 118.632538
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市西滨镇万康塑胶厂
   address: ''
   label: 晋江市西滨镇万康塑胶厂
@@ -84,6 +88,7 @@ enterprises:
   lat: 24.801173
   lon: 118.643701
   geocode_level: POI
+  district: 晋江市
 - name: 晋江一三鞋材有限公司
   address: ''
   label: 晋江一三鞋材有限公司
@@ -95,3 +100,4 @@ enterprises:
   lat: 24.839484
   lon: 118.60448
   geocode_level: POI
+  district: 晋江市

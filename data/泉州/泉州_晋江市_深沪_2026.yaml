@@ -66,6 +66,7 @@ enterprises:
   lat: 24.603815
   lon: 118.677038
   geocode_level: POI
+  district: 晋江市
 - name: 晋江金泉环保有限公司
   address: ''
   label: 晋江金泉环保有限公司
@@ -78,6 +79,7 @@ enterprises:
   lat: 24.599828
   lon: 118.676782
   geocode_level: POI
+  district: 晋江市
 - name: 福建龙峰纺织科技实业有限公司（新厂）
   address: ''
   label: 福建龙峰纺织科技实业有限公司（新厂）
@@ -100,6 +102,7 @@ enterprises:
   lat: 24.58445
   lon: 118.657698
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙达服装洗烫有限公司
   address: ''
   label: 晋江市龙达服装洗烫有限公司
@@ -108,6 +111,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 浩沙实业（福建）有限公司
   address: ''
   label: 浩沙实业（福建）有限公司
@@ -132,6 +136,7 @@ enterprises:
   lat: 24.81438
   lon: 118.568944
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市超鸿五金精品有限公司
   address: ''
   label: 晋江市超鸿五金精品有限公司
@@ -145,6 +150,7 @@ enterprises:
   lat: 24.60769
   lon: 118.680647
   geocode_level: POI
+  district: 晋江市
 - name: 晋江福鑫电镀有限公司
   address: ''
   label: 晋江福鑫电镀有限公司
@@ -158,6 +164,7 @@ enterprises:
   lat: 24.607462
   lon: 118.678792
   geocode_level: POI
+  district: 晋江市
 - name: 福建浔兴拉链科技股份有限公司（电镀部）
   address: ''
   label: 福建浔兴拉链科技股份有限公司（电镀部）
@@ -180,6 +187,7 @@ enterprises:
   categories:
   - 土壤污染
   - 水环境
+  district: 晋江市
 - name: 晋江市惠众水利投资开发建设有限公司（晋江市深沪（含华海）污水处理厂）
   address: ''
   label: 晋江市惠众水利投资开发建设有限公司（晋江市深沪（含华海）污水处理厂）
@@ -200,6 +208,7 @@ enterprises:
   lat: 24.601875
   lon: 118.676375
   geocode_level: POI
+  district: 晋江市
 - name: 福建省福能晋南热电有限公司
   address: ''
   label: 福建省福能晋南热电有限公司
@@ -211,6 +220,7 @@ enterprises:
   lat: 24.607875
   lon: 118.685175
   geocode_level: POI
+  district: 晋江市
 - name: 福建浔兴拉链科技股份有限公司（漂染部）
   address: ''
   label: 福建浔兴拉链科技股份有限公司（漂染部）
@@ -233,6 +243,7 @@ enterprises:
   lat: 24.603506
   lon: 118.675264
   geocode_level: POI
+  district: 晋江市
 - name: 泉州市六源印染织造有限公司
   address: ''
   label: 泉州市六源印染织造有限公司
@@ -244,6 +255,7 @@ enterprises:
   lat: 24.601264
   lon: 118.676185
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市福龙拉链染织有限公司
   address: ''
   label: 晋江市福龙拉链染织有限公司
@@ -255,6 +267,7 @@ enterprises:
   lat: 24.607457
   lon: 118.678805
   geocode_level: POI
+  district: 晋江市
 - name: 晋江万兴隆染织实业有限公司
   address: ''
   label: 晋江万兴隆染织实业有限公司
@@ -266,6 +279,7 @@ enterprises:
   lat: 24.600488
   lon: 118.675521
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙兴隆染织实业有限公司
   address: ''
   label: 晋江市龙兴隆染织实业有限公司
@@ -277,6 +291,7 @@ enterprises:
   lat: 24.608995
   lon: 118.681095
   geocode_level: POI
+  district: 晋江市
 - name: 福建省联丰盛漂染植绒有限公司
   address: ''
   label: 福建省联丰盛漂染植绒有限公司
@@ -288,6 +303,7 @@ enterprises:
   lat: 24.603963
   lon: 118.678411
   geocode_level: POI
+  district: 晋江市
 - name: 晋江活源印花有限公司
   address: ''
   label: 晋江活源印花有限公司
@@ -296,6 +312,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 福建福田纺织印染科技有限公司
   address: ''
   label: 福建福田纺织印染科技有限公司
@@ -304,6 +321,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 泉州市博丰服饰有限公司
   address: ''
   label: 泉州市博丰服饰有限公司
@@ -312,6 +330,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 福建锦丰印染有限公司
   address: ''
   label: 福建锦丰印染有限公司
@@ -323,6 +342,7 @@ enterprises:
   lat: 24.602775
   lon: 118.678025
   geocode_level: POI
+  district: 晋江市
 - name: 通亿（泉州）轻工有限公司
   address: ''
   label: 通亿（泉州）轻工有限公司
@@ -353,6 +373,7 @@ enterprises:
   lat: 24.604921
   lon: 118.680127
   geocode_level: POI
+  district: 晋江市
 - name: 福建浔兴拉链科技股份有限公司（浔兴工业园）
   address: ''
   label: 福建浔兴拉链科技股份有限公司（浔兴工业园）

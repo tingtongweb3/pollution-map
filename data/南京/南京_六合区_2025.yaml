@@ -67,6 +67,7 @@ enterprises:
   lat: 32.28373
   lon: 118.878144
   geocode_level: POI
+  district: 六合区
 - name: 兰精（南京）纤维有限公司
   address: ''
   label: 兰精（南京）纤维有限公司
@@ -81,6 +82,7 @@ enterprises:
   lat: 32.280619
   lon: 118.881579
   geocode_level: POI
+  district: 六合区
 - name: 江苏先卓食品科技股份有限公司
   address: ''
   label: 江苏先卓食品科技股份有限公司
@@ -92,6 +94,7 @@ enterprises:
   lat: 32.315998
   lon: 118.943925
   geocode_level: POI
+  district: 六合区
 - name: 日立安斯泰莫动力系统（南京）有限公司
   address: ''
   label: 日立安斯泰莫动力系统（南京）有限公司
@@ -104,6 +107,7 @@ enterprises:
   lat: 32.312267
   lon: 118.809829
   geocode_level: POI
+  district: 六合区
 - name: 南京亚东启天药业有限公司
   address: ''
   label: 南京亚东启天药业有限公司
@@ -116,6 +120,7 @@ enterprises:
   lat: 32.258642
   lon: 118.88723
   geocode_level: POI
+  district: 六合区
 - name: 江苏和成新材料有限公司
   address: ''
   label: 江苏和成新材料有限公司
@@ -129,6 +134,7 @@ enterprises:
   lat: 32.27703
   lon: 118.869211
   geocode_level: POI
+  district: 六合区
 - name: 中铁钢结构有限公司
   address: ''
   label: 中铁钢结构有限公司
@@ -140,6 +146,7 @@ enterprises:
   lat: 32.409348
   lon: 118.916844
   geocode_level: POI
+  district: 六合区
 - name: 南京金羚生物基纤维有限公司
   address: ''
   label: 南京金羚生物基纤维有限公司
@@ -150,6 +157,10 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
+  lat: 32.274096
+  lon: 118.87605
+  geocode_level: 兴趣点
+  district: 六合区
 - name: 南京振兴新能源发展有限公司
   address: ''
   label: 南京振兴新能源发展有限公司
@@ -163,6 +174,7 @@ enterprises:
   lat: 32.273398
   lon: 118.854365
   geocode_level: POI
+  district: 六合区
 - name: 南京凯燕环保科技有限公司
   address: ''
   label: 南京凯燕环保科技有限公司
@@ -177,6 +189,7 @@ enterprises:
   lat: 32.28169
   lon: 118.871265
   geocode_level: POI
+  district: 六合区
 - name: 南京巴诗克环保科技有限公司
   address: ''
   label: 南京巴诗克环保科技有限公司
@@ -187,6 +200,10 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  lat: 32.28039
+  lon: 118.868411
+  geocode_level: 兴趣点
+  district: 六合区
 - name: 南京承佑树脂有限公司
   address: ''
   label: 南京承佑树脂有限公司
@@ -199,6 +216,7 @@ enterprises:
   lat: 32.274459
   lon: 118.854112
   geocode_level: POI
+  district: 六合区
 - name: 南京润埠水处理有限公司（含南京现代表面处理科技产业园内的电镀企业）
   address: ''
   label: 南京润埠水处理有限公司（含南京现代表面处理科技产业园内的电镀企业）
@@ -213,6 +231,7 @@ enterprises:
   lat: 32.278245
   lon: 118.859166
   geocode_level: POI
+  district: 六合区
 - name: 南京美华羽绒制品有限公司
   address: ''
   label: 南京美华羽绒制品有限公司
@@ -221,9 +240,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 六合区
   lat: 32.018182
   lon: 118.800037
-  geocode_level: POI
+  geocode_level: 跨区
 - name: 南京星光再生纸业有限公司
   address: ''
   label: 南京星光再生纸业有限公司
@@ -235,6 +255,7 @@ enterprises:
   lat: 32.388136
   lon: 118.884079
   geocode_level: POI
+  district: 六合区
 - name: 南京北控雄州污水处理有限公司
   address: ''
   label: 南京北控雄州污水处理有限公司
@@ -246,6 +267,7 @@ enterprises:
   lat: 32.311939
   lon: 118.844202
   geocode_level: POI
+  district: 六合区
 - name: 光大水质净化南京有限公司
   address: ''
   label: 光大水质净化南京有限公司
@@ -257,6 +279,7 @@ enterprises:
   lat: 32.311321
   lon: 118.846469
   geocode_level: POI
+  district: 六合区
 - name: 南京红山水处理有限公司
   address: ''
   label: 南京红山水处理有限公司
@@ -268,6 +291,7 @@ enterprises:
   lat: 32.282143
   lon: 118.875456
   geocode_level: POI
+  district: 六合区
 - name: 江苏省环境资源有限公司（南京六合）
   address: ''
   label: 江苏省环境资源有限公司（南京六合）
@@ -276,6 +300,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 六合区
+  lat: 32.034925
+  lon: 118.710425
+  geocode_level: 跨区
 - name: 南京市六合区生活废弃物处置中心
   address: ''
   label: 南京市六合区生活废弃物处置中心
@@ -284,6 +312,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  lat: 32.323235
+  lon: 118.822241
+  geocode_level: 区县
+  district: 六合区
 - name: 南京六合茉莉绿色能源有限公司
   address: ''
   label: 南京六合茉莉绿色能源有限公司
@@ -296,6 +328,7 @@ enterprises:
   lat: 32.465767
   lon: 118.753639
   geocode_level: POI
+  district: 六合区
 - name: 江苏格润合美再生资源有限公司
   address: ''
   label: 江苏格润合美再生资源有限公司
@@ -307,6 +340,7 @@ enterprises:
   lat: 32.315067
   lon: 118.792022
   geocode_level: POI
+  district: 六合区
 - name: 扬州新材料投资集团有限公司（长输管线南京段）
   address: ''
   label: 扬州新材料投资集团有限公司（长输管线南京段）
@@ -315,9 +349,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.25685
-  lon: 119.1641
-  geocode_level: POI
+  district: 六合区
+  lat: 32.323235
+  lon: 118.822241
+  geocode_level: 区县
 - name: 南京国轩电池有限公司
   address: ''
   label: 南京国轩电池有限公司
@@ -329,6 +364,7 @@ enterprises:
   lat: 32.313712
   lon: 118.797767
   geocode_level: POI
+  district: 六合区
 - name: 南京市六合区横梁街道大仇污水处理厂
   address: ''
   label: 南京市六合区横梁街道大仇污水处理厂
@@ -337,9 +373,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
-  geocode_level: POI
+  district: 六合区
+  lat: 32.318754
+  lon: 118.930338
+  geocode_level: 乡镇
 - name: 龙池街道污水处理厂
   address: ''
   label: 龙池街道污水处理厂
@@ -348,6 +385,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 六合区
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: 跨区
 - name: 程桥街道污水处理厂
   address: ''
   label: 程桥街道污水处理厂
@@ -356,9 +397,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.996375
-  lon: 118.855375
-  geocode_level: POI
+  district: 六合区
+  lat: 32.384117
+  lon: 118.730935
+  geocode_level: 乡镇
 - name: 金牛湖街道污水处理厂
   address: ''
   label: 金牛湖街道污水处理厂
@@ -367,9 +409,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.853545
-  lon: 118.970576
-  geocode_level: POI
+  district: 六合区
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: 跨区
 - name: 南京龙腾污水处理有限公司
   address: ''
   label: 南京龙腾污水处理有限公司
@@ -381,6 +424,7 @@ enterprises:
   lat: 32.311939
   lon: 118.844202
   geocode_level: POI
+  district: 六合区
 - name: 南京市六合区竹镇镇污水处理厂
   address: ''
   label: 南京市六合区竹镇镇污水处理厂
@@ -389,9 +433,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
-  geocode_level: POI
+  district: 六合区
+  lat: 32.500172
+  lon: 118.681699
+  geocode_level: 乡镇
 - name: 冶山街道污水处理厂
   address: ''
   label: 冶山街道污水处理厂
@@ -400,6 +445,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 六合区
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: 跨区
 - name: 南京雄州产业投资发展集团有限公司南京台商工业园区污水处理厂
   address: ''
   label: 南京雄州产业投资发展集团有限公司南京台商工业园区污水处理厂
@@ -408,6 +457,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 32.258607
+  lon: 118.893814
+  geocode_level: POI
+  district: 六合区
 - name: 江苏艾津作物科技集团有限公司
   address: ''
   label: 江苏艾津作物科技集团有限公司
@@ -420,6 +473,7 @@ enterprises:
   lat: 32.275959
   lon: 118.858395
   geocode_level: POI
+  district: 六合区
 - name: 南京宁进环保科技有限公司
   address: ''
   label: 南京宁进环保科技有限公司
@@ -431,6 +485,7 @@ enterprises:
   lat: 32.32579
   lon: 118.868131
   geocode_level: POI
+  district: 六合区
 - name: 南京盛世新能源科技有限公司
   address: ''
   label: 南京盛世新能源科技有限公司
@@ -442,6 +497,7 @@ enterprises:
   lat: 32.311199
   lon: 118.787132
   geocode_level: POI
+  district: 六合区
 - name: 南京金土地生物技术有限公司
   address: ''
   label: 南京金土地生物技术有限公司
@@ -453,6 +509,7 @@ enterprises:
   lat: 32.265806
   lon: 118.990019
   geocode_level: POI
+  district: 六合区
 - name: 普丽妍（南京）医疗科技有限公司
   address: ''
   label: 普丽妍（南京）医疗科技有限公司
@@ -464,3 +521,4 @@ enterprises:
   lat: 32.309103
   lon: 118.863015
   geocode_level: POI
+  district: 六合区

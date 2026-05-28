@@ -66,6 +66,7 @@ enterprises:
   lat: 32.033103
   lon: 118.843163
   geocode_level: POI
+  district: 玄武区
 - name: 南京理工大学
   address: ''
   label: 南京理工大学
@@ -77,6 +78,7 @@ enterprises:
   lat: 32.02891
   lon: 118.855629
   geocode_level: POI
+  district: 玄武区
 - name: 南京市中医院
   address: ''
   label: 南京市中医院
@@ -88,6 +90,7 @@ enterprises:
   lat: 31.995463
   lon: 118.807803
   geocode_level: POI
+  district: 秦淮区
 - name: 江苏金陵环境股份有限公司城东三期污水处理厂
   address: ''
   label: 江苏金陵环境股份有限公司城东三期污水处理厂
@@ -96,6 +99,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 秦淮区
+  lat: 31.95289
+  lon: 118.798615
+  geocode_level: 跨区
 - name: 南京水务集团有限公司城东厂管理中心
   address: ''
   label: 南京水务集团有限公司城东厂管理中心
@@ -107,6 +114,7 @@ enterprises:
   lat: 32.035477
   lon: 118.768696
   geocode_level: POI
+  district: 秦淮区
 - name: 宏光空降装备有限公司
   address: ''
   label: 宏光空降装备有限公司
@@ -115,6 +123,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  lat: 32.001668
+  lon: 118.79992
+  geocode_level: 村庄
+  district: 秦淮区
 - name: 南京晨光集团有限责任公司
   address: ''
   label: 南京晨光集团有限责任公司
@@ -127,6 +139,7 @@ enterprises:
   lat: 32.002526
   lon: 118.787626
   geocode_level: POI
+  district: 秦淮区
 - name: 中国电子科技集团公司第二十八研究所
   address: ''
   label: 中国电子科技集团公司第二十八研究所
@@ -138,6 +151,7 @@ enterprises:
   lat: 32.028734
   lon: 118.836843
   geocode_level: POI
+  district: 秦淮区
 - name: 江苏中烟工业有限责任公司南京卷烟厂
   address: ''
   label: 江苏中烟工业有限责任公司南京卷烟厂
@@ -147,6 +161,10 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  lat: 32.001886
+  lon: 118.748096
+  geocode_level: POI
+  district: 建邺区
 - name: 南京明基医院有限公司
   address: ''
   label: 南京明基医院有限公司
@@ -159,6 +177,7 @@ enterprises:
   lat: 31.987081
   lon: 118.728964
   geocode_level: POI
+  district: 建邺区
 - name: 江苏金陵环境股份有限公司江心洲污水处理厂
   address: ''
   label: 江苏金陵环境股份有限公司江心洲污水处理厂
@@ -167,9 +186,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.145225
-  lon: 118.852275
-  geocode_level: POI
+  district: 建邺区
+  lat: 32.037466
+  lon: 118.839443
+  geocode_level: 跨区
 - name: 江苏省苏力环境科技有限责任公司
   address: ''
   label: 江苏省苏力环境科技有限责任公司
@@ -178,9 +198,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.071905
-  lon: 118.764234
-  geocode_level: POI
+  district: 建邺区
+  lat: 32.069827
+  lon: 118.821278
+  geocode_level: 跨区
 - name: 中国联合网络通信有限公司南京市分公司
   address: ''
   label: 中国联合网络通信有限公司南京市分公司
@@ -189,9 +210,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 31.99095
-  lon: 118.740789
-  geocode_level: POI
+  district: 鼓楼区
+  lat: 32.042565
+  lon: 118.777224
+  geocode_level: 兴趣点
 - name: 江苏金陵环境股份有限公司城北污水处理厂
   address: ''
   label: 江苏金陵环境股份有限公司城北污水处理厂
@@ -200,6 +222,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 鼓楼区
+  lat: 32.109674
+  lon: 118.767241
+  geocode_level: 村庄
 - name: 江苏省人民医院
   address: ''
   label: 江苏省人民医院
@@ -212,6 +238,7 @@ enterprises:
   lat: 32.049208
   lon: 118.766276
   geocode_level: POI
+  district: 鼓楼区
 - name: 南京汽轮电机（集团）有限责任公司
   address: ''
   label: 南京汽轮电机（集团）有限责任公司
@@ -225,6 +252,7 @@ enterprises:
   lat: 32.100737
   lon: 118.787624
   geocode_level: POI
+  district: 鼓楼区
 - name: 南京鼓楼医院
   address: ''
   label: 南京鼓楼医院
@@ -237,6 +265,7 @@ enterprises:
   lat: 32.05618
   lon: 118.783042
   geocode_level: POI
+  district: 鼓楼区
 - name: 东南大学附属中大医院
   address: ''
   label: 东南大学附属中大医院
@@ -249,6 +278,7 @@ enterprises:
   lat: 32.072367
   lon: 118.77622
   geocode_level: POI
+  district: 鼓楼区
 - name: 招商局金陵船舶（南京）有限公司
   address: ''
   label: 招商局金陵船舶（南京）有限公司
@@ -261,6 +291,7 @@ enterprises:
   lat: 32.115193
   lon: 118.761927
   geocode_level: POI
+  district: 鼓楼区
 - name: 药大制药有限公司
   address: 南京市鼓楼区马家街50号
   label: 药大制药有限公司
@@ -272,6 +303,7 @@ enterprises:
   lat: 32.067
   lon: 118.781
   geocode_level: manual
+  district: 鼓楼区
 - name: 中国电子科技集团公司第十四研究所
   address: ''
   label: 中国电子科技集团公司第十四研究所
@@ -281,9 +313,10 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.071636
-  lon: 118.750307
+  lat: 31.924874
+  lon: 118.641192
   geocode_level: POI
+  district: 雨花台区
 - name: 上海梅山钢铁股份有限公司
   address: ''
   label: 上海梅山钢铁股份有限公司
@@ -300,6 +333,7 @@ enterprises:
   lat: 31.905593
   lon: 118.605241
   geocode_level: POI
+  district: 雨花台区
 - name: 南京市桂雨鸭食品有限公司
   address: ''
   label: 南京市桂雨鸭食品有限公司
@@ -311,6 +345,7 @@ enterprises:
   lat: 31.941401
   lon: 118.650036
   geocode_level: POI
+  district: 雨花台区
 - name: 南京宝地梅山产城发展有限公司矿业分公司
   address: ''
   label: 南京宝地梅山产城发展有限公司矿业分公司
@@ -322,6 +357,7 @@ enterprises:
   lat: 31.899377
   lon: 118.623144
   geocode_level: POI
+  district: 雨花台区
 - name: 南京金梦都工贸实业有限责任公司
   address: ''
   label: 南京金梦都工贸实业有限责任公司
@@ -334,6 +370,7 @@ enterprises:
   lat: 31.929014
   lon: 118.630173
   geocode_level: POI
+  district: 雨花台区
 - name: 南京华润热电有限公司
   address: ''
   label: 南京华润热电有限公司
@@ -346,6 +383,7 @@ enterprises:
   lat: 31.947536
   lon: 118.637942
   geocode_level: POI
+  district: 雨花台区
 - name: 中牧南京动物药业有限公司
   address: ''
   label: 中牧南京动物药业有限公司
@@ -358,6 +396,7 @@ enterprises:
   lat: 31.985241
   lon: 118.745724
   geocode_level: POI
+  district: 雨花台区
 - name: 南京城南污水处理有限公司
   address: ''
   label: 南京城南污水处理有限公司
@@ -369,6 +408,7 @@ enterprises:
   lat: 31.928438
   lon: 118.627892
   geocode_level: POI
+  district: 雨花台区
 - name: 宝武碳业科技股份有限公司梅山分公司
   address: ''
   label: 宝武碳业科技股份有限公司梅山分公司
@@ -382,6 +422,7 @@ enterprises:
   lat: 31.909575
   lon: 118.626225
   geocode_level: POI
+  district: 雨花台区
 - name: 南京格灵化工有限公司
   address: ''
   label: 南京格灵化工有限公司
@@ -395,6 +436,7 @@ enterprises:
   lat: 31.9427
   lon: 118.723562
   geocode_level: POI
+  district: 雨花台区
 - name: 宝武环科南京资源利用有限公司
   address: ''
   label: 宝武环科南京资源利用有限公司
@@ -403,6 +445,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 雨花台区
+  lat: 31.991291
+  lon: 118.779087
+  geocode_level: 区县
 - name: 南京地铁运营有限责任公司
   address: ''
   label: 南京地铁运营有限责任公司
@@ -411,9 +457,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.108475
-  lon: 118.885875
-  geocode_level: POI
+  district: 雨花台区
+  lat: 31.981268
+  lon: 118.749363
+  geocode_level: 兴趣点
 - name: 南京宁星汽车维修服务有限公司
   address: ''
   label: 南京宁星汽车维修服务有限公司
@@ -425,6 +472,7 @@ enterprises:
   lat: 31.995276
   lon: 118.790748
   geocode_level: POI
+  district: 雨花台区
 - name: 宝武装备智能科技有限公司南京分公司
   address: ''
   label: 宝武装备智能科技有限公司南京分公司
@@ -433,3 +481,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 雨花台区
+  lat: 31.991291
+  lon: 118.779087
+  geocode_level: 区县

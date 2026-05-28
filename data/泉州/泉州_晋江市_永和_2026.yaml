@@ -66,6 +66,7 @@ enterprises:
   lat: 24.736579
   lon: 118.570785
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市凯利达纺织发展有限公司
   address: ''
   label: 晋江市凯利达纺织发展有限公司
@@ -77,6 +78,7 @@ enterprises:
   lat: 24.735982
   lon: 118.575705
   geocode_level: POI
+  district: 晋江市
 - name: 福建永固集团有限公司
   address: ''
   label: 福建永固集团有限公司
@@ -89,6 +91,7 @@ enterprises:
   lat: 24.689775
   lon: 118.579125
   geocode_level: POI
+  district: 晋江市
 - name: 泉州鑫友再生资源回收有限公司
   address: ''
   label: 泉州鑫友再生资源回收有限公司
@@ -100,6 +103,7 @@ enterprises:
   lat: 24.72326
   lon: 118.531206
   geocode_level: POI
+  district: 晋江市
 - name: 永逸（福建）化纤有限公司
   address: ''
   label: 永逸（福建）化纤有限公司

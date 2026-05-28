@@ -1,0 +1,391 @@
+meta:
+  dpi: 200
+  title: 杭州淳安县2025年重点污染源单位地理分布图
+  subtitle: 数据来源：杭州市生态环境局2025年度环境监管重点单位名录  |  共28家  |  坐标：高德地图
+  output_path: ./杭州_淳安县_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  city: 杭州
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 淳安千岛湖顺风纺织有限公司
+  address: ''
+  label: 淳安千岛湖顺风纺织有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.603611
+  lon: 119.057928
+  geocode_level: 住宅区
+- name: 淳安县第一人民医院
+  address: ''
+  label: 淳安县第一人民医院
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.605572
+  lon: 119.11054
+  geocode_level: 兴趣点
+- name: 淳安县浪川纺织有限公司
+  address: ''
+  label: 淳安县浪川纺织有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.495899
+  lon: 118.612393
+  geocode_level: 乡镇
+- name: 淳安县荣华纺织有限公司
+  address: ''
+  label: 淳安县荣华纺织有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.398127
+  lon: 118.757736
+  geocode_level: 兴趣点
+- name: 淳安县新兴纺织有限公司
+  address: ''
+  label: 淳安县新兴纺织有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 淳安祥润实业有限公司
+  address: ''
+  label: 淳安祥润实业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.664047
+  lon: 119.021087
+  geocode_level: 乡镇
+- name: 杭州淳安晨盛丝绸有限公司
+  address: ''
+  label: 杭州淳安晨盛丝绸有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 杭州淳安千岛湖生态综合养殖有限公司
+  address: ''
+  label: 杭州淳安千岛湖生态综合养殖有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.595534
+  lon: 119.184737
+  geocode_level: 兴趣点
+- name: 杭州华茜贸易有限公司
+  address: ''
+  label: 杭州华茜贸易有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 杭州千岛湖啤酒有限公司
+  address: ''
+  label: 杭州千岛湖啤酒有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609323
+  lon: 119.148574
+  geocode_level: 兴趣点
+- name: 杭州千岛湖新兴纺织织造有限公司
+  address: ''
+  label: 杭州千岛湖新兴纺织织造有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.591917
+  lon: 119.048137
+  geocode_level: 兴趣点
+- name: 杭州千岛湖瀛山实业有限公司
+  address: ''
+  label: 杭州千岛湖瀛山实业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.564836
+  lon: 118.629927
+  geocode_level: 未知
+- name: 杭州商辂丝绸有限公司
+  address: ''
+  label: 杭州商辂丝绸有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.72558
+  lon: 118.793241
+  geocode_level: 兴趣点
+- name: 杭州世松工贸有限公司
+  address: ''
+  label: 杭州世松工贸有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.425285
+  lon: 118.538003
+  geocode_level: 兴趣点
+- name: 杭州天道实业有限公司
+  address: ''
+  label: 杭州天道实业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 农夫山泉（淳安茶园）有限公司
+  address: ''
+  label: 农夫山泉（淳安茶园）有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.491423
+  lon: 119.181814
+  geocode_level: 兴趣点
+- name: 浙江诚鑫织造有限公司
+  address: ''
+  label: 浙江诚鑫织造有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.424931
+  lon: 118.541057
+  geocode_level: 兴趣点
+- name: 浙江鼓山实业有限公司
+  address: ''
+  label: 浙江鼓山实业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.613042
+  lon: 119.111478
+  geocode_level: 兴趣点
+- name: 浙江强强实业有限公司
+  address: ''
+  label: 浙江强强实业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.610109
+  lon: 119.159866
+  geocode_level: 兴趣点
+- name: 浙江顺美丝绸有限公司
+  address: ''
+  label: 浙江顺美丝绸有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 淳安薪火新型建材有限公司
+  address: ''
+  label: 淳安薪火新型建材有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.664047
+  lon: 119.021087
+  geocode_level: 乡镇
+- name: 光大环保能源（淳安）有限公司
+  address: ''
+  label: 光大环保能源（淳安）有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.674563
+  lon: 118.933454
+  geocode_level: 兴趣点
+- name: 浙江红泰砖业有限公司
+  address: ''
+  label: 浙江红泰砖业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 淳安县市容环境卫生保障中心
+  address: ''
+  label: 淳安县市容环境卫生保障中心
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.61107
+  lon: 119.049356
+  geocode_level: 兴趣点
+- name: 杭州清淳环境服务有限公司
+  address: ''
+  label: 杭州清淳环境服务有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 杭州盈铭深冷真空工程有限公司
+  address: ''
+  label: 杭州盈铭深冷真空工程有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+- name: 浙江康盛科工贸有限公司
+  address: ''
+  label: 浙江康盛科工贸有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县
+- name: 浙江众力压力容器制造有限公司
+  address: ''
+  label: 浙江众力压力容器制造有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 淳安县
+  lat: 29.609678
+  lon: 119.042015
+  geocode_level: 区县

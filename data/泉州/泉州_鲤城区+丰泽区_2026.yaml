@@ -21,6 +21,7 @@ enterprises:
   lat: 24.90706
   lon: 118.550267
   geocode_level: POI
+  district: 鲤城区
 - name: 泉州市第一医院东街院区
   address: 泉州东街248-252
   label: 泉州市第一医院东街院区
@@ -43,6 +44,7 @@ enterprises:
   lat: 24.913548
   lon: 118.592092
   geocode_level: POI
+  district: 鲤城区
 - name: 福建省鸿福化纤实业有限公司
   address: 泉州南环路1005号
   label: 福建省鸿福化纤实业有限公司
@@ -54,6 +56,7 @@ enterprises:
   lat: 24.90266
   lon: 118.547101
   geocode_level: POI
+  district: 鲤城区
 - name: 中国人民解放军联勤保障部队第九一〇医院
   address: 泉州平安路与健康大道交叉口南120米
   label: 中国人民解放军联勤保障部队第九一〇医院
@@ -76,6 +79,7 @@ enterprises:
   lat: 24.88594
   lon: 118.604681
   geocode_level: POI
+  district: 丰泽区
 - name: 中国移动通信集团福建有限公司泉州分公司
   address: 泉州安吉南路567号
   label: 中国移动通信集团福建有限公司泉州分公司
@@ -87,6 +91,7 @@ enterprises:
   lat: 24.906982
   lon: 118.644452
   geocode_level: POI
+  district: 丰泽区
 - name: 中国铁塔股份有限公司泉州市分公司
   address: 泉州刺桐路586号国际商厦F18层
   label: 中国铁塔股份有限公司泉州市分公司
@@ -109,6 +114,7 @@ enterprises:
   lat: 24.912732
   lon: 118.658532
   geocode_level: POI
+  district: 丰泽区
 - name: 泉州医学高等专科学校附属人民医院
   address: 泉州丰泽街95号
   label: 泉州医学高等专科学校附属人民医院
@@ -120,6 +126,7 @@ enterprises:
   lat: 24.899238
   lon: 118.614574
   geocode_level: POI
+  district: 丰泽区
 - name: 泉州南新漂染有限公司
   address: 泉州成州路236号
   label: 泉州南新漂染有限公司
@@ -131,6 +138,7 @@ enterprises:
   lat: 24.88095
   lon: 118.615808
   geocode_level: POI
+  district: 丰泽区
 - name: 泉州市圣泽环境工程有限公司（北峰污水处理厂）
   address: 泉州市丰泽区城西路北峰污水处理厂
   label: 泉州市圣泽环境工程有限公司（北峰污水处理厂）
@@ -231,6 +239,7 @@ enterprises:
   lat: 24.922574
   lon: 118.668008
   geocode_level: POI
+  district: 丰泽区
 - name: 福建医科大学附属第二医院（东海院区）
   address: 泉州东海大街950号
   label: 福建医科大学附属第二医院（东海院区）

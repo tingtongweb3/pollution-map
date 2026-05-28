@@ -66,6 +66,7 @@ enterprises:
   lat: 24.694199
   lon: 118.450623
   geocode_level: POI
+  district: 晋江市
 - name: 九牧王股份有限公司晋江公司
   address: ''
   label: 九牧王股份有限公司晋江公司
@@ -77,6 +78,7 @@ enterprises:
   lat: 24.876251
   lon: 118.559409
   geocode_level: POI
+  district: 晋江市
 - name: 晋江三六五环保工程有限公司
   address: ''
   label: 晋江三六五环保工程有限公司
@@ -88,6 +90,7 @@ enterprises:
   lat: 24.694199
   lon: 118.450623
   geocode_level: POI
+  district: 晋江市
 - name: 泉州市霞美纤维制品有限公司
   address: ''
   label: 泉州市霞美纤维制品有限公司
@@ -99,6 +102,7 @@ enterprises:
   lat: 24.86057
   lon: 118.518503
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江豪山建材有限公司
   address: ''
   label: 福建省晋江豪山建材有限公司
@@ -110,6 +114,7 @@ enterprises:
   lat: 24.847986
   lon: 118.480266
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市丹豪陶瓷有限公司
   address: ''
   label: 福建省晋江市丹豪陶瓷有限公司
@@ -121,6 +126,7 @@ enterprises:
   lat: 24.823631
   lon: 118.523651
   geocode_level: POI
+  district: 晋江市
 - name: 晋江广达陶瓷有限公司
   address: ''
   label: 晋江广达陶瓷有限公司
@@ -132,6 +138,7 @@ enterprises:
   lat: 24.846611
   lon: 118.452188
   geocode_level: POI
+  district: 晋江市
 - name: 福建华泰集团股份有限公司
   address: ''
   label: 福建华泰集团股份有限公司
@@ -143,6 +150,7 @@ enterprises:
   lat: 24.84549
   lon: 118.455397
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市骏陶陶瓷实业有限公司
   address: ''
   label: 晋江市骏陶陶瓷实业有限公司
@@ -154,6 +162,7 @@ enterprises:
   lat: 24.845234
   lon: 118.454394
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市联兴建材有限公司
   address: ''
   label: 福建省晋江市联兴建材有限公司
@@ -165,6 +174,7 @@ enterprises:
   lat: 24.811527
   lon: 118.500299
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市舒适陶瓷有限公司
   address: ''
   label: 福建省晋江市舒适陶瓷有限公司
@@ -176,6 +186,7 @@ enterprises:
   lat: 24.848483
   lon: 118.499144
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市舒意陶瓷有限责任公司
   address: ''
   label: 晋江市舒意陶瓷有限责任公司
@@ -184,6 +195,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江市鸿华陶瓷有限公司
   address: ''
   label: 晋江市鸿华陶瓷有限公司
@@ -192,6 +204,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市紫茂陶瓷有限公司
   address: ''
   label: 福建省晋江市紫茂陶瓷有限公司
@@ -200,6 +213,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江市建新陶瓷有限责任公司
   address: ''
   label: 晋江市建新陶瓷有限责任公司
@@ -211,6 +225,7 @@ enterprises:
   lat: 24.839775
   lon: 118.484425
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市德顺陶瓷建材有限公司
   address: ''
   label: 晋江市德顺陶瓷建材有限公司
@@ -222,6 +237,7 @@ enterprises:
   lat: 24.841417
   lon: 118.46272
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江釉花锦砖有限公司
   address: ''
   label: 福建省晋江釉花锦砖有限公司
@@ -233,6 +249,7 @@ enterprises:
   lat: 24.838984
   lon: 118.484452
   geocode_level: POI
+  district: 晋江市
 - name: 晋江鑫圣亚陶瓷实业有限公司
   address: ''
   label: 晋江鑫圣亚陶瓷实业有限公司
@@ -244,6 +261,7 @@ enterprises:
   lat: 24.844325
   lon: 118.457225
   geocode_level: POI
+  district: 晋江市
 - name: 福建小虎陶瓷有限公司
   address: ''
   label: 福建小虎陶瓷有限公司
@@ -255,6 +273,7 @@ enterprises:
   lat: 24.84518
   lon: 118.474349
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市国邦建材有限公司
   address: ''
   label: 晋江市国邦建材有限公司
@@ -266,6 +285,7 @@ enterprises:
   lat: 24.681446
   lon: 118.627065
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市豪鹏陶瓷有限公司
   address: ''
   label: 福建省晋江市豪鹏陶瓷有限公司
@@ -277,6 +297,7 @@ enterprises:
   lat: 24.82939
   lon: 118.459387
   geocode_level: POI
+  district: 晋江市
 - name: 晋江合兴陶瓷有限公司
   address: ''
   label: 晋江合兴陶瓷有限公司
@@ -288,6 +309,7 @@ enterprises:
   lat: 24.827298
   lon: 118.510258
   geocode_level: POI
+  district: 晋江市
 - name: 晋江闽宝陶瓷有限公司
   address: ''
   label: 晋江闽宝陶瓷有限公司
@@ -296,6 +318,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江市彩霸陶瓷有限公司
   address: ''
   label: 晋江市彩霸陶瓷有限公司
@@ -307,6 +330,7 @@ enterprises:
   lat: 24.849068
   lon: 118.4706
   geocode_level: POI
+  district: 晋江市
 - name: 福建松岭陶瓷有限公司
   address: ''
   label: 福建松岭陶瓷有限公司
@@ -318,6 +342,7 @@ enterprises:
   lat: 24.843197
   lon: 118.502725
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市闽梅新型陶瓷制品有限公司
   address: ''
   label: 福建省晋江市闽梅新型陶瓷制品有限公司
@@ -326,6 +351,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市卓越陶瓷工业有限公司
   address: ''
   label: 福建省晋江市卓越陶瓷工业有限公司
@@ -337,6 +363,7 @@ enterprises:
   lat: 24.830764
   lon: 118.499136
   geocode_level: POI
+  district: 晋江市
 - name: 福建晋江市祥达陶瓷有限公司
   address: ''
   label: 福建晋江市祥达陶瓷有限公司
@@ -348,6 +375,7 @@ enterprises:
   lat: 24.828669
   lon: 118.483723
   geocode_level: POI
+  district: 晋江市
 - name: 福建省金利建材发展有限公司
   address: ''
   label: 福建省金利建材发展有限公司
@@ -356,6 +384,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市华业陶瓷有限公司
   address: ''
   label: 福建省晋江市华业陶瓷有限公司
@@ -367,6 +396,7 @@ enterprises:
   lat: 24.836638
   lon: 118.506461
   geocode_level: POI
+  district: 晋江市
 - name: 福建德祺建材有限公司
   address: ''
   label: 福建德祺建材有限公司
@@ -378,6 +408,7 @@ enterprises:
   lat: 24.812703
   lon: 118.474829
   geocode_level: POI
+  district: 晋江市
 - name: 福建东南陶瓷有限公司
   address: ''
   label: 福建东南陶瓷有限公司
@@ -389,6 +420,7 @@ enterprises:
   lat: 24.83482
   lon: 118.456579
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市森景陶瓷有限公司
   address: ''
   label: 晋江市森景陶瓷有限公司
@@ -397,6 +429,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 豪劲（福建）陶瓷有限公司
   address: ''
   label: 豪劲（福建）陶瓷有限公司
@@ -419,6 +452,7 @@ enterprises:
   lat: 24.822232
   lon: 118.510338
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市吉联陶瓷有限公司
   address: ''
   label: 晋江市吉联陶瓷有限公司
@@ -430,6 +464,7 @@ enterprises:
   lat: 24.844738
   lon: 118.513653
   geocode_level: POI
+  district: 晋江市
 - name: 福建信源集团发展有限公司
   address: ''
   label: 福建信源集团发展有限公司
@@ -438,6 +473,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建名奇陶瓷有限公司
   address: ''
   label: 福建名奇陶瓷有限公司
@@ -449,6 +485,7 @@ enterprises:
   lat: 24.822131
   lon: 118.498815
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市金壮建筑陶瓷有限公司
   address: ''
   label: 晋江市金壮建筑陶瓷有限公司
@@ -460,6 +497,7 @@ enterprises:
   lat: 24.827306
   lon: 118.446945
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江协隆陶瓷有限公司
   address: ''
   label: 福建省晋江协隆陶瓷有限公司
@@ -468,6 +506,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江奥成建材有限公司
   address: ''
   label: 晋江奥成建材有限公司
@@ -476,6 +515,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建芦川建材有限公司
   address: ''
   label: 福建芦川建材有限公司
@@ -487,6 +527,7 @@ enterprises:
   lat: 24.846952
   lon: 118.482311
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市侨丰建材有限公司
   address: ''
   label: 福建省晋江市侨丰建材有限公司
@@ -498,6 +539,7 @@ enterprises:
   lat: 24.84653
   lon: 118.496113
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市晋光新型建材有限公司
   address: ''
   label: 晋江市晋光新型建材有限公司
@@ -506,6 +548,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市华强陶瓷有限公司
   address: ''
   label: 福建省晋江市华强陶瓷有限公司
@@ -517,6 +560,7 @@ enterprises:
   lat: 24.824046
   lon: 118.522534
   geocode_level: POI
+  district: 晋江市
 - name: 晋江亨盛陶瓷有限公司
   address: ''
   label: 晋江亨盛陶瓷有限公司
@@ -528,6 +572,7 @@ enterprises:
   lat: 24.84111
   lon: 118.500761
   geocode_level: POI
+  district: 晋江市
 - name: 晋江广厦陶瓷建材有限公司
   address: ''
   label: 晋江广厦陶瓷建材有限公司
@@ -539,6 +584,7 @@ enterprises:
   lat: 24.824272
   lon: 118.522124
   geocode_level: POI
+  district: 晋江市
 - name: 福建中兴建材有限公司
   address: ''
   label: 福建中兴建材有限公司
@@ -547,6 +593,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市燕山建陶有限公司
   address: ''
   label: 福建省晋江市燕山建陶有限公司
@@ -558,6 +605,7 @@ enterprises:
   lat: 24.828194
   lon: 118.503017
   geocode_level: POI
+  district: 晋江市
 - name: 福建宏华集团有限公司
   address: ''
   label: 福建宏华集团有限公司
@@ -569,6 +617,7 @@ enterprises:
   lat: 24.809186
   lon: 118.506258
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江晋成陶瓷有限公司
   address: ''
   label: 福建省晋江晋成陶瓷有限公司
@@ -580,6 +629,7 @@ enterprises:
   lat: 24.799102
   lon: 118.499348
   geocode_level: POI
+  district: 晋江市
 - name: 福建七彩陶瓷有限公司
   address: ''
   label: 福建七彩陶瓷有限公司
@@ -591,6 +641,7 @@ enterprises:
   lat: 24.839949
   lon: 118.462251
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市碧泉陶瓷有限公司
   address: ''
   label: 晋江市碧泉陶瓷有限公司
@@ -613,6 +664,7 @@ enterprises:
   lat: 24.820571
   lon: 118.511967
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市利达陶瓷有限公司
   address: ''
   label: 福建省晋江市利达陶瓷有限公司
@@ -624,6 +676,7 @@ enterprises:
   lat: 24.822268
   lon: 118.464867
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江德益建材有限公司
   address: ''
   label: 福建省晋江德益建材有限公司
@@ -632,6 +685,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江市美胜陶瓷实业有限公司
   address: ''
   label: 晋江市美胜陶瓷实业有限公司
@@ -643,6 +697,7 @@ enterprises:
   lat: 24.82502
   lon: 118.520956
   geocode_level: POI
+  district: 晋江市
 - name: 福建尊威陶瓷有限公司
   address: ''
   label: 福建尊威陶瓷有限公司
@@ -651,6 +706,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 佳辉（福建）陶瓷有限公司
   address: ''
   label: 佳辉（福建）陶瓷有限公司
@@ -673,6 +729,7 @@ enterprises:
   lat: 24.840098
   lon: 118.605297
   geocode_level: POI
+  district: 晋江市
 - name: 晋江辅友建材有限公司
   address: ''
   label: 晋江辅友建材有限公司
@@ -684,6 +741,7 @@ enterprises:
   lat: 24.887078
   lon: 118.490879
   geocode_level: POI
+  district: 晋江市
 - name: 福建省埃莱克陶瓷有限公司
   address: ''
   label: 福建省埃莱克陶瓷有限公司
@@ -692,6 +750,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省山美新型建材有限公司
   address: ''
   label: 福建省山美新型建材有限公司
@@ -703,6 +762,7 @@ enterprises:
   lat: 24.844151
   lon: 118.502253
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市华强防火涂料有限公司
   address: ''
   label: 晋江市华强防火涂料有限公司
@@ -711,6 +771,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建省晋江市碧圣建材有限公司
   address: ''
   label: 福建省晋江市碧圣建材有限公司
@@ -722,6 +783,7 @@ enterprises:
   lat: 24.812044
   lon: 118.526543
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市福佑陶瓷原料有限公司
   address: ''
   label: 晋江市福佑陶瓷原料有限公司
@@ -733,3 +795,4 @@ enterprises:
   lat: 24.845353
   lon: 118.479167
   geocode_level: POI
+  district: 晋江市

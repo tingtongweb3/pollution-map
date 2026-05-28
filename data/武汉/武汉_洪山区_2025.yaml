@@ -1,0 +1,440 @@
+meta:
+  dpi: 200
+  title: 武汉市洪山区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：武汉市生态环境局2025年环境监管重点单位名录  |  共31家  |  坐标：高德地图
+  output_path: ./武汉_洪山区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  city: 武汉
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 中国石化销售股份有限公司湖北武汉先建中环加油站
+  address: 湖北省武汉市洪山区三环线服务区内
+  label: 中国石化销售股份有限公司湖北武汉先建中环加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.587626
+  lon: 114.432225
+  geocode_level: 未知
+- name: 中国石化销售股份有限公司湖北武汉武丰二加油站
+  address: 湖北省武汉市新洲区阳光北路与阳光大道交叉口西北方向47米左右
+  label: 中国石化销售股份有限公司湖北武汉武丰二加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.675471
+  lon: 114.577241
+  geocode_level: 跨区
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司五星加油站
+  address: 洪山区洪山乡先建村小茅店
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司五星加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.460277
+  lon: 114.359185
+  geocode_level: 村庄
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司徐东路加油站
+  address: ''
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司徐东路加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.585128
+  lon: 114.3555
+  geocode_level: 住宅区
+- name: 中国石油天然气股份有限公司湖北武汉销售分公司武丰吉利加油加气站
+  address: 湖北省武汉市江汉区汉兴街街道常青路149号中石油大厦20楼
+  label: 中国石油天然气股份有限公司湖北武汉销售分公司武丰吉利加油加气站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.623877
+  lon: 114.239354
+  geocode_level: 跨区
+- name: 武汉九濯石化科技有限公司乔木湾加油站
+  address: ''
+  label: 武汉九濯石化科技有限公司乔木湾加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.504218
+  lon: 114.295929
+  geocode_level: 住宅区
+- name: 武汉市城市排水发展有限公司落步嘴污水处理厂
+  address: 湖北省武汉市洪山区和平街道友谊大道现代花园-A区东南侧约40米
+  label: 武汉市城市排水发展有限公司落步嘴污水处理厂
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.618322
+  lon: 114.40679
+  geocode_level: 跨区
+- name: 武汉市城市排水发展有限公司黄家湖污水处理厂
+  address: 湖北省武汉市洪山区黄家湖大学城
+  label: 武汉市城市排水发展有限公司黄家湖污水处理厂
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.449062
+  lon: 114.267309
+  geocode_level: 兴趣点
+- name: 武汉市第三医院光谷院区
+  address: ''
+  label: 武汉市第三医院光谷院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.505837
+  lon: 114.409539
+  geocode_level: 住宅区
+- name: 武汉龙安集团有限责任公司
+  address: ''
+  label: 武汉龙安集团有限责任公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 洪山区
+  lat: 30.501338
+  lon: 114.396551
+  geocode_level: 兴趣点
+- name: 浦项奥斯特姆（武汉）汽车配件有限公司
+  address: 湖北省武汉市江夏区横二路
+  label: 浦项奥斯特姆（武汉）汽车配件有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 洪山区
+  lat: 30.392878
+  lon: 114.197855
+  geocode_level: 道路
+- name: 湖北中油铭诚油气销售有限公司吴家湾加油站
+  address: ''
+  label: 湖北中油铭诚油气销售有限公司吴家湾加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.511726
+  lon: 114.390308
+  geocode_level: 住宅区
+- name: 湖北华电创意天地新能源有限公司
+  address: ''
+  label: 湖北华电创意天地新能源有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 洪山区
+  lat: 30.470526
+  lon: 114.321887
+  geocode_level: 住宅区
+- name: 湖北新海中汇石油化工有限公司大洲加油站
+  address: ''
+  label: 湖北新海中汇石油化工有限公司大洲加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.61554
+  lon: 114.382799
+  geocode_level: 村庄
+- name: 湖北省中医院光谷院区
+  address: ''
+  label: 湖北省中医院光谷院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.505889
+  lon: 114.408405
+  geocode_level: 兴趣点
+- name: 湖北省肿瘤医院
+  address: ''
+  label: 湖北省肿瘤医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 洪山区
+  lat: 30.500225
+  lon: 114.364673
+  geocode_level: 兴趣点
+- name: 道达尔能源销售（湖北）有限公司先建交通服务站
+  address: 湖北省武汉市洪山区三环线道达尔能源先建交通服务区右侧
+  label: 道达尔能源销售（湖北）有限公司先建交通服务站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.458098
+  lon: 114.350524
+  geocode_level: 兴趣点
+- name: 道达尔能源销售（湖北）有限公司卓豹路交通服务站
+  address: ''
+  label: 道达尔能源销售（湖北）有限公司卓豹路交通服务站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.507073
+  lon: 114.377299
+  geocode_level: 道路
+- name: 道达尔能源销售（湖北）有限公司雄楚大道交通服务站
+  address: 湖北省武汉市洪山区雄楚大道
+  label: 道达尔能源销售（湖北）有限公司雄楚大道交通服务站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.513554
+  lon: 114.337028
+  geocode_level: 兴趣点
+- name: 马应龙药业集团股份有限公司
+  address: ''
+  label: 马应龙药业集团股份有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 洪山区
+  lat: 30.485848
+  lon: 114.327227
+  geocode_level: 未知
+- name: 武汉大学人民医院洪山院区
+  address: ''
+  label: 武汉大学人民医院洪山院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.474356
+  lon: 114.284734
+  geocode_level: 兴趣点
+- name: 武汉迈瑞科技有限公司
+  address: 湖北省武汉市洪山区青菱街道白沙洲中小企业城42幢
+  label: 武汉迈瑞科技有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 洪山区
+  lat: 30.457961
+  lon: 114.249904
+  geocode_level: 兴趣点
+- name: 中国铁路武汉局集团有限公司武昌南机务段
+  address: ''
+  label: 中国铁路武汉局集团有限公司武昌南机务段
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  - 大气环境
+  district: 洪山区
+  lat: 30.471844
+  lon: 114.303501
+  geocode_level: 道路
+- name: 武汉市中心医院（杨春湖院区）
+  address: 湖北省武汉市洪山区和平街道礼和路188号
+  label: 武汉市中心医院（杨春湖院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.600752
+  lon: 114.395641
+  geocode_level: 兴趣点
+- name: 武汉市城市排水发展有限公司二郎庙污水处理厂
+  address: 湖北省武汉市洪山区
+  label: 武汉市城市排水发展有限公司二郎庙污水处理厂
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  district: 洪山区
+  lat: 30.500642
+  lon: 114.342664
+  geocode_level: 区县
+- name: 武汉市水务集团有限公司武昌供水分公司白沙洲水厂
+  address: ''
+  label: 武汉市水务集团有限公司武昌供水分公司白沙洲水厂
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.475052
+  lon: 114.268115
+  geocode_level: 住宅区
+- name: 武汉科技大学附属老年病医院
+  address: ''
+  label: 武汉科技大学附属老年病医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.444171
+  lon: 114.264384
+  geocode_level: 兴趣点
+- name: 武汉齐菲源再生资源有限公司
+  address: 湖北省武汉市黄陂区横天路特8号
+  label: 武汉齐菲源再生资源有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  district: 洪山区
+  lat: 30.792648
+  lon: 114.298522
+  geocode_level: 跨区
+- name: 湖北医养康复中心
+  address: ''
+  label: 湖北医养康复中心
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.497594
+  lon: 114.365331
+  geocode_level: 兴趣点
+- name: 湖北省妇幼保健院
+  address: 湖北省武汉市洪山区张家湾街道张家湾街白沙三路63号湖北省妇幼保健院(洪山院区)
+  label: 湖北省妇幼保健院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 洪山区
+  lat: 30.479123
+  lon: 114.29148
+  geocode_level: 兴趣点
+- name: 湖北省妇幼保健院洪山院区
+  address: ''
+  label: 湖北省妇幼保健院洪山院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  district: 洪山区
+  lat: 30.478778
+  lon: 114.291656
+  geocode_level: 兴趣点

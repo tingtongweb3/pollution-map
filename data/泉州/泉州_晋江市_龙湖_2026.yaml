@@ -66,6 +66,7 @@ enterprises:
   lat: 24.649992
   lon: 118.597457
   geocode_level: POI
+  district: 晋江市
 - name: 福建百宏聚纤科技实业有限公司
   address: ''
   label: 福建百宏聚纤科技实业有限公司
@@ -75,6 +76,7 @@ enterprises:
   categories:
   - 大气环境
   - 水环境
+  district: 晋江市
 - name: 晋江永捷印花有限公司
   address: ''
   label: 晋江永捷印花有限公司
@@ -83,6 +85,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 福建省百凯经编实业有限公司
   address: ''
   label: 福建省百凯经编实业有限公司
@@ -91,6 +94,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江锦晖染织有限公司
   address: ''
   label: 晋江锦晖染织有限公司
@@ -102,6 +106,7 @@ enterprises:
   lat: 24.706214
   lon: 118.622139
   geocode_level: POI
+  district: 晋江市
 - name: 晋江福林服饰洗烫有限公司
   address: ''
   label: 晋江福林服饰洗烫有限公司
@@ -113,6 +118,7 @@ enterprises:
   lat: 24.688934
   lon: 118.592087
   geocode_level: POI
+  district: 晋江市
 - name: 福建百宏聚纤科技实业有限公司（晋南厂区）
   address: ''
   label: 福建百宏聚纤科技实业有限公司（晋南厂区）
@@ -130,6 +136,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江南方织造有限公司
   address: ''
   label: 晋江南方织造有限公司
@@ -141,6 +148,7 @@ enterprises:
   lat: 24.668967
   lon: 118.581804
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙湖镇恒裕水洗厂
   address: ''
   label: 晋江市龙湖镇恒裕水洗厂
@@ -149,6 +157,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市远大服装织造有限公司
   address: ''
   label: 晋江市远大服装织造有限公司
@@ -160,6 +169,7 @@ enterprises:
   lat: 24.633934
   lon: 118.492847
   geocode_level: POI
+  district: 晋江市
 - name: 龙之族（中国）有限公司
   address: ''
   label: 龙之族（中国）有限公司
@@ -182,6 +192,7 @@ enterprises:
   lat: 24.663695
   lon: 118.576666
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市信诚化纤实业有限公司
   address: ''
   label: 晋江市信诚化纤实业有限公司
@@ -190,6 +201,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 福建信隆纺织有限公司
   address: ''
   label: 福建信隆纺织有限公司
@@ -201,6 +213,7 @@ enterprises:
   lat: 24.789433
   lon: 118.61808
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市金城水洗有限公司
   address: ''
   label: 晋江市金城水洗有限公司
@@ -212,6 +225,7 @@ enterprises:
   lat: 24.62985
   lon: 118.623949
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市宏伟服饰发展有限公司
   address: ''
   label: 晋江市宏伟服饰发展有限公司
@@ -223,6 +237,7 @@ enterprises:
   lat: 24.658315
   lon: 118.617319
   geocode_level: POI
+  district: 晋江市
 - name: 晋江万兴隆化纤制品有限公司
   address: ''
   label: 晋江万兴隆化纤制品有限公司
@@ -231,6 +246,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市速洁特服装加工有限公司
   address: ''
   label: 晋江市速洁特服装加工有限公司
@@ -242,6 +258,7 @@ enterprises:
   lat: 24.685997
   lon: 118.5055
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙湖镇威龙服装水洗厂
   address: ''
   label: 晋江市龙湖镇威龙服装水洗厂
@@ -253,6 +270,7 @@ enterprises:
   lat: 24.663695
   lon: 118.576666
   geocode_level: POI
+  district: 晋江市
 - name: 晋江联纺织造有限公司
   address: ''
   label: 晋江联纺织造有限公司
@@ -264,6 +282,7 @@ enterprises:
   lat: 24.676493
   lon: 118.583526
   geocode_level: POI
+  district: 晋江市
 - name: 创捷实业有限公司
   address: ''
   label: 创捷实业有限公司
@@ -275,6 +294,7 @@ enterprises:
   lat: 24.680653
   lon: 118.627697
   geocode_level: POI
+  district: 晋江市
 - name: 福建百凯纺织化纤实业有限公司
   address: ''
   label: 福建百凯纺织化纤实业有限公司
@@ -283,6 +303,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 福建百宏高新材料实业有限公司
   address: ''
   label: 福建百宏高新材料实业有限公司
@@ -293,6 +314,7 @@ enterprises:
   - 土壤污染
   - 大气环境
   - 环境风险
+  district: 晋江市
 - name: 晋江华鑫塑料橡胶制品有限公司
   address: ''
   label: 晋江华鑫塑料橡胶制品有限公司
@@ -304,6 +326,7 @@ enterprises:
   lat: 24.728721
   lon: 118.513388
   geocode_level: POI
+  district: 晋江市
 - name: 泉州市华跃中翔环保有限公司
   address: ''
   label: 泉州市华跃中翔环保有限公司
@@ -312,6 +335,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 泉州市盛欣纤维制品有限公司
   address: ''
   label: 泉州市盛欣纤维制品有限公司
@@ -323,6 +347,7 @@ enterprises:
   lat: 24.68784
   lon: 118.604661
   geocode_level: POI
+  district: 晋江市
 - name: 福建盛欣化纤有限公司（龙湖厂）
   address: ''
   label: 福建盛欣化纤有限公司（龙湖厂）
@@ -345,6 +370,7 @@ enterprises:
   lat: 24.667625
   lon: 118.593275
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市联盛舒坦科技有限公司
   address: ''
   label: 晋江市联盛舒坦科技有限公司
@@ -356,6 +382,7 @@ enterprises:
   lat: 24.667286
   lon: 118.591082
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙湖科宝助剂有限公司
   address: ''
   label: 晋江市龙湖科宝助剂有限公司
@@ -367,6 +394,7 @@ enterprises:
   lat: 24.700983
   lon: 118.661774
   geocode_level: POI
+  district: 晋江市
 - name: 晋江远丰织造有限公司
   address: ''
   label: 晋江远丰织造有限公司
@@ -378,6 +406,7 @@ enterprises:
   lat: 24.616378
   lon: 118.530547
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市佳福化纤实业有限公司
   address: ''
   label: 晋江市佳福化纤实业有限公司
@@ -386,6 +415,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 晋江市南星印染材料有限公司
   address: ''
   label: 晋江市南星印染材料有限公司
@@ -397,3 +427,4 @@ enterprises:
   lat: 24.69066
   lon: 118.609691
   geocode_level: POI
+  district: 晋江市

@@ -66,6 +66,7 @@ enterprises:
   lat: 24.622644
   lon: 118.589327
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市瑞益服装织造有限公司
   address: ''
   label: 晋江市瑞益服装织造有限公司
@@ -77,6 +78,7 @@ enterprises:
   lat: 24.621913
   lon: 118.509147
   geocode_level: POI
+  district: 晋江市
 - name: 晋江东广印花有限公司
   address: ''
   label: 晋江东广印花有限公司
@@ -88,6 +90,7 @@ enterprises:
   lat: 24.586057
   lon: 118.6102
   geocode_level: POI
+  district: 晋江市
 - name: 福建天辉织造有限公司
   address: ''
   label: 福建天辉织造有限公司
@@ -99,6 +102,7 @@ enterprises:
   lat: 24.606275
   lon: 118.599054
   geocode_level: POI
+  district: 晋江市
 - name: 晋江鑫彩服装有限公司
   address: ''
   label: 晋江鑫彩服装有限公司
@@ -110,6 +114,7 @@ enterprises:
   lat: 24.604041
   lon: 118.597254
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市港益纤维制品有限公司（金井厂区）
   address: ''
   label: 晋江市港益纤维制品有限公司（金井厂区）
@@ -132,6 +137,7 @@ enterprises:
   lat: 24.584653
   lon: 118.596344
   geocode_level: POI
+  district: 晋江市
 - name: 大发科技集团有限公司
   address: ''
   label: 大发科技集团有限公司
@@ -143,6 +149,7 @@ enterprises:
   lat: 24.608975
   lon: 118.611021
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市金井镇联艺纺织面料后整理加工厂
   address: ''
   label: 晋江市金井镇联艺纺织面料后整理加工厂
@@ -151,6 +158,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市鸿兴服装水磨有限公司
   address: ''
   label: 晋江市鸿兴服装水磨有限公司
@@ -159,6 +167,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 福建省晋江金井玉山联发水磨厂
   address: ''
   label: 福建省晋江金井玉山联发水磨厂
@@ -167,6 +176,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市山林服饰水洗有限公司
   address: ''
   label: 晋江市山林服饰水洗有限公司
@@ -178,6 +188,7 @@ enterprises:
   lat: 24.600983
   lon: 118.62987
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市福进服装水洗有限公司
   address: ''
   label: 晋江市福进服装水洗有限公司
@@ -189,6 +200,7 @@ enterprises:
   lat: 24.603601
   lon: 118.59809
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市顺发水磨漂洗有限公司
   address: ''
   label: 晋江市顺发水磨漂洗有限公司
@@ -197,6 +209,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市金井鸿运漂洗有限公司
   address: ''
   label: 晋江市金井鸿运漂洗有限公司
@@ -205,6 +218,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 世兴达（福建）纺织科技有限公司
   address: ''
   label: 世兴达（福建）纺织科技有限公司
@@ -228,6 +242,7 @@ enterprises:
   lat: 24.586631
   lon: 118.620878
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江圳源环境科技有限责任公司
   address: ''
   label: 福建省晋江圳源环境科技有限责任公司
@@ -239,6 +254,7 @@ enterprises:
   lat: 24.86257
   lon: 118.550009
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市金井富源水洗厂
   address: ''
   label: 晋江市金井富源水洗厂
@@ -250,6 +266,7 @@ enterprises:
   lat: 24.607375
   lon: 118.605275
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市鲲鹏纺织制品有限公司
   address: ''
   label: 晋江市鲲鹏纺织制品有限公司
@@ -261,6 +278,7 @@ enterprises:
   lat: 24.572602
   lon: 118.612563
   geocode_level: POI
+  district: 晋江市
 - name: 向兴（福建）新材料科技有限公司
   address: ''
   label: 向兴（福建）新材料科技有限公司
@@ -283,6 +301,7 @@ enterprises:
   lat: 24.609225
   lon: 118.610075
   geocode_level: POI
+  district: 晋江市
 - name: 福建晋江天然气发电有限公司
   address: ''
   label: 福建晋江天然气发电有限公司
@@ -294,6 +313,7 @@ enterprises:
   lat: 24.560308
   lon: 118.647974
   geocode_level: POI
+  district: 晋江市
 - name: 瀚蓝（晋江）固废处理有限公司（晋江市金井镇综合固废填埋场）
   address: ''
   label: 瀚蓝（晋江）固废处理有限公司（晋江市金井镇综合固废填埋场）
@@ -314,6 +334,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 晋江市盛隆纺织实业有限公司
   address: ''
   label: 晋江市盛隆纺织实业有限公司
@@ -322,3 +343,4 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市

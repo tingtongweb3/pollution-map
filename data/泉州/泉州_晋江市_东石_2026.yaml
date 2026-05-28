@@ -67,6 +67,7 @@ enterprises:
   lat: 24.666013
   lon: 118.474818
   geocode_level: POI
+  district: 晋江市
 - name: 泉州市华澳环保科技有限公司
   address: ''
   label: 泉州市华澳环保科技有限公司
@@ -80,6 +81,7 @@ enterprises:
   lat: 24.642706
   lon: 118.507556
   geocode_level: POI
+  district: 晋江市
 - name: 锦兴皮业科技有限公司
   address: ''
   label: 锦兴皮业科技有限公司
@@ -93,6 +95,7 @@ enterprises:
   lat: 24.677077
   lon: 118.47003
   geocode_level: POI
+  district: 晋江市
 - name: 晋江华峰织造印染实业有限公司
   address: ''
   label: 晋江华峰织造印染实业有限公司
@@ -104,6 +107,7 @@ enterprises:
   lat: 24.676161
   lon: 118.469623
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市威立织造实业有限公司
   address: ''
   label: 晋江市威立织造实业有限公司
@@ -115,6 +119,7 @@ enterprises:
   lat: 24.670257
   lon: 118.463174
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市三友涂料油墨有限公司
   address: ''
   label: 晋江市三友涂料油墨有限公司
@@ -126,6 +131,7 @@ enterprises:
   lat: 24.63815
   lon: 118.475256
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江万泰涂料有限公司
   address: ''
   label: 福建省晋江万泰涂料有限公司
@@ -137,6 +143,7 @@ enterprises:
   lat: 24.648646
   lon: 118.465173
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市宜星服装织造有限公司
   address: ''
   label: 晋江市宜星服装织造有限公司
@@ -148,6 +155,7 @@ enterprises:
   lat: 24.635425
   lon: 118.494375
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市东石三和泰涂料有限公司
   address: ''
   label: 福建省晋江市东石三和泰涂料有限公司
@@ -156,6 +164,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 大气环境
+  district: 晋江市
 - name: 晋江豪富电镀有限公司
   address: ''
   label: 晋江豪富电镀有限公司
@@ -168,6 +177,7 @@ enterprises:
   lat: 24.680832
   lon: 118.466267
   geocode_level: POI
+  district: 晋江市
 - name: 晋江璞邦电镀有限公司
   address: ''
   label: 晋江璞邦电镀有限公司
@@ -177,6 +187,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 晋江市
 - name: 晋江市务实环保科技有限公司（中懋厂区）
   address: ''
   label: 晋江市务实环保科技有限公司（中懋厂区）
@@ -200,6 +211,7 @@ enterprises:
   lat: 24.681013
   lon: 118.4682
   geocode_level: POI
+  district: 晋江市
 - name: 晋江东翔电镀有限公司
   address: ''
   label: 晋江东翔电镀有限公司
@@ -212,6 +224,7 @@ enterprises:
   lat: 24.681304
   lon: 118.466504
   geocode_level: POI
+  district: 晋江市
 - name: 晋江东全电镀有限公司
   address: ''
   label: 晋江东全电镀有限公司
@@ -224,6 +237,7 @@ enterprises:
   lat: 24.68067
   lon: 118.468485
   geocode_level: POI
+  district: 晋江市
 - name: 晋江公盈电镀有限公司
   address: ''
   label: 晋江公盈电镀有限公司
@@ -233,6 +247,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 晋江市
 - name: 晋江市带路金属制品有限公司
   address: ''
   label: 晋江市带路金属制品有限公司
@@ -245,6 +260,7 @@ enterprises:
   lat: 24.679132
   lon: 118.467925
   geocode_level: POI
+  district: 晋江市
 - name: 晋江隆圣矿物油贸易有限公司
   address: ''
   label: 晋江隆圣矿物油贸易有限公司
@@ -253,6 +269,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 晋江市众茂五金制品有限公司
   address: ''
   label: 晋江市众茂五金制品有限公司
@@ -264,6 +281,7 @@ enterprises:
   lat: 24.758033
   lon: 118.607287
   geocode_level: POI
+  district: 晋江市
 - name: 福建雨丝梦洋伞实业有限公司
   address: ''
   label: 福建雨丝梦洋伞实业有限公司
@@ -275,6 +293,7 @@ enterprises:
   lat: 24.61367
   lon: 118.522739
   geocode_level: POI
+  district: 晋江市
 - name: 雨中鸟（福建）户外用品有限公司
   address: ''
   label: 雨中鸟（福建）户外用品有限公司
@@ -294,6 +313,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市
 - name: 福建晋江市锨宇金属表面处理有限公司
   address: ''
   label: 福建晋江市锨宇金属表面处理有限公司
@@ -305,3 +325,4 @@ enterprises:
   lat: 24.679682
   lon: 118.466069
   geocode_level: POI
+  district: 晋江市

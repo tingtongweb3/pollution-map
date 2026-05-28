@@ -66,6 +66,7 @@ enterprises:
   lat: 31.382887
   lon: 118.926437
   geocode_level: POI
+  district: 高淳区
 - name: 南京润京乳胶制品有限公司
   address: ''
   label: 南京润京乳胶制品有限公司
@@ -77,6 +78,7 @@ enterprises:
   lat: 31.383331
   lon: 118.943638
   geocode_level: POI
+  district: 高淳区
 - name: 海太欧林集团股份有限公司
   address: ''
   label: 海太欧林集团股份有限公司
@@ -90,6 +92,7 @@ enterprises:
   lat: 31.369336
   lon: 118.933402
   geocode_level: POI
+  district: 高淳区
 - name: 南京市高淳人民医院
   address: ''
   label: 南京市高淳人民医院
@@ -102,6 +105,7 @@ enterprises:
   lat: 31.36341
   lon: 118.939775
   geocode_level: POI
+  district: 高淳区
 - name: 南京宁高协鑫燃机热电有限公司
   address: ''
   label: 南京宁高协鑫燃机热电有限公司
@@ -114,6 +118,7 @@ enterprises:
   lat: 31.357845
   lon: 118.916059
   geocode_level: POI
+  district: 高淳区
 - name: 南京市高淳中医院
   address: ''
   label: 南京市高淳中医院
@@ -126,6 +131,7 @@ enterprises:
   lat: 31.322922
   lon: 118.868535
   geocode_level: POI
+  district: 高淳区
 - name: 光大再生能源（南京）有限公司
   address: ''
   label: 光大再生能源（南京）有限公司
@@ -139,6 +145,7 @@ enterprises:
   lat: 31.305141
   lon: 119.078516
   geocode_level: POI
+  district: 高淳区
 - name: 江苏中邦制药有限公司
   address: ''
   label: 江苏中邦制药有限公司
@@ -152,6 +159,7 @@ enterprises:
   lat: 31.348868
   lon: 118.934204
   geocode_level: POI
+  district: 高淳区
 - name: 江苏润淳环境集团有限公司
   address: ''
   label: 江苏润淳环境集团有限公司
@@ -163,6 +171,7 @@ enterprises:
   lat: 31.386882
   lon: 118.938084
   geocode_level: POI
+  district: 高淳区
 - name: 南京弥盛陶瓷制品有限公司
   address: ''
   label: 南京弥盛陶瓷制品有限公司
@@ -174,6 +183,7 @@ enterprises:
   lat: 31.318475
   lon: 118.978058
   geocode_level: POI
+  district: 高淳区
 - name: 仁厚碳素科技(江苏)有限公司
   address: ''
   label: 仁厚碳素科技(江苏)有限公司
@@ -185,6 +195,7 @@ enterprises:
   lat: 31.366725
   lon: 118.957925
   geocode_level: POI
+  district: 高淳区
 - name: 希恩杰普莱登（南京）羽绒有限公司
   address: ''
   label: 希恩杰普莱登（南京）羽绒有限公司
@@ -193,6 +204,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 高淳区
 - name: 南京润淳环境科技有限公司
   address: ''
   label: 南京润淳环境科技有限公司
@@ -204,6 +216,7 @@ enterprises:
   lat: 31.345092
   lon: 118.944969
   geocode_level: POI
+  district: 高淳区
 - name: 南京红太阳股份有限公司
   address: ''
   label: 南京红太阳股份有限公司
@@ -218,6 +231,7 @@ enterprises:
   lat: 31.32
   lon: 118.9
   geocode_level: manual
+  district: 高淳区
 - name: 南京华洲药业有限公司
   address: ''
   label: 南京华洲药业有限公司
@@ -231,6 +245,7 @@ enterprises:
   lat: 31.357268
   lon: 119.17326
   geocode_level: POI
+  district: 高淳区
 - name: 南京荣泰污水处理有限公司
   address: ''
   label: 南京荣泰污水处理有限公司
@@ -242,6 +257,7 @@ enterprises:
   lat: 31.34785
   lon: 118.90877
   geocode_level: POI
+  district: 高淳区
 - name: 特丰制药有限公司
   address: ''
   label: 特丰制药有限公司
@@ -250,6 +266,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.328678
+  lon: 118.892074
+  geocode_level: POI
+  district: 高淳区
 - name: 江苏高淳陶瓷股份有限公司
   address: ''
   label: 江苏高淳陶瓷股份有限公司
@@ -262,6 +282,7 @@ enterprises:
   lat: 31.3359
   lon: 118.939657
   geocode_level: POI
+  district: 高淳区
 - name: 南京国邦水务有限公司
   address: 南京市高淳区淳溪镇镇兴路227号
   label: 南京国邦水务有限公司
@@ -273,6 +294,7 @@ enterprises:
   lat: 31.336
   lon: 118.881
   geocode_level: manual
+  district: 高淳区
 - name: 南京市高淳区水务建设投资有限公司东坝污水处理分公司
   address: ''
   label: 南京市高淳区水务建设投资有限公司东坝污水处理分公司
@@ -281,6 +303,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.318375
+  lon: 119.053714
+  geocode_level: 住宅区
+  district: 高淳区
 - name: 南京市高淳区水务建设投资有限公司固城污水处理分公司
   address: ''
   label: 南京市高淳区水务建设投资有限公司固城污水处理分公司
@@ -289,6 +315,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.340651
+  lon: 118.883403
+  geocode_level: 住宅区
+  district: 高淳区
 - name: 南京市高淳区水务建设投资有限公司阳江污水处理分公司
   address: ''
   label: 南京市高淳区水务建设投资有限公司阳江污水处理分公司
@@ -297,6 +327,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.329373
+  lon: 118.817883
+  geocode_level: 住宅区
+  district: 高淳区
 - name: 南京市高淳区水务建设投资有限公司砖墙污水处理分公司
   address: ''
   label: 南京市高淳区水务建设投资有限公司砖墙污水处理分公司
@@ -305,6 +339,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.262967
+  lon: 118.825414
+  geocode_level: 村庄
+  district: 高淳区
 - name: 南京市高淳区水务建设投资有限公司桠溪污水处理分公司
   address: ''
   label: 南京市高淳区水务建设投资有限公司桠溪污水处理分公司
@@ -313,6 +351,10 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  lat: 31.315492
+  lon: 119.151468
+  geocode_level: 住宅区
+  district: 高淳区
 - name: 范德威尔（南京）纺织机械有限公司
   address: ''
   label: 范德威尔（南京）纺织机械有限公司
@@ -325,6 +367,7 @@ enterprises:
   lat: 31.373725
   lon: 118.962151
   geocode_level: POI
+  district: 高淳区
 - name: 南京沃尔德特钢有限公司
   address: ''
   label: 南京沃尔德特钢有限公司
@@ -336,6 +379,7 @@ enterprises:
   lat: 31.361773
   lon: 118.933251
   geocode_level: POI
+  district: 高淳区
 - name: 南京冠盛汽配有限公司
   address: ''
   label: 南京冠盛汽配有限公司
@@ -347,6 +391,7 @@ enterprises:
   lat: 31.377622
   lon: 118.94846
   geocode_level: POI
+  district: 高淳区
 - name: 南京正领汽车部件有限公司
   address: ''
   label: 南京正领汽车部件有限公司
@@ -358,6 +403,7 @@ enterprises:
   lat: 31.384125
   lon: 118.952975
   geocode_level: POI
+  district: 高淳区
 - name: 南京淳容环境有限公司
   address: ''
   label: 南京淳容环境有限公司
@@ -369,6 +415,7 @@ enterprises:
   lat: 31.34
   lon: 118.88
   geocode_level: manual
+  district: 高淳区
 - name: 南京恒丰玻璃制品有限公司
   address: ''
   label: 南京恒丰玻璃制品有限公司
@@ -380,6 +427,7 @@ enterprises:
   lat: 31.372203
   lon: 119.100844
   geocode_level: POI
+  district: 高淳区
 - name: 南京诚一新能源装备有限公司
   address: ''
   label: 南京诚一新能源装备有限公司
@@ -391,3 +439,4 @@ enterprises:
   lat: 31.344572
   lon: 118.947446
   geocode_level: POI
+  district: 高淳区

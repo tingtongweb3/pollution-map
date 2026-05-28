@@ -68,6 +68,7 @@ enterprises:
   lat: 24.711702
   lon: 118.487075
   geocode_level: POI
+  district: 晋江市
 - name: 泉州松志环保科技有限公司（可慕污水厂）
   address: ''
   label: 泉州松志环保科技有限公司（可慕污水厂）
@@ -92,6 +93,7 @@ enterprises:
   lat: 24.677591
   lon: 118.513346
   geocode_level: POI
+  district: 晋江市
 - name: 福建晋江良兴染织厂有限公司
   address: ''
   label: 福建晋江良兴染织厂有限公司
@@ -101,6 +103,7 @@ enterprises:
   categories:
   - 土壤污染
   - 水环境
+  district: 晋江市
 - name: 联邦印染（泉州）有限公司
   address: ''
   label: 联邦印染（泉州）有限公司
@@ -120,6 +123,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 福建晋江鸿裕涂层织物有限公司
   address: ''
   label: 福建晋江鸿裕涂层织物有限公司
@@ -128,6 +132,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 晋江市安海医院
   address: ''
   label: 晋江市安海医院
@@ -139,6 +144,7 @@ enterprises:
   lat: 24.717413
   lon: 118.464981
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市协兴洗染有限公司
   address: ''
   label: 福建省晋江市协兴洗染有限公司
@@ -150,6 +156,7 @@ enterprises:
   lat: 24.699901
   lon: 118.533823
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市华联印铁制罐有限公司（新厂）
   address: ''
   label: 晋江市华联印铁制罐有限公司（新厂）
@@ -170,6 +177,7 @@ enterprises:
   categories:
   - 土壤污染
   - 环境风险
+  district: 晋江市
 - name: 慕盛皮革新科技（福建）有限公司
   address: ''
   label: 慕盛皮革新科技（福建）有限公司
@@ -191,6 +199,7 @@ enterprises:
   lat: 24.736908
   lon: 118.526595
   geocode_level: POI
+  district: 晋江市
 - name: 福建省晋江市聚泰制革有限公司
   address: ''
   label: 福建省晋江市聚泰制革有限公司
@@ -203,6 +212,7 @@ enterprises:
   lat: 24.686825
   lon: 118.460725
   geocode_level: POI
+  district: 晋江市
 - name: 泉州共进皮革有限公司
   address: ''
   label: 泉州共进皮革有限公司
@@ -214,6 +224,7 @@ enterprises:
   lat: 24.687517
   lon: 118.461976
   geocode_level: POI
+  district: 晋江市
 - name: 晋江鸿安皮业有限公司
   address: ''
   label: 晋江鸿安皮业有限公司
@@ -225,6 +236,7 @@ enterprises:
   lat: 24.727573
   lon: 118.511628
   geocode_level: POI
+  district: 晋江市
 - name: 晋江紫滨农牧实业有限公司
   address: ''
   label: 晋江紫滨农牧实业有限公司
@@ -236,6 +248,7 @@ enterprises:
   lat: 24.676372
   lon: 118.514362
   geocode_level: POI
+  district: 晋江市
 - name: 泉州市天马星环保科技有限公司
   address: ''
   label: 泉州市天马星环保科技有限公司
@@ -247,3 +260,4 @@ enterprises:
   lat: 24.752955
   lon: 118.452771
   geocode_level: POI
+  district: 晋江市

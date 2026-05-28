@@ -63,8 +63,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.146808
-  lon: 118.869624
+  district: 经济技术开发区
+  lat: 32.148536
+  lon: 118.868242
   geocode_level: POI
 - name: 南京京东方显示技术有限公司
   address: ''
@@ -76,8 +77,9 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
-  lat: 32.133656
-  lon: 119.000067
+  district: 经济技术开发区
+  lat: 32.133788
+  lon: 118.99568
   geocode_level: POI
 - name: 南京宝日钢丝制品有限公司
   address: ''
@@ -89,6 +91,7 @@ enterprises:
   - 水环境
   - 土壤污染
   - 环境风险
+  district: 经济技术开发区
   lat: 32.150704
   lon: 118.855101
   geocode_level: POI
@@ -101,6 +104,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.156134
   lon: 118.884525
   geocode_level: POI
@@ -112,8 +116,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.159021
-  lon: 119.025446
+  district: 经济技术开发区
+  lat: 32.158912
+  lon: 119.025372
   geocode_level: POI
 - name: 邦基（南京）粮油有限公司
   address: ''
@@ -123,6 +128,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 经济技术开发区
   lat: 32.168872
   lon: 118.876824
   geocode_level: POI
@@ -135,8 +141,9 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.149428
-  lon: 118.893759
+  district: 经济技术开发区
+  lat: 32.151323
+  lon: 118.892568
   geocode_level: POI
 - name: 杉金光电（南京）有限公司
   address: ''
@@ -147,6 +154,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.156451
   lon: 118.882046
   geocode_level: POI
@@ -159,6 +167,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.16761
   lon: 118.909129
   geocode_level: POI
@@ -170,8 +179,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.164794
-  lon: 118.890798
+  district: 经济技术开发区
+  lat: 32.161197
+  lon: 118.866972
   geocode_level: POI
 - name: 南京正大天晴制药有限公司
   address: ''
@@ -181,8 +191,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.139688
-  lon: 118.887974
+  district: 经济技术开发区
+  lat: 32.164917
+  lon: 118.881246
   geocode_level: POI
 - name: 南京正大天晴制药有限公司新厂
   address: ''
@@ -192,8 +203,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.139688
-  lon: 118.887974
+  district: 经济技术开发区
+  lat: 32.164917
+  lon: 118.881246
   geocode_level: POI
 - name: 盛禾（中国）生物制药有限公司
   address: ''
@@ -203,6 +215,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.138936
   lon: 118.855342
   geocode_level: POI
@@ -215,6 +228,7 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  district: 经济技术开发区
   lat: 32.167451
   lon: 118.880936
   geocode_level: POI
@@ -227,6 +241,7 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  district: 经济技术开发区
   lat: 32.137407
   lon: 118.873596
   geocode_level: POI
@@ -238,8 +253,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.169417
-  lon: 118.89002
+  district: 经济技术开发区
+  lat: 32.169667
+  lon: 118.890546
   geocode_level: POI
 - name: 南京诺唯赞生物科技股份有限公司
   address: ''
@@ -250,9 +266,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
-  lat: 32.149865
-  lon: 119.008604
-  geocode_level: POI
+  district: 经济技术开发区
 - name: 中建五洲工程装备有限公司（南厂区）
   address: ''
   label: 中建五洲工程装备有限公司（南厂区）
@@ -261,8 +275,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
-  lat: 32.161701
-  lon: 119.024881
+  district: 经济技术开发区
+  lat: 32.161408
+  lon: 119.023202
   geocode_level: POI
 - name: 中建五洲工程装备有限公司(北厂区)
   address: ''
@@ -272,8 +287,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
-  lat: 32.161701
-  lon: 119.024881
+  district: 经济技术开发区
+  lat: 32.161408
+  lon: 119.023202
   geocode_level: POI
 - name: 喜星电子（南京）有限公司
   address: ''
@@ -283,6 +299,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.153666
   lon: 118.886525
   geocode_level: POI
@@ -294,8 +311,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.149428
-  lon: 118.893759
+  district: 经济技术开发区
+  lat: 32.151323
+  lon: 118.892568
   geocode_level: POI
 - name: 江苏金翔石油化工有限公司
   address: ''
@@ -307,6 +325,7 @@ enterprises:
   - 地下水
   - 土壤污染
   - 大气环境
+  district: 经济技术开发区
   lat: 32.168992
   lon: 118.893397
   geocode_level: POI
@@ -318,8 +337,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.070967
-  lon: 118.760098
+  district: 经济技术开发区
+  lat: 32.149386
+  lon: 118.859166
   geocode_level: POI
 - name: 南京正科医药股份有限公司
   address: ''
@@ -329,6 +349,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.166126
   lon: 118.879857
   geocode_level: POI
@@ -340,8 +361,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.136589
-  lon: 118.875744
+  district: 经济技术开发区
+  lat: 32.13789
+  lon: 118.876808
   geocode_level: POI
 - name: 南京美瑞制药有限公司
   address: ''
@@ -351,6 +373,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.169064
   lon: 118.882311
   geocode_level: POI
@@ -362,8 +385,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.017926
-  lon: 118.88106
+  district: 经济技术开发区
+  lat: 32.164291
+  lon: 118.885012
   geocode_level: POI
 - name: 博西华电器（江苏）有限公司
   address: ''
@@ -374,6 +398,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.134667
   lon: 118.871035
   geocode_level: POI
@@ -385,6 +410,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 经济技术开发区
   lat: 32.163505
   lon: 118.896039
   geocode_level: POI
@@ -396,8 +422,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 金陵药业股份有限公司南京金陵制药厂
   address: ''
@@ -407,6 +434,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.075024
   lon: 118.784351
   geocode_level: POI
@@ -418,8 +446,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.145225
-  lon: 118.852275
+  district: 经济技术开发区
+  lat: 32.145325
+  lon: 118.852525
   geocode_level: POI
 - name: 江苏金陵环境股份有限公司铁北污水处理厂三期
   address: ''
@@ -429,8 +458,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 32.145225
-  lon: 118.852275
+  district: 经济技术开发区
+  lat: 32.145325
+  lon: 118.852525
   geocode_level: POI
 - name: 南京博肽生物科技有限公司
   address: ''
@@ -440,8 +470,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
-  lat: 32.169821
-  lon: 118.884853
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 南京白敬宇制药有限责任公司
   address: ''
@@ -452,6 +483,7 @@ enterprises:
   categories:
   - 水环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.04051
   lon: 118.763643
   geocode_level: POI
@@ -463,6 +495,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
+  district: 经济技术开发区
   lat: 32.144867
   lon: 118.854769
   geocode_level: POI
@@ -476,8 +509,9 @@ enterprises:
   - 水环境
   - 大气环境
   - 环境风险
-  lat: 32.150083
-  lon: 118.875686
+  district: 经济技术开发区
+  lat: 32.151439
+  lon: 118.875703
   geocode_level: POI
 - name: 南京乐韬生物科技有限公司
   address: ''
@@ -488,6 +522,7 @@ enterprises:
   categories:
   - 水环境
   - 大气环境
+  district: 经济技术开发区
   lat: 32.130785
   lon: 118.959871
   geocode_level: POI
@@ -499,8 +534,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 水环境
-  lat: 31.95289
-  lon: 118.798615
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 爱尔集新能源电池（南京）有限公司
   address: ''
@@ -510,6 +546,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 经济技术开发区
   lat: 32.148422
   lon: 118.890581
   geocode_level: POI
@@ -521,6 +558,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 经济技术开发区
   lat: 32.165865
   lon: 118.877029
   geocode_level: POI
@@ -532,8 +570,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.137199
-  lon: 118.910237
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 埃瓦默泵技术服务（南京）有限公司
   address: ''
@@ -543,9 +582,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.158721
-  lon: 119.02544
-  geocode_level: POI
+  district: 经济技术开发区
 - name: 江苏龙蟠新材料科技有限公司
   address: ''
   label: 江苏龙蟠新材料科技有限公司
@@ -554,8 +591,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.144665
-  lon: 118.856914
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 南京恩梯恩精密机电有限公司
   address: ''
@@ -565,6 +603,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
+  district: 经济技术开发区
   lat: 32.157144
   lon: 118.904497
   geocode_level: POI
@@ -577,6 +616,7 @@ enterprises:
   categories:
   - 大气环境
   - 环境风险
+  district: 经济技术开发区
   lat: 32.149159
   lon: 118.899081
   geocode_level: POI
@@ -588,8 +628,9 @@ enterprises:
   data_date: 2025-03
   categories:
   - 环境风险
-  lat: 32.147177
-  lon: 118.854755
+  district: 经济技术开发区
+  lat: 32.145268
+  lon: 118.875419
   geocode_level: POI
 - name: 南京华格电汽塑业有限公司
   address: ''
@@ -599,6 +640,7 @@ enterprises:
   data_date: 2025-03
   categories:
   - 大气环境
-  lat: 32.148108
-  lon: 118.854572
+  district: 经济技术开发区
+  lat: 32.145864
+  lon: 118.854578
   geocode_level: POI

@@ -66,6 +66,7 @@ enterprises:
   lat: 24.805827
   lon: 118.594453
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市中医院
   address: ''
   label: 晋江市中医院
@@ -77,6 +78,7 @@ enterprises:
   lat: 24.822841
   lon: 118.582975
   geocode_level: POI
+  district: 晋江市
 - name: 瀚蓝（晋江）固废处理有限公司
   address: ''
   label: 瀚蓝（晋江）固废处理有限公司
@@ -101,6 +103,7 @@ enterprises:
   lat: 24.82162
   lon: 118.516231
   geocode_level: POI
+  district: 晋江市
 - name: 国网福建省电力有限公司晋江市供电公司
   address: ''
   label: 国网福建省电力有限公司晋江市供电公司
@@ -109,3 +112,4 @@ enterprises:
   data_date: 2026-03
   categories:
   - 环境风险
+  district: 晋江市

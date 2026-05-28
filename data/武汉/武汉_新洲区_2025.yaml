@@ -1,0 +1,168 @@
+meta:
+  dpi: 200
+  title: 武汉市新洲区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：武汉市生态环境局2025年环境监管重点单位名录  |  共11家  |  坐标：高德地图
+  output_path: ./武汉_新洲区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  city: 武汉
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 中交二航局科工（武汉）有限公司
+  address: ''
+  label: 中交二航局科工（武汉）有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国石油天然气股份有限公司西北销售武汉分公司
+  address: ''
+  label: 中国石油天然气股份有限公司西北销售武汉分公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武昌船舶重工集团有限公司
+  address: ''
+  label: 武昌船舶重工集团有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 环境风险
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉众投再生资源有限公司
+  address: ''
+  label: 武汉众投再生资源有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市新洲区人民医院
+  address: ''
+  label: 武汉市新洲区人民医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉正业东方建设投资有限责任公司武汉新港古龙产业园污水处理厂
+  address: ''
+  label: 武汉正业东方建设投资有限责任公司武汉新港古龙产业园污水处理厂
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉航天城医院（武汉同济航天城医院）
+  address: ''
+  label: 武汉航天城医院（武汉同济航天城医院）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北中能木业有限公司
+  address: ''
+  label: 湖北中能木业有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北金汕世纪再生资源有限公司
+  address: ''
+  label: 湖北金汕世纪再生资源有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉帝元自来水有限公司
+  address: ''
+  label: 武汉帝元自来水有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉科凌联诚环保有限公司
+  address: ''
+  label: 武汉科凌联诚环保有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 新洲区
+  lat: null
+  lon: null
+  geocode_level: ''

@@ -1,0 +1,730 @@
+meta:
+  dpi: 200
+  title: 杭州桐庐县2025年重点污染源单位地理分布图
+  subtitle: 数据来源：杭州市生态环境局2025年度环境监管重点单位名录  |  共56家  |  坐标：高德地图
+  output_path: ./杭州_桐庐县_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  city: 杭州
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: o
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: o
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: ^
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: '*'
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: s
+enterprises:
+- name: 杭州达利富丝绸染整有限公司
+  address: ''
+  label: 杭州达利富丝绸染整有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.804129
+  lon: 119.660803
+  geocode_level: 兴趣点
+- name: 杭州泛亚卫浴股份有限公司一分厂
+  address: ''
+  label: 杭州泛亚卫浴股份有限公司一分厂
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.837392
+  lon: 119.758655
+  geocode_level: 兴趣点
+- name: 杭州富强织染有限公司
+  address: ''
+  label: 杭州富强织染有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.841676
+  lon: 119.610387
+  geocode_level: 兴趣点
+- name: 杭州华地针织品印花有限公司
+  address: ''
+  label: 杭州华地针织品印花有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.852815
+  lon: 119.618813
+  geocode_level: 兴趣点
+- name: 杭州聚兴环保科技有限公司
+  address: ''
+  label: 杭州聚兴环保科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.858498
+  lon: 119.812252
+  geocode_level: 兴趣点
+- name: 杭州美磁表面处理有限公司
+  address: ''
+  label: 杭州美磁表面处理有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 杭州商莱金属科技有限公司
+  address: ''
+  label: 杭州商莱金属科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.835528
+  lon: 119.755254
+  geocode_level: 兴趣点
+- name: 杭州市第一人民医院桐庐医院（桐庐县第一人民医院）
+  address: ''
+  label: 杭州市第一人民医院桐庐医院（桐庐县第一人民医院）
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.788597
+  lon: 119.722942
+  geocode_level: 兴趣点
+- name: 杭州市桐庐富东车圈有限责任公司
+  address: ''
+  label: 杭州市桐庐富东车圈有限责任公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.947741
+  lon: 119.469422
+  geocode_level: 兴趣点
+- name: 杭州桐泓染整有限公司
+  address: ''
+  label: 杭州桐泓染整有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.835846
+  lon: 119.604303
+  geocode_level: 兴趣点
+- name: 杭州象限表面处理有限公司
+  address: ''
+  label: 杭州象限表面处理有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.836367
+  lon: 119.761139
+  geocode_level: 兴趣点
+- name: 杭州裕美生物科技有限公司
+  address: ''
+  label: 杭州裕美生物科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.799362
+  lon: 119.582102
+  geocode_level: 兴趣点
+- name: 思拓凡生物科技（杭州）有限公司
+  address: ''
+  label: 思拓凡生物科技（杭州）有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.818438
+  lon: 119.725611
+  geocode_level: 兴趣点
+- name: 桐庐诚信针纺染整有限公司
+  address: ''
+  label: 桐庐诚信针纺染整有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐春弘纺织印染有限公司
+  address: ''
+  label: 桐庐春弘纺织印染有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.830504
+  lon: 119.605658
+  geocode_level: 兴趣点
+- name: 桐庐春江阀门有限公司
+  address: ''
+  label: 桐庐春江阀门有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.765184
+  lon: 119.663108
+  geocode_level: 村庄
+- name: 桐庐大裕织染有限公司
+  address: ''
+  label: 桐庐大裕织染有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐富春车圈纸业有限公司
+  address: ''
+  label: 桐庐富春车圈纸业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐恒达纺织印染有限公司
+  address: ''
+  label: 桐庐恒达纺织印染有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐金利印染有限公司
+  address: ''
+  label: 桐庐金利印染有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐千红笔业有限责任公司
+  address: ''
+  label: 桐庐千红笔业有限责任公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.943949
+  lon: 119.463231
+  geocode_level: 兴趣点
+- name: 桐庐县窄溪工艺电镀厂
+  address: ''
+  label: 桐庐县窄溪工艺电镀厂
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.83781
+  lon: 119.762111
+  geocode_level: 兴趣点
+- name: 桐庐新合电镀制品有限公司
+  address: ''
+  label: 桐庐新合电镀制品有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.696511
+  lon: 119.938734
+  geocode_level: 兴趣点
+- name: 物产中大（桐庐）水处理有限公司
+  address: ''
+  label: 物产中大（桐庐）水处理有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.813509
+  lon: 119.727989
+  geocode_level: 兴趣点
+- name: 物产中大凤川（桐庐）水处理有限公司
+  address: ''
+  label: 物产中大凤川（桐庐）水处理有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 物产中大横村（桐庐）水处理有限公司
+  address: ''
+  label: 物产中大横村（桐庐）水处理有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.807958
+  lon: 119.679587
+  geocode_level: 乡镇
+- name: 浙江省桐庐汇丰生物科技有限公司
+  address: ''
+  label: 浙江省桐庐汇丰生物科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.807958
+  lon: 119.679587
+  geocode_level: 乡镇
+- name: 浙江天鹰纺织有限公司
+  address: ''
+  label: 浙江天鹰纺织有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.915576
+  lon: 119.418153
+  geocode_level: 兴趣点
+- name: 杭州红狮双隆环保科技有限公司
+  address: ''
+  label: 杭州红狮双隆环保科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 杭州基本科技有限公司
+  address: ''
+  label: 杭州基本科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.800464
+  lon: 119.710873
+  geocode_level: 兴趣点
+- name: 杭州永乾环境有限公司
+  address: ''
+  label: 杭州永乾环境有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 桐庐大路新型建材有限公司
+  address: ''
+  label: 桐庐大路新型建材有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐红狮水泥有限公司
+  address: ''
+  label: 桐庐红狮水泥有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.841161
+  lon: 119.706165
+  geocode_level: 兴趣点
+- name: 桐庐环保工业有限公司
+  address: ''
+  label: 桐庐环保工业有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐南方水泥有限公司
+  address: ''
+  label: 桐庐南方水泥有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.826016
+  lon: 119.687991
+  geocode_level: 兴趣点
+- name: 桐庐信雅达热电有限公司
+  address: ''
+  label: 桐庐信雅达热电有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 桐庐珠山新型建材有限公司
+  address: ''
+  label: 桐庐珠山新型建材有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.785377
+  lon: 119.681733
+  geocode_level: 乡镇
+- name: 浙江环益资源利用股份有限公司
+  address: ''
+  label: 浙江环益资源利用股份有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.841774
+  lon: 119.763389
+  geocode_level: 兴趣点
+- name: 浙江金帆达生化股份有限公司
+  address: ''
+  label: 浙江金帆达生化股份有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.860993
+  lon: 119.609432
+  geocode_level: 兴趣点
+- name: 东芝水电设备（杭州）有限公司
+  address: ''
+  label: 东芝水电设备（杭州）有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.706048
+  lon: 119.639126
+  geocode_level: 兴趣点
+- name: 富江能源科技有限公司
+  address: ''
+  label: 富江能源科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.817684
+  lon: 119.752094
+  geocode_level: 兴趣点
+- name: 杭州海康威视电子有限公司
+  address: ''
+  label: 杭州海康威视电子有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.819376
+  lon: 119.736452
+  geocode_level: 公交地铁站点
+- name: 杭州科博纸业有限责任公司
+  address: ''
+  label: 杭州科博纸业有限责任公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.812043
+  lon: 119.729744
+  geocode_level: 兴趣点
+- name: 杭州天锋电子有限公司
+  address: ''
+  label: 杭州天锋电子有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 杭州欣源电梯部件有限公司
+  address: ''
+  label: 杭州欣源电梯部件有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.801131
+  lon: 119.728178
+  geocode_level: 兴趣点
+- name: 杭州浙富核电设备有限公司
+  address: ''
+  label: 杭州浙富核电设备有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 杭州挚诚机械设备有限公司
+  address: ''
+  label: 杭州挚诚机械设备有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.860327
+  lon: 119.78082
+  geocode_level: 兴趣点
+- name: 桐庐富春江医院
+  address: ''
+  label: 桐庐富春江医院
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.709598
+  lon: 119.648528
+  geocode_level: 兴趣点
+- name: 桐庐县环境卫生管理处
+  address: ''
+  label: 桐庐县环境卫生管理处
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.772656
+  lon: 119.677933
+  geocode_level: 兴趣点
+- name: 桐庐县农业生产资料有限公司
+  address: ''
+  label: 桐庐县农业生产资料有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.789899
+  lon: 119.665999
+  geocode_level: 兴趣点
+- name: 桐庐县中医院
+  address: ''
+  label: 桐庐县中医院
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.79418
+  lon: 119.691755
+  geocode_level: 区县
+- name: 威立雅资源再生（杭州）有限公司
+  address: ''
+  label: 威立雅资源再生（杭州）有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.843397
+  lon: 119.761303
+  geocode_level: 兴趣点
+- name: 赢通（杭州）压力容器有限公司
+  address: ''
+  label: 赢通（杭州）压力容器有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.905851
+  lon: 119.550066
+  geocode_level: 兴趣点
+- name: 浙江华博电力科技有限公司
+  address: ''
+  label: 浙江华博电力科技有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.839316
+  lon: 119.757281
+  geocode_level: 兴趣点
+- name: 浙江华锦制管股份有限公司
+  address: ''
+  label: 浙江华锦制管股份有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.824853
+  lon: 119.753224
+  geocode_level: 兴趣点
+- name: 浙江中泰深冷设备有限公司
+  address: ''
+  label: 浙江中泰深冷设备有限公司
+  data_source: ''
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 桐庐县
+  lat: 29.861383
+  lon: 119.776969
+  geocode_level: 兴趣点

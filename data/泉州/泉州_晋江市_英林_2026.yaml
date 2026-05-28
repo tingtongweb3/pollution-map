@@ -66,6 +66,7 @@ enterprises:
   lat: 24.601435
   lon: 118.591417
   geocode_level: POI
+  district: 晋江市
 - name: 福建新宇拉链织造有限公司
   address: ''
   label: 福建新宇拉链织造有限公司
@@ -77,6 +78,7 @@ enterprises:
   lat: 24.619937
   lon: 118.577811
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市泰兴服装织造有限公司
   address: ''
   label: 晋江市泰兴服装织造有限公司
@@ -88,6 +90,7 @@ enterprises:
   lat: 24.609955
   lon: 118.665873
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市锦福化纤聚合有限公司
   address: ''
   label: 晋江市锦福化纤聚合有限公司
@@ -100,6 +103,7 @@ enterprises:
   lat: 24.607725
   lon: 118.548525
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市联兴服装水洗有限公司
   address: ''
   label: 晋江市联兴服装水洗有限公司
@@ -111,6 +115,7 @@ enterprises:
   lat: 24.663695
   lon: 118.576666
   geocode_level: POI
+  district: 晋江市
 - name: 锦兴（福建）化纤纺织实业有限公司
   address: ''
   label: 锦兴（福建）化纤纺织实业有限公司
@@ -133,6 +138,7 @@ enterprises:
   lat: 24.619884
   lon: 118.580537
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市信富服装织造有限公司
   address: ''
   label: 晋江市信富服装织造有限公司
@@ -144,6 +150,7 @@ enterprises:
   lat: 24.61256
   lon: 118.663938
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市紫阳织造实业有限公司
   address: ''
   label: 晋江市紫阳织造实业有限公司
@@ -155,6 +162,7 @@ enterprises:
   lat: 24.616337
   lon: 118.550055
   geocode_level: POI
+  district: 晋江市
 - name: 晋江市龙盛达纺织实业有限公司
   address: ''
   label: 晋江市龙盛达纺织实业有限公司
@@ -166,6 +174,7 @@ enterprises:
   lat: 24.6182
   lon: 118.581497
   geocode_level: POI
+  district: 晋江市
 - name: 晋江英林皇都服装洗烫有限公司
   address: ''
   label: 晋江英林皇都服装洗烫有限公司
@@ -186,6 +195,7 @@ enterprises:
   lat: 24.601359
   lon: 118.59479
   geocode_level: POI
+  district: 晋江市
 - name: 福建正麒高纤科技股份有限公司
   address: ''
   label: 福建正麒高纤科技股份有限公司
@@ -198,6 +208,7 @@ enterprises:
   lat: 24.586029
   lon: 118.570686
   geocode_level: POI
+  district: 晋江市
 - name: 福建红太阳织造实业有限公司
   address: ''
   label: 福建红太阳织造实业有限公司
@@ -206,6 +217,7 @@ enterprises:
   data_date: 2026-03
   categories:
   - 水环境
+  district: 晋江市
 - name: 媗程（福建）纺织集团有限公司
   address: ''
   label: 媗程（福建）纺织集团有限公司
@@ -228,6 +240,7 @@ enterprises:
   lat: 24.586172
   lon: 118.570743
   geocode_level: POI
+  district: 晋江市
 - name: 瀚蓝（晋江）固废处理有限公司（晋江市英林镇综合固废填埋场）
   address: ''
   label: 瀚蓝（晋江）固废处理有限公司（晋江市英林镇综合固废填埋场）
@@ -251,3 +264,4 @@ enterprises:
   lat: 24.812188
   lon: 118.628561
   geocode_level: POI
+  district: 晋江市

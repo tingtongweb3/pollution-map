@@ -1,0 +1,222 @@
+meta:
+  dpi: 200
+  title: 武汉市武昌区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：武汉市生态环境局2025年环境监管重点单位名录  |  共15家  |  坐标：高德地图
+  output_path: ./武汉_武昌区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  city: 武汉
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 中国人民解放军中部战区总医院
+  address: ''
+  label: 中国人民解放军中部战区总医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国电建集团武汉重工装备有限公司
+  address: ''
+  label: 中国电建集团武汉重工装备有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国石化销售股份有限公司湖北武汉水果湖加油站
+  address: ''
+  label: 中国石化销售股份有限公司湖北武汉水果湖加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 中国石化销售股份有限公司湖北武汉积玉桥加油站
+  address: ''
+  label: 中国石化销售股份有限公司湖北武汉积玉桥加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉中石公交能源有限责任公司中北路加油站
+  address: ''
+  label: 武汉中石公交能源有限责任公司中北路加油站
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉大学中南医院
+  address: ''
+  label: 武汉大学中南医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉大学人民医院首义院区
+  address: ''
+  label: 武汉大学人民医院首义院区
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市第三医院（首义院区）
+  address: ''
+  label: 武汉市第三医院（首义院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉科技大学附属天佑医院
+  address: ''
+  label: 武汉科技大学附属天佑医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北省中医院（湖北中医药大学附属医院、湖北省中医药研究院）
+  address: ''
+  label: 湖北省中医院（湖北中医药大学附属医院、湖北省中医药研究院）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北省省直机关供暖中心
+  address: ''
+  label: 湖北省省直机关供暖中心
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市第七医院（新院区）
+  address: ''
+  label: 武汉市第七医院（新院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 华电湖北发电有限公司武昌热电分公司
+  address: ''
+  label: 华电湖北发电有限公司武昌热电分公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市武昌医院（东区）
+  address: ''
+  label: 武汉市武昌医院（东区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉紫荆医院
+  address: ''
+  label: 武汉紫荆医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 地下水
+  district: 武昌区
+  lat: null
+  lon: null
+  geocode_level: ''

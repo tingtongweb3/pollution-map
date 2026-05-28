@@ -1,0 +1,6079 @@
+{
+  "summary": {
+    "total": 577,
+    "corrected": 303,
+    "lost": 0,
+    "still_failed": 0,
+    "newly_acquired": 58,
+    "unchanged": 216,
+    "cross_district_after_fix": 118
+  },
+  "corrections": [
+    {
+      "name": "中国石化集团南京化学工业有限公司",
+      "district": "江北新区",
+      "old": [
+        32.228753,
+        118.765127
+      ],
+      "new": [
+        32.228667,
+        118.755699
+      ],
+      "distance_m": 887,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "亚什兰化工（南京）有限公司",
+      "district": "江北新区",
+      "old": [
+        32.28118,
+        118.827822
+      ],
+      "new": [
+        32.282843,
+        118.826672
+      ],
+      "distance_m": 214,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京金陵亨斯迈新材料有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.197798,
+        118.923389
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 19481,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京化学工业园热电有限公司",
+      "district": "江北新区",
+      "old": [
+        32.268163,
+        118.821545
+      ],
+      "new": [
+        32.268492,
+        118.821532
+      ],
+      "distance_m": 37,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京钢铁股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.201854,
+        118.748515
+      ],
+      "new": [
+        32.197752,
+        118.742413
+      ],
+      "distance_m": 733,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京福邦特东方化工有限公司",
+      "district": "江北新区",
+      "old": [
+        32.212284,
+        118.764048
+      ],
+      "new": [
+        32.212201,
+        118.763925
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏中旗科技股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.270946,
+        118.8339
+      ],
+      "new": [
+        32.277583,
+        118.830516
+      ],
+      "distance_m": 804,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏太古可口可乐饮料有限公司",
+      "district": "江北新区",
+      "old": [
+        32.025303,
+        118.823785
+      ],
+      "new": [
+        32.172022,
+        118.707504
+      ],
+      "distance_m": 19650,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石化扬子石油化工有限公司",
+      "district": "江北新区",
+      "old": [
+        32.263619,
+        118.821705
+      ],
+      "new": [
+        32.238208,
+        118.773354
+      ],
+      "distance_m": 5353,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "瓦克化学（南京）有限公司",
+      "district": "江北新区",
+      "old": [
+        32.253613,
+        118.828745
+      ],
+      "new": [
+        32.253661,
+        118.828628
+      ],
+      "distance_m": 12,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京胜科水务有限公司",
+      "district": "江北新区",
+      "old": [
+        32.04387,
+        118.716033
+      ],
+      "new": [
+        32.045263,
+        118.716635
+      ],
+      "distance_m": 165,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京新奥环保技术有限公司",
+      "district": "江北新区",
+      "old": [
+        32.267651,
+        118.842307
+      ],
+      "new": [
+        32.013615,
+        118.725512
+      ],
+      "distance_m": 30313,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京化工园博瑞德水务有限公司",
+      "district": "江北新区",
+      "old": [
+        32.203094,
+        118.877986
+      ],
+      "new": [
+        32.204396,
+        118.87677
+      ],
+      "distance_m": 185,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏南化永大实业有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.228533,
+        118.755998
+      ],
+      "new": [
+        32.228243,
+        118.756261
+      ],
+      "distance_m": 41,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏先盛生物医药有限公司",
+      "district": "江北新区",
+      "old": [
+        32.260925,
+        118.830875
+      ],
+      "new": [
+        32.260745,
+        118.832102
+      ],
+      "distance_m": 117,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京九霄药业有限公司",
+      "district": "江北新区",
+      "old": [
+        32.255694,
+        118.700665
+      ],
+      "new": [
+        32.254912,
+        118.700637
+      ],
+      "distance_m": 87,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "沙索（中国）化学有限公司（赵桥河路）",
+      "district": "江北新区",
+      "old": [
+        32.283291,
+        118.838971
+      ],
+      "new": [
+        32.280908,
+        118.833856
+      ],
+      "distance_m": 549,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京金陵塑胶化工有限公司",
+      "district": "江北新区",
+      "old": [
+        32.260075,
+        118.823627
+      ],
+      "new": [
+        32.153843,
+        118.92871
+      ],
+      "distance_m": 15404,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "沙索（中国）化学有限公司（方水路厂区）",
+      "district": "江北新区",
+      "old": [
+        32.283291,
+        118.838971
+      ],
+      "new": [
+        32.19296,
+        118.685849
+      ],
+      "distance_m": 17558,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中车南京浦镇车辆有限公司（高新区）",
+      "district": "江北新区",
+      "old": [
+        32.123375,
+        118.709325
+      ],
+      "new": [
+        32.121788,
+        118.717058
+      ],
+      "distance_m": 749,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中石化南京化工研究院有限公司",
+      "district": "江北新区",
+      "old": [
+        32.237787,
+        118.750989
+      ],
+      "new": [
+        32.237746,
+        118.751215
+      ],
+      "distance_m": 22,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京制药厂有限公司原料药分公司",
+      "district": "江北新区",
+      "old": [
+        32.27385,
+        118.809194
+      ],
+      "new": [
+        32.274092,
+        118.807134
+      ],
+      "distance_m": 196,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京健友生化制药股份有限公司（FDF厂区）",
+      "district": "江北新区",
+      "old": [
+        32.172086,
+        118.716226
+      ],
+      "new": [
+        32.175694,
+        118.690141
+      ],
+      "distance_m": 2488,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京美思德新材料有限公司",
+      "district": "江北新区",
+      "old": [
+        32.27239,
+        118.843741
+      ],
+      "new": [
+        32.272303,
+        118.843844
+      ],
+      "distance_m": 14,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石化扬子石油化工有限公司（橡胶厂）",
+      "district": "江北新区",
+      "old": [
+        32.263619,
+        118.821705
+      ],
+      "new": [
+        32.238208,
+        118.773354
+      ],
+      "distance_m": 5353,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石化销售股份有限公司江苏南京石油分公司（玉带油库）",
+      "district": "江北新区",
+      "old": [
+        32.109494,
+        118.876884
+      ],
+      "new": [
+        32.085762,
+        118.751166
+      ],
+      "distance_m": 12133,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京驯鹿生物医药有限公司",
+      "district": "江北新区",
+      "old": [
+        32.18977,
+        118.670557
+      ],
+      "new": [
+        32.186766,
+        118.693998
+      ],
+      "distance_m": 2231,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京易亨制药有限公司（华宝路）",
+      "district": "江北新区",
+      "old": [
+        32.198128,
+        118.672898
+      ],
+      "new": [
+        32.199188,
+        118.67645
+      ],
+      "distance_m": 354,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京江北水务发展有限公司-南京江北新区葛塘污水处理厂",
+      "district": "江北新区",
+      "old": [
+        32.256025,
+        118.726425
+      ],
+      "new": [
+        32.244029,
+        118.745532
+      ],
+      "distance_m": 2238,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江北水务发展有限公司-南京江北新区盘城污水处理厂",
+      "district": "江北新区",
+      "old": [
+        32.256025,
+        118.726425
+      ],
+      "new": [
+        32.256026,
+        118.726546
+      ],
+      "distance_m": 11,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "贺利氏贵金属技术（中国）有限公司",
+      "district": "江北新区",
+      "old": [
+        32.274179,
+        118.833423
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 24138,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京海润医药有限公司",
+      "district": "江北新区",
+      "old": [
+        32.251775,
+        118.841225
+      ],
+      "new": [
+        32.252169,
+        118.841272
+      ],
+      "distance_m": 44,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京汽车集团有限公司",
+      "district": "江北新区",
+      "old": [
+        32.078377,
+        118.781155
+      ],
+      "new": [
+        32.169041,
+        118.691744
+      ],
+      "distance_m": 13135,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏康倍得药业股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.28,
+        118.75
+      ],
+      "new": [
+        32.260989,
+        118.715963
+      ],
+      "distance_m": 3835,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京海鲸药业股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.198216,
+        118.689036
+      ],
+      "new": [
+        32.169035,
+        118.702088
+      ],
+      "distance_m": 3469,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "金城化学（江苏）有限公司",
+      "district": "江北新区",
+      "old": [
+        32.285081,
+        118.818351
+      ],
+      "new": [
+        32.075044,
+        118.666151
+      ],
+      "distance_m": 27398,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "巴斯夫特性化学品（南京）有限公司-HH",
+      "district": "江北新区",
+      "old": [
+        32.24893,
+        118.822011
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 21216,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "塞拉尼斯（南京）化工有限公司",
+      "district": "江北新区",
+      "old": [
+        32.275764,
+        118.822432
+      ],
+      "new": [
+        32.275806,
+        118.822587
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏新瀚新材料股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.252866,
+        118.851198
+      ],
+      "new": [
+        32.254015,
+        118.839041
+      ],
+      "distance_m": 1150,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京扬子石化炼化有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.282438,
+        118.785402
+      ],
+      "new": [
+        32.243422,
+        118.760244
+      ],
+      "distance_m": 4941,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏钟山新材料有限公司",
+      "district": "江北新区",
+      "old": [
+        32.266775,
+        118.838175
+      ],
+      "new": [
+        32.26672,
+        118.837857
+      ],
+      "distance_m": 31,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中石化南京清江物流有限公司",
+      "district": "江北新区",
+      "old": [
+        32.19504,
+        118.91152
+      ],
+      "new": [
+        32.043093,
+        118.727939
+      ],
+      "distance_m": 24174,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "华能国际电力江苏能源开发有限公司南京电厂",
+      "district": "江北新区",
+      "old": [
+        32.117084,
+        118.765214
+      ],
+      "new": [
+        32.117187,
+        118.765193
+      ],
+      "distance_m": 12,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京康明服饰有限责任公司水洗分公司",
+      "district": "江北新区",
+      "old": [
+        32.215125,
+        118.754425
+      ],
+      "new": [
+        32.215347,
+        118.754487
+      ],
+      "distance_m": 25,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "恒河（南京）材料科技有限公司",
+      "district": "江北新区",
+      "old": [
+        32.289947,
+        118.823876
+      ],
+      "new": [
+        32.28972,
+        118.823663
+      ],
+      "distance_m": 32,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中环信（南京）环境服务有限公司",
+      "district": "江北新区",
+      "old": [
+        32.25198,
+        118.827957
+      ],
+      "new": [
+        32.249016,
+        118.831734
+      ],
+      "distance_m": 485,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏省农药研究所股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.138339,
+        118.870722
+      ],
+      "new": [
+        32.272672,
+        118.830894
+      ],
+      "distance_m": 15400,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京博特新材料有限公司",
+      "district": "江北新区",
+      "old": [
+        32.285688,
+        118.82208
+      ],
+      "new": [
+        32.104094,
+        118.500897
+      ],
+      "distance_m": 36347,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京化学试剂股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.274392,
+        118.837904
+      ],
+      "new": [
+        32.228416,
+        118.786182
+      ],
+      "distance_m": 7056,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中车南京浦镇车辆有限公司",
+      "district": "江北新区",
+      "old": [
+        32.121404,
+        118.71348
+      ],
+      "new": [
+        32.111331,
+        118.691428
+      ],
+      "distance_m": 2360,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京扬子奥克化学有限公司",
+      "district": "江北新区",
+      "old": [
+        32.28146,
+        118.81493
+      ],
+      "new": [
+        32.253661,
+        118.828628
+      ],
+      "distance_m": 3349,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏德纳化学股份有限公司（EO厂区）",
+      "district": "江北新区",
+      "old": [
+        32.27131,
+        118.799806
+      ],
+      "new": [
+        32.284391,
+        118.81461
+      ],
+      "distance_m": 2013,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京健友药业有限公司",
+      "district": "江北新区",
+      "old": [
+        32.173696,
+        118.716058
+      ],
+      "new": [
+        32.173168,
+        118.716127
+      ],
+      "distance_m": 59,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京鼓楼医院江北院区",
+      "district": "江北新区",
+      "old": [
+        32.092656,
+        118.669315
+      ],
+      "new": [
+        32.092489,
+        118.669584
+      ],
+      "distance_m": 31,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏新瀚新材料股份有限公司（罐区南路86号）",
+      "district": "江北新区",
+      "old": [
+        32.252866,
+        118.851198
+      ],
+      "new": [
+        32.199114,
+        118.738999
+      ],
+      "distance_m": 12129,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京扬子石化英力士乙酰有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.273069,
+        118.786896
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 23783,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京市大厂欣乐肉类食品中心",
+      "district": "江北新区",
+      "old": [
+        32.238247,
+        118.735025
+      ],
+      "new": [
+        32.234868,
+        118.754024
+      ],
+      "distance_m": 1826,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京汇科高分子材料有限公司",
+      "district": "江北新区",
+      "old": [
+        32.258475,
+        118.849025
+      ],
+      "new": [
+        32.258592,
+        118.848917
+      ],
+      "distance_m": 17,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京宏川石化仓储有限公司",
+      "district": "江北新区",
+      "old": [
+        32.215268,
+        118.86852
+      ],
+      "new": [
+        32.215086,
+        118.868175
+      ],
+      "distance_m": 38,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "木林森活性炭江苏有限公司",
+      "district": "江北新区",
+      "old": [
+        32.266649,
+        118.809065
+      ],
+      "new": [
+        31.947285,
+        118.777216
+      ],
+      "distance_m": 35638,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京扬子物流有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.237195,
+        118.822275
+      ],
+      "new": [
+        32.235563,
+        118.812522
+      ],
+      "distance_m": 935,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "欧德优创（南京）仓储有限责任公司",
+      "district": "江北新区",
+      "old": [
+        32.189853,
+        118.912814
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 18175,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "蓝星安迪苏南京有限公司",
+      "district": "江北新区",
+      "old": [
+        32.286938,
+        118.828475
+      ],
+      "new": [
+        32.287604,
+        118.828082
+      ],
+      "distance_m": 83,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "富乐（南京）化学有限公司",
+      "district": "江北新区",
+      "old": [
+        32.273363,
+        118.829039
+      ],
+      "new": [
+        32.273356,
+        118.828496
+      ],
+      "distance_m": 51,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "巴斯夫特性化学品（南京）有限公司-SR",
+      "district": "江北新区",
+      "old": [
+        32.24893,
+        118.822011
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 21216,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京药石科技股份有限公司",
+      "district": "江北新区",
+      "old": [
+        32.174449,
+        118.693511
+      ],
+      "new": [
+        32.190066,
+        118.676224
+      ],
+      "distance_m": 2380,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "马勒发动机零部件（南京）有限公司",
+      "district": "江北新区",
+      "old": [
+        32.160542,
+        118.718844
+      ],
+      "new": [
+        32.059344,
+        118.796624
+      ],
+      "distance_m": 13427,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京工业大学（浦口校区）",
+      "district": "江北新区",
+      "old": [
+        32.082481,
+        118.640105
+      ],
+      "new": [
+        32.082549,
+        118.639871
+      ],
+      "distance_m": 23,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中外运化工国际物流有限公司南京分公司",
+      "district": "江北新区",
+      "old": [
+        32.191707,
+        119.067961
+      ],
+      "new": [
+        32.205656,
+        119.075426
+      ],
+      "distance_m": 1703,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京巨龙钢管有限公司",
+      "district": "江北新区",
+      "old": [
+        32.185473,
+        118.687008
+      ],
+      "new": [
+        32.187116,
+        118.68708
+      ],
+      "distance_m": 183,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏拓弘康恒医药有限公司",
+      "district": "江北新区",
+      "old": [
+        32.18392,
+        118.691631
+      ],
+      "new": [
+        32.184049,
+        118.691692
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京农业大学",
+      "district": "玄武区",
+      "old": [
+        32.033103,
+        118.843163
+      ],
+      "new": [
+        32.034986,
+        118.843486
+      ],
+      "distance_m": 212,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京理工大学",
+      "district": "玄武区",
+      "old": [
+        32.02891,
+        118.855629
+      ],
+      "new": [
+        32.032379,
+        118.853039
+      ],
+      "distance_m": 457,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京市中医院",
+      "district": "秦淮区",
+      "old": [
+        31.995463,
+        118.807803
+      ],
+      "new": [
+        31.995373,
+        118.808035
+      ],
+      "distance_m": 24,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京水务集团有限公司城东厂管理中心",
+      "district": "秦淮区",
+      "old": [
+        32.035477,
+        118.768696
+      ],
+      "new": [
+        32.03071,
+        118.776576
+      ],
+      "distance_m": 913,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京晨光集团有限责任公司",
+      "district": "秦淮区",
+      "old": [
+        32.002526,
+        118.787626
+      ],
+      "new": [
+        32.039065,
+        118.794792
+      ],
+      "distance_m": 4119,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中国电子科技集团公司第二十八研究所",
+      "district": "秦淮区",
+      "old": [
+        32.028734,
+        118.836843
+      ],
+      "new": [
+        32.035303,
+        118.83567
+      ],
+      "distance_m": 739,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏中烟工业有限责任公司南京卷烟厂",
+      "district": "建邺区",
+      "old": [
+        32.001886,
+        118.748096
+      ],
+      "new": [
+        32.00276,
+        118.7489
+      ],
+      "distance_m": 123,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京明基医院有限公司",
+      "district": "建邺区",
+      "old": [
+        31.987081,
+        118.728964
+      ],
+      "new": [
+        31.988427,
+        118.729205
+      ],
+      "distance_m": 151,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏金陵环境股份有限公司江心洲污水处理厂",
+      "district": "建邺区",
+      "old": [
+        32.145225,
+        118.852275
+      ],
+      "new": [
+        32.044436,
+        118.707323
+      ],
+      "distance_m": 17665,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏省苏力环境科技有限责任公司",
+      "district": "建邺区",
+      "old": [
+        32.071905,
+        118.764234
+      ],
+      "new": [
+        32.006128,
+        118.792755
+      ],
+      "distance_m": 7792,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国联合网络通信有限公司南京市分公司",
+      "district": "鼓楼区",
+      "old": [
+        31.99095,
+        118.740789
+      ],
+      "new": [
+        32.04255,
+        118.77721
+      ],
+      "distance_m": 6687,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏省人民医院",
+      "district": "鼓楼区",
+      "old": [
+        32.049208,
+        118.766276
+      ],
+      "new": [
+        32.048891,
+        118.766494
+      ],
+      "distance_m": 41,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京鼓楼医院",
+      "district": "鼓楼区",
+      "old": [
+        32.05618,
+        118.783042
+      ],
+      "new": [
+        32.055033,
+        118.78307
+      ],
+      "distance_m": 128,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "东南大学附属中大医院",
+      "district": "鼓楼区",
+      "old": [
+        32.072367,
+        118.77622
+      ],
+      "new": [
+        32.072023,
+        118.77646
+      ],
+      "distance_m": 44,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "招商局金陵船舶（南京）有限公司",
+      "district": "鼓楼区",
+      "old": [
+        32.115193,
+        118.761927
+      ],
+      "new": [
+        32.112028,
+        118.760493
+      ],
+      "distance_m": 377,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "药大制药有限公司",
+      "district": "鼓楼区",
+      "old": [
+        32.067,
+        118.781
+      ],
+      "new": [
+        32.07374,
+        118.779801
+      ],
+      "distance_m": 758,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石油化工股份有限公司金陵分公司",
+      "district": "栖霞区",
+      "old": [
+        32.148359,
+        118.925849
+      ],
+      "new": [
+        32.150122,
+        118.925668
+      ],
+      "distance_m": 197,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润泽华针纺织科技发展有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.160647,
+        119.01329
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 12142,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "华能南京金陵发电有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.169333,
+        119.021065
+      ],
+      "new": [
+        32.169424,
+        119.021726
+      ],
+      "distance_m": 63,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京中石油联安石化有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.226438,
+        119.089061
+      ],
+      "new": [
+        32.116011,
+        118.806699
+      ],
+      "distance_m": 29276,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "大唐南京发电厂",
+      "district": "栖霞区",
+      "old": [
+        32.18,
+        118.98
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 11454,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏金陵环境股份有限公司东阳城市污水处理厂",
+      "district": "栖霞区",
+      "old": [
+        32.145225,
+        118.852275
+      ],
+      "new": [
+        32.171867,
+        118.83851
+      ],
+      "distance_m": 3233,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石化集团金陵石油化工有限责任公司",
+      "district": "栖霞区",
+      "old": [
+        32.124554,
+        118.86931
+      ],
+      "new": [
+        32.156264,
+        118.930892
+      ],
+      "distance_m": 6786,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京明珠肥料有限责任公司",
+      "district": "栖霞区",
+      "old": [
+        32.182041,
+        118.779628
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 15481,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京水务集团有限公司仙林厂管理中心",
+      "district": "栖霞区",
+      "old": [
+        32.035477,
+        118.768696
+      ],
+      "new": [
+        32.10403,
+        118.929642
+      ],
+      "distance_m": 16973,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中国石化销售股份有限公司江苏南京石油分公司（栖霞油库）",
+      "district": "栖霞区",
+      "old": [
+        32.109494,
+        118.876884
+      ],
+      "new": [
+        32.150122,
+        118.925668
+      ],
+      "distance_m": 6443,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国铁路上海局集团有限公司南京东机辆段（栖霞）",
+      "district": "栖霞区",
+      "old": [
+        32.117983,
+        118.891811
+      ],
+      "new": [
+        32.082985,
+        118.800976
+      ],
+      "distance_m": 9400,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏省中医院紫东院区",
+      "district": "栖霞区",
+      "old": [
+        32.116932,
+        118.986472
+      ],
+      "new": [
+        32.182146,
+        119.073484
+      ],
+      "distance_m": 10940,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "华能南京燃机发电有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.169625,
+        119.017925
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 13094,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京炼油厂有限责任公司",
+      "district": "栖霞区",
+      "old": [
+        32.150139,
+        118.929994
+      ],
+      "new": [
+        32.150169,
+        118.929458
+      ],
+      "distance_m": 51,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国石化催化剂有限公司南京分公司",
+      "district": "栖霞区",
+      "old": [
+        32.040217,
+        118.800245
+      ],
+      "new": [
+        32.228416,
+        118.786182
+      ],
+      "distance_m": 20969,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "国家管网集团东部原油储运有限公司南京输油处石埠桥输油站",
+      "district": "栖霞区",
+      "old": [
+        32.115225,
+        118.872425
+      ],
+      "new": [
+        32.112949,
+        118.873127
+      ],
+      "distance_m": 262,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京港华燃气有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.072103,
+        118.784302
+      ],
+      "new": [
+        32.10379,
+        118.880928
+      ],
+      "distance_m": 9761,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京港龙潭集装箱有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.200666,
+        119.072976
+      ],
+      "new": [
+        32.200314,
+        119.0724
+      ],
+      "distance_m": 67,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京启迈生物科技有限公司",
+      "district": "栖霞区",
+      "old": [
+        31.972499,
+        118.753188
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 20137,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中石化长江燃料有限公司南京分公司（684油库）",
+      "district": "栖霞区",
+      "old": [
+        32.089446,
+        118.741036
+      ],
+      "new": [
+        32.116011,
+        118.806699
+      ],
+      "distance_m": 6854,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京大学栖霞校区",
+      "district": "栖霞区",
+      "old": [
+        32.11956,
+        118.958406
+      ],
+      "new": [
+        32.110478,
+        118.959015
+      ],
+      "distance_m": 1011,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京科默生物医药有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.134075,
+        118.960325
+      ],
+      "new": [
+        32.155876,
+        118.897376
+      ],
+      "distance_m": 6403,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京师范大学栖霞校区",
+      "district": "栖霞区",
+      "old": [
+        32.106853,
+        118.910278
+      ],
+      "new": [
+        32.098826,
+        118.906471
+      ],
+      "distance_m": 962,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京长江油运龙潭船务工程有限公司",
+      "district": "栖霞区",
+      "old": [
+        32.234725,
+        119.111248
+      ],
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "distance_m": 24473,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中国电子科技集团公司第十四研究所",
+      "district": "雨花台区",
+      "old": [
+        32.071636,
+        118.750307
+      ],
+      "new": [
+        31.924874,
+        118.641192
+      ],
+      "distance_m": 19292,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "上海梅山钢铁股份有限公司",
+      "district": "雨花台区",
+      "old": [
+        31.905593,
+        118.605241
+      ],
+      "new": [
+        31.914315,
+        118.622802
+      ],
+      "distance_m": 1920,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京宝地梅山产城发展有限公司矿业分公司",
+      "district": "雨花台区",
+      "old": [
+        31.899377,
+        118.623144
+      ],
+      "new": [
+        31.991291,
+        118.779087
+      ],
+      "distance_m": 17915,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京华润热电有限公司",
+      "district": "雨花台区",
+      "old": [
+        31.947536,
+        118.637942
+      ],
+      "new": [
+        31.947777,
+        118.637658
+      ],
+      "distance_m": 38,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中牧南京动物药业有限公司",
+      "district": "雨花台区",
+      "old": [
+        31.985241,
+        118.745724
+      ],
+      "new": [
+        31.985408,
+        118.746046
+      ],
+      "distance_m": 36,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京城南污水处理有限公司",
+      "district": "雨花台区",
+      "old": [
+        31.928438,
+        118.627892
+      ],
+      "new": [
+        31.928382,
+        118.627695
+      ],
+      "distance_m": 20,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "宝武碳业科技股份有限公司梅山分公司",
+      "district": "雨花台区",
+      "old": [
+        31.909575,
+        118.626225
+      ],
+      "new": [
+        31.903835,
+        118.641357
+      ],
+      "distance_m": 1564,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京地铁运营有限责任公司",
+      "district": "雨花台区",
+      "old": [
+        32.108475,
+        118.885875
+      ],
+      "new": [
+        31.979449,
+        118.751088
+      ],
+      "distance_m": 19163,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京宁星汽车维修服务有限公司",
+      "district": "雨花台区",
+      "old": [
+        31.995276,
+        118.790748
+      ],
+      "new": [
+        31.995784,
+        118.789961
+      ],
+      "distance_m": 93,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国电子科技集团公司第五十五研究所",
+      "district": "江宁区",
+      "old": [
+        32.028734,
+        118.836843
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 8403,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "正大天晴药业集团南京顺欣制药有限公司",
+      "district": "江宁区",
+      "old": [
+        31.919104,
+        118.940169
+      ],
+      "new": [
+        31.915837,
+        118.937386
+      ],
+      "distance_m": 448,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "长安马自达汽车有限公司",
+      "district": "江宁区",
+      "old": [
+        31.897622,
+        118.804028
+      ],
+      "new": [
+        31.900373,
+        118.812116
+      ],
+      "distance_m": 823,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "上汽大众汽车有限公司南京分公司",
+      "district": "江宁区",
+      "old": [
+        31.950156,
+        118.80061
+      ],
+      "new": [
+        31.948827,
+        118.79389
+      ],
+      "distance_m": 651,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "上汽大通汽车有限公司南京分公司",
+      "district": "江宁区",
+      "old": [
+        31.944225,
+        118.902887
+      ],
+      "new": [
+        31.940718,
+        118.943897
+      ],
+      "distance_m": 3889,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京造币有限公司",
+      "district": "江宁区",
+      "old": [
+        31.948813,
+        118.866388
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 2582,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京玻璃纤维研究设计院有限公司江宁分公司",
+      "district": "江宁区",
+      "old": [
+        31.921929,
+        118.862408
+      ],
+      "new": [
+        31.921628,
+        118.86248
+      ],
+      "distance_m": 34,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市江宁区中医医院",
+      "district": "江宁区",
+      "old": [
+        31.965187,
+        118.859178
+      ],
+      "new": [
+        31.966128,
+        118.859889
+      ],
+      "distance_m": 124,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京汽轮电机长风新能源股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.938889,
+        118.905872
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 6460,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京高精齿轮集团有限公司（天册路厂区）",
+      "district": "江宁区",
+      "old": [
+        31.952853,
+        118.90896
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 6553,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京高速齿轮制造有限公司-322亩",
+      "district": "江宁区",
+      "old": [
+        31.923514,
+        118.928874
+      ],
+      "new": [
+        31.927167,
+        118.923555
+      ],
+      "distance_m": 646,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司空港污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.996375,
+        118.855375
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 9385,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司开发区污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.947645,
+        118.819494
+      ],
+      "distance_m": 2054,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京江宁水务集团有限公司江宁开发区南区污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.838378,
+        118.841965
+      ],
+      "distance_m": 9590,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司滨江污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 8697,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司高新区污水处理厂三四期",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 8697,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司高新区污水处理厂一二期",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 8697,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司高桥污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 8697,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京江宁水务集团有限公司城北污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.922881,
+        118.821643
+      ],
+      "new": [
+        31.927941,
+        118.913607
+      ],
+      "distance_m": 8697,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江宁区禄口污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.753647,
+        118.870691
+      ],
+      "new": [
+        31.774933,
+        118.859068
+      ],
+      "distance_m": 2610,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市江宁区鑫杭达润滑油添加剂经营部",
+      "district": "江宁区",
+      "old": [
+        32.053851,
+        118.925805
+      ],
+      "new": [
+        31.869804,
+        118.774619
+      ],
+      "distance_m": 24945,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京乾元浩生物科技有限公司",
+      "district": "江宁区",
+      "old": [
+        31.836718,
+        118.563829
+      ],
+      "new": [
+        31.966069,
+        118.85387
+      ],
+      "distance_m": 30928,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京金陵金箔集团股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.952537,
+        118.857261
+      ],
+      "new": [
+        31.922968,
+        118.856962
+      ],
+      "distance_m": 3288,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "航天晨光股份有限公司（车业园）",
+      "district": "江宁区",
+      "old": [
+        31.888813,
+        118.794071
+      ],
+      "new": [
+        31.92901,
+        118.823319
+      ],
+      "distance_m": 5254,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "汤山新城污水处理厂",
+      "district": "江宁区",
+      "old": [
+        32.017675,
+        119.065375
+      ],
+      "new": [
+        32.039174,
+        119.068148
+      ],
+      "distance_m": 2405,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏省中医院牛首山分院医疗康复院区",
+      "district": "江宁区",
+      "old": [
+        32.049635,
+        118.845628
+      ],
+      "new": [
+        31.966128,
+        118.859889
+      ],
+      "distance_m": 9382,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京绿筑科技有限公司",
+      "district": "江宁区",
+      "old": [
+        31.88124,
+        118.738336
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 12458,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京高速齿轮制造有限公司-410亩",
+      "district": "江宁区",
+      "old": [
+        31.923514,
+        118.928874
+      ],
+      "new": [
+        31.927167,
+        118.923555
+      ],
+      "distance_m": 646,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京禄口国际机场",
+      "district": "江宁区",
+      "old": [
+        31.731634,
+        118.871181
+      ],
+      "new": [
+        31.734297,
+        118.873195
+      ],
+      "distance_m": 352,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京塔塔汽车零部件系统有限公司",
+      "district": "江宁区",
+      "old": [
+        31.910091,
+        118.846497
+      ],
+      "new": [
+        31.909814,
+        118.846607
+      ],
+      "distance_m": 33,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "蒂森克虏伯发动机零部件（中国）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.960319,
+        118.909904
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 6688,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京高速齿轮制造有限公司-400亩",
+      "district": "江宁区",
+      "old": [
+        31.936577,
+        118.908067
+      ],
+      "new": [
+        31.927167,
+        118.923555
+      ],
+      "distance_m": 1798,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京南传智能技术有限公司",
+      "district": "江宁区",
+      "old": [
+        31.789525,
+        118.796225
+      ],
+      "new": [
+        31.784038,
+        118.79236
+      ],
+      "distance_m": 711,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京立升再生资源开发有限公司",
+      "district": "江宁区",
+      "old": [
+        31.828251,
+        118.818781
+      ],
+      "new": [
+        31.828283,
+        118.818534
+      ],
+      "distance_m": 24,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市第二医院（南京市公共卫生医疗中心、江苏省传染病医院）",
+      "district": "江宁区",
+      "old": [
+        32.088873,
+        118.768137
+      ],
+      "new": [
+        32.047082,
+        118.989914
+      ],
+      "distance_m": 21408,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京元润食品有限公司",
+      "district": "江宁区",
+      "old": [
+        31.925219,
+        119.052242
+      ],
+      "new": [
+        31.925516,
+        119.052025
+      ],
+      "distance_m": 39,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京医科大学附属逸夫医院",
+      "district": "江宁区",
+      "old": [
+        31.932123,
+        118.894579
+      ],
+      "new": [
+        31.932018,
+        118.894457
+      ],
+      "distance_m": 16,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市江宁医院鼓山路院区",
+      "district": "江宁区",
+      "old": [
+        31.95074,
+        118.849162
+      ],
+      "new": [
+        31.951397,
+        118.849597
+      ],
+      "distance_m": 84,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京天印山医院有限公司",
+      "district": "江宁区",
+      "old": [
+        31.881949,
+        118.874735
+      ],
+      "new": [
+        31.950757,
+        118.849194
+      ],
+      "distance_m": 8022,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京奥特佳祥云冷机有限公司",
+      "district": "江宁区",
+      "old": [
+        31.867246,
+        118.821283
+      ],
+      "new": [
+        31.868768,
+        118.819998
+      ],
+      "distance_m": 208,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京星乔威泰克汽车零部件有限公司",
+      "district": "江宁区",
+      "old": [
+        31.935755,
+        118.918224
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 7676,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京传奇生物科技有限公司（月华路）",
+      "district": "江宁区",
+      "old": [
+        31.930548,
+        118.914082
+      ],
+      "new": [
+        31.9249,
+        118.890143
+      ],
+      "distance_m": 2345,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京泉峰汽车精密技术股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.894386,
+        118.793983
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 7825,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京中船绿洲机器有限公司",
+      "district": "江宁区",
+      "old": [
+        31.857505,
+        118.564379
+      ],
+      "new": [
+        31.857355,
+        118.56586
+      ],
+      "distance_m": 141,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "大协西川东阳汽车部件（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.905785,
+        118.845592
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 5303,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "布雷博（南京）制动系统有限公司",
+      "district": "江宁区",
+      "old": [
+        31.782424,
+        118.793022
+      ],
+      "new": [
+        31.782482,
+        118.793239
+      ],
+      "distance_m": 22,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "诺玛科（南京）汽车零部件有限公司",
+      "district": "江宁区",
+      "old": [
+        31.779797,
+        118.791419
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 19809,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京天环食品（集团）有限公司",
+      "district": "江宁区",
+      "old": [
+        32.076384,
+        118.738765
+      ],
+      "new": [
+        31.881277,
+        118.679186
+      ],
+      "distance_m": 22411,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中材锂膜（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.787708,
+        118.576376
+      ],
+      "new": [
+        31.787511,
+        118.575643
+      ],
+      "distance_m": 73,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京空港油料有限公司",
+      "district": "江宁区",
+      "old": [
+        31.740391,
+        118.890096
+      ],
+      "new": [
+        31.738039,
+        118.875717
+      ],
+      "distance_m": 1385,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "横溪街道丹阳污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.628696,
+        118.722967
+      ],
+      "distance_m": 36751,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江宁街道陆郎污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.797131,
+        118.63073
+      ],
+      "new": [
+        31.786086,
+        118.658505
+      ],
+      "distance_m": 2898,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市江宁区横溪集镇污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.72117,
+        118.782237
+      ],
+      "distance_m": 25812,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江宁区湖熟街道龙都污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.853545,
+        118.970576
+      ],
+      "new": [
+        31.860397,
+        118.946494
+      ],
+      "distance_m": 2399,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江宁区湖熟街道周岗污水处理厂",
+      "district": "江宁区",
+      "old": [
+        31.853545,
+        118.970576
+      ],
+      "new": [
+        31.778133,
+        118.923982
+      ],
+      "distance_m": 9471,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国航空工业集团公司金城南京机电液压工程研究中心",
+      "district": "江宁区",
+      "old": [
+        31.897677,
+        118.778351
+      ],
+      "new": [
+        31.955583,
+        118.917695
+      ],
+      "distance_m": 14642,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京国博电子股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.842266,
+        118.799478
+      ],
+      "new": [
+        31.84397,
+        118.800362
+      ],
+      "distance_m": 207,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "爱尔集新能源科技（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        32.156134,
+        118.884525
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 22961,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中国电信股份有限公司南京分公司",
+      "district": "江宁区",
+      "old": [
+        32.061965,
+        118.78638
+      ],
+      "new": [
+        31.940718,
+        118.943897
+      ],
+      "distance_m": 20060,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中兴通讯（南京）有限责任公司",
+      "district": "江宁区",
+      "old": [
+        31.930625,
+        118.754075
+      ],
+      "new": [
+        31.98859,
+        118.776377
+      ],
+      "distance_m": 6780,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "长安马自达发动机有限公司",
+      "district": "江宁区",
+      "old": [
+        31.886361,
+        118.791318
+      ],
+      "new": [
+        31.893303,
+        118.804048
+      ],
+      "distance_m": 1428,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "中国药科大学（江宁校区）",
+      "district": "江宁区",
+      "old": [
+        31.902898,
+        118.918208
+      ],
+      "new": [
+        31.90295,
+        118.918105
+      ],
+      "distance_m": 11,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "苏世博（南京）减振系统有限公司",
+      "district": "江宁区",
+      "old": [
+        31.770562,
+        118.826027
+      ],
+      "new": [
+        31.771596,
+        118.825103
+      ],
+      "distance_m": 144,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京驰力智能汽车科技有限责任公司",
+      "district": "江宁区",
+      "old": [
+        31.833775,
+        118.574225
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 28348,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京湶膜科技有限公司",
+      "district": "江宁区",
+      "old": [
+        31.85569,
+        118.819365
+      ],
+      "new": [
+        31.855573,
+        118.819653
+      ],
+      "distance_m": 30,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "法雷奥动力系统（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.868655,
+        118.788745
+      ],
+      "new": [
+        31.866497,
+        118.809096
+      ],
+      "distance_m": 1937,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京泉峰科技有限公司（529）",
+      "district": "江宁区",
+      "old": [
+        31.925725,
+        118.810925
+      ],
+      "new": [
+        31.89439,
+        118.793988
+      ],
+      "distance_m": 3834,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京中升之星汽车销售服务有限公司",
+      "district": "江宁区",
+      "old": [
+        31.978659,
+        118.872949
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 4239,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "翰昂杰希思汽车零部件（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.911275,
+        118.804175
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 5731,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中国移动通信集团江苏有限公司南京分公司",
+      "district": "江宁区",
+      "old": [
+        31.990621,
+        118.720985
+      ],
+      "new": [
+        31.93578,
+        118.846638
+      ],
+      "distance_m": 13330,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京惠农千重浪农业科技有限公司",
+      "district": "江宁区",
+      "old": [
+        31.76745,
+        118.842451
+      ],
+      "new": [
+        31.767582,
+        118.842186
+      ],
+      "distance_m": 29,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "美埃（中国）环境科技股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.834185,
+        118.828833
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 13272,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "菲尼克斯亚太电气（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.931597,
+        118.825449
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 2744,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "格力电器（南京）有限公司",
+      "district": "江宁区",
+      "old": [
+        31.919691,
+        118.932896
+      ],
+      "new": [
+        31.919803,
+        118.932967
+      ],
+      "distance_m": 14,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京擎科生物科技有限公司",
+      "district": "江宁区",
+      "old": [
+        31.942273,
+        118.915438
+      ],
+      "new": [
+        31.941831,
+        118.915083
+      ],
+      "distance_m": 59,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京中升之宝汽车销售服务有限公司",
+      "district": "江宁区",
+      "old": [
+        31.977867,
+        118.87503
+      ],
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "distance_m": 4331,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "东南大学（江宁）",
+      "district": "江宁区",
+      "old": [
+        31.887252,
+        118.820909
+      ],
+      "new": [
+        31.889849,
+        118.820942
+      ],
+      "distance_m": 289,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京高精船用设备有限公司",
+      "district": "江宁区",
+      "old": [
+        31.960639,
+        118.918629
+      ],
+      "new": [
+        31.960426,
+        118.9179
+      ],
+      "distance_m": 73,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京大全变压器有限公司",
+      "district": "江宁区",
+      "old": [
+        31.892625,
+        118.775375
+      ],
+      "new": [
+        31.891616,
+        118.773916
+      ],
+      "distance_m": 178,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏顺力冷弯型钢实业有限公司",
+      "district": "江宁区",
+      "old": [
+        31.834417,
+        118.594686
+      ],
+      "new": [
+        31.834558,
+        118.594654
+      ],
+      "distance_m": 16,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京华电节能环保股份有限公司",
+      "district": "江宁区",
+      "old": [
+        31.844997,
+        118.592787
+      ],
+      "new": [
+        31.844749,
+        118.593217
+      ],
+      "distance_m": 49,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京安基山铜矿有限公司",
+      "district": "江宁区",
+      "old": [
+        32.067138,
+        119.090859
+      ],
+      "new": [
+        31.870142,
+        118.751686
+      ],
+      "distance_m": 38775,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京谷里铜矿有限公司",
+      "district": "江宁区",
+      "old": [
+        31.859307,
+        118.696399
+      ],
+      "new": [
+        31.852961,
+        118.691398
+      ],
+      "distance_m": 849,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "台积电（南京）有限公司",
+      "district": "浦口区",
+      "old": [
+        31.972591,
+        118.538523
+      ],
+      "new": [
+        31.971119,
+        118.53591
+      ],
+      "distance_m": 296,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京同凯兆业生物技术有限责任公司",
+      "district": "浦口区",
+      "old": [
+        31.975644,
+        118.548955
+      ],
+      "new": [
+        32.059796,
+        118.627165
+      ],
+      "distance_m": 11913,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏雨润肉食品有限公司",
+      "district": "浦口区",
+      "old": [
+        31.969046,
+        118.545975
+      ],
+      "new": [
+        32.210579,
+        118.666798
+      ],
+      "distance_m": 29170,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "华天科技（南京）有限公司",
+      "district": "浦口区",
+      "old": [
+        31.970413,
+        118.52206
+      ],
+      "new": [
+        31.970403,
+        118.5232
+      ],
+      "distance_m": 108,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京水务集团资源再生科技有限公司",
+      "district": "浦口区",
+      "old": [
+        32.056721,
+        118.445783
+      ],
+      "new": [
+        32.056945,
+        118.445336
+      ],
+      "distance_m": 49,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京环境集团有限公司（江北灰渣填埋场）",
+      "district": "浦口区",
+      "old": [
+        32.087282,
+        118.830144
+      ],
+      "new": [
+        32.06031,
+        118.448599
+      ],
+      "distance_m": 36075,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京环境再生能源有限公司",
+      "district": "浦口区",
+      "old": [
+        32.059136,
+        118.444915
+      ],
+      "new": [
+        32.059521,
+        118.443923
+      ],
+      "distance_m": 103,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏乾江环境科技有限公司（危险废物综合处置中心）",
+      "district": "浦口区",
+      "old": [
+        32.071905,
+        118.764234
+      ],
+      "new": [
+        32.057313,
+        118.451491
+      ],
+      "distance_m": 29515,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏乾江环境科技有限公司（填埋）",
+      "district": "浦口区",
+      "old": [
+        32.057225,
+        118.452025
+      ],
+      "new": [
+        32.057313,
+        118.451491
+      ],
+      "distance_m": 51,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏华水污水处理有限公司（南京浦口经济开发区污水处理厂）",
+      "district": "浦口区",
+      "old": [
+        31.965823,
+        118.623498
+      ],
+      "new": [
+        31.957927,
+        118.544466
+      ],
+      "distance_m": 7507,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏盘古半导体科技股份有限公司",
+      "district": "浦口区",
+      "old": [
+        31.955275,
+        118.531025
+      ],
+      "new": [
+        31.956276,
+        118.531353
+      ],
+      "distance_m": 116,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏海硕再生资源有限公司",
+      "district": "浦口区",
+      "old": [
+        32.033676,
+        118.463158
+      ],
+      "new": [
+        32.033584,
+        118.463332
+      ],
+      "distance_m": 19,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "芯爱科技（南京）有限公司",
+      "district": "浦口区",
+      "old": [
+        31.98138,
+        118.562347
+      ],
+      "new": [
+        31.982479,
+        118.562082
+      ],
+      "distance_m": 125,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "华天科技（江苏）有限公司",
+      "district": "浦口区",
+      "old": [
+        31.965711,
+        118.518729
+      ],
+      "new": [
+        31.970403,
+        118.5232
+      ],
+      "distance_m": 671,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏芯德半导体科技有限公司",
+      "district": "浦口区",
+      "old": [
+        31.976547,
+        118.551078
+      ],
+      "new": [
+        31.976825,
+        118.551865
+      ],
+      "distance_m": 80,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市城市管理生活废弃物处置指导中心（天井洼管理科）",
+      "district": "浦口区",
+      "old": [
+        32.089436,
+        118.762904
+      ],
+      "new": [
+        32.010517,
+        118.63544
+      ],
+      "distance_m": 14877,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市浦口区中心医院",
+      "district": "浦口区",
+      "old": [
+        32.048946,
+        118.6363
+      ],
+      "new": [
+        32.050716,
+        118.63799
+      ],
+      "distance_m": 253,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市浦口区中医院",
+      "district": "浦口区",
+      "old": [
+        32.064543,
+        118.628679
+      ],
+      "new": [
+        32.064368,
+        118.628694
+      ],
+      "distance_m": 20,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润浦建设发展有限公司乌江污水处理厂",
+      "district": "浦口区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.050543,
+        118.638648
+      ],
+      "distance_m": 18586,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润浦建设发展有限公司石桥污水处理厂",
+      "district": "浦口区",
+      "old": [
+        31.996375,
+        118.855375
+      ],
+      "new": [
+        32.050543,
+        118.638648
+      ],
+      "distance_m": 21301,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润浦建设发展有限公司汤泉污水处理厂",
+      "district": "浦口区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.050543,
+        118.638648
+      ],
+      "distance_m": 18586,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润浦建设发展有限公司永宁污水处理厂",
+      "district": "浦口区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.050543,
+        118.638648
+      ],
+      "distance_m": 18586,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京大吉铁塔制造有限公司",
+      "district": "浦口区",
+      "old": [
+        31.971115,
+        118.560349
+      ],
+      "new": [
+        31.971859,
+        118.559968
+      ],
+      "distance_m": 90,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京米格过滤材料有限公司",
+      "district": "浦口区",
+      "old": [
+        31.953285,
+        118.550188
+      ],
+      "new": [
+        31.953348,
+        118.550358
+      ],
+      "distance_m": 18,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "兰精（南京）纤维有限公司",
+      "district": "六合区",
+      "old": [
+        32.280619,
+        118.881579
+      ],
+      "new": [
+        32.281749,
+        118.881586
+      ],
+      "distance_m": 126,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "日立安斯泰莫动力系统（南京）有限公司",
+      "district": "六合区",
+      "old": [
+        32.312267,
+        118.809829
+      ],
+      "new": [
+        32.323235,
+        118.822241
+      ],
+      "distance_m": 1688,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京润埠水处理有限公司（含南京现代表面处理科技产业园内的电镀企业）",
+      "district": "六合区",
+      "old": [
+        32.278245,
+        118.859166
+      ],
+      "new": [
+        32.277975,
+        118.859399
+      ],
+      "distance_m": 37,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京美华羽绒制品有限公司",
+      "district": "六合区",
+      "old": [
+        32.018182,
+        118.800037
+      ],
+      "new": [
+        32.518416,
+        118.814983
+      ],
+      "distance_m": 55641,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京六合茉莉绿色能源有限公司",
+      "district": "六合区",
+      "old": [
+        32.465767,
+        118.753639
+      ],
+      "new": [
+        32.465424,
+        118.753547
+      ],
+      "distance_m": 39,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "扬州新材料投资集团有限公司（长输管线南京段）",
+      "district": "六合区",
+      "old": [
+        32.25685,
+        119.1641
+      ],
+      "new": [
+        32.244361,
+        118.76571
+      ],
+      "distance_m": 37490,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京市六合区横梁街道大仇污水处理厂",
+      "district": "六合区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.318617,
+        118.93033
+      ],
+      "distance_m": 42516,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "程桥街道污水处理厂",
+      "district": "六合区",
+      "old": [
+        31.996375,
+        118.855375
+      ],
+      "new": [
+        32.383291,
+        118.72892
+      ],
+      "distance_m": 44638,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "金牛湖街道污水处理厂",
+      "district": "六合区",
+      "old": [
+        31.853545,
+        118.970576
+      ],
+      "new": [
+        32.418158,
+        118.9314
+      ],
+      "distance_m": 62890,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京市六合区竹镇镇污水处理厂",
+      "district": "六合区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.323235,
+        118.822241
+      ],
+      "distance_m": 41241,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京盛世新能源科技有限公司",
+      "district": "六合区",
+      "old": [
+        32.311199,
+        118.787132
+      ],
+      "new": [
+        32.323235,
+        118.822241
+      ],
+      "distance_m": 3560,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "布雷博（南京）汽车零部件有限公司",
+      "district": "溧水区",
+      "old": [
+        31.728994,
+        118.94087
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 11984,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司",
+      "district": "溧水区",
+      "old": [
+        31.67,
+        118.98
+      ],
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "distance_m": 4981,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京经源环境服务有限公司",
+      "district": "溧水区",
+      "old": [
+        31.703175,
+        119.029375
+      ],
+      "new": [
+        31.702568,
+        119.029905
+      ],
+      "distance_m": 84,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京长安汽车有限公司溧水开发区厂区",
+      "district": "溧水区",
+      "old": [
+        32.088206,
+        118.811503
+      ],
+      "new": [
+        31.668383,
+        119.020479
+      ],
+      "distance_m": 50681,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏中天共康环保科技有限公司",
+      "district": "溧水区",
+      "old": [
+        32.045514,
+        118.817736
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 48159,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "江苏宜嘉物资回收再生利用有限公司",
+      "district": "溧水区",
+      "old": [
+        31.483557,
+        119.098709
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 19785,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "信安细川（南京）包装有限公司",
+      "district": "溧水区",
+      "old": [
+        31.685983,
+        119.027498
+      ],
+      "new": [
+        31.685969,
+        119.027043
+      ],
+      "distance_m": 43,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京金盾动物药业有限责任公司",
+      "district": "溧水区",
+      "old": [
+        31.991583,
+        118.756507
+      ],
+      "new": [
+        31.626733,
+        119.067048
+      ],
+      "distance_m": 50070,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏本川智能电路科技股份有限公司",
+      "district": "溧水区",
+      "old": [
+        31.698435,
+        119.036837
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 5323,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京恒生制药有限公司",
+      "district": "溧水区",
+      "old": [
+        31.676869,
+        119.023195
+      ],
+      "new": [
+        31.67672,
+        119.023055
+      ],
+      "distance_m": 21,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市溧水区人民医院",
+      "district": "溧水区",
+      "old": [
+        31.631114,
+        119.034284
+      ],
+      "new": [
+        31.631252,
+        119.034292
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京理工宇龙新材料科技股份有限公司",
+      "district": "溧水区",
+      "old": [
+        31.692491,
+        119.098919
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 8105,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京鸿发有色金属制造股份有限公司",
+      "district": "溧水区",
+      "old": [
+        31.749019,
+        118.936449
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 13937,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京乐宠乐家生物制药有限公司",
+      "district": "溧水区",
+      "old": [
+        31.694467,
+        119.034477
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 4855,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司（四期）",
+      "district": "溧水区",
+      "old": [
+        31.69,
+        118.97
+      ],
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "distance_m": 7029,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京喜旺污水处理有限公司",
+      "district": "溧水区",
+      "old": [
+        31.72,
+        118.97
+      ],
+      "new": [
+        31.658874,
+        119.03561
+      ],
+      "distance_m": 9205,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市欣旺达新能源有限公司",
+      "district": "溧水区",
+      "old": [
+        31.695232,
+        118.964528
+      ],
+      "new": [
+        31.696987,
+        119.010232
+      ],
+      "distance_m": 4328,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京龙鑫电子科技有限公司",
+      "district": "溧水区",
+      "old": [
+        31.697229,
+        118.974067
+      ],
+      "new": [
+        31.695548,
+        118.970326
+      ],
+      "distance_m": 400,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司白马污水处理厂",
+      "district": "溧水区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "distance_m": 40077,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司和凤污水处理厂",
+      "district": "溧水区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "distance_m": 40077,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司洪蓝污水处理厂",
+      "district": "溧水区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "distance_m": 40077,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京飞燕活塞环股份有限公司",
+      "district": "溧水区",
+      "old": [
+        31.708757,
+        118.949324
+      ],
+      "new": [
+        31.648953,
+        119.034182
+      ],
+      "distance_m": 10426,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市欣旺达新能源有限公司（二期工厂）",
+      "district": "溧水区",
+      "old": [
+        31.695232,
+        118.964528
+      ],
+      "new": [
+        31.695524,
+        118.966899
+      ],
+      "distance_m": 227,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京市比亚迪汽车有限公司",
+      "district": "溧水区",
+      "old": [
+        31.983632,
+        118.873507
+      ],
+      "new": [
+        31.721243,
+        118.945977
+      ],
+      "distance_m": 29968,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京多美包装科技有限公司",
+      "district": "溧水区",
+      "old": [
+        31.683025,
+        119.028975
+      ],
+      "new": [
+        31.682981,
+        119.029359
+      ],
+      "distance_m": 37,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京优宁维生物科技有限公司",
+      "district": "溧水区",
+      "old": [
+        31.738452,
+        118.950846
+      ],
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "distance_m": 12173,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "仁厚碳素科技(江苏)有限公司",
+      "district": "高淳区",
+      "old": [
+        31.366725,
+        118.957925
+      ],
+      "new": [
+        31.366691,
+        118.957776
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京润淳环境科技有限公司",
+      "district": "高淳区",
+      "old": [
+        31.345092,
+        118.944969
+      ],
+      "new": [
+        31.386887,
+        118.938089
+      ],
+      "distance_m": 4693,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京红太阳股份有限公司",
+      "district": "高淳区",
+      "old": [
+        31.32,
+        118.9
+      ],
+      "new": [
+        31.35727,
+        119.173332
+      ],
+      "distance_m": 26288,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京荣泰污水处理有限公司",
+      "district": "高淳区",
+      "old": [
+        31.34785,
+        118.90877
+      ],
+      "new": [
+        31.347669,
+        118.908888
+      ],
+      "distance_m": 23,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京国邦水务有限公司",
+      "district": "高淳区",
+      "old": [
+        31.336,
+        118.881
+      ],
+      "new": [
+        31.341178,
+        118.867381
+      ],
+      "distance_m": 1416,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "范德威尔（南京）纺织机械有限公司",
+      "district": "高淳区",
+      "old": [
+        31.373725,
+        118.962151
+      ],
+      "new": [
+        31.328678,
+        118.892074
+      ],
+      "distance_m": 8329,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京冠盛汽配有限公司",
+      "district": "高淳区",
+      "old": [
+        31.377622,
+        118.94846
+      ],
+      "new": [
+        31.377097,
+        118.94857
+      ],
+      "distance_m": 59,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京淳容环境有限公司",
+      "district": "高淳区",
+      "old": [
+        31.34,
+        118.88
+      ],
+      "new": [
+        31.346296,
+        118.946942
+      ],
+      "distance_m": 6396,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京恒丰玻璃制品有限公司",
+      "district": "高淳区",
+      "old": [
+        31.372203,
+        119.100844
+      ],
+      "new": [
+        31.34452,
+        118.945814
+      ],
+      "distance_m": 15039,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京诚一新能源装备有限公司",
+      "district": "高淳区",
+      "old": [
+        31.344572,
+        118.947446
+      ],
+      "new": [
+        31.344714,
+        118.948011
+      ],
+      "distance_m": 56,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京夏普电子有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.146808,
+        118.869624
+      ],
+      "new": [
+        32.147188,
+        118.869688
+      ],
+      "distance_m": 43,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "爱尔集新能源（南京）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.156134,
+        118.884525
+      ],
+      "new": [
+        32.148426,
+        118.890587
+      ],
+      "distance_m": 1030,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "博世汽车技术服务（中国）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.159021,
+        119.025446
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 13826,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "乐金显示（南京）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.149428,
+        118.893759
+      ],
+      "new": [
+        32.151899,
+        118.893343
+      ],
+      "distance_m": 278,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京臣功制药股份有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.164794,
+        118.890798
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 2190,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京正大天晴制药有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.139688,
+        118.887974
+      ],
+      "new": [
+        32.165163,
+        118.881938
+      ],
+      "distance_m": 2889,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京正大天晴制药有限公司新厂",
+      "district": "经济技术开发区",
+      "old": [
+        32.139688,
+        118.887974
+      ],
+      "new": [
+        32.165163,
+        118.881938
+      ],
+      "distance_m": 2889,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京诺唯赞生物科技股份有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.149865,
+        119.008604
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 12186,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中建五洲工程装备有限公司（南厂区）",
+      "district": "经济技术开发区",
+      "old": [
+        32.161701,
+        119.024881
+      ],
+      "new": [
+        32.136417,
+        118.820327
+      ],
+      "distance_m": 19462,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "中建五洲工程装备有限公司(北厂区)",
+      "district": "经济技术开发区",
+      "old": [
+        32.161701,
+        119.024881
+      ],
+      "new": [
+        32.136417,
+        118.820327
+      ],
+      "distance_m": 19462,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[区县]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "喜星电子（南京）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.153666,
+        118.886525
+      ],
+      "new": [
+        32.153742,
+        118.886161
+      ],
+      "distance_m": 35,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "乐金显示（南京）有限公司（南厂区）",
+      "district": "经济技术开发区",
+      "old": [
+        32.149428,
+        118.893759
+      ],
+      "new": [
+        32.151899,
+        118.893343
+      ],
+      "distance_m": 278,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京康尼机电股份有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.070967,
+        118.760098
+      ],
+      "new": [
+        32.149391,
+        118.85917
+      ],
+      "distance_m": 12772,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京圣和药业股份有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.017926,
+        118.88106
+      ],
+      "new": [
+        32.165481,
+        118.885679
+      ],
+      "distance_m": 16413,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "博西华电器（江苏）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.134667,
+        118.871035
+      ],
+      "new": [
+        32.134671,
+        118.871195
+      ],
+      "distance_m": 15,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏嘉汇再生资源利用有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.163505,
+        118.896039
+      ],
+      "new": [
+        32.163713,
+        118.896284
+      ],
+      "distance_m": 33,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京东区污水处理管理有限公司（东阳污水处理厂）",
+      "district": "经济技术开发区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 22958,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "金陵药业股份有限公司南京金陵制药厂",
+      "district": "经济技术开发区",
+      "old": [
+        32.075024,
+        118.784351
+      ],
+      "new": [
+        32.167952,
+        118.886088
+      ],
+      "distance_m": 14091,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏金陵环境股份有限公司铁北污水处理厂",
+      "district": "经济技术开发区",
+      "old": [
+        32.145225,
+        118.852275
+      ],
+      "new": [
+        32.171867,
+        118.83851
+      ],
+      "distance_m": 3233,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "江苏金陵环境股份有限公司铁北污水处理厂三期",
+      "district": "经济技术开发区",
+      "old": [
+        32.145225,
+        118.852275
+      ],
+      "new": [
+        32.171867,
+        118.83851
+      ],
+      "distance_m": 3233,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "南京博肽生物科技有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.169821,
+        118.884853
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 2514,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京白敬宇制药有限责任公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.04051,
+        118.763643
+      ],
+      "new": [
+        32.167531,
+        118.883612
+      ],
+      "distance_m": 18088,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "美药星（南京）制药有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.150083,
+        118.875686
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 421,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京乐韬生物科技有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.130785,
+        118.959871
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 7827,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京东区污水处理管理有限公司（南京龙潭污水处理厂）",
+      "district": "经济技术开发区",
+      "old": [
+        31.95289,
+        118.798615
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 22958,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "爱尔集新能源电池（南京）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.148422,
+        118.890581
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 1075,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京华信藤仓光通信有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.165865,
+        118.877029
+      ],
+      "new": [
+        32.165622,
+        118.877553
+      ],
+      "distance_m": 56,
+      "method": "address(inferred)",
+      "warnings": []
+    },
+    {
+      "name": "埃瓦默泵技术服务（南京）有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.158721,
+        119.02544
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 13822,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    },
+    {
+      "name": "南京华格电汽塑业有限公司",
+      "district": "经济技术开发区",
+      "old": [
+        32.148108,
+        118.854572
+      ],
+      "new": [
+        32.147731,
+        118.879187
+      ],
+      "distance_m": 2318,
+      "method": "address(inferred)",
+      "warnings": [
+        "地址精度不足[兴趣点]，坐标可能为区域中心点，建议补充到门牌号级别"
+      ]
+    }
+  ],
+  "new_failures": [],
+  "skipped_no_old": [
+    {
+      "name": "南京威尔生物科技有限公司",
+      "district": "江北新区",
+      "new": [
+        32.274876,
+        118.84413
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京钛白化工有限责任公司",
+      "district": "江北新区",
+      "new": [
+        32.255593,
+        118.821233
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京红太阳生物化学有限责任公司",
+      "district": "江北新区",
+      "new": [
+        32.276922,
+        118.811428
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏南热发电有限责任公司",
+      "district": "江北新区",
+      "new": [
+        32.207599,
+        118.756285
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京长江涂料有限公司",
+      "district": "江北新区",
+      "new": [
+        32.013409,
+        118.761738
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京同骏环境服务有限公司",
+      "district": "江北新区",
+      "new": [
+        32.269568,
+        118.81488
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "中国石化集团资产经营管理有限公司扬子石化分公司",
+      "district": "江北新区",
+      "new": [
+        32.243422,
+        118.760244
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京绿叶制药有限公司华康路121号厂区",
+      "district": "江北新区",
+      "new": [
+        32.197228,
+        118.677914
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京化学工业园天宇固体废物处置有限公司",
+      "district": "江北新区",
+      "new": [
+        32.285352,
+        118.787399
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏金陵环境股份有限公司桥北污水处理厂",
+      "district": "江北新区",
+      "new": [
+        32.171867,
+        118.83851
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京金江冶金炉料有限公司",
+      "district": "江北新区",
+      "new": [
+        31.95467,
+        118.987137
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京南钢产业发展有限公司",
+      "district": "江北新区",
+      "new": [
+        32.201599,
+        118.750997
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏金陵环境股份有限公司城东三期污水处理厂",
+      "district": "秦淮区",
+      "new": [
+        32.062177,
+        118.784529
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "宏光空降装备有限公司",
+      "district": "秦淮区",
+      "new": [
+        32.002304,
+        118.796621
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏金陵环境股份有限公司城北污水处理厂",
+      "district": "鼓楼区",
+      "new": [
+        32.063772,
+        118.776128
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏金陵环境股份有限公司八卦洲污水处理厂",
+      "district": "栖霞区",
+      "new": [
+        32.171867,
+        118.83851
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京华龙臭氧设备有限公司",
+      "district": "栖霞区",
+      "new": [
+        32.096269,
+        118.909138
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京欧泰钢格板制造有限公司",
+      "district": "栖霞区",
+      "new": [
+        32.229493,
+        119.105923
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "宝武环科南京资源利用有限公司",
+      "district": "雨花台区",
+      "new": [
+        31.960616,
+        118.744804
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "宝武装备智能科技有限公司南京分公司",
+      "district": "雨花台区",
+      "new": [
+        31.875466,
+        118.624302
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京同仁医院有限公司",
+      "district": "江宁区",
+      "new": [
+        31.896478,
+        118.827076
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京高精齿轮集团有限公司（建衡路厂区）",
+      "district": "江宁区",
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京赑屃再生资源有限公司",
+      "district": "江宁区",
+      "new": [
+        31.915629,
+        118.872804
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京埃斯顿机器人工程有限公司",
+      "district": "江宁区",
+      "new": [
+        31.895672,
+        118.774996
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市城市管理生活废弃物处置指导中心（水阁有机废弃物处理场）",
+      "district": "江宁区",
+      "new": [
+        31.89944,
+        118.760823
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京宁容钢桶封闭器厂",
+      "district": "江宁区",
+      "new": [
+        31.760875,
+        118.838086
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市城市管理生活废弃物处置指导中心（轿子山有机废弃物处理场）",
+      "district": "江宁区",
+      "new": [
+        31.993193,
+        118.905594
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京中江新材料科技有限公司",
+      "district": "江宁区",
+      "new": [
+        31.833045,
+        118.589058
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江宁区湖熟街道集镇污水处理厂",
+      "district": "江宁区",
+      "new": [
+        31.860277,
+        118.985545
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "淳化街道土桥污水厂",
+      "district": "江宁区",
+      "new": [
+        31.933965,
+        119.060628
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "谷里街道污水处理厂",
+      "district": "江宁区",
+      "new": [
+        31.870575,
+        118.701281
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市江宁区禄口街道污水处理二厂",
+      "district": "江宁区",
+      "new": [
+        31.774186,
+        118.864853
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "法雷奥凯佩科液力变矩器（南京）有限公司",
+      "district": "江宁区",
+      "new": [
+        31.953195,
+        118.83951
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏信宁新型建材有限公司",
+      "district": "浦口区",
+      "new": [
+        32.039293,
+        118.428086
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "光大水务（南京）有限公司",
+      "district": "浦口区",
+      "new": [
+        32.017396,
+        118.641418
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "光大中水利用（南京）有限公司",
+      "district": "浦口区",
+      "new": [
+        32.017396,
+        118.641418
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京润浦建设发展有限公司星甸污水处理厂",
+      "district": "浦口区",
+      "new": [
+        32.050543,
+        118.638648
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京康尼环网开关设备有限公司（原南京瑞吾电气有限公司）",
+      "district": "浦口区",
+      "new": [
+        31.946376,
+        118.408631
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京金羚生物基纤维有限公司",
+      "district": "六合区",
+      "new": [
+        32.274096,
+        118.87605
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京巴诗克环保科技有限公司",
+      "district": "六合区",
+      "new": [
+        32.280395,
+        118.868416
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "江苏省环境资源有限公司（南京六合）",
+      "district": "六合区",
+      "new": [
+        32.323235,
+        118.822241
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市六合区生活废弃物处置中心",
+      "district": "六合区",
+      "new": [
+        32.323235,
+        118.822241
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "龙池街道污水处理厂",
+      "district": "六合区",
+      "new": [
+        32.30594,
+        118.72326
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "冶山街道污水处理厂",
+      "district": "六合区",
+      "new": [
+        32.506056,
+        118.916732
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京雄州产业投资发展集团有限公司南京台商工业园区污水处理厂",
+      "district": "六合区",
+      "new": [
+        31.589365,
+        119.172739
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市溧水区城市管理局（南京市溧水区垃圾填埋场）",
+      "district": "溧水区",
+      "new": [
+        31.636508,
+        119.040662
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京溧水宁南水务建设发展有限公司秦淮分公司",
+      "district": "溧水区",
+      "new": [
+        31.651108,
+        119.028414
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京溧水宁南水务建设发展有限公司柘塘分公司",
+      "district": "溧水区",
+      "new": [
+        31.751915,
+        118.926933
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司东屏污水处理厂",
+      "district": "溧水区",
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司晶桥污水处理厂",
+      "district": "溧水区",
+      "new": [
+        31.648876,
+        119.02641
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京溧水秦源污水处理有限公司石湫污水处理厂",
+      "district": "溧水区",
+      "new": [
+        31.634691,
+        118.909741
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "希恩杰普莱登（南京）羽绒有限公司",
+      "district": "高淳区",
+      "new": [
+        31.328678,
+        118.892074
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "特丰制药有限公司",
+      "district": "高淳区",
+      "new": [
+        31.35483,
+        118.852659
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市高淳区水务建设投资有限公司东坝污水处理分公司",
+      "district": "高淳区",
+      "new": [
+        31.296685,
+        119.067889
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市高淳区水务建设投资有限公司固城污水处理分公司",
+      "district": "高淳区",
+      "new": [
+        31.328678,
+        118.892074
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市高淳区水务建设投资有限公司阳江污水处理分公司",
+      "district": "高淳区",
+      "new": [
+        31.32591,
+        118.816708
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市高淳区水务建设投资有限公司砖墙污水处理分公司",
+      "district": "高淳区",
+      "new": [
+        31.260394,
+        118.825562
+      ],
+      "method": "address(inferred)"
+    },
+    {
+      "name": "南京市高淳区水务建设投资有限公司桠溪污水处理分公司",
+      "district": "高淳区",
+      "new": [
+        31.368249,
+        119.170621
+      ],
+      "method": "address(inferred)"
+    }
+  ],
+  "cross_district": [
+    {
+      "name": "中国石化集团南京化学工业有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.228667,
+      "lon": 118.755699
+    },
+    {
+      "name": "亚什兰化工（南京）有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.282843,
+      "lon": 118.826672
+    },
+    {
+      "name": "南京金陵亨斯迈新材料有限责任公司",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "南京化学工业园热电有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.268492,
+      "lon": 118.821532
+    },
+    {
+      "name": "南京钢铁股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.197752,
+      "lon": 118.742413
+    },
+    {
+      "name": "南京福邦特东方化工有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.212201,
+      "lon": 118.763925
+    },
+    {
+      "name": "江苏中旗科技股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.277583,
+      "lon": 118.830516
+    },
+    {
+      "name": "江苏太古可口可乐饮料有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.172022,
+      "lon": 118.707504
+    },
+    {
+      "name": "中国石化扬子石油化工有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.238208,
+      "lon": 118.773354
+    },
+    {
+      "name": "瓦克化学（南京）有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.253661,
+      "lon": 118.828628
+    },
+    {
+      "name": "南京胜科水务有限公司",
+      "district": "江北新区",
+      "actual": "建邺区",
+      "lat": 32.045263,
+      "lon": 118.716635
+    },
+    {
+      "name": "南京新奥环保技术有限公司",
+      "district": "江北新区",
+      "actual": "建邺区",
+      "lat": 32.013615,
+      "lon": 118.725512
+    },
+    {
+      "name": "南京化工园博瑞德水务有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.204396,
+      "lon": 118.87677
+    },
+    {
+      "name": "江苏南化永大实业有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.228243,
+      "lon": 118.756261
+    },
+    {
+      "name": "江苏先盛生物医药有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.260745,
+      "lon": 118.832102
+    },
+    {
+      "name": "南京九霄药业有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.254912,
+      "lon": 118.700637
+    },
+    {
+      "name": "沙索（中国）化学有限公司（赵桥河路）",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.280908,
+      "lon": 118.833856
+    },
+    {
+      "name": "南京金陵塑胶化工有限公司",
+      "district": "江北新区",
+      "actual": "栖霞区",
+      "lat": 32.153843,
+      "lon": 118.92871
+    },
+    {
+      "name": "沙索（中国）化学有限公司（方水路厂区）",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.19296,
+      "lon": 118.685849
+    },
+    {
+      "name": "中车南京浦镇车辆有限公司（高新区）",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.121788,
+      "lon": 118.717058
+    },
+    {
+      "name": "中石化南京化工研究院有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.237746,
+      "lon": 118.751215
+    },
+    {
+      "name": "南京制药厂有限公司原料药分公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.274092,
+      "lon": 118.807134
+    },
+    {
+      "name": "南京健友生化制药股份有限公司（FDF厂区）",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.175694,
+      "lon": 118.690141
+    },
+    {
+      "name": "南京美思德新材料有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.272303,
+      "lon": 118.843844
+    },
+    {
+      "name": "中国石化扬子石油化工有限公司（橡胶厂）",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.238208,
+      "lon": 118.773354
+    },
+    {
+      "name": "中国石化销售股份有限公司江苏南京石油分公司（玉带油库）",
+      "district": "江北新区",
+      "actual": "鼓楼区",
+      "lat": 32.085762,
+      "lon": 118.751166
+    },
+    {
+      "name": "南京驯鹿生物医药有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.186766,
+      "lon": 118.693998
+    },
+    {
+      "name": "南京易亨制药有限公司（华宝路）",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.199188,
+      "lon": 118.67645
+    },
+    {
+      "name": "南京江北水务发展有限公司-南京江北新区葛塘污水处理厂",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.244029,
+      "lon": 118.745532
+    },
+    {
+      "name": "南京江北水务发展有限公司-南京江北新区盘城污水处理厂",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.256026,
+      "lon": 118.726546
+    },
+    {
+      "name": "贺利氏贵金属技术（中国）有限公司",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "南京海润医药有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.252169,
+      "lon": 118.841272
+    },
+    {
+      "name": "南京汽车集团有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.169041,
+      "lon": 118.691744
+    },
+    {
+      "name": "江苏康倍得药业股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.260989,
+      "lon": 118.715963
+    },
+    {
+      "name": "南京海鲸药业股份有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.169035,
+      "lon": 118.702088
+    },
+    {
+      "name": "金城化学（江苏）有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.075044,
+      "lon": 118.666151
+    },
+    {
+      "name": "巴斯夫特性化学品（南京）有限公司-HH",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "塞拉尼斯（南京）化工有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.275806,
+      "lon": 118.822587
+    },
+    {
+      "name": "江苏新瀚新材料股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.254015,
+      "lon": 118.839041
+    },
+    {
+      "name": "南京扬子石化炼化有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.243422,
+      "lon": 118.760244
+    },
+    {
+      "name": "江苏钟山新材料有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.26672,
+      "lon": 118.837857
+    },
+    {
+      "name": "中石化南京清江物流有限公司",
+      "district": "江北新区",
+      "actual": "鼓楼区",
+      "lat": 32.043093,
+      "lon": 118.727939
+    },
+    {
+      "name": "华能国际电力江苏能源开发有限公司南京电厂",
+      "district": "江北新区",
+      "actual": "鼓楼区",
+      "lat": 32.117187,
+      "lon": 118.765193
+    },
+    {
+      "name": "南京康明服饰有限责任公司水洗分公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.215347,
+      "lon": 118.754487
+    },
+    {
+      "name": "恒河（南京）材料科技有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.28972,
+      "lon": 118.823663
+    },
+    {
+      "name": "中环信（南京）环境服务有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.249016,
+      "lon": 118.831734
+    },
+    {
+      "name": "江苏省农药研究所股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.272672,
+      "lon": 118.830894
+    },
+    {
+      "name": "南京博特新材料有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.104094,
+      "lon": 118.500897
+    },
+    {
+      "name": "南京化学试剂股份有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.228416,
+      "lon": 118.786182
+    },
+    {
+      "name": "中车南京浦镇车辆有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.111331,
+      "lon": 118.691428
+    },
+    {
+      "name": "南京扬子奥克化学有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.253661,
+      "lon": 118.828628
+    },
+    {
+      "name": "江苏德纳化学股份有限公司（EO厂区）",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.284391,
+      "lon": 118.81461
+    },
+    {
+      "name": "南京健友药业有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.173168,
+      "lon": 118.716127
+    },
+    {
+      "name": "南京鼓楼医院江北院区",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.092489,
+      "lon": 118.669584
+    },
+    {
+      "name": "江苏新瀚新材料股份有限公司（罐区南路86号）",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.199114,
+      "lon": 118.738999
+    },
+    {
+      "name": "南京扬子石化英力士乙酰有限责任公司",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "南京市大厂欣乐肉类食品中心",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.234868,
+      "lon": 118.754024
+    },
+    {
+      "name": "南京汇科高分子材料有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.258592,
+      "lon": 118.848917
+    },
+    {
+      "name": "南京宏川石化仓储有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.215086,
+      "lon": 118.868175
+    },
+    {
+      "name": "木林森活性炭江苏有限公司",
+      "district": "江北新区",
+      "actual": "江宁区",
+      "lat": 31.947285,
+      "lon": 118.777216
+    },
+    {
+      "name": "南京扬子物流有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.235563,
+      "lon": 118.812522
+    },
+    {
+      "name": "欧德优创（南京）仓储有限责任公司",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "蓝星安迪苏南京有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.287604,
+      "lon": 118.828082
+    },
+    {
+      "name": "富乐（南京）化学有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.273356,
+      "lon": 118.828496
+    },
+    {
+      "name": "巴斯夫特性化学品（南京）有限公司-SR",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "南京药石科技股份有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.190066,
+      "lon": 118.676224
+    },
+    {
+      "name": "马勒发动机零部件（南京）有限公司",
+      "district": "江北新区",
+      "actual": "玄武区",
+      "lat": 32.059344,
+      "lon": 118.796624
+    },
+    {
+      "name": "南京工业大学（浦口校区）",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.082549,
+      "lon": 118.639871
+    },
+    {
+      "name": "中外运化工国际物流有限公司南京分公司",
+      "district": "江北新区",
+      "actual": "栖霞区",
+      "lat": 32.205656,
+      "lon": 119.075426
+    },
+    {
+      "name": "南京巨龙钢管有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.187116,
+      "lon": 118.68708
+    },
+    {
+      "name": "江苏拓弘康恒医药有限公司",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.184049,
+      "lon": 118.691692
+    },
+    {
+      "name": "江苏省苏力环境科技有限责任公司",
+      "district": "建邺区",
+      "actual": "秦淮区",
+      "lat": 32.006128,
+      "lon": 118.792755
+    },
+    {
+      "name": "中国铁路上海局集团有限公司南京东机辆段（栖霞）",
+      "district": "栖霞区",
+      "actual": "玄武区",
+      "lat": 32.082985,
+      "lon": 118.800976
+    },
+    {
+      "name": "中国石化催化剂有限公司南京分公司",
+      "district": "栖霞区",
+      "actual": "六合区",
+      "lat": 32.228416,
+      "lon": 118.786182
+    },
+    {
+      "name": "中兴通讯（南京）有限责任公司",
+      "district": "江宁区",
+      "actual": "雨花台区",
+      "lat": 31.98859,
+      "lon": 118.776377
+    },
+    {
+      "name": "南京夏普电子有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147188,
+      "lon": 118.869688
+    },
+    {
+      "name": "爱尔集新能源（南京）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.148426,
+      "lon": 118.890587
+    },
+    {
+      "name": "博世汽车技术服务（中国）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "乐金显示（南京）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.151899,
+      "lon": 118.893343
+    },
+    {
+      "name": "南京臣功制药股份有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京正大天晴制药有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.165163,
+      "lon": 118.881938
+    },
+    {
+      "name": "南京正大天晴制药有限公司新厂",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.165163,
+      "lon": 118.881938
+    },
+    {
+      "name": "南京诺唯赞生物科技股份有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "中建五洲工程装备有限公司（南厂区）",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.136417,
+      "lon": 118.820327
+    },
+    {
+      "name": "中建五洲工程装备有限公司(北厂区)",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.136417,
+      "lon": 118.820327
+    },
+    {
+      "name": "喜星电子（南京）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.153742,
+      "lon": 118.886161
+    },
+    {
+      "name": "乐金显示（南京）有限公司（南厂区）",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.151899,
+      "lon": 118.893343
+    },
+    {
+      "name": "南京康尼机电股份有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.149391,
+      "lon": 118.85917
+    },
+    {
+      "name": "南京圣和药业股份有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.165481,
+      "lon": 118.885679
+    },
+    {
+      "name": "博西华电器（江苏）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.134671,
+      "lon": 118.871195
+    },
+    {
+      "name": "江苏嘉汇再生资源利用有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.163713,
+      "lon": 118.896284
+    },
+    {
+      "name": "南京东区污水处理管理有限公司（东阳污水处理厂）",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "金陵药业股份有限公司南京金陵制药厂",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.167952,
+      "lon": 118.886088
+    },
+    {
+      "name": "江苏金陵环境股份有限公司铁北污水处理厂",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.171867,
+      "lon": 118.83851
+    },
+    {
+      "name": "江苏金陵环境股份有限公司铁北污水处理厂三期",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.171867,
+      "lon": 118.83851
+    },
+    {
+      "name": "南京博肽生物科技有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京白敬宇制药有限责任公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.167531,
+      "lon": 118.883612
+    },
+    {
+      "name": "美药星（南京）制药有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京乐韬生物科技有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京东区污水处理管理有限公司（南京龙潭污水处理厂）",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "爱尔集新能源电池（南京）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京华信藤仓光通信有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.165622,
+      "lon": 118.877553
+    },
+    {
+      "name": "埃瓦默泵技术服务（南京）有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京华格电汽塑业有限公司",
+      "district": "经济技术开发区",
+      "actual": "栖霞区",
+      "lat": 32.147731,
+      "lon": 118.879187
+    },
+    {
+      "name": "南京威尔生物科技有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.274876,
+      "lon": 118.84413
+    },
+    {
+      "name": "南京钛白化工有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.255593,
+      "lon": 118.821233
+    },
+    {
+      "name": "南京红太阳生物化学有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.276922,
+      "lon": 118.811428
+    },
+    {
+      "name": "江苏南热发电有限责任公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.207599,
+      "lon": 118.756285
+    },
+    {
+      "name": "南京长江涂料有限公司",
+      "district": "江北新区",
+      "actual": "建邺区",
+      "lat": 32.013409,
+      "lon": 118.761738
+    },
+    {
+      "name": "南京同骏环境服务有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.269568,
+      "lon": 118.81488
+    },
+    {
+      "name": "中国石化集团资产经营管理有限公司扬子石化分公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.243422,
+      "lon": 118.760244
+    },
+    {
+      "name": "南京绿叶制药有限公司华康路121号厂区",
+      "district": "江北新区",
+      "actual": "浦口区",
+      "lat": 32.197228,
+      "lon": 118.677914
+    },
+    {
+      "name": "南京化学工业园天宇固体废物处置有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.285352,
+      "lon": 118.787399
+    },
+    {
+      "name": "江苏金陵环境股份有限公司桥北污水处理厂",
+      "district": "江北新区",
+      "actual": "栖霞区",
+      "lat": 32.171867,
+      "lon": 118.83851
+    },
+    {
+      "name": "南京金江冶金炉料有限公司",
+      "district": "江北新区",
+      "actual": "江宁区",
+      "lat": 31.95467,
+      "lon": 118.987137
+    },
+    {
+      "name": "南京南钢产业发展有限公司",
+      "district": "江北新区",
+      "actual": "六合区",
+      "lat": 32.201599,
+      "lon": 118.750997
+    },
+    {
+      "name": "江苏金陵环境股份有限公司城东三期污水处理厂",
+      "district": "秦淮区",
+      "actual": "玄武区",
+      "lat": 32.062177,
+      "lon": 118.784529
+    },
+    {
+      "name": "南京雄州产业投资发展集团有限公司南京台商工业园区污水处理厂",
+      "district": "六合区",
+      "actual": "溧水区",
+      "lat": 31.589365,
+      "lon": 119.172739
+    }
+  ]
+}

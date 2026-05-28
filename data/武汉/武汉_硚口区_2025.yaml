@@ -1,0 +1,136 @@
+meta:
+  dpi: 200
+  title: 武汉市硚口区2025年重点污染源单位地理分布图
+  subtitle: 数据来源：武汉市生态环境局2025年环境监管重点单位名录  |  共8家  |  坐标：高德地图
+  output_path: ./武汉_硚口区_2025_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  city: 武汉
+  provider: gaode
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: o
+enterprises:
+- name: 华中科技大学同济医学院附属同济医院
+  address: ''
+  label: 华中科技大学同济医学院附属同济医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉东运制版有限公司
+  address: ''
+  label: 武汉东运制版有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  - 土壤污染
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉地铁运营有限公司
+  address: ''
+  label: 武汉地铁运营有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 环境风险
+  district: 硚口区（办公所在地，按属地管理原则对各站点<分支机构>进行管理）
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市中西医结合医院（武汉市第一医院）
+  address: ''
+  label: 武汉市中西医结合医院（武汉市第一医院）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市第四医院（古田院区）
+  address: ''
+  label: 武汉市第四医院（古田院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉市第四医院（武胜路院区）
+  address: ''
+  label: 武汉市第四医院（武胜路院区）
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  - 大气环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 湖北省第三人民医院
+  address: ''
+  label: 湖北省第三人民医院
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 水环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
+- name: 武汉天利包装有限公司
+  address: ''
+  label: 武汉天利包装有限公司
+  data_source: 武汉市生态环境局2025年环境监管重点单位名录
+  source_type: official
+  data_date: 2025-03
+  categories:
+  - 大气环境
+  district: 硚口区
+  lat: null
+  lon: null
+  geocode_level: ''
