@@ -47,6 +47,16 @@ def load_config(path: str) -> dict:
     return config
 
 
+def _cache_lookup(cache: dict, name: str, addr: str):
+    """Lookup cache entry by name|addr key (geocode.py format) or addr-only key."""
+    key = f"{name}|{addr}"
+    if key in cache:
+        return cache[key]
+    if addr in cache:
+        return cache[addr]
+    return None
+
+
 def merge_coords(enterprises: list, cache_file: str) -> list:
     """Merge lat/lon + geocode level from cache into enterprise records."""
     cache = {}
@@ -57,18 +67,21 @@ def merge_coords(enterprises: list, cache_file: str) -> list:
     merged = []
     for e in enterprises:
         rec = dict(e)
+        name = rec['name']
         addr = rec['address']
+        cached = _cache_lookup(cache, name, addr)
+
         if 'lat' in rec and 'lon' in rec:
-            if addr in cache:
-                rec['geocode_level'] = cache[addr].get('level', '未知')
+            if cached:
+                rec['geocode_level'] = cached.get('level', '未知')
             else:
                 rec['geocode_level'] = rec.get('geocode_level', '未知')
-        elif addr in cache:
-            rec['lat'] = cache[addr]['lat']
-            rec['lon'] = cache[addr]['lon']
-            rec['geocode_level'] = cache[addr].get('level', '未知')
+        elif cached:
+            rec['lat'] = cached['lat']
+            rec['lon'] = cached['lon']
+            rec['geocode_level'] = cached.get('level', '未知')
         else:
-            print(f"WARNING: no coords for '{rec['name']}' ({addr}), skipping")
+            print(f"WARNING: no coords for '{name}' ({addr}), skipping")
             continue
         merged.append(rec)
     return merged
