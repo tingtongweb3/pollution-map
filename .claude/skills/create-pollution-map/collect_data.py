@@ -35,7 +35,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (
-    get_map_key, get_map_provider, _names_match, extract_district_hint, district_match,
+    get_map_key, _names_match, extract_district_hint, district_match,
     reverse_geocode_district, resolve_cache_path, ensure_dir, get_city_from_config,
     _DISTRICT_KEYWORDS,
 )
@@ -64,7 +64,7 @@ except ImportError:
 class Source:
     url: str
     title: str = ""
-    source_type: str = "official"   # official | license | complaint | exposure
+    source_type: str = "official"   # official | license | complaint | exposure | eia | monitoring | penalty
     format: str = "html"            # html | pdf
 
 
@@ -77,12 +77,25 @@ class Enterprise:
     categories: List[str] = field(default_factory=list)
     label: str = ""
     data_source: str = ""
-    source_type: str = "official"
+    source_type: str = "official"   # official | license | complaint | exposure | eia | monitoring | penalty
     data_date: str = ""
     lat: Optional[float] = None
     lon: Optional[float] = None
     geocode_level: str = ""
     raw_text: str = ""              # original text for debugging
+
+    # Risk assessment fields (new)
+    risk_level: str = ""            # low | medium | high
+    risk_score: int = 0             # 0-100
+    risk_factors: List[str] = field(default_factory=list)
+    penalty_count: int = 0
+    complaint_count: int = 0
+    monitoring_violations: int = 0
+    eia_level: str = ""             # 报告书 | 报告表 | 登记表 | 未知
+    # Detailed records with dates (used for "last N years" filtering)
+    penalty_records: List[dict] = field(default_factory=list)
+    complaint_records: List[dict] = field(default_factory=list)
+    monitoring_records: List[dict] = field(default_factory=list)
 
     def to_dict(self):
         d = asdict(self)
@@ -118,6 +131,19 @@ def infer_category(text: str) -> str:
             if kw in text:
                 return cat
     return ""
+
+
+def _infer_eia_level(text: str) -> str:
+    """Infer EIA level (环评等级) from text."""
+    if not text:
+        return "未知"
+    if "报告书" in text:
+        return "报告书"
+    if "报告表" in text:
+        return "报告表"
+    if "登记表" in text:
+        return "登记表"
+    return "未知"
 
 
 # ---------------------------------------------------------------------------
@@ -685,6 +711,29 @@ class DataExtractor:
         else:
             return self.extract_from_html(source.url, source)
 
+    def extract_risk_data(self, source: Source) -> List[Enterprise]:
+        """Extract from penalty / monitoring / EIA / complaint data sources.
+
+        These sources often have different table structures:
+          - Penalty: 企业名称 | 处罚日期 | 违法类型 | 处罚结果
+          - Monitoring: 企业名称 | 监测时间 | 污染物 | 超标倍数
+          - EIA: 项目名称 | 建设地点 | 环评等级 | 审批日期
+          - Complaint: 企业名称 | 投诉时间 | 投诉内容
+        """
+        enterprises = self.extract_from_html(source.url, source)
+
+        for ent in enterprises:
+            if source.source_type == "penalty":
+                ent.penalty_count = 1
+            elif source.source_type == "complaint":
+                ent.complaint_count = 1
+            elif source.source_type == "monitoring":
+                ent.monitoring_violations = 1
+            elif source.source_type == "eia":
+                ent.eia_level = _infer_eia_level(ent.raw_text)
+
+        return enterprises
+
 
 # ---------------------------------------------------------------------------
 # AddressEnricher
@@ -693,12 +742,10 @@ class DataExtractor:
 class AddressEnricher:
     """Enrich enterprise records with addresses via map POI search."""
 
-    def __init__(self, key: str, city: str = "福州", rate_limit: float = 0.15,
-                 provider: str = "gaode"):
+    def __init__(self, key: str, city: str = "福州", rate_limit: float = 0.15):
         self.key = key
         self.city = city
         self.rate_limit = rate_limit
-        self.provider = provider
 
     # ------------------------------------------------------------------
     # Smart search query generation based on enterprise type + district
@@ -780,7 +827,7 @@ class AddressEnricher:
         """Reverse geocode to verify coordinate falls in expected district."""
         from utils import reverse_geocode_district, district_match
         try:
-            actual = reverse_geocode_district(lat, lon, self.key, provider=self.provider)
+            actual = reverse_geocode_district(lat, lon, self.key)
             if not actual:
                 return False  # Cannot verify district — unsafe to accept
             if expected_district and not district_match(expected_district, actual):
@@ -833,49 +880,8 @@ class AddressEnricher:
             pass
         return None
 
-    def _poi_search_tencent(self, q: str, district_filter: str, queries: list) -> tuple:
-        """Single Tencent POI query. Returns (poi_name, poi_addr, lon, lat) or Nones."""
-        url = (
-            f"https://apis.map.qq.com/ws/place/v1/search"
-            f"?keyword={urllib.parse.quote(q)}"
-            f"&boundary=region({urllib.parse.quote(self.city)},0)"
-            f"&page_size=1&page_index=1"
-            f"&key={self.key}"
-        )
-        try:
-            resp = requests.get(url, timeout=10).json()
-            if resp.get("status") == 0 and resp.get("data"):
-                p = resp["data"][0]
-                poi_name = p.get("title", "")
-                poi_addr = str(p.get("address", "")).strip()
-                loc = p.get("location", {})
-                if not loc or "lat" not in loc or "lng" not in loc:
-                    return None
-                lat, lon = loc["lat"], loc["lng"]
-
-                # Name matching
-                match_ok = False
-                for candidate in queries:
-                    clean = candidate.replace(district_filter or "", "").strip() if district_filter else candidate
-                    if poi_name and _names_match(clean, poi_name):
-                        match_ok = True
-                        break
-                if not match_ok:
-                    return None
-
-                # Cross-district validation
-                if district_filter:
-                    if not self._reverse_check_district(lat, lon, district_filter):
-                        return None
-                    time.sleep(self.rate_limit)
-
-                return poi_name, poi_addr, lon, lat
-        except Exception:
-            pass
-        return None
-
     def _poi_search(self, queries: list, district_filter: str = None) -> tuple:
-        """Search POI with a list of candidate queries.
+        """Search POI with a list of candidate queries via Gaode Maps.
 
         Strategy:
           1. Use district in query keywords to bias results toward target area
@@ -886,10 +892,7 @@ class AddressEnricher:
         Returns (poi_name, poi_addr, lon, lat, matched_query) or Nones.
         """
         for q in queries:
-            if self.provider == "tencent":
-                result = self._poi_search_tencent(q, district_filter, queries)
-            else:
-                result = self._poi_search_gaode(q, district_filter, queries)
+            result = self._poi_search_gaode(q, district_filter, queries)
             if result:
                 return (*result, q)
         return None, None, None, None, None
@@ -1005,7 +1008,7 @@ def merge_sources(sources_results: dict) -> List[Enterprise]:
         sources_results: dict mapping source_type -> list of Enterprise
 
     Returns:
-        Deduplicated list with categories merged.
+        Deduplicated list with categories and risk counts merged.
     """
     by_key = {}  # key = (name, district)
 
@@ -1022,6 +1025,16 @@ def merge_sources(sources_results: dict) -> List[Enterprise]:
                 # Merge source_type if different
                 if ent.source_type != existing.source_type:
                     existing.data_source += f"; {ent.data_source}"
+
+                # NEW: Aggregate risk counts
+                existing.penalty_count += ent.penalty_count
+                existing.complaint_count += ent.complaint_count
+                existing.monitoring_violations += ent.monitoring_violations
+
+                # EIA level: keep highest (报告书 > 报告表 > 登记表 > 未知)
+                eia_priority = {"报告书": 3, "报告表": 2, "登记表": 1, "未知": 0, "": 0}
+                if eia_priority.get(ent.eia_level, 0) > eia_priority.get(existing.eia_level, 0):
+                    existing.eia_level = ent.eia_level
 
     # Set categories for single-category enterprises
     for ent in by_key.values():
@@ -1058,77 +1071,47 @@ def generate_config(
     else:
         district_label = district
 
-    config = {
-        "meta": {
-            "title": f"{city}{district_label}{year}年重点污染源单位地理分布图",
-            "subtitle": f"数据来源：{city}生态环境局{year}年度环境监管重点单位名录  |  共{len(enterprises)}家  |  坐标：高德地图",
-            "output_path": f"./{city}_{district}_{year}_output.png",
-            "dpi": 200,
-        },
-        "map": {
-            "figsize": [18, 14],
-            "padding": 500,
-            "zoom": 12,
-            "basemap_alpha": 0.95,
-        },
-        "gaode": {
-            "key": "",
-            "cache_file": f"./geocode_cache_{city}.json",
-            "rate_limit": 0.15,
-            "city": city,
-            "provider": get_map_provider(),
-        },
-        "risk_zones": {
-            "enabled": True,
-            "radius_meters": 1000,
-            "fill_color": "#FF4444",
-            "fill_alpha": 0.12,
-            "edge_color": "#CC0000",
-            "edge_width": 0.8,
-            "edge_alpha": 0.25,
-        },
-        "boundary": {
-            "coords": [],
-        },
-        "categories": {
-            "水环境": {
-                "display": "水环境重点排污",
-                "color": "#CC0000",
-                "marker": "o",
-            },
-            "大气环境": {
-                "display": "大气环境重点排污",
-                "color": "#FF2200",
-                "marker": "o",
-            },
-            "土壤污染": {
-                "display": "土壤污染重点监管",
-                "color": "#FF6600",
-                "marker": "o",
-            },
-            "环境风险": {
-                "display": "环境风险重点管控",
-                "color": "#9933CC",
-                "marker": "o",
-            },
-            "噪声": {
-                "display": "噪声重点排污",
-                "color": "#0066CC",
-                "marker": "^",
-            },
-            "辐射安全": {
-                "display": "辐射安全许可证",
-                "color": "#9933CC",
-                "marker": "*",
-            },
-            "地下水": {
-                "display": "地下水污染防治",
-                "color": "#0099CC",
-                "marker": "s",
-            },
-        },
-        "enterprises": [],
+    # Load defaults.yaml as the base config so plus-version fields
+    # (render_mode, risk_scoring, risk_levels, categories.emoji, etc.)
+    # are automatically included.
+    skill_dir = os.path.dirname(os.path.abspath(__file__))
+    defaults_path = os.path.join(skill_dir, "defaults.yaml")
+    if os.path.exists(defaults_path):
+        with open(defaults_path, "r", encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+    else:
+        config = {}
+
+    # Override with city-specific values
+    config["meta"] = {
+        "title": f"{city}{district_label}{year}年重点污染源单位地理分布图",
+        "subtitle": f"数据来源：{city}生态环境局{year}年度环境监管重点单位名录  |  共{len(enterprises)}家  |  坐标：高德地图",
+        "output_path": f"./{city}_{district}_{year}_output.png",
+        "dpi": 200,
     }
+    config["map"] = {
+        "figsize": [18, 14],
+        "padding": 500,
+        "zoom": 12,
+        "basemap_alpha": 0.95,
+    }
+    config["gaode"] = {
+        "key": "",
+        "cache_file": f"./geocode_cache_{city}.json",
+        "rate_limit": 0.15,
+        "city": city,
+    }
+    config["risk_zones"] = {
+        "enabled": True,
+        "radius_meters": 1000,
+        "fill_color": "#FF4444",
+        "fill_alpha": 0.12,
+        "edge_color": "#CC0000",
+        "edge_width": 0.8,
+        "edge_alpha": 0.25,
+    }
+    config["boundary"] = {"coords": []}
+    config["enterprises"] = []
 
     # Build enterprise entries
     for ent in enterprises:
@@ -1149,6 +1132,29 @@ def generate_config(
             entry["lat"] = ent.lat
             entry["lon"] = ent.lon
             entry["geocode_level"] = ent.geocode_level
+
+        # Risk fields (only include when non-default)
+        if ent.penalty_count:
+            entry["penalty_count"] = ent.penalty_count
+        if ent.complaint_count:
+            entry["complaint_count"] = ent.complaint_count
+        if ent.monitoring_violations:
+            entry["monitoring_violations"] = ent.monitoring_violations
+        if ent.eia_level:
+            entry["eia_level"] = ent.eia_level
+        # Detailed records with dates (for "last N years" filtering)
+        if ent.penalty_records:
+            entry["penalty_records"] = ent.penalty_records
+        if ent.complaint_records:
+            entry["complaint_records"] = ent.complaint_records
+        if ent.monitoring_records:
+            entry["monitoring_records"] = ent.monitoring_records
+        # Risk assessment results (always include if computed)
+        if ent.risk_level:
+            entry["risk_level"] = ent.risk_level
+            entry["risk_score"] = ent.risk_score
+            if ent.risk_factors:
+                entry["risk_factors"] = ent.risk_factors
 
         config["enterprises"].append(entry)
 
@@ -1242,14 +1248,12 @@ def auto_partition_districts(enterprises: list, min_standalone: int = 20,
 def main():
     parser = argparse.ArgumentParser(description="Extract environmental enterprise data from URLs")
     parser.add_argument("--url", required=True, help="URL to extract data from")
-    parser.add_argument("--source-type", default="official", choices=["official", "license", "complaint", "exposure"])
+    parser.add_argument("--source-type", default="official", choices=["official", "license", "complaint", "exposure", "eia", "monitoring", "penalty"])
     parser.add_argument("--format", default="auto", choices=["auto", "html", "pdf"])
     parser.add_argument("--output", "-o", help="Output JSON file for extracted enterprises")
     parser.add_argument("--enrich", action="store_true", help="Enrich addresses via Gaode POI")
     parser.add_argument("--city", default="福州", help="City for address enrichment and POI search")
-    parser.add_argument("--key", default="", help="API key (or set GAODE_API_KEY / TENCENT_MAP_KEY env var)")
-    parser.add_argument("--provider", default="", choices=["gaode", "tencent"],
-                        help="Map provider (gaode or tencent). Overrides MAP_PROVIDER env var.")
+    parser.add_argument("--key", default="", help="API key (or set GAODE_API_KEY env var)")
     args = parser.parse_args()
 
     # Detect format
@@ -1279,13 +1283,12 @@ def main():
 
     # Enrich addresses
     if args.enrich:
-        provider = args.provider or get_map_provider()
-        key = args.key or get_map_key(provider, "")
+        key = args.key or get_map_key()
         if not key:
-            print(f"ERROR: No API key for provider '{provider}'. Set GAODE_API_KEY / TENCENT_MAP_KEY or pass --key")
+            print("ERROR: No API key. Set GAODE_API_KEY or pass --key")
             return 1
 
-        enricher = AddressEnricher(key=key, city=args.city, provider=provider)
+        enricher = AddressEnricher(key=key, city=args.city)
         report = enricher.enrich(enterprises)
 
         print(f"\n地址补全结果:")

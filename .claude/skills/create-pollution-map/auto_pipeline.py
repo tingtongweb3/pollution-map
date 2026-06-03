@@ -40,6 +40,8 @@ from collect_data import (
     merge_sources, generate_config, get_map_key,
     save_city_cache, load_city_cache, get_city_cache_path,
 )
+from risk_scoring import assign_risk_levels
+
 
 
 def parse_url_args(url_args: list) -> list[Source]:
@@ -143,13 +145,15 @@ def run_geocode(config_path: str) -> int:
     return result.returncode
 
 
-def run_create_map(config_path: str) -> int:
+def run_create_map(config_path: str, render_mode: str = "") -> int:
     """Run create_map.py on the generated config."""
     print(f"\n{'='*60}")
     print("Running create_map.py...")
     print("=" * 60)
 
     cmd = [sys.executable, "create_map.py", "-c", config_path]
+    if render_mode and render_mode != "auto":
+        cmd.extend(["--render-mode", render_mode])
     result = subprocess.run(cmd, cwd=os.path.dirname(__file__))
     return result.returncode
 
@@ -195,6 +199,14 @@ def main():
     parser.add_argument(
         "--city-cache", action="store_true",
         help="Load city-wide data from cache instead of extracting from URLs"
+    )
+    parser.add_argument(
+        "--risk-assessment", action="store_true",
+        help="Enable risk scoring after data collection"
+    )
+    parser.add_argument(
+        "--render-mode", choices=["category", "risk", "auto"], default="auto",
+        help="Map rendering mode: category, risk, or auto-detect"
     )
     args = parser.parse_args()
 
@@ -245,6 +257,21 @@ def main():
     print("=" * 60)
     all_enterprises = merge_sources(results)
     print(f"  -> {sum(len(v) for v in results.values())} raw -> {len(all_enterprises)} unique")
+
+    # ------------------------------------------------------------------
+    # Step 2.3: Risk assessment (if enabled)
+    # ------------------------------------------------------------------
+    if args.risk_assessment:
+        print(f"\n{'='*60}")
+        print("Running risk assessment...")
+        print("=" * 60)
+        # Build a minimal config with defaults for scoring
+        risk_config = {"risk_scoring": {"enabled": True, "auto_assign": True}}
+        assign_risk_levels([e.__dict__ if hasattr(e, '__dataclass_fields__') else e for e in all_enterprises], risk_config)
+        high = sum(1 for e in all_enterprises if getattr(e, 'risk_level', '') == 'high')
+        medium = sum(1 for e in all_enterprises if getattr(e, 'risk_level', '') == 'medium')
+        low = sum(1 for e in all_enterprises if getattr(e, 'risk_level', '') == 'low')
+        print(f"  -> high: {high}, medium: {medium}, low: {low}")
 
     # ------------------------------------------------------------------
     # Step 2.5: Save city cache (if requested)
@@ -346,7 +373,7 @@ def main():
     # ------------------------------------------------------------------
     # Step 7: Generate map
     # ------------------------------------------------------------------
-    map_rc = run_create_map(config_path)
+    map_rc = run_create_map(config_path, args.render_mode)
     if map_rc != 0:
         print("\nERROR: create_map.py failed.")
         return 1

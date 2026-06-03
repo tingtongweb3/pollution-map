@@ -1,27 +1,20 @@
-# ============================================================
-# 污染源企业分布图 — 默认配置模板
-#
-# 城市/区县 YAML 只需覆盖差异字段：
-#   meta.title, meta.subtitle, meta.output_path
-#   gaode.city, gaode.cache_file
-#   enterprises
-#
-# 其余字段从此模板继承。
-# ============================================================
-
 meta:
   dpi: 200
-
+  title: 福州台江区2026年重点污染源单位地理分布图
+  subtitle: 数据来源：福州生态环境局2026年度环境监管重点单位名录  |  共3家  |  坐标：高德地图
+  output_path: ./福州_台江区_2026_output.png
 map:
-  figsize: [18, 14]
+  figsize:
+  - 18
+  - 14
   padding: 500
   zoom: 12
   basemap_alpha: 0.95
-
 gaode:
   key: ''
   rate_limit: 0.15
-
+  cache_file: data/福州/geocode_cache_福州.json
+  city: 福州
 risk_zones:
   enabled: true
   radius_meters: 1000
@@ -30,57 +23,48 @@ risk_zones:
   edge_color: '#CC0000'
   edge_width: 0.8
   edge_alpha: 0.25
-
 boundary:
   coords: []
-
 categories:
   水环境:
     display: 水环境重点排污
     color: '#CC0000'
     marker: o
-    emoji: "🌊"
+    emoji: 🌊
   大气环境:
     display: 大气环境重点排污
     color: '#FF2200'
     marker: s
-    emoji: "☁️"
+    emoji: ☁️
   土壤污染:
     display: 土壤污染重点监管
     color: '#FF6600'
     marker: D
-    emoji: "🏭"
+    emoji: 🏭
   环境风险:
     display: 环境风险重点管控
     color: '#9933CC'
     marker: '*'
-    emoji: "⚠️"
+    emoji: ⚠️
   噪声:
     display: 噪声重点排污
     color: '#0066CC'
     marker: v
-    emoji: "📢"
+    emoji: 📢
   辐射安全:
     display: 辐射安全许可证
     color: '#9933CC'
     marker: p
-    emoji: "☢️"
+    emoji: ☢️
   地下水:
     display: 地下水污染防治
     color: '#0099CC'
     marker: h
-    emoji: "💧"
-
-# ============================================================
-# Risk assessment configuration (Plus Version)
-# ============================================================
-
-render_mode: category   # "category" | "risk" | "auto"
-
+    emoji: 💧
+render_mode: risk
 risk_scoring:
   enabled: false
   auto_assign: true
-
   weights:
     category_baseline:
       环境风险: 20
@@ -92,24 +76,19 @@ risk_scoring:
       地下水: 12
       噪声: 15
       未分类: 10
-
     multi_source_bonus: 5
     penalty_per_record: 15
     complaint_per_record: 10
     monitoring_violation_per_record: 15
-
     eia_level_scores:
       报告书: 0
       报告表: 0
       登记表: 0
       未知: 0
-
     max_score: 100
-
   thresholds:
     high: 60
     medium: 35
-
 risk_levels:
   low:
     display: 低风险
@@ -126,3 +105,28 @@ risk_levels:
     color: '#DC3545'
     marker: o
     size: 380
+enterprises:
+- name: 福州市第一医院
+  address: 福州福州市第一医院
+  label: 福州市第一医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建中医药大学附属人民医院
+  address: 福州福建中医药大学附属人民医院
+  label: 福建中医药大学附属人民医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建医科大学附属第一医院
+  address: 福州福建医科大学附属第一医院
+  label: 福建医科大学附属第一医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境

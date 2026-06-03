@@ -7,10 +7,12 @@ Usage:
 """
 
 import argparse
+import io
 import json
 import math
 import os
 import sys
+import urllib.request
 import warnings
 from pathlib import Path
 
@@ -18,14 +20,17 @@ import contextily as ctx
 import geopandas as gpd
 import matplotlib
 import matplotlib.pyplot as plt
+import numpy as np
 import yaml
-from PIL import Image, ImageDraw
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from PIL import Image, ImageDraw, ImageFont
 from shapely.geometry import Point, Polygon
 
 sys.path.insert(0, os.path.dirname(__file__))
 from utils import (get_font, resolve_image_path, resolve_cache_path, ensure_dir,
                    get_city_from_config, load_config_with_defaults, estimate_city_bounds,
                    coord_in_bounds)
+from risk_scoring import assign_risk_levels
 
 matplotlib.use('Agg')
 warnings.filterwarnings('ignore')
@@ -55,6 +60,133 @@ def _cache_lookup(cache: dict, name: str, addr: str):
     if addr in cache:
         return cache[addr]
     return None
+
+
+# ---------------------------------------------------------------------------
+# Risk-level rendering
+# ---------------------------------------------------------------------------
+
+RISK_LEVEL_CONFIG = {
+    "low":    {"color": "#6C757D", "size": 200, "display": "低风险"},
+    "medium": {"color": "#FFC107", "size": 280, "display": "中风险"},
+    "high":   {"color": "#DC3545", "size": 380, "display": "高风险"},
+}
+
+_EMOJI_CACHE = {}
+
+
+def _emoji_to_hex_filename(emoji: str) -> str:
+    """Convert emoji to Twemoji filename, e.g. '🌊' -> '1f30a'."""
+    code_points = [f"{ord(c):x}" for c in emoji]
+    return "-".join(code_points)
+
+
+def _add_square_border(img: Image.Image, target_size: int) -> Image.Image:
+    """Add a black border + white background square around a PIL image.
+
+    The returned image is exactly `target_size x target_size`.
+    The original image is centered inside a white square with a black border.
+    """
+    border_px = max(2, target_size // 10)  # e.g. 20px -> 2px, 30px -> 3px
+    inner_size = max(1, target_size - border_px * 2)
+
+    # Resize original to fit inside the border
+    orig = img.resize((inner_size, inner_size), Image.Resampling.LANCZOS)
+
+    # Create white canvas with black border
+    canvas = Image.new("RGBA", (target_size, target_size), (255, 255, 255, 255))
+    draw = ImageDraw.Draw(canvas)
+    draw.rectangle(
+        [(0, 0), (target_size - 1, target_size - 1)],
+        outline=(0, 0, 0, 255), width=border_px
+    )
+
+    # Paste original centered, using its alpha channel
+    x = (target_size - inner_size) // 2
+    y = (target_size - inner_size) // 2
+    canvas.paste(orig, (x, y), orig)
+    return canvas
+
+
+def _make_square_icon(size: int = 24) -> Image.Image:
+    """Return a white-square-with-black-border icon (no emoji)."""
+    border_px = max(2, size // 10)
+    img = Image.new("RGBA", (size, size), (255, 255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        [(0, 0), (size - 1, size - 1)],
+        outline=(0, 0, 0, 255), width=border_px
+    )
+    return img
+
+
+def _ensure_twemoji_cached(emoji: str) -> str:
+    """Ensure Twemoji PNG is cached locally, return path."""
+    hex_name = _emoji_to_hex_filename(emoji)
+    skill_dir = os.path.dirname(os.path.abspath(__file__))
+    cache_dir = os.path.join(skill_dir, ".twemoji_cache")
+    os.makedirs(cache_dir, exist_ok=True)
+    local_path = os.path.join(cache_dir, f"{hex_name}.png")
+
+    if os.path.exists(local_path):
+        return local_path
+
+    url = f"https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/72x72/{hex_name}.png"
+    try:
+        urllib.request.urlretrieve(url, local_path)
+    except Exception:
+        if "-fe0f" in hex_name:
+            hex_name = hex_name.replace("-fe0f", "")
+            url = f"https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/72x72/{hex_name}.png"
+            local_path = os.path.join(cache_dir, f"{hex_name}.png")
+            if not os.path.exists(local_path):
+                urllib.request.urlretrieve(url, local_path)
+        else:
+            raise
+    return local_path
+
+
+def _get_twemoji_image(emoji: str, size: int = 32) -> OffsetImage:
+    """Download Twemoji PNG and render as matplotlib OffsetImage with square border.
+
+    Uses Twemoji's 72x72 PNG assets (CC-BY 4.0) via jsDelivr CDN.
+    The emoji is centered inside a white square with a black border.
+    """
+    cache_key = (emoji, size)
+    if cache_key in _EMOJI_CACHE:
+        return _EMOJI_CACHE[cache_key]
+
+    local_path = _ensure_twemoji_cached(emoji)
+    img = Image.open(local_path).convert("RGBA")
+    img = _add_square_border(img, size)
+
+    arr = np.array(img)
+    offset_img = OffsetImage(arr, zoom=1.0)
+    _EMOJI_CACHE[cache_key] = offset_img
+    return offset_img
+
+
+def _get_twemoji_pil(emoji: str, size: int = 20) -> Image.Image:
+    """Return Twemoji as PIL Image with square border for legend rendering."""
+    local_path = _ensure_twemoji_cached(emoji)
+    img = Image.open(local_path).convert("RGBA")
+    return _add_square_border(img, size)
+
+
+def get_render_mode(config: dict) -> str:
+    """Determine rendering mode: 'category' or 'risk'."""
+    mode = config.get("render_mode", "")
+    if mode in ("category", "risk"):
+        return mode
+
+    # Auto-detect: if risk_scoring enabled and enterprises have risk levels
+    risk_cfg = config.get("risk_scoring", {})
+    if risk_cfg.get("enabled", False):
+        ents = config.get("enterprises", [])
+        if any(e.get("risk_level") for e in ents):
+            return "risk"
+
+    return "category"
 
 
 def merge_coords(enterprises: list, cache_file: str) -> list:
@@ -350,12 +482,23 @@ def build_geodataframes(config: dict, enterprises: list):
         {'name': ['District'], 'geometry': [boundary]}, crs='EPSG:4326'
     )
     _normalize_categories(enterprises)
+
+    # Ensure risk fields are normalized
+    for e in enterprises:
+        if not e.get("risk_level"):
+            e["risk_level"] = "low"
+        if not e.get("risk_score"):
+            e["risk_score"] = 0
+
     gdf = gpd.GeoDataFrame(
         {
             'name': [e['name'] for e in enterprises],
             'label': [e['label'] for e in enterprises],
             'categories': [e['categories'] for e in enterprises],
             'primary_category': [e['categories'][0] for e in enterprises],
+            'risk_level': [e.get('risk_level', 'low') for e in enterprises],
+            'risk_score': [e.get('risk_score', 0) for e in enterprises],
+            'risk_factors': [e.get('risk_factors', []) for e in enterprises],
             'geometry': [Point(e['lon'], e['lat']) for e in enterprises],
         },
         crs='EPSG:4326',
@@ -396,18 +539,61 @@ def render_basemap(gdf_boundary_wm, gdf_wm, config: dict) -> str:
         x_b, y_b = boundary_geom.exterior.xy
         ax.plot(x_b, y_b, color='#1E90FF', linewidth=2.5, alpha=0.9, zorder=4)
 
-    # Category-colored scatter points with shape differentiation
-    color_map = {k: v['color'] for k, v in cat_cfg.items()}
-    marker_map = {k: v.get('marker', 'o') for k, v in cat_cfg.items()}
-    for cat, color in color_map.items():
-        mask = gdf_wm['primary_category'] == cat
-        if mask.any():
-            marker = marker_map.get(cat, 'o')
+    render_mode = get_render_mode(config)
+    emoji_map = {k: v.get('emoji', '') for k, v in cat_cfg.items()}
+
+    if render_mode == "risk":
+        # Risk-level rendering: circle color = risk, size = risk, emoji = category
+        risk_cfg_levels = config.get('risk_levels', {})
+
+        for level in ["low", "medium", "high"]:
+            level_mask = gdf_wm['risk_level'] == level
+            if not level_mask.any():
+                continue
+            level_color = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level]).get(
+                'color', RISK_LEVEL_CONFIG[level]['color']
+            )
+            level_size = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level]).get(
+                'size', RISK_LEVEL_CONFIG[level]['size']
+            )
+            # Draw circle background for all enterprises in this risk level
             ax.scatter(
-                gdf_wm.geometry.x[mask], gdf_wm.geometry.y[mask],
-                c=color, s=280, marker=marker,
+                gdf_wm.geometry.x[level_mask], gdf_wm.geometry.y[level_mask],
+                c=level_color, s=level_size, marker='o',
                 edgecolors='white', linewidths=1.5, zorder=5, alpha=0.95
             )
+        # Overlay emoji for each enterprise (zorder above circles)
+        emoji_size_map = {"low": 22, "medium": 26, "high": 30}
+        for idx, row in gdf_wm.iterrows():
+            emoji = emoji_map.get(row['primary_category'], '')
+            if emoji:
+                es = emoji_size_map.get(row['risk_level'], 26)
+                img = _get_twemoji_image(emoji, es)
+                ab = AnnotationBbox(
+                    img, (row.geometry.x, row.geometry.y),
+                    frameon=False, pad=0, boxcoords="data"
+                )
+                ab.set_zorder(7)
+                ax.add_artist(ab)
+    else:
+        # Category rendering: emoji replaces colored circles as the marker
+        # Draw a subtle white circle behind each emoji for contrast
+        ax.scatter(
+            gdf_wm.geometry.x, gdf_wm.geometry.y,
+            c='white', s=180, marker='o',
+            edgecolors='#CCCCCC', linewidths=0.8, zorder=5, alpha=0.9
+        )
+        # Overlay emoji for each enterprise
+        for idx, row in gdf_wm.iterrows():
+            emoji = emoji_map.get(row['primary_category'], '')
+            if emoji:
+                img = _get_twemoji_image(emoji, 26)
+                ab = AnnotationBbox(
+                    img, (row.geometry.x, row.geometry.y),
+                    frameon=False, pad=0, boxcoords="data"
+                )
+                ab.set_zorder(7)
+                ax.add_artist(ab)
 
     # Numbered labels with smart offsets
     wm_coords = list(zip(gdf_wm.geometry.x, gdf_wm.geometry.y))
@@ -431,16 +617,40 @@ def render_basemap(gdf_boundary_wm, gdf_wm, config: dict) -> str:
     risk_cfg = config.get('risk_zones', {})
     if risk_cfg.get('enabled', False):
         radius = risk_cfg.get('radius_meters', 1000)
-        buffers_gs = gpd.GeoSeries(gdf_wm.buffer(radius), crs='EPSG:3857')
-        buffers_gs.plot(
-            ax=ax, facecolor=risk_cfg.get('fill_color', '#FF4444'),
-            alpha=risk_cfg.get('fill_alpha', 0.12), edgecolor='none', zorder=3
-        )
-        buffers_gs.boundary.plot(
-            ax=ax, color=risk_cfg.get('edge_color', '#CC0000'),
-            alpha=risk_cfg.get('edge_alpha', 0.25),
-            linewidth=risk_cfg.get('edge_width', 0.8), zorder=3
-        )
+        base_alpha = risk_cfg.get('fill_alpha', 0.12)
+
+        if render_mode == 'risk':
+            # Risk mode: buffer color matches risk level color, alpha fixed at 60%
+            risk_cfg_levels = config.get('risk_levels', {})
+            for level in ['low', 'medium', 'high']:
+                mask = gdf_wm['risk_level'] == level
+                if mask.any():
+                    level_color = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level]).get(
+                        'color', RISK_LEVEL_CONFIG[level]['color']
+                    )
+                    buffers = gpd.GeoSeries(gdf_wm[mask].buffer(radius), crs='EPSG:3857')
+                    buffers.plot(
+                        ax=ax, facecolor=level_color,
+                        alpha=0.60, edgecolor='none', zorder=3
+                    )
+            # Draw boundaries for all
+            all_buffers = gpd.GeoSeries(gdf_wm.buffer(radius), crs='EPSG:3857')
+            all_buffers.boundary.plot(
+                ax=ax, color=risk_cfg.get('edge_color', '#CC0000'),
+                alpha=risk_cfg.get('edge_alpha', 0.25),
+                linewidth=risk_cfg.get('edge_width', 0.8), zorder=3
+            )
+        else:
+            buffers_gs = gpd.GeoSeries(gdf_wm.buffer(radius), crs='EPSG:3857')
+            buffers_gs.plot(
+                ax=ax, facecolor=risk_cfg.get('fill_color', '#FF4444'),
+                alpha=base_alpha, edgecolor='none', zorder=3
+            )
+            buffers_gs.boundary.plot(
+                ax=ax, color=risk_cfg.get('edge_color', '#CC0000'),
+                alpha=risk_cfg.get('edge_alpha', 0.25),
+                linewidth=risk_cfg.get('edge_width', 0.8), zorder=3
+            )
 
     ax.set_axis_off()
 
@@ -474,7 +684,7 @@ def _blend_with_white(hex_color: str, alpha: float) -> str:
 
 
 def _draw_marker(draw, cx, cy, size, color, marker):
-    """Draw a marker shape on PIL canvas. Supports: o, ^, s, D, *."""
+    """Draw a marker shape on PIL canvas. Supports: o, ^, v, s, D, p, h, *."""
     half = size // 2
     x0, y0 = cx - half, cy - half
     x1, y1 = cx + half, cy + half
@@ -483,8 +693,28 @@ def _draw_marker(draw, cx, cy, size, color, marker):
         draw.rectangle([(x0, y0), (x1, y1)], fill=color)
     elif marker == '^':
         draw.polygon([(cx, y0), (x1, y1), (x0, y1)], fill=color)
+    elif marker == 'v':
+        draw.polygon([(x0, y0), (x1, y0), (cx, y1)], fill=color)
     elif marker == 'D':
         draw.polygon([(cx, y0), (x1, cy), (cx, y1), (x0, cy)], fill=color)
+    elif marker == 'p':
+        # Pentagon
+        import math
+        r = half
+        pts = []
+        for i in range(5):
+            angle = math.radians(90 + i * 72)
+            pts.append((cx + r * math.cos(angle), cy - r * math.sin(angle)))
+        draw.polygon(pts, fill=color)
+    elif marker == 'h':
+        # Hexagon
+        import math
+        r = half
+        pts = []
+        for i in range(6):
+            angle = math.radians(90 + i * 60)
+            pts.append((cx + r * math.cos(angle), cy - r * math.sin(angle)))
+        draw.polygon(pts, fill=color)
     elif marker == '*':
         # Simplified star: a circle with a small cross, visually distinctive
         draw.ellipse([(x0, y0), (x1, y1)], fill=color)
@@ -501,9 +731,14 @@ def render_legend(enterprises: list, config: dict, map_width: int = 0) -> Image.
     When enterprise count > 60, switches to horizontal layout (full-width, multi-column
     enterprise list) to avoid excessively tall images.
     """
-    cat_cfg = config['categories']
+    render_mode = get_render_mode(config)
     total_count = len(enterprises)
     horizontal_mode = total_count > 60 and map_width > 0
+
+    if render_mode == "risk":
+        if horizontal_mode:
+            return _render_legend_horizontal_risk(enterprises, config, map_width)
+        return _render_legend_vertical_risk(enterprises, config)
 
     if horizontal_mode:
         return _render_legend_horizontal(enterprises, config, map_width)
@@ -538,11 +773,11 @@ def _render_legend_vertical(enterprises: list, config: dict) -> Image.Image:
 
     # Total count
     total_count = len(enterprises)
-    draw.text((x, y), '●', fill='#CC0000', font=font_header)
+    draw.rectangle([(x, y), (x + 23, y + 23)], fill='white', outline='black', width=2)
     draw.text((x + 35, y), f'重点污染源单位（{total_count}家）', fill='#333333', font=font_body)
     y += 50
 
-    # Risk zone legend
+    # Risk zone legend (category mode: single blended color)
     risk_cfg = config.get('risk_zones', {})
     if risk_cfg.get('enabled', False):
         rz_color = risk_cfg.get('fill_color', '#FF4444')
@@ -564,8 +799,10 @@ def _render_legend_vertical(enterprises: list, config: dict) -> Image.Image:
 
     for cat_key, cat_info in cat_cfg.items():
         if cat_key in cats_count:
-            marker = cat_info.get('marker', 'o')
-            _draw_marker(draw, x + 10, y + 12, 18, cat_info['color'], marker)
+            emoji = cat_info.get('emoji', '')
+            if emoji:
+                eimg = _get_twemoji_pil(emoji, 20)
+                legend_img.paste(eimg, (x + 2, y - 2), eimg)
             draw.text((x + 30, y), f"{cat_info['display']}：{cats_count[cat_key]}家", fill='#333333', font=font_body)
             y += 32
 
@@ -684,7 +921,7 @@ def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -
     y += 50
 
     # Total count + risk zone in one row
-    draw.text((x, y), '●', fill='#CC0000', font=font_header)
+    draw.rectangle([(x, y), (x + 23, y + 23)], fill='white', outline='black', width=2)
     draw.text((x + 30, y), f'重点污染源单位（{total_count}家）', fill='#333333', font=font_body)
 
     risk_cfg = config.get('risk_zones', {})
@@ -705,9 +942,11 @@ def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -
     cat_x = x
     for cat_key, cat_info in cat_cfg.items():
         if cat_key in cats_count:
-            marker = cat_info.get('marker', 'o')
-            _draw_marker(draw, cat_x + 8, y + 10, 16, cat_info['color'], marker)
-            draw.text((cat_x + 24, y), f"{cat_info['display']}：{cats_count[cat_key]}家", fill='#333333', font=font_body)
+            emoji = cat_info.get('emoji', '')
+            if emoji:
+                eimg = _get_twemoji_pil(emoji, 20)
+                legend_img.paste(eimg, (cat_x + 2, y - 2), eimg)
+            draw.text((cat_x + 28, y), f"{cat_info['display']}：{cats_count[cat_key]}家", fill='#333333', font=font_body)
             # estimate text width and advance
             bbox = draw.textbbox((0, 0), f"{cat_info['display']}：{cats_count[cat_key]}家", font=font_body)
             cat_x += (bbox[2] - bbox[0]) + 40
@@ -863,6 +1102,437 @@ def _render_legend_horizontal(enterprises: list, config: dict, map_width: int) -
     return legend_img
 
 
+# ---------------------------------------------------------------------------
+# Risk-level legend variants
+# ---------------------------------------------------------------------------
+
+def _render_legend_vertical_risk(enterprises: list, config: dict) -> Image.Image:
+    """Vertical legend for risk-level rendering (<=60 enterprises)."""
+    cat_cfg = config['categories']
+    risk_cfg_levels = config.get('risk_levels', {})
+    legend_width = 650
+    legend_height = 5000
+    legend_img = Image.new('RGB', (legend_width, legend_height), 'white')
+    draw = ImageDraw.Draw(legend_img)
+
+    font_title = get_font(36)
+    font_header = get_font(24)
+    font_body = get_font(20)
+    font_small = get_font(18)
+    font_tiny = get_font(16)
+
+    draw.rectangle([(0, 0), (legend_width - 1, legend_height - 1)], outline='#cccccc', width=2)
+
+    margin = 30
+    x = margin
+    y = 40
+
+    # Title
+    bbox = draw.textbbox((0, 0), '图例', font=font_title)
+    text_w = bbox[2] - bbox[0]
+    draw.text(((legend_width - text_w) // 2, y), '图例', fill='#333333', font=font_title)
+    y += 60
+
+    # Total count
+    total_count = len(enterprises)
+    draw.rectangle([(x, y), (x + 23, y + 23)], fill='white', outline='black', width=2)
+    draw.text((x + 35, y), f'重点污染源单位（{total_count}家）', fill='#333333', font=font_body)
+    y += 50
+
+    # Risk zone legend (risk mode: show all three level colors)
+    risk_zone_cfg = config.get('risk_zones', {})
+    if risk_zone_cfg.get('enabled', False):
+        draw.text((x, y), '环境潜在压力区（1km缓冲重叠）', fill='#333333', font=font_body)
+        y += 28
+        for level in ['low', 'medium', 'high']:
+            level_info = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level])
+            blended = _blend_with_white(level_info['color'], 0.60)
+            draw.ellipse([(x + 10, y - 2), (x + 38, y + 26)], fill=blended)
+            draw.text((x + 48, y), f"{level_info['display']} — 1km缓冲", fill='#555555', font=font_small)
+            y += 28
+        y += 4
+
+    # Risk level stats
+    y += 15
+    draw.text((x, y), '【潜在压力等级统计】', fill='#333333', font=font_header)
+    y += 40
+
+    risk_counts = {}
+    for e in enterprises:
+        rl = e.get('risk_level', 'low')
+        risk_counts[rl] = risk_counts.get(rl, 0) + 1
+
+    for level in ['high', 'medium', 'low']:
+        if level in risk_counts:
+            level_info = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level])
+            _draw_marker(draw, x + 10, y + 12, 18, level_info['color'], 'o')
+            draw.text((x + 30, y), f"{level_info['display']}：{risk_counts[level]}家", fill='#333333', font=font_body)
+            y += 32
+
+    # Category stats (shape reference)
+    y += 15
+    draw.text((x, y), '【分类统计（形状）】', fill='#333333', font=font_header)
+    y += 40
+
+    cats_count = {}
+    for e in enterprises:
+        for cat in e['categories']:
+            cats_count[cat] = cats_count.get(cat, 0) + 1
+
+    for cat_key, cat_info in cat_cfg.items():
+        if cat_key in cats_count:
+            emoji = cat_info.get('emoji', '')
+            if emoji:
+                eimg = _get_twemoji_pil(emoji, 20)
+                legend_img.paste(eimg, (x + 2, y - 2), eimg)
+            draw.text((x + 30, y), f"{cat_info['display']}：{cats_count[cat_key]}家", fill='#333333', font=font_body)
+            y += 32
+
+    # Risk factor breakdown
+    all_factors = {}
+    for e in enterprises:
+        for f in e.get('risk_factors', []):
+            all_factors[f] = all_factors.get(f, 0) + 1
+    if all_factors:
+        y += 15
+        draw.text((x, y), '【潜在压力因子分布】', fill='#333333', font=font_header)
+        y += 40
+        for factor, count in sorted(all_factors.items(), key=lambda x: -x[1]):
+            draw.text((x + 10, y), f"{factor}：{count}家", fill='#555555', font=font_small)
+            y += 28
+
+    # Enterprise list
+    y += 33
+    draw.text((x, y), '【企业列表】', fill='#333333', font=font_header)
+    y += 40
+
+    # Build source index
+    circled_nums = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
+    source_list = []
+    source_index = {}
+    for e in enterprises:
+        src = e.get('data_source', '').strip()
+        if src and src not in source_index:
+            idx = len(source_list)
+            source_index[src] = circled_nums[idx] if idx < len(circled_nums) else f'[{idx+1}]'
+            source_list.append(src)
+
+    for i, e in enumerate(enterprises):
+        lines = e['label'].split('\n')
+        risk_level = e.get('risk_level', 'low')
+        level_info = risk_cfg_levels.get(risk_level, RISK_LEVEL_CONFIG[risk_level])
+        num_color = level_info['color']
+        src_ref = source_index.get(e.get('data_source', '').strip(), '')
+
+        draw.text((x, y), f'{i + 1}', fill=num_color, font=font_small)
+        draw.text((x + 28, y), lines[0], fill='#333333', font=font_small)
+        y += 26
+
+        for line in lines[1:]:
+            draw.text((x + 28, y), line, fill='#555555', font=font_tiny)
+            y += 22
+
+        display_names = [cat_cfg.get(c, {}).get('display', c) for c in e['categories']]
+        tag = '【' + '】【'.join(display_names) + '】'
+        if src_ref:
+            tag += f' {src_ref}'
+        draw.text((x + 28, y), tag, fill='#888888', font=font_tiny)
+        y += 26
+
+    # Source type grouping
+    source_type_labels = {
+        'official': '官方监管名录',
+        'license': '许可证信息',
+        'complaint': '群众投诉/信访',
+        'exposure': '违规曝光',
+        'eia': '环评数据',
+        'monitoring': '监测数据',
+        'penalty': '处罚记录',
+    }
+    source_type_counts = {}
+    for e in enterprises:
+        st = e.get('source_type', '').strip()
+        if st:
+            source_type_counts[st] = source_type_counts.get(st, 0) + 1
+
+    if source_type_counts:
+        y += 25
+        draw.text((x, y), '数据来源分布：', fill='#888888', font=font_tiny)
+        y += 20
+        for st, count in sorted(source_type_counts.items(), key=lambda x: -x[1]):
+            label = source_type_labels.get(st, st)
+            draw.text((x, y), f'  [{count}家] {label}', fill='#888888', font=font_tiny)
+            y += 18
+
+    # Data source footer
+    y += 25
+    draw.text((x, y), '数据来源:', fill='#888888', font=font_tiny)
+    y += 20
+    for src in source_list:
+        ref = source_index[src]
+        draw.text((x, y), f'  {ref} {src}', fill='#888888', font=font_tiny)
+        y += 18
+
+    # Conditional radiation footnote
+    has_radiation = any('辐射安全' in e.get('categories', []) for e in enterprises)
+    if has_radiation:
+        y += 12
+        draw.text((x, y), '注：辐射单位为射线装置使用单位', fill='#888888', font=font_tiny)
+        y += 20
+
+    # Crop to actual content
+    actual_height = y
+    legend_img = legend_img.crop((0, 0, legend_width, actual_height))
+    draw_final = ImageDraw.Draw(legend_img)
+    draw_final.rectangle([(0, 0), (legend_width - 1, actual_height - 1)], outline='#cccccc', width=2)
+
+    legend_path = os.path.join(os.path.dirname(config['meta']['output_path']) or '.', 'legend_only.png')
+    ensure_dir(legend_path)
+    legend_img.save(legend_path)
+    print(f'Legend-only image saved: {legend_path}')
+    return legend_img
+
+
+def _render_legend_horizontal_risk(enterprises: list, config: dict, map_width: int) -> Image.Image:
+    """Horizontal legend for risk-level rendering (>60 enterprises)."""
+    cat_cfg = config['categories']
+    risk_cfg_levels = config.get('risk_levels', {})
+    legend_width = map_width
+    legend_height = 2000  # initial buffer, will crop
+    legend_img = Image.new('RGB', (legend_width, legend_height), 'white')
+    draw = ImageDraw.Draw(legend_img)
+
+    font_title = get_font(32)
+    font_header = get_font(22)
+    font_body = get_font(18)
+    font_small = get_font(17)
+    font_tiny = get_font(15)
+
+    margin = 30
+    x = margin
+    y = 30
+
+    # Title
+    total_count = len(enterprises)
+    draw.text((x, y), '图例', fill='#333333', font=font_title)
+    y += 50
+
+    # Total count
+    draw.rectangle([(x, y), (x + 23, y + 23)], fill='white', outline='black', width=2)
+    draw.text((x + 30, y), f'重点污染源单位（{total_count}家）', fill='#333333', font=font_body)
+    y += 40
+
+    # Potential pressure zone legend (risk mode: all three colors)
+    risk_zone_cfg = config.get('risk_zones', {})
+    if risk_zone_cfg.get('enabled', False):
+        draw.text((x, y), '环境潜在压力区（1km缓冲重叠）', fill='#333333', font=font_body)
+        y += 26
+        zone_x = x + 10
+        for level in ['low', 'medium', 'high']:
+            level_info = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level])
+            blended = _blend_with_white(level_info['color'], 0.60)
+            draw.ellipse([(zone_x, y - 2), (zone_x + 20, y + 18)], fill=blended)
+            zone_text = f"{level_info['display']}"
+            draw.text((zone_x + 24, y - 2), zone_text, fill='#555555', font=font_small)
+            bbox = draw.textbbox((0, 0), zone_text, font=font_small)
+            zone_x += (bbox[2] - bbox[0]) + 44
+            if zone_x > legend_width - 150:
+                zone_x = x + 10
+                y += 22
+        if zone_x > x + 10:
+            y += 22
+        y += 6
+
+    # Risk level stats (horizontal row)
+    risk_counts = {}
+    for e in enterprises:
+        rl = e.get('risk_level', 'low')
+        risk_counts[rl] = risk_counts.get(rl, 0) + 1
+
+    risk_x = x
+    for level in ['high', 'medium', 'low']:
+        if level in risk_counts:
+            level_info = risk_cfg_levels.get(level, RISK_LEVEL_CONFIG[level])
+            _draw_marker(draw, risk_x + 8, y + 10, 16, level_info['color'], 'o')
+            text = f"{level_info['display']}：{risk_counts[level]}家"
+            draw.text((risk_x + 24, y), text, fill='#333333', font=font_body)
+            bbox = draw.textbbox((0, 0), text, font=font_body)
+            risk_x += (bbox[2] - bbox[0]) + 40
+            if risk_x > legend_width - 200:
+                risk_x = x
+                y += 28
+
+    if risk_x > x:
+        y += 28
+    y += 10
+
+    # Category stats (horizontal row, shapes only)
+    cats_count = {}
+    for e in enterprises:
+        for cat in e['categories']:
+            cats_count[cat] = cats_count.get(cat, 0) + 1
+
+    cat_x = x
+    for cat_key, cat_info in cat_cfg.items():
+        if cat_key in cats_count:
+            emoji = cat_info.get('emoji', '')
+            if emoji:
+                eimg = _get_twemoji_pil(emoji, 20)
+                legend_img.paste(eimg, (cat_x + 2, y - 2), eimg)
+            text = f"{cat_info['display']}：{cats_count[cat_key]}家"
+            draw.text((cat_x + 28, y), text, fill='#333333', font=font_body)
+            bbox = draw.textbbox((0, 0), text, font=font_body)
+            cat_x += (bbox[2] - bbox[0]) + 44
+            if cat_x > legend_width - 200:
+                cat_x = x
+                y += 28
+
+    if cat_x > x:
+        y += 28
+    y += 20
+
+    # Enterprise list header
+    draw.text((x, y), '【企业列表】', fill='#333333', font=font_header)
+    y += 35
+
+    # Build source index
+    circled_nums = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩']
+    source_list = []
+    source_index = {}
+    for e in enterprises:
+        src = e.get('data_source', '').strip()
+        if src and src not in source_index:
+            idx = len(source_list)
+            source_index[src] = circled_nums[idx] if idx < len(circled_nums) else f'[{idx+1}]'
+            source_list.append(src)
+
+    # Calculate columns
+    if total_count <= 80:
+        entries_per_col = 15
+    elif total_count <= 120:
+        entries_per_col = 20
+    else:
+        entries_per_col = 25
+    num_cols = max(3, (total_count + entries_per_col - 1) // entries_per_col)
+    col_width = (legend_width - 2 * margin) // num_cols
+    col_gap = 10
+
+    def _wrap_label(text, font, max_w):
+        bbox = draw.textbbox((0, 0), "中文字", font=font)
+        avg_char_w = (bbox[2] - bbox[0]) / 3
+        max_chars = max(5, int(max_w / avg_char_w))
+        if len(text) <= max_chars:
+            return [text], 24
+        break_at = max_chars
+        for j in range(max_chars, max_chars // 2, -1):
+            if text[j] in '、，,()（）':
+                break_at = j + 1
+                break
+        first = text[:break_at]
+        rest = text[break_at:]
+        if len(rest) > max_chars:
+            rest = rest[:max_chars - 1] + '…'
+        return [first, rest], 44
+
+    col_heights = [0] * num_cols
+    entries = list(enumerate(enterprises))
+    label_max_w = col_width - 30
+
+    for col_idx in range(num_cols):
+        col_x = margin + col_idx * col_width
+        col_y = y
+        start_idx = col_idx * entries_per_col
+        end_idx = min(start_idx + entries_per_col, total_count)
+
+        for i in range(start_idx, end_idx):
+            e = enterprises[i]
+            risk_level = e.get('risk_level', 'low')
+            level_info = risk_cfg_levels.get(risk_level, RISK_LEVEL_CONFIG[risk_level])
+            num_color = level_info['color']
+            src_ref = source_index.get(e.get('data_source', '').strip(), '')
+
+            label_lines, label_h = _wrap_label(e['label'], font_small, label_max_w)
+
+            draw.text((col_x, col_y), f'{i + 1}', fill=num_color, font=font_small)
+            draw.text((col_x + 26, col_y), label_lines[0], fill='#333333', font=font_small)
+            col_y += 24
+
+            for line in label_lines[1:]:
+                draw.text((col_x + 26, col_y), line, fill='#555555', font=font_tiny)
+                col_y += 20
+
+            display_names = [cat_cfg.get(c, {}).get('display', c) for c in e['categories']]
+            tag = '【' + '】【'.join(display_names) + '】'
+            if src_ref:
+                tag += f' {src_ref}'
+            draw.text((col_x + 26, col_y), tag, fill='#888888', font=font_tiny)
+            col_y += 24
+
+        col_heights[col_idx] = col_y - y
+
+    y += max(col_heights) + 20
+
+    # Source type grouping
+    source_type_labels = {
+        'official': '官方监管名录',
+        'license': '许可证信息',
+        'complaint': '群众投诉/信访',
+        'exposure': '违规曝光',
+        'eia': '环评数据',
+        'monitoring': '监测数据',
+        'penalty': '处罚记录',
+    }
+    source_type_counts = {}
+    for e in enterprises:
+        st = e.get('source_type', '').strip()
+        if st:
+            source_type_counts[st] = source_type_counts.get(st, 0) + 1
+
+    if source_type_counts:
+        draw.text((x, y), '数据来源分布：', fill='#888888', font=font_tiny)
+        y += 22
+        st_x = x + 20
+        for st, count in sorted(source_type_counts.items(), key=lambda x: -x[1]):
+            label = source_type_labels.get(st, st)
+            text = f'[{count}家] {label}'
+            draw.text((st_x, y), text, fill='#888888', font=font_tiny)
+            bbox = draw.textbbox((0, 0), text, font=font_tiny)
+            st_x += (bbox[2] - bbox[0]) + 30
+            if st_x > legend_width - 200:
+                st_x = x + 20
+                y += 20
+        if st_x > x + 20:
+            y += 20
+
+    # Data source footer
+    y += 15
+    draw.text((x, y), '数据来源:', fill='#888888', font=font_tiny)
+    y += 20
+    for src in source_list:
+        ref = source_index[src]
+        draw.text((x, y), f'{ref} {src}', fill='#888888', font=font_tiny)
+        y += 18
+
+    # Conditional radiation footnote
+    has_radiation = any('辐射安全' in e.get('categories', []) for e in enterprises)
+    if has_radiation:
+        y += 10
+        draw.text((x, y), '注：辐射单位为射线装置使用单位', fill='#888888', font=font_tiny)
+        y += 20
+
+    # Crop to actual content
+    actual_height = y + margin
+    legend_img = legend_img.crop((0, 0, legend_width, actual_height))
+    draw_final = ImageDraw.Draw(legend_img)
+    draw_final.rectangle([(0, 0), (legend_width - 1, actual_height - 1)], outline='#cccccc', width=2)
+
+    legend_path = os.path.join(os.path.dirname(config['meta']['output_path']) or '.', 'legend_only.png')
+    ensure_dir(legend_path)
+    legend_img.save(legend_path)
+    print(f'Legend-only image saved: {legend_path} ({legend_width}x{actual_height})')
+    return legend_img
+
+
 def combine_images(map_path: str, legend_img: Image.Image, output_path: str, horizontal: bool = False) -> str:
     """Combine map and legend into final image.
 
@@ -925,9 +1595,30 @@ def generate_map(config: dict, enterprises: list) -> str:
 def main():
     parser = argparse.ArgumentParser(description='Generate pollution-source distribution map')
     parser.add_argument('-c', '--config', required=True, help='Path to config YAML file')
+    parser.add_argument(
+        '--render-mode', choices=['category', 'risk', 'auto'], default='auto',
+        help='Rendering mode: category (default), risk, or auto-detect'
+    )
     args = parser.parse_args()
 
     config = load_config(args.config)
+
+    # Override render_mode from CLI if explicitly provided
+    if args.render_mode in ('category', 'risk'):
+        config['render_mode'] = args.render_mode
+
+    # Auto-assign risk levels if enabled
+    risk_cfg = config.get('risk_scoring', {})
+    if risk_cfg.get('enabled', False) and risk_cfg.get('auto_assign', True):
+        enterprises = config.get('enterprises', [])
+        if enterprises and not any(e.get('risk_level') for e in enterprises):
+            print("Auto-assigning risk levels...")
+            assign_risk_levels(enterprises, config)
+            print(f"  Risk assignment complete: "
+                  f"{sum(1 for e in enterprises if e.get('risk_level') == 'high')} high, "
+                  f"{sum(1 for e in enterprises if e.get('risk_level') == 'medium')} medium, "
+                  f"{sum(1 for e in enterprises if e.get('risk_level') == 'low')} low")
+
     cache_file = config['gaode'].get('cache_file', './geocode_cache.json')
     enterprises = merge_coords(config['enterprises'], cache_file)
 

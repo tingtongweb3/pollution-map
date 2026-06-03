@@ -2,8 +2,15 @@
 """
 Re-geocode all Nanjing enterprises with per-enterprise district validation
 and generate a correction report comparing old vs new coordinates.
+
+Usage:
+    python revalidate_nanjing.py \\
+        --cache data/南京/geocode_cache_南京.json \\
+        --data  data/南京/南京_2025_city_cache.json \\
+        --report data/南京/revalidation_report.json
 """
 
+import argparse
 import json
 import math
 import os
@@ -30,13 +37,21 @@ def load_dotenv():
 def main():
     load_dotenv()
 
+    parser = argparse.ArgumentParser(description="Re-validate Nanjing enterprise geocodes")
+    parser.add_argument("--cache", required=True, help="Path to old geocode cache JSON")
+    parser.add_argument("--data", required=True, help="Path to enterprise data JSON")
+    parser.add_argument("--report", default=None,
+                        help="Path for the revalidation report (default: <data_dir>/revalidation_report.json)")
+    args = parser.parse_args()
+
     provider = get_map_provider()
-    key = get_map_key(provider, "")
+    key = get_map_key("")
     city = "南京"
     rate_limit = 0.15
 
-    cache_path = Path("/Users/wong/.hermes/code/map2image/data/南京/geocode_cache_南京.json")
-    data_path = Path("/Users/wong/.hermes/code/map2image/data/南京/南京_2025_city_cache.json")
+    cache_path = Path(args.cache)
+    data_path = Path(args.data)
+    report_path = Path(args.report) if args.report else data_path.parent / "revalidation_report.json"
 
     with open(cache_path, "r", encoding="utf-8") as f:
         old_cache = json.load(f)
@@ -214,7 +229,7 @@ def main():
         "skipped_no_old": skipped_no_old,
         "cross_district": cross_district,
     }
-    report_path = Path("/Users/wong/.hermes/code/map2image/data/南京/revalidation_report.json")
+    report_path.parent.mkdir(parents=True, exist_ok=True)
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
     print(f"\n报告已保存: {report_path}")

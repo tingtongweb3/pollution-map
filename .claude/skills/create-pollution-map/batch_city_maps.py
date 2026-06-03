@@ -28,7 +28,7 @@ SKILL_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SKILL_DIR)
 
 from collect_data import auto_partition_districts, generate_config, Enterprise
-from utils import get_map_key, ensure_dir, get_map_provider
+from utils import get_map_key, ensure_dir
 
 
 def _dict_to_enterprise(d: dict) -> Enterprise:
@@ -48,20 +48,14 @@ def load_city_cache(cache_path: str) -> list:
     return data
 
 
-def run_geocode_for_config(config_path: str, key: str = "", provider: str = ""):
+def run_geocode_for_config(config_path: str, key: str = ""):
     """Run geocode.py for a single config."""
     script = os.path.join(SKILL_DIR, "geocode.py")
     env = os.environ.copy()
-    provider = provider or get_map_provider()
     if key:
-        if provider == "tencent":
-            env["TENCENT_MAP_KEY"] = key
-        else:
-            env["GAODE_API_KEY"] = key
-    if provider:
-        env["MAP_PROVIDER"] = provider
+        env["GAODE_API_KEY"] = key
     result = subprocess.run(
-        [sys.executable, script, "-c", config_path, "--provider", provider],
+        [sys.executable, script, "-c", config_path],
         env=env,
         capture_output=True,
         text=True,
@@ -69,14 +63,13 @@ def run_geocode_for_config(config_path: str, key: str = "", provider: str = ""):
     return result
 
 
-def run_create_map_for_config(config_path: str):
+def run_create_map_for_config(config_path: str, render_mode: str = ""):
     """Run create_map.py for a single config."""
     script = os.path.join(SKILL_DIR, "create_map.py")
-    result = subprocess.run(
-        [sys.executable, script, "-c", config_path],
-        capture_output=True,
-        text=True,
-    )
+    cmd = [sys.executable, script, "-c", config_path]
+    if render_mode:
+        cmd.extend(["--render-mode", render_mode])
+    result = subprocess.run(cmd, capture_output=True, text=True)
     return result
 
 
@@ -109,9 +102,11 @@ def main():
     parser.add_argument("--alias", action="append",
                         help="Alias for merged partition (format: 主城区=玄武区+秦淮区+鼓楼区)")
     parser.add_argument("--key", default="",
-                        help="API key (or set GAODE_API_KEY / TENCENT_MAP_KEY env var)")
-    parser.add_argument("--provider", default="", choices=["gaode", "tencent"],
-                        help="Map provider (gaode or tencent). Overrides MAP_PROVIDER env var.")
+                        help="API key (or set GAODE_API_KEY env var)")
+    parser.add_argument(
+        "--render-mode", choices=["category", "risk", "auto"], default="auto",
+        help="Map rendering mode: category, risk, or auto-detect"
+    )
     parser.add_argument("--skip-geocode", action="store_true",
                         help="Skip geocoding step (use existing cache)")
     parser.add_argument("--skip-map", action="store_true",
@@ -162,11 +157,10 @@ def main():
         parts_str = ", ".join(info["parts"])
         print(f"  {name}: {len(info['enterprises'])} enterprises (parts: {parts_str})")
 
-    provider = args.provider or get_map_provider()
-    key = args.key or get_map_key(provider, "")
+    key = args.key or get_map_key()
     if not key and not args.skip_geocode:
-        print(f"\nWARNING: No API key for provider '{provider}'. Geocoding will likely fail.")
-        print("  Set GAODE_API_KEY / TENCENT_MAP_KEY env var or pass --key.")
+        print("\nWARNING: No API key. Geocoding will likely fail.")
+        print("  Set GAODE_API_KEY env var or pass --key.")
 
     reports = []
 
@@ -208,7 +202,7 @@ def main():
         # Step 1: Geocode
         if not args.skip_geocode:
             print("\n-- Geocoding --")
-            geo_result = run_geocode_for_config(config_path, key, provider)
+            geo_result = run_geocode_for_config(config_path, key)
             print(geo_result.stdout)
             if geo_result.returncode != 0:
                 print(f"Geocode stderr: {geo_result.stderr}")
@@ -218,7 +212,7 @@ def main():
         # Step 2: Create map
         if not args.skip_map:
             print("\n-- Creating map --")
-            map_result = run_create_map_for_config(config_path)
+            map_result = run_create_map_for_config(config_path, args.render_mode)
             print(map_result.stdout)
             if map_result.returncode != 0:
                 print(f"Map stderr: {map_result.stderr}")

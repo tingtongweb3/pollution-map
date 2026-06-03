@@ -1,0 +1,318 @@
+meta:
+  dpi: 200
+  title: 福州晋安区2026年重点污染源单位地理分布图
+  subtitle: 数据来源：福州生态环境局2026年度环境监管重点单位名录  |  共25家  |  坐标：高德地图
+  output_path: ./福州_晋安区_2026_output.png
+map:
+  figsize:
+  - 18
+  - 14
+  padding: 500
+  zoom: 12
+  basemap_alpha: 0.95
+gaode:
+  key: ''
+  rate_limit: 0.15
+  cache_file: data/福州/geocode_cache_福州.json
+  city: 福州
+risk_zones:
+  enabled: true
+  radius_meters: 1000
+  fill_color: '#FF4444'
+  fill_alpha: 0.12
+  edge_color: '#CC0000'
+  edge_width: 0.8
+  edge_alpha: 0.25
+boundary:
+  coords: []
+categories:
+  水环境:
+    display: 水环境重点排污
+    color: '#CC0000'
+    marker: o
+    emoji: 🌊
+  大气环境:
+    display: 大气环境重点排污
+    color: '#FF2200'
+    marker: s
+    emoji: ☁️
+  土壤污染:
+    display: 土壤污染重点监管
+    color: '#FF6600'
+    marker: D
+    emoji: 🏭
+  环境风险:
+    display: 环境风险重点管控
+    color: '#9933CC'
+    marker: '*'
+    emoji: ⚠️
+  噪声:
+    display: 噪声重点排污
+    color: '#0066CC'
+    marker: v
+    emoji: 📢
+  辐射安全:
+    display: 辐射安全许可证
+    color: '#9933CC'
+    marker: p
+    emoji: ☢️
+  地下水:
+    display: 地下水污染防治
+    color: '#0099CC'
+    marker: h
+    emoji: 💧
+render_mode: risk
+risk_scoring:
+  enabled: false
+  auto_assign: true
+  weights:
+    category_baseline:
+      环境风险: 20
+      土壤污染: 25
+      固废: 22
+      水环境: 20
+      大气环境: 18
+      辐射安全: 15
+      地下水: 12
+      噪声: 15
+      未分类: 10
+    multi_source_bonus: 5
+    penalty_per_record: 15
+    complaint_per_record: 10
+    monitoring_violation_per_record: 15
+    eia_level_scores:
+      报告书: 0
+      报告表: 0
+      登记表: 0
+      未知: 0
+    max_score: 100
+  thresholds:
+    high: 60
+    medium: 35
+risk_levels:
+  low:
+    display: 低风险
+    color: '#6C757D'
+    marker: o
+    size: 200
+  medium:
+    display: 中风险
+    color: '#FFC107'
+    marker: o
+    size: 280
+  high:
+    display: 高风险
+    color: '#DC3545'
+    marker: o
+    size: 380
+enterprises:
+- name: 兆丰华生物科技（福州）有限公司
+  address: 福州兆丰华生物科技（福州）有限公司
+  label: 兆丰华生物科技（福州）有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+- name: 福州市北岭食品有限公司
+  address: 福州福州市北岭食品有限公司
+  label: 福州市北岭食品有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福州市晋安区医院
+  address: 福州福州市晋安区医院
+  label: 福州市晋安区医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福州海王福药制药有限公司
+  address: 福州福州海王福药制药有限公司
+  label: 福州海王福药制药有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 水环境
+  - 环境风险
+- name: 福州海王金象中药制药有限公司
+  address: 福州福州海王金象中药制药有限公司
+  label: 福州海王金象中药制药有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福州福华纺织印染有限公司
+  address: 福州福州福华纺织印染有限公司
+  label: 福州福华纺织印染有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福州高意光学有限公司
+  address: 福州福州高意光学有限公司
+  label: 福州高意光学有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+  - 环境风险
+- name: 福建仁锋种猪有限公司
+  address: 福州福建仁锋种猪有限公司
+  label: 福建仁锋种猪有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建华侨荣胜生态农业有限公司
+  address: 福州福建华侨荣胜生态农业有限公司
+  label: 福建华侨荣胜生态农业有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建弥高生物有机肥有限公司
+  address: 福州福建弥高生物有机肥有限公司
+  label: 福建弥高生物有机肥有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建榕北海峡环保有限公司
+  address: 福州福建榕北海峡环保有限公司
+  label: 福建榕北海峡环保有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建海峡环保集团股份有限公司
+  address: 福州福建海峡环保集团股份有限公司
+  label: 福建海峡环保集团股份有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建省儿童医院
+  address: 福州福建省儿童医院
+  label: 福建省儿童医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建省妇产医院（筹）
+  address: 福州福建省妇产医院（筹）
+  label: 福建省妇产医院（筹）
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建省肿瘤医院
+  address: 福州福建省肿瘤医院
+  label: 福建省肿瘤医院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建红庙岭海峡环保有限公司
+  address: 福州福建红庙岭海峡环保有限公司
+  label: 福建红庙岭海峡环保有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福州市中医院晋安区五四北分院
+  address: 福州福州市中医院晋安区五四北分院
+  label: 福州市中医院晋安区五四北分院
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 水环境
+- name: 福建深投海峡环保科技有限公司
+  address: 福州福建深投海峡环保科技有限公司
+  label: 福建深投海峡环保科技有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 地下水
+  - 环境风险
+- name: 保罗清洁能源（福州）有限公司
+  address: 福州保罗清洁能源（福州）有限公司
+  label: 保罗清洁能源（福州）有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 福州沪榕海环再生能源有限公司
+  address: 福州福州沪榕海环再生能源有限公司
+  label: 福州沪榕海环再生能源有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 福州红庙岭垃圾焚烧发电有限公司
+  address: 福州福州红庙岭垃圾焚烧发电有限公司
+  label: 福州红庙岭垃圾焚烧发电有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 土壤污染
+  - 大气环境
+  - 环境风险
+- name: 福建保罗环保能源有限公司
+  address: 福州福建保罗环保能源有限公司
+  label: 福建保罗环保能源有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+  - 环境风险
+- name: 福建高壹工机有限公司
+  address: 福州福建高壹工机有限公司
+  label: 福建高壹工机有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 大气环境
+- name: 福州市大新飞灰处理有限公司
+  address: 福州福州市大新飞灰处理有限公司
+  label: 福州市大新飞灰处理有限公司
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险
+- name: 福州市红庙岭垃圾综合处理中心
+  address: 福州福州市红庙岭垃圾综合处理中心
+  label: 福州市红庙岭垃圾综合处理中心
+  data_source: 福州生态环境局2026年度环境监管重点单位名录
+  source_type: official
+  data_date: 2026-03
+  categories:
+  - 环境风险

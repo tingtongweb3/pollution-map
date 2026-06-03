@@ -17,7 +17,10 @@ except ImportError:
 
 
 def load_dotenv(path: str) -> None:
-    """Load key=value pairs from a .env file into os.environ."""
+    """Load key=value pairs from a .env file into os.environ.
+
+    .env file values take precedence over existing environment variables.
+    """
     if not os.path.exists(path):
         return
     with open(path, "r", encoding="utf-8") as f:
@@ -25,7 +28,7 @@ def load_dotenv(path: str) -> None:
             line = line.strip()
             if line and "=" in line and not line.startswith("#"):
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k, v)
+                os.environ[k] = v
 
 
 def get_map_key(config_key: str = "") -> str:
