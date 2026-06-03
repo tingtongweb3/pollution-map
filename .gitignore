@@ -39,3 +39,13 @@ data/*/address_prefill_report.md
 
 # Twemoji cache
 .twemoji_cache/
+
+# Built-in Claude skills (not part of this project)
+.claude/skills/diagnose/
+.claude/skills/grill-me/
+.claude/skills/grill-with-docs/
+.claude/skills/improve-codebase-architecture/
+.claude/skills/setup-matt-pocock-skills/
+.claude/skills/tdd/
+.claude/skills/to-issues/
+.claude/skills/to-prd/
