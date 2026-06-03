@@ -31,3 +31,11 @@ data/*/geocode_cache_*.json
 # Runtime working dirs
 .agents/
 data/*/data/
+
+# Logs and backups
+*.log
+*.bak*
+data/*/address_prefill_report.md
+
+# Twemoji cache
+.twemoji_cache/
