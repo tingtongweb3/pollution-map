@@ -3,7 +3,7 @@ meta:
   subtitle: 数据来源：福州生态环境局2026年度环境监管重点单位名录  |  共45家  |  坐标：高德地图
   output_path: ./福州_闽侯县_2026_output.png
 gaode:
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_福州.json
+  cache_file: ./cache/geocode_cache_福州.json
   city: 福州
 enterprises:
 - name: 东南（福建）汽车工业股份有限公司

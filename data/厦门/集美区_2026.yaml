@@ -3,7 +3,7 @@ meta:
   subtitle: 数据来源：厦门市生态环境局2025年度环境监管重点单位名录  |  共62家  |  坐标：高德地图
   output_path: ./xiamen_jimei_output.png
 gaode:
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_xiamen.json
+  cache_file: ./cache/geocode_cache_xiamen.json
   city: 厦门
 enterprises:
 - name: 厦门建霖健康家居股份有限公司

@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  cache_file: ./data/杭州/geocode_cache_杭州.json
   city: 杭州
   provider: gaode
 risk_zones:
@@ -57,7 +57,7 @@ categories:
     marker: s
 enterprises:
 - name: 杭州达利富丝绸染整有限公司
-  address: ''
+  address: 桐君街道洋塘路228号达理富染厂
   label: 杭州达利富丝绸染整有限公司
   data_source: ''
   source_type: official
@@ -68,8 +68,9 @@ enterprises:
   lat: 29.804129
   lon: 119.660803
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州泛亚卫浴股份有限公司一分厂
-  address: ''
+  address: 天鹤路1399号
   label: 杭州泛亚卫浴股份有限公司一分厂
   data_source: ''
   source_type: official
@@ -80,8 +81,9 @@ enterprises:
   lat: 29.837392
   lon: 119.758655
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州富强织染有限公司
-  address: ''
+  address: 横村镇深畈村马浦独山路188号
   label: 杭州富强织染有限公司
   data_source: ''
   source_type: official
@@ -92,8 +94,9 @@ enterprises:
   lat: 29.841676
   lon: 119.610387
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华地针织品印花有限公司
-  address: ''
+  address: 横村镇方埠针织工业园区
   label: 杭州华地针织品印花有限公司
   data_source: ''
   source_type: official
@@ -104,8 +107,9 @@ enterprises:
   lat: 29.852815
   lon: 119.618813
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州聚兴环保科技有限公司
-  address: ''
+  address: 江南镇枝茂村1幢
   label: 杭州聚兴环保科技有限公司
   data_source: ''
   source_type: official
@@ -116,8 +120,9 @@ enterprises:
   lat: 29.858498
   lon: 119.812252
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州美磁表面处理有限公司
-  address: ''
+  address: 分水镇朝阳路22号东溪工业园区柏山村路口
   label: 杭州美磁表面处理有限公司
   data_source: ''
   source_type: official
@@ -128,8 +133,9 @@ enterprises:
   lat: 29.79418
   lon: 119.691755
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州商莱金属科技有限公司
-  address: ''
+  address: 桐庐经济开发区大源溪路299号
   label: 杭州商莱金属科技有限公司
   data_source: ''
   source_type: official
@@ -140,8 +146,9 @@ enterprises:
   lat: 29.835528
   lon: 119.755254
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市第一人民医院桐庐医院（桐庐县第一人民医院）
-  address: ''
+  address: 梅林路899号
   label: 杭州市第一人民医院桐庐医院（桐庐县第一人民医院）
   data_source: ''
   source_type: official
@@ -152,8 +159,9 @@ enterprises:
   lat: 29.788597
   lon: 119.722942
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市桐庐富东车圈有限责任公司
-  address: ''
+  address: 分水镇东溪前湾磨湾38号
   label: 杭州市桐庐富东车圈有限责任公司
   data_source: ''
   source_type: official
@@ -164,8 +172,9 @@ enterprises:
   lat: 29.947741
   lon: 119.469422
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州桐泓染整有限公司
-  address: ''
+  address: 横村镇学前路318号
   label: 杭州桐泓染整有限公司
   data_source: ''
   source_type: official
@@ -176,8 +185,9 @@ enterprises:
   lat: 29.835846
   lon: 119.604303
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州象限表面处理有限公司
-  address: ''
+  address: 棠川路555号
   label: 杭州象限表面处理有限公司
   data_source: ''
   source_type: official
@@ -188,8 +198,9 @@ enterprises:
   lat: 29.836367
   lon: 119.761139
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州裕美生物科技有限公司
-  address: ''
+  address: 桐钟路8号
   label: 杭州裕美生物科技有限公司
   data_source: ''
   source_type: official
@@ -200,8 +211,9 @@ enterprises:
   lat: 29.799362
   lon: 119.582102
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 思拓凡生物科技（杭州）有限公司
-  address: ''
+  address: 春江东路1568号
   label: 思拓凡生物科技（杭州）有限公司
   data_source: ''
   source_type: official
@@ -212,8 +224,9 @@ enterprises:
   lat: 29.818438
   lon: 119.725611
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐诚信针纺染整有限公司
-  address: ''
+  address: 横村龙腾路239号
   label: 桐庐诚信针纺染整有限公司
   data_source: ''
   source_type: official
@@ -224,8 +237,9 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐春弘纺织印染有限公司
-  address: ''
+  address: 横村镇龙富路188号
   label: 桐庐春弘纺织印染有限公司
   data_source: ''
   source_type: official
@@ -236,8 +250,9 @@ enterprises:
   lat: 29.830504
   lon: 119.605658
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐春江阀门有限公司
-  address: ''
+  address: 城南街道桐庐经济开发区宝心路369号
   label: 桐庐春江阀门有限公司
   data_source: ''
   source_type: official
@@ -248,6 +263,7 @@ enterprises:
   lat: 29.765184
   lon: 119.663108
   geocode_level: 村庄
+  _address_source: auto_poi
 - name: 桐庐大裕织染有限公司
   address: ''
   label: 桐庐大裕织染有限公司
@@ -273,7 +289,7 @@ enterprises:
   lon: 119.681733
   geocode_level: 乡镇
 - name: 桐庐恒达纺织印染有限公司
-  address: ''
+  address: 城南街道青山工业区峙山路177号
   label: 桐庐恒达纺织印染有限公司
   data_source: ''
   source_type: official
@@ -284,8 +300,9 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐金利印染有限公司
-  address: ''
+  address: 横村镇方埠祥和路128号
   label: 桐庐金利印染有限公司
   data_source: ''
   source_type: official
@@ -296,8 +313,9 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐千红笔业有限责任公司
-  address: ''
+  address: 分水镇朝阳路20号
   label: 桐庐千红笔业有限责任公司
   data_source: ''
   source_type: official
@@ -308,8 +326,9 @@ enterprises:
   lat: 29.943949
   lon: 119.463231
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐县窄溪工艺电镀厂
-  address: ''
+  address: 江南镇工业园区舒川路7号
   label: 桐庐县窄溪工艺电镀厂
   data_source: ''
   source_type: official
@@ -320,8 +339,9 @@ enterprises:
   lat: 29.83781
   lon: 119.762111
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐新合电镀制品有限公司
-  address: ''
+  address: 亚环大道3号
   label: 桐庐新合电镀制品有限公司
   data_source: ''
   source_type: official
@@ -332,8 +352,9 @@ enterprises:
   lat: 29.696511
   lon: 119.938734
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 物产中大（桐庐）水处理有限公司
-  address: ''
+  address: 桐庐经济开发区求是路111号
   label: 物产中大（桐庐）水处理有限公司
   data_source: ''
   source_type: official
@@ -344,8 +365,9 @@ enterprises:
   lat: 29.813509
   lon: 119.727989
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 物产中大凤川（桐庐）水处理有限公司
-  address: ''
+  address: 桐庐经济开发区求是路111号
   label: 物产中大凤川（桐庐）水处理有限公司
   data_source: ''
   source_type: official
@@ -356,6 +378,7 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 物产中大横村（桐庐）水处理有限公司
   address: ''
   label: 物产中大横村（桐庐）水处理有限公司
@@ -369,7 +392,7 @@ enterprises:
   lon: 119.679587
   geocode_level: 乡镇
 - name: 浙江省桐庐汇丰生物科技有限公司
-  address: ''
+  address: 桐君街道洋塘路311号
   label: 浙江省桐庐汇丰生物科技有限公司
   data_source: ''
   source_type: official
@@ -380,8 +403,9 @@ enterprises:
   lat: 29.807958
   lon: 119.679587
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 浙江天鹰纺织有限公司
-  address: ''
+  address: 分水镇天英村
   label: 浙江天鹰纺织有限公司
   data_source: ''
   source_type: official
@@ -392,8 +416,9 @@ enterprises:
   lat: 29.915576
   lon: 119.418153
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州红狮双隆环保科技有限公司
-  address: ''
+  address: 旧县街道溪西路66号
   label: 杭州红狮双隆环保科技有限公司
   data_source: ''
   source_type: official
@@ -404,8 +429,9 @@ enterprises:
   lat: 29.79418
   lon: 119.691755
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州基本科技有限公司
-  address: ''
+  address: 桐君街道云栖路355号
   label: 杭州基本科技有限公司
   data_source: ''
   source_type: official
@@ -416,6 +442,7 @@ enterprises:
   lat: 29.800464
   lon: 119.710873
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州永乾环境有限公司
   address: ''
   label: 杭州永乾环境有限公司
@@ -429,7 +456,7 @@ enterprises:
   lon: 119.691755
   geocode_level: 区县
 - name: 桐庐大路新型建材有限公司
-  address: ''
+  address: 横村镇龙腾路99号
   label: 桐庐大路新型建材有限公司
   data_source: ''
   source_type: official
@@ -440,8 +467,9 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐红狮水泥有限公司
-  address: ''
+  address: 桐君街道坞泥口村
   label: 桐庐红狮水泥有限公司
   data_source: ''
   source_type: official
@@ -452,8 +480,9 @@ enterprises:
   lat: 29.841161
   lon: 119.706165
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐环保工业有限公司
-  address: ''
+  address: 喻西路8号联亚智造产业园10栋二楼
   label: 桐庐环保工业有限公司
   data_source: ''
   source_type: official
@@ -464,8 +493,9 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐南方水泥有限公司
-  address: ''
+  address: 桐君街道君山村88号
   label: 桐庐南方水泥有限公司
   data_source: ''
   source_type: official
@@ -476,8 +506,9 @@ enterprises:
   lat: 29.826016
   lon: 119.687991
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐信雅达热电有限公司
-  address: ''
+  address: 江南大道3888号(伟业路地铁站A口步行390米)
   label: 桐庐信雅达热电有限公司
   data_source: ''
   source_type: official
@@ -488,6 +519,7 @@ enterprises:
   lat: 29.785377
   lon: 119.681733
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 桐庐珠山新型建材有限公司
   address: ''
   label: 桐庐珠山新型建材有限公司
@@ -501,7 +533,7 @@ enterprises:
   lon: 119.681733
   geocode_level: 乡镇
 - name: 浙江环益资源利用股份有限公司
-  address: ''
+  address: 江南开发区天鹤路1339号
   label: 浙江环益资源利用股份有限公司
   data_source: ''
   source_type: official
@@ -512,8 +544,9 @@ enterprises:
   lat: 29.841774
   lon: 119.763389
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江金帆达生化股份有限公司
-  address: ''
+  address: 桐千路与方香线交叉口西北340米
   label: 浙江金帆达生化股份有限公司
   data_source: ''
   source_type: official
@@ -524,8 +557,9 @@ enterprises:
   lat: 29.860993
   lon: 119.609432
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 东芝水电设备（杭州）有限公司
-  address: ''
+  address: 桐庐县富春江镇清渚路318号
   label: 东芝水电设备（杭州）有限公司
   data_source: ''
   source_type: official
@@ -536,8 +570,9 @@ enterprises:
   lat: 29.706048
   lon: 119.639126
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 富江能源科技有限公司
-  address: ''
+  address: 凤川街道陈山路888号
   label: 富江能源科技有限公司
   data_source: ''
   source_type: official
@@ -548,8 +583,9 @@ enterprises:
   lat: 29.817684
   lon: 119.752094
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州海康威视电子有限公司
-  address: ''
+  address: 环城南路333号
   label: 杭州海康威视电子有限公司
   data_source: ''
   source_type: official
@@ -560,8 +596,9 @@ enterprises:
   lat: 29.819376
   lon: 119.736452
   geocode_level: 公交地铁站点
+  _address_source: auto_poi
 - name: 杭州科博纸业有限责任公司
-  address: ''
+  address: 求是路117号
   label: 杭州科博纸业有限责任公司
   data_source: ''
   source_type: official
@@ -572,8 +609,9 @@ enterprises:
   lat: 29.812043
   lon: 119.729744
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州天锋电子有限公司
-  address: ''
+  address: 四联工业区洋塘西路13 8号
   label: 杭州天锋电子有限公司
   data_source: ''
   source_type: official
@@ -584,8 +622,9 @@ enterprises:
   lat: 29.79418
   lon: 119.691755
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州欣源电梯部件有限公司
-  address: ''
+  address: 尹家路19号
   label: 杭州欣源电梯部件有限公司
   data_source: ''
   source_type: official
@@ -596,8 +635,9 @@ enterprises:
   lat: 29.801131
   lon: 119.728178
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州浙富核电设备有限公司
-  address: ''
+  address: 富春江镇红旗南路99号
   label: 杭州浙富核电设备有限公司
   data_source: ''
   source_type: official
@@ -608,8 +648,9 @@ enterprises:
   lat: 29.79418
   lon: 119.691755
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州挚诚机械设备有限公司
-  address: ''
+  address: 江南镇高山路360号
   label: 杭州挚诚机械设备有限公司
   data_source: ''
   source_type: official
@@ -620,8 +661,9 @@ enterprises:
   lat: 29.860327
   lon: 119.78082
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐富春江医院
-  address: ''
+  address: 富春江镇七里泷大街71号
   label: 桐庐富春江医院
   data_source: ''
   source_type: official
@@ -632,8 +674,9 @@ enterprises:
   lat: 29.709598
   lon: 119.648528
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐县环境卫生管理处
-  address: ''
+  address: 城南街道大丰路567号
   label: 桐庐县环境卫生管理处
   data_source: ''
   source_type: official
@@ -644,8 +687,9 @@ enterprises:
   lat: 29.772656
   lon: 119.677933
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐县农业生产资料有限公司
-  address: ''
+  address: 桐君街道牛山坞路62号农业生产资料有限公司
   label: 桐庐县农业生产资料有限公司
   data_source: ''
   source_type: official
@@ -656,8 +700,9 @@ enterprises:
   lat: 29.789899
   lon: 119.665999
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 桐庐县中医院
-  address: ''
+  address: 桐君街道广场路70号
   label: 桐庐县中医院
   data_source: ''
   source_type: official
@@ -668,8 +713,9 @@ enterprises:
   lat: 29.79418
   lon: 119.691755
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 威立雅资源再生（杭州）有限公司
-  address: ''
+  address: 江源路与320国道交叉口东南160米
   label: 威立雅资源再生（杭州）有限公司
   data_source: ''
   source_type: official
@@ -680,8 +726,9 @@ enterprises:
   lat: 29.843397
   lon: 119.761303
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 赢通（杭州）压力容器有限公司
-  address: ''
+  address: 瑶琳镇白岩路8号
   label: 赢通（杭州）压力容器有限公司
   data_source: ''
   source_type: official
@@ -692,8 +739,9 @@ enterprises:
   lat: 29.905851
   lon: 119.550066
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江华博电力科技有限公司
-  address: ''
+  address: 开发区舒川路17号
   label: 浙江华博电力科技有限公司
   data_source: ''
   source_type: official
@@ -704,8 +752,9 @@ enterprises:
   lat: 29.839316
   lon: 119.757281
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江华锦制管股份有限公司
-  address: ''
+  address: 凤川街道凤翔路168号
   label: 浙江华锦制管股份有限公司
   data_source: ''
   source_type: official
@@ -716,8 +765,9 @@ enterprises:
   lat: 29.824853
   lon: 119.753224
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江中泰深冷设备有限公司
-  address: ''
+  address: 江南路555号
   label: 浙江中泰深冷设备有限公司
   data_source: ''
   source_type: official
@@ -728,3 +778,4 @@ enterprises:
   lat: 29.861383
   lon: 119.776969
   geocode_level: 兴趣点
+  _address_source: auto_poi

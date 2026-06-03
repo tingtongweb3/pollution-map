@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  cache_file: ./data/杭州/geocode_cache_杭州.json
   city: 杭州
   provider: gaode
 risk_zones:
@@ -57,7 +57,7 @@ categories:
     marker: s
 enterprises:
 - name: 杭州市第三人民医院 （杭州市惠民医院、 浙江中医药大学附属杭州
-  address: ''
+  address: 西湖大道18号(城站地铁站C口步行210米)
   label: 杭州市第三人民医院 （杭州市惠民医院、 浙江中医药大学附属杭州
   data_source: ''
   source_type: official
@@ -68,6 +68,7 @@ enterprises:
   lat: 30.246445
   lon: 120.1778
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市第一人民医院（西湖大学附属杭州市第一人民医院）
   address: ''
   label: 杭州市第一人民医院（西湖大学附属杭州市第一人民医院）
@@ -117,7 +118,7 @@ enterprises:
   lon: 120.169397
   geocode_level: 兴趣点
 - name: 杭州远大生物制药有限公司
-  address: ''
+  address: 浙江省杭州市上城区九环路63号
   label: 杭州远大生物制药有限公司
   data_source: ''
   source_type: official
@@ -125,9 +126,9 @@ enterprises:
   categories:
   - 环境风险
   district: 上城区
-  lat: 30.226543
-  lon: 120.19732
-  geocode_level: 区县
+  lat: 30.327493
+  lon: 120.267332
+  geocode_level: 门址
 - name: 浙江大学医学院附属第二医院
   address: ''
   label: 浙江大学医学院附属第二医院
@@ -141,7 +142,7 @@ enterprises:
   lon: 120.175894
   geocode_level: 兴趣点
 - name: 浙江大学医学院附属第一医院
-  address: ''
+  address: 浙江省杭州市上城区庆春路79号
   label: 浙江大学医学院附属第一医院
   data_source: ''
   source_type: official
@@ -149,11 +150,11 @@ enterprises:
   categories:
   - 环境风险
   district: 上城区
-  lat: 30.133575
-  lon: 120.080325
-  geocode_level: 跨区
+  lat: 30.257192
+  lon: 120.177908
+  geocode_level: 门址
 - name: 浙江大学医学院附属第一医院城站院区
-  address: ''
+  address: 城站路58号(城站地铁站C口步行160米)
   label: 浙江大学医学院附属第一医院城站院区
   data_source: ''
   source_type: official
@@ -164,6 +165,7 @@ enterprises:
   lat: 30.246484
   lon: 120.181872
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江大学医学院附属妇产科医院
   address: ''
   label: 浙江大学医学院附属妇产科医院
@@ -189,7 +191,7 @@ enterprises:
   lon: 120.202351
   geocode_level: 兴趣点
 - name: 浙江省中医院、浙江中医药大学附属第一医院（浙江省东方医院）
-  address: ''
+  address: 浙江省杭州市上城区邮电路54号
   label: 浙江省中医院、浙江中医药大学附属第一医院（浙江省东方医院）
   data_source: ''
   source_type: official
@@ -197,11 +199,11 @@ enterprises:
   categories:
   - 环境风险
   district: 上城区
-  lat: 30.083572
-  lon: 119.892726
-  geocode_level: 跨区
+  lat: 30.252056
+  lon: 120.165833
+  geocode_level: 门址
 - name: 杭州城东医院有限公司
-  address: ''
+  address: 德胜东路3339号3幢
   label: 杭州城东医院有限公司
   data_source: ''
   source_type: official
@@ -212,8 +214,9 @@ enterprises:
   lat: 30.312301
   lon: 120.276849
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州全景医学影像诊断有限公司
-  address: ''
+  address: 浙江省杭州市上城区江城路1楼
   label: 杭州全景医学影像诊断有限公司
   data_source: ''
   source_type: official
@@ -221,11 +224,11 @@ enterprises:
   categories:
   - 环境风险
   district: 上城区
-  lat: 30.226543
-  lon: 120.19732
-  geocode_level: 区县
+  lat: 30.219725
+  lon: 120.174369
+  geocode_level: 门牌号
 - name: 杭州市上城区人民医院
-  address: ''
+  address: 浙江省杭州市上城区机场路238-6
   label: 杭州市上城区人民医院
   data_source: ''
   source_type: official
@@ -233,11 +236,11 @@ enterprises:
   categories:
   - 环境风险
   district: 上城区
-  lat: 30.226543
-  lon: 120.19732
-  geocode_level: 区县
+  lat: 30.316018
+  lon: 120.221644
+  geocode_level: 门址
 - name: 杭州原子高科医药有限公司
-  address: ''
+  address: 九环路63号1幢d座1楼
   label: 杭州原子高科医药有限公司
   data_source: ''
   source_type: official
@@ -248,8 +251,9 @@ enterprises:
   lat: 30.32691
   lon: 120.267295
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省农业科学院
-  address: ''
+  address: 德胜中路298号
   label: 浙江省农业科学院
   data_source: ''
   source_type: official
@@ -260,8 +264,9 @@ enterprises:
   lat: 30.307403
   lon: 120.196809
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江之信汽车有限公司
-  address: ''
+  address: 九堡镇下沙路1163号(九睦路地铁站B口步行330米)
   label: 浙江之信汽车有限公司
   data_source: ''
   source_type: official
@@ -272,8 +277,9 @@ enterprises:
   lat: 30.302327
   lon: 120.268997
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华电半山发电有限公司
-  address: ''
+  address: 拱康路214号
   label: 杭州华电半山发电有限公司
   data_source: ''
   source_type: official
@@ -284,8 +290,9 @@ enterprises:
   lat: 30.359125
   lon: 120.148293
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州师范大学附属医院
-  address: ''
+  address: 温州路126号
   label: 杭州师范大学附属医院
   data_source: ''
   source_type: official
@@ -296,8 +303,9 @@ enterprises:
   lat: 30.32222
   lon: 120.141179
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市儿童医院
-  address: ''
+  address: 文晖街道文晖路上塘路交叉口文晖路201号
   label: 杭州市儿童医院
   data_source: ''
   source_type: official
@@ -308,8 +316,9 @@ enterprises:
   lat: 30.28095
   lon: 120.170859
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市红十字会医院
-  address: ''
+  address: 浙江省杭州市拱墅区环城东路208号
   label: 杭州市红十字会医院
   data_source: ''
   source_type: official
@@ -317,11 +326,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.319126
-  lon: 120.141503
-  geocode_level: 区县
+  lat: 30.265475
+  lon: 120.187232
+  geocode_level: 门址
 - name: 杭州市环境集团有限公司
-  address: ''
+  address: 临半路138-1号
   label: 杭州市环境集团有限公司
   data_source: ''
   source_type: official
@@ -332,8 +341,9 @@ enterprises:
   lat: 30.388843
   lon: 120.197654
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市老年病医院
-  address: ''
+  address: 浙江省杭州市拱墅区景莘街50号
   label: 杭州市老年病医院
   data_source: ''
   source_type: official
@@ -341,9 +351,9 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.319126
-  lon: 120.141503
-  geocode_level: 区县
+  lat: 30.351074
+  lon: 120.170718
+  geocode_level: 道路
 - name: 杭州市排水有限公司净水分公司城北净水厂
   address: ''
   label: 杭州市排水有限公司净水分公司城北净水厂
@@ -357,7 +367,7 @@ enterprises:
   lon: 120.1567
   geocode_level: 住宅区
 - name: 杭州中美华东制药有限公司
-  address: ''
+  address: 莫干山路868号
   label: 杭州中美华东制药有限公司
   data_source: ''
   source_type: official
@@ -368,6 +378,7 @@ enterprises:
   lat: 30.324984
   lon: 120.107722
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 树兰（杭州）医院有限公司
   address: ''
   label: 树兰（杭州）医院有限公司
@@ -381,7 +392,7 @@ enterprises:
   lon: 120.174522
   geocode_level: 兴趣点
 - name: 浙江大学医学院附属邵逸夫医院大运河院区
-  address: ''
+  address: 马家桥街60号(平安桥地铁站D口步行490米)
   label: 浙江大学医学院附属邵逸夫医院大运河院区
   data_source: ''
   source_type: official
@@ -392,8 +403,9 @@ enterprises:
   lat: 30.35335
   lon: 120.147647
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省人民医院
-  address: ''
+  address: 浙江省杭州市拱墅区上塘路158号
   label: 浙江省人民医院
   data_source: ''
   source_type: official
@@ -401,11 +413,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.15025
-  lon: 120.067466
-  geocode_level: 跨区
+  lat: 30.284873
+  lon: 120.16844
+  geocode_level: 门址
 - name: 浙江省肿瘤医院
-  address: ''
+  address: 半山东路1号
   label: 浙江省肿瘤医院
   data_source: ''
   source_type: official
@@ -416,8 +428,9 @@ enterprises:
   lat: 30.352901
   lon: 120.191093
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江中医药大学附属第二医院
-  address: ''
+  address: 潮王路318号
   label: 浙江中医药大学附属第二医院
   data_source: ''
   source_type: official
@@ -428,6 +441,7 @@ enterprises:
   lat: 30.284547
   lon: 120.148439
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州德奥汽车有限公司
   address: ''
   label: 杭州德奥汽车有限公司
@@ -441,7 +455,7 @@ enterprises:
   lon: 120.118631
   geocode_level: 兴趣点
 - name: 杭州东顺染整机械制造有限公司
-  address: ''
+  address: 康桥镇康桥路12号
   label: 杭州东顺染整机械制造有限公司
   data_source: ''
   source_type: official
@@ -452,8 +466,9 @@ enterprises:
   lat: 30.36389
   lon: 120.167051
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州东星行汽车维修有限公司
-  address: ''
+  address: 华中路6号
   label: 杭州东星行汽车维修有限公司
   data_source: ''
   source_type: official
@@ -464,8 +479,9 @@ enterprises:
   lat: 30.334352
   lon: 120.203177
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州杭特无损检测技术有限公司
-  address: ''
+  address: 浙江省杭州市拱墅区莫干山路上城工业园区1418-41号2号楼
   label: 杭州杭特无损检测技术有限公司
   data_source: ''
   source_type: official
@@ -473,11 +489,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.319126
-  lon: 120.141503
-  geocode_level: 区县
+  lat: 30.342714
+  lon: 120.107637
+  geocode_level: 小巷
 - name: 杭州和诚之宝汽车销售服务有限公司
-  address: ''
+  address: 绍兴路381号
   label: 杭州和诚之宝汽车销售服务有限公司
   data_source: ''
   source_type: official
@@ -488,8 +504,9 @@ enterprises:
   lat: 30.302711
   lon: 120.163489
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华意电力检测工程技术有限公司
-  address: ''
+  address: 浙江省杭州市拱墅区美都广场商铺24号
   label: 杭州华意电力检测工程技术有限公司
   data_source: ''
   source_type: official
@@ -497,9 +514,9 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.319126
-  lon: 120.141503
-  geocode_level: 区县
+  lat: 30.299322
+  lon: 120.134002
+  geocode_level: 兴趣点
 - name: 杭州市设备安装有限公司
   address: ''
   label: 杭州市设备安装有限公司
@@ -513,7 +530,7 @@ enterprises:
   lon: 120.157997
   geocode_level: 兴趣点
 - name: 杭州义德中医医院有限公司
-  address: ''
+  address: 浙江省杭州市拱墅区洄龙湖邸43幢
   label: 杭州义德中医医院有限公司
   data_source: ''
   source_type: official
@@ -521,8 +538,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
+  lat: 30.343975
+  lon: 120.198706
+  geocode_level: 住宅区
 - name: 杭州轴承集团有限公司
-  address: ''
+  address: 石桥路416号
   label: 杭州轴承集团有限公司
   data_source: ''
   source_type: official
@@ -533,8 +553,9 @@ enterprises:
   lat: 30.337003
   lon: 120.194593
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江奥通汽车有限公司
-  address: ''
+  address: 德胜绍兴路428号
   label: 浙江奥通汽车有限公司
   data_source: ''
   source_type: official
@@ -545,8 +566,9 @@ enterprises:
   lat: 30.303149
   lon: 120.163808
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省电力锅炉压力容器检验所有限公司
-  address: ''
+  address: 浙江省杭州市拱墅区朝晖八区省电力试验研究所内
   label: 浙江省电力锅炉压力容器检验所有限公司
   data_source: ''
   source_type: official
@@ -554,11 +576,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.221109
-  lon: 119.715918
-  geocode_level: 跨区
+  lat: 30.291056
+  lon: 120.159994
+  geocode_level: 住宅区
 - name: 浙江双元科技股份有限公司
-  address: ''
+  address: 浙江省杭州市拱墅区莫干山路1418-41号2号楼（双元科技大厦）
   label: 浙江双元科技股份有限公司
   data_source: ''
   source_type: official
@@ -566,11 +588,11 @@ enterprises:
   categories:
   - 环境风险
   district: 拱墅区
-  lat: 30.319126
-  lon: 120.141503
-  geocode_level: 区县
+  lat: 30.34303
+  lon: 120.10703
+  geocode_level: 门址
 - name: 杭州市第七人民医院
-  address: ''
+  address: 天目山路305号(古荡新村地铁站D口步行180米)
   label: 杭州市第七人民医院
   data_source: ''
   source_type: official
@@ -581,8 +603,9 @@ enterprises:
   lat: 30.269947
   lon: 120.113505
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市排水有限公司城西水处理分公司
-  address: ''
+  address: 浙江省杭州市西湖区三墩镇竹牌头巷1号
   label: 杭州市排水有限公司城西水处理分公司
   data_source: ''
   source_type: official
@@ -590,11 +613,11 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 29.924478
-  lon: 119.429415
-  geocode_level: 跨区
+  lat: 30.306417
+  lon: 120.048394
+  geocode_level: 道路
 - name: 杭州市西溪医院
-  address: ''
+  address: 留下街道横埠街2号(近天目山路)
   label: 杭州市西溪医院
   data_source: ''
   source_type: official
@@ -605,8 +628,9 @@ enterprises:
   lat: 30.236576
   lon: 120.044752
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市中医院（浙江中医药大学附属杭州市中医院）
-  address: ''
+  address: 浙江省杭州市西湖区体育场路453号
   label: 杭州市中医院（浙江中医药大学附属杭州市中医院）
   data_source: ''
   source_type: official
@@ -614,9 +638,9 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.26924
-  lon: 120.15363
-  geocode_level: 未知
+  lat: 30.269347
+  lon: 120.154331
+  geocode_level: 门址
 - name: 杭州水务之江污水处理有限公司
   address: ''
   label: 杭州水务之江污水处理有限公司
@@ -630,7 +654,7 @@ enterprises:
   lon: 120.074727
   geocode_level: 住宅区
 - name: 浙江大学医学院附属第一医院之江院区
-  address: ''
+  address: 转塘街道梧桐路366号
   label: 浙江大学医学院附属第一医院之江院区
   data_source: ''
   source_type: official
@@ -641,8 +665,9 @@ enterprises:
   lat: 30.145902
   lon: 120.100094
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省立同德医院（翠苑院区）
-  address: ''
+  address: 浙江省杭州市西湖区古翠路234号
   label: 浙江省立同德医院（翠苑院区）
   data_source: ''
   source_type: official
@@ -650,9 +675,9 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.259242
-  lon: 120.130396
-  geocode_level: 区县
+  lat: 30.284188
+  lon: 120.120354
+  geocode_level: 门址
 - name: 浙江省人民医院（望江山院区）
   address: ''
   label: 浙江省人民医院（望江山院区）
@@ -678,7 +703,7 @@ enterprises:
   lon: 120.124832
   geocode_level: 兴趣点
 - name: 杭州泰盈金属制品有限公司
-  address: ''
+  address: 双浦镇之江轮渡路1号
   label: 杭州泰盈金属制品有限公司
   data_source: ''
   source_type: official
@@ -689,8 +714,9 @@ enterprises:
   lat: 30.119803
   lon: 120.131121
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭芝机电有限公司
-  address: ''
+  address: 教工路27-29号
   label: 杭芝机电有限公司
   data_source: ''
   source_type: official
@@ -701,8 +727,9 @@ enterprises:
   lat: 30.275424
   lon: 120.13554
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州弘安检测科技有限公司
-  address: ''
+  address: 留和路129号
   label: 杭州弘安检测科技有限公司
   data_source: ''
   source_type: official
@@ -713,8 +740,9 @@ enterprises:
   lat: 30.231308
   lon: 120.05115
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华安检测技术有限公司
-  address: ''
+  address: 浙江省杭州市西湖区留下街道留和路56号
   label: 杭州华安检测技术有限公司
   data_source: ''
   source_type: official
@@ -722,11 +750,11 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.259242
-  lon: 120.130396
-  geocode_level: 区县
+  lat: 30.236871
+  lon: 120.050523
+  geocode_level: 门址
 - name: 西湖大学
-  address: ''
+  address: 浙江省杭州市西湖区转塘街道石龙山街18号
   label: 西湖大学
   data_source: ''
   source_type: official
@@ -734,11 +762,11 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.326775
-  lon: 120.038122
-  geocode_level: 公交地铁站点
+  lat: 30.133535
+  lon: 120.080318
+  geocode_level: 门址
 - name: 浙江爱索拓科技有限公司
-  address: ''
+  address: 浙江省杭州市西湖区金蓬街368号5号楼1楼
   label: 浙江爱索拓科技有限公司
   data_source: ''
   source_type: official
@@ -746,11 +774,11 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.259242
-  lon: 120.130396
-  geocode_level: 区县
+  lat: 30.323304
+  lon: 120.059545
+  geocode_level: 门址
 - name: 浙江大学
-  address: ''
+  address: 浙江省杭州市西湖区余杭塘路866号
   label: 浙江大学
   data_source: ''
   source_type: official
@@ -758,9 +786,9 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.269214
-  lon: 120.19546
-  geocode_level: 跨区
+  lat: 30.302034
+  lon: 120.085974
+  geocode_level: 门址
 - name: 浙江金湖机电有限公司
   address: ''
   label: 浙江金湖机电有限公司
@@ -774,7 +802,7 @@ enterprises:
   lon: 120.12224
   geocode_level: 兴趣点
 - name: 浙江绿城心血管病医院
-  address: ''
+  address: 古墩路409号(近文一西路)
   label: 浙江绿城心血管病医院
   data_source: ''
   source_type: official
@@ -785,8 +813,9 @@ enterprises:
   lat: 30.28381
   lon: 120.098568
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江求是心血管病医院有限公司
-  address: ''
+  address: 文二路383号
   label: 浙江求是心血管病医院有限公司
   data_source: ''
   source_type: official
@@ -797,8 +826,9 @@ enterprises:
   lat: 30.281991
   lon: 120.123379
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省科学器材进出口有限责任公司
-  address: ''
+  address: 浙江省杭州市西湖区天目山路97号
   label: 浙江省科学器材进出口有限责任公司
   data_source: ''
   source_type: official
@@ -806,11 +836,11 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 30.259242
-  lon: 120.130396
-  geocode_level: 区县
+  lat: 30.271437
+  lon: 120.144001
+  geocode_level: 门址
 - name: 浙江中医药大学附属第三医院
-  address: ''
+  address: 浙江省杭州市西湖区莫干山路219号
   label: 浙江中医药大学附属第三医院
   data_source: ''
   source_type: official
@@ -818,9 +848,9 @@ enterprises:
   categories:
   - 环境风险
   district: 西湖区
-  lat: 29.843138
-  lon: 119.607804
-  geocode_level: 跨区
+  lat: 30.277574
+  lon: 120.15097
+  geocode_level: 门址
 - name: 博世电动工具（中国）有限公司
   address: ''
   label: 博世电动工具（中国）有限公司
@@ -834,7 +864,7 @@ enterprises:
   lon: 120.176533
   geocode_level: 兴趣点
 - name: 杭州大和热磁电子有限公司
-  address: ''
+  address: 浙江省杭州市滨江区滨康路668号
   label: 杭州大和热磁电子有限公司
   data_source: ''
   source_type: official
@@ -844,9 +874,9 @@ enterprises:
   district: 滨江区
   lat: 30.181753
   lon: 120.165838
-  geocode_level: 兴趣点
+  geocode_level: 门址
 - name: 杭州盾源聚芯半导体科技有限公司
-  address: ''
+  address: 浙江省杭州市滨江区滨康路668号C幢
   label: 杭州盾源聚芯半导体科技有限公司
   data_source: ''
   source_type: official
@@ -854,11 +884,11 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.208332
-  lon: 120.211981
-  geocode_level: 区县
+  lat: 30.181753
+  lon: 120.165838
+  geocode_level: 门址
 - name: 杭州绿能环保发电有限公司
-  address: ''
+  address: 浙江省杭州市滨江区浦沿街道山二村风紫墩68号
   label: 杭州绿能环保发电有限公司
   data_source: ''
   source_type: official
@@ -866,9 +896,9 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.208332
-  lon: 120.211981
-  geocode_level: 区县
+  lat: 30.160807
+  lon: 120.17608
+  geocode_level: 村庄
 - name: 杭州市滨江医院
   address: ''
   label: 杭州市滨江医院
@@ -882,7 +912,7 @@ enterprises:
   lon: 120.185414
   geocode_level: 村庄
 - name: 浙江大学医学院附属儿童医院滨江院区
-  address: ''
+  address: 滨盛路3333号
   label: 浙江大学医学院附属儿童医院滨江院区
   data_source: ''
   source_type: official
@@ -893,8 +923,9 @@ enterprises:
   lat: 30.191132
   lon: 120.174389
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江普康生物技术股份有限公司
-  address: ''
+  address: 滨康路587号
   label: 浙江普康生物技术股份有限公司
   data_source: ''
   source_type: official
@@ -905,8 +936,9 @@ enterprises:
   lat: 30.180205
   lon: 120.172691
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江苏泊尔家电制造有限公司
-  address: ''
+  address: 聚工路27号(江晖路地铁站B口步行390米)
   label: 浙江苏泊尔家电制造有限公司
   data_source: ''
   source_type: official
@@ -917,8 +949,9 @@ enterprises:
   lat: 30.185525
   lon: 120.212334
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 中国人民武装警察部队浙江省总队医院
-  address: ''
+  address: 浙江省杭州市滨江区江南大道86号
   label: 中国人民武装警察部队浙江省总队医院
   data_source: ''
   source_type: official
@@ -926,11 +959,11 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.185136
-  lon: 120.415092
-  geocode_level: 跨区
+  lat: 30.210149
+  lon: 120.215159
+  geocode_level: 门址
 - name: 祖名豆制品股份有限公司
-  address: ''
+  address: 江陵路77号
   label: 祖名豆制品股份有限公司
   data_source: ''
   source_type: official
@@ -941,8 +974,9 @@ enterprises:
   lat: 30.17706
   lon: 120.216704
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州航天电子技术有限公司
-  address: ''
+  address: 东洲街道高尔夫路566号
   label: 杭州航天电子技术有限公司
   data_source: ''
   source_type: official
@@ -953,8 +987,9 @@ enterprises:
   lat: 30.190227
   lon: 120.199049
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州精工技研有限公司
-  address: ''
+  address: 滨康路526号
   label: 杭州精工技研有限公司
   data_source: ''
   source_type: official
@@ -965,8 +1000,9 @@ enterprises:
   lat: 30.182451
   lon: 120.178746
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州启明医疗器械股份有限公司
-  address: ''
+  address: 浙江省杭州市滨江区江陵路88号2幢3楼311室
   label: 杭州启明医疗器械股份有限公司
   data_source: ''
   source_type: official
@@ -974,11 +1010,11 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.208332
-  lon: 120.211981
-  geocode_level: 区县
+  lat: 30.180705
+  lon: 120.21918
+  geocode_level: 小巷
 - name: 杭州钱唐环境服务有限公司
-  address: ''
+  address: 浙江省杭州市滨江区浦沿街道南环路3276号尚造科技园2幢109室
   label: 杭州钱唐环境服务有限公司
   data_source: ''
   source_type: official
@@ -986,11 +1022,11 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.208332
-  lon: 120.211981
-  geocode_level: 区县
+  lat: 30.17803
+  lon: 120.165954
+  geocode_level: 兴趣点
 - name: 杭州正远检测技术有限公司
-  address: ''
+  address: 浙江省杭州市滨江区西兴街道聚园路12号8幢13楼1303室
   label: 杭州正远检测技术有限公司
   data_source: ''
   source_type: official
@@ -1001,6 +1037,7 @@ enterprises:
   lat: 30.179183
   lon: 120.215075
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 聚光科技（杭州）股份有限公司
   address: ''
   label: 聚光科技（杭州）股份有限公司
@@ -1026,7 +1063,7 @@ enterprises:
   lon: 120.179057
   geocode_level: 兴趣点
 - name: 浙江万利金刚石工具有限公司
-  address: ''
+  address: 浙江省杭州市滨江区江虹南路388号
   label: 浙江万利金刚石工具有限公司
   data_source: ''
   source_type: official
@@ -1034,6 +1071,6 @@ enterprises:
   categories:
   - 环境风险
   district: 滨江区
-  lat: 30.208332
-  lon: 120.211981
-  geocode_level: 区县
+  lat: 30.166503
+  lon: 120.206153
+  geocode_level: 门址

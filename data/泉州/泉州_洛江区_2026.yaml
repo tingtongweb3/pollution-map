@@ -3,7 +3,7 @@ meta:
   subtitle: 数据来源：泉州生态环境局2026年度环境监管重点单位名录  |  共10家  |  坐标：高德地图
   output_path: ./泉州_洛江区_2026_output.png
 gaode:
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  cache_file: ./cache/geocode_cache_泉州.json
   city: 泉州
 enterprises:
 - name: 泉州市医疗废物处置中心

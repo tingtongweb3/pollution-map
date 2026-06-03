@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  cache_file: ./data/杭州/geocode_cache_杭州.json
   city: 杭州
   provider: gaode
 risk_zones:
@@ -69,7 +69,7 @@ enterprises:
   lon: 119.057928
   geocode_level: 住宅区
 - name: 淳安县第一人民医院
-  address: ''
+  address: 千岛湖镇环湖北路1869号
   label: 淳安县第一人民医院
   data_source: ''
   source_type: official
@@ -80,6 +80,7 @@ enterprises:
   lat: 29.605572
   lon: 119.11054
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 淳安县浪川纺织有限公司
   address: ''
   label: 淳安县浪川纺织有限公司
@@ -93,7 +94,7 @@ enterprises:
   lon: 118.612393
   geocode_level: 乡镇
 - name: 淳安县荣华纺织有限公司
-  address: ''
+  address: 大墅镇千岛湖风景区
   label: 淳安县荣华纺织有限公司
   data_source: ''
   source_type: official
@@ -104,8 +105,9 @@ enterprises:
   lat: 29.398127
   lon: 118.757736
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 淳安县新兴纺织有限公司
-  address: ''
+  address: 千岛湖镇曙光路88号
   label: 淳安县新兴纺织有限公司
   data_source: ''
   source_type: official
@@ -116,6 +118,7 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 淳安祥润实业有限公司
   address: ''
   label: 淳安祥润实业有限公司
@@ -141,7 +144,7 @@ enterprises:
   lon: 119.042015
   geocode_level: 区县
 - name: 杭州淳安千岛湖生态综合养殖有限公司
-  address: ''
+  address: 武强路79号
   label: 杭州淳安千岛湖生态综合养殖有限公司
   data_source: ''
   source_type: official
@@ -152,8 +155,9 @@ enterprises:
   lat: 29.595534
   lon: 119.184737
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华茜贸易有限公司
-  address: ''
+  address: 云山路60号
   label: 杭州华茜贸易有限公司
   data_source: ''
   source_type: official
@@ -164,8 +168,9 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州千岛湖啤酒有限公司
-  address: ''
+  address: 千岛湖镇坪山工业园区睦州大道659号
   label: 杭州千岛湖啤酒有限公司
   data_source: ''
   source_type: official
@@ -176,8 +181,9 @@ enterprises:
   lat: 29.609323
   lon: 119.148574
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州千岛湖新兴纺织织造有限公司
-  address: ''
+  address: 千岛湖镇曙光路88号
   label: 杭州千岛湖新兴纺织织造有限公司
   data_source: ''
   source_type: official
@@ -188,8 +194,9 @@ enterprises:
   lat: 29.591917
   lon: 119.048137
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州千岛湖瀛山实业有限公司
-  address: ''
+  address: 千岛湖镇坪山工业区牡丹路198号
   label: 杭州千岛湖瀛山实业有限公司
   data_source: ''
   source_type: official
@@ -200,8 +207,9 @@ enterprises:
   lat: 29.564836
   lon: 118.629927
   geocode_level: 未知
+  _address_source: auto_poi
 - name: 杭州商辂丝绸有限公司
-  address: ''
+  address: 兴华街260号
   label: 杭州商辂丝绸有限公司
   data_source: ''
   source_type: official
@@ -212,8 +220,9 @@ enterprises:
   lat: 29.72558
   lon: 118.793241
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州世松工贸有限公司
-  address: ''
+  address: 汾口镇工业园区
   label: 杭州世松工贸有限公司
   data_source: ''
   source_type: official
@@ -224,6 +233,7 @@ enterprises:
   lat: 29.425285
   lon: 118.538003
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州天道实业有限公司
   address: ''
   label: 杭州天道实业有限公司
@@ -237,7 +247,7 @@ enterprises:
   lon: 119.042015
   geocode_level: 区县
 - name: 农夫山泉（淳安茶园）有限公司
-  address: ''
+  address: 千岛湖镇春蚕路59号农夫山泉南山工厂
   label: 农夫山泉（淳安茶园）有限公司
   data_source: ''
   source_type: official
@@ -248,8 +258,9 @@ enterprises:
   lat: 29.491423
   lon: 119.181814
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江诚鑫织造有限公司
-  address: ''
+  address: 武强路31号
   label: 浙江诚鑫织造有限公司
   data_source: ''
   source_type: official
@@ -260,8 +271,9 @@ enterprises:
   lat: 29.424931
   lon: 118.541057
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江鼓山实业有限公司
-  address: ''
+  address: 千岛湖鼓山工业园区涌金路321号
   label: 浙江鼓山实业有限公司
   data_source: ''
   source_type: official
@@ -272,8 +284,9 @@ enterprises:
   lat: 29.613042
   lon: 119.111478
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江强强实业有限公司
-  address: ''
+  address: 千岛湖镇坪山工业园区睦州大道468号
   label: 浙江强强实业有限公司
   data_source: ''
   source_type: official
@@ -284,6 +297,7 @@ enterprises:
   lat: 29.610109
   lon: 119.159866
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江顺美丝绸有限公司
   address: ''
   label: 浙江顺美丝绸有限公司
@@ -309,7 +323,7 @@ enterprises:
   lon: 119.021087
   geocode_level: 乡镇
 - name: 光大环保能源（淳安）有限公司
-  address: ''
+  address: 千岛湖镇鼓山工业园区鼓山大道499号
   label: 光大环保能源（淳安）有限公司
   data_source: ''
   source_type: official
@@ -320,8 +334,9 @@ enterprises:
   lat: 29.674563
   lon: 118.933454
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江红泰砖业有限公司
-  address: ''
+  address: 汾口镇翁川源村沈家20号
   label: 浙江红泰砖业有限公司
   data_source: ''
   source_type: official
@@ -332,8 +347,9 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 淳安县市容环境卫生保障中心
-  address: ''
+  address: 新龙门路67号
   label: 淳安县市容环境卫生保障中心
   data_source: ''
   source_type: official
@@ -344,8 +360,9 @@ enterprises:
   lat: 29.61107
   lon: 119.049356
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州清淳环境服务有限公司
-  address: ''
+  address: 千岛湖镇恒盛钢管租赁站永兴路与环富线交叉口北140米
   label: 杭州清淳环境服务有限公司
   data_source: ''
   source_type: official
@@ -356,8 +373,9 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州盈铭深冷真空工程有限公司
-  address: ''
+  address: 临岐产业园富园路18号
   label: 杭州盈铭深冷真空工程有限公司
   data_source: ''
   source_type: official
@@ -365,8 +383,9 @@ enterprises:
   categories:
   - 环境风险
   district: 淳安县
+  _address_source: auto_poi
 - name: 浙江康盛科工贸有限公司
-  address: ''
+  address: 千岛湖镇坪山工业园区康盛路268号
   label: 浙江康盛科工贸有限公司
   data_source: ''
   source_type: official
@@ -377,8 +396,9 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 浙江众力压力容器制造有限公司
-  address: ''
+  address: 昌文线与贝欧路交叉口东南360米
   label: 浙江众力压力容器制造有限公司
   data_source: ''
   source_type: official
@@ -389,3 +409,4 @@ enterprises:
   lat: 29.609678
   lon: 119.042015
   geocode_level: 区县
+  _address_source: auto_poi

@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/南京/geocode_cache_南京.json
+  cache_file: ./data/南京/geocode_cache_南京.json
   city: 南京
 risk_zones:
   enabled: true

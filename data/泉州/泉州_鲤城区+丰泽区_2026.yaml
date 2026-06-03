@@ -7,7 +7,7 @@ map:
   - 20
   - 16
 gaode:
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  cache_file: ./cache/geocode_cache_泉州.json
   city: 泉州
 enterprises:
 - name: 泉州市中医院

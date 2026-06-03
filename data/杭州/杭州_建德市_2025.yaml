@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  cache_file: ./data/杭州/geocode_cache_杭州.json
   city: 杭州
   provider: gaode
 risk_zones:
@@ -57,7 +57,7 @@ categories:
     marker: s
 enterprises:
 - name: 格林生物科技股份有限公司
-  address: ''
+  address: 梅城镇马目南峰高新技术产业园
   label: 格林生物科技股份有限公司
   data_source: ''
   source_type: official
@@ -68,8 +68,9 @@ enterprises:
   lat: 29.522868
   lon: 119.466798
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 国际香料香精（杭州）有限公司
-  address: ''
+  address: 下涯镇施家村马目路18号
   label: 国际香料香精（杭州）有限公司
   data_source: ''
   source_type: official
@@ -80,8 +81,9 @@ enterprises:
   lat: 29.520397
   lon: 119.418537
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州澳赛诺生物科技有限公司
-  address: ''
+  address: 下涯镇马目园区丰和路18号
   label: 杭州澳赛诺生物科技有限公司
   data_source: ''
   source_type: official
@@ -92,8 +94,9 @@ enterprises:
   lat: 29.524181
   lon: 119.432854
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州崇耀科技发展有限公司
-  address: ''
+  address: 杭州崇耀科技发展有限公司西北侧150米
   label: 杭州崇耀科技发展有限公司
   data_source: ''
   source_type: official
@@ -104,6 +107,7 @@ enterprises:
   lat: 29.521824
   lon: 119.428869
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州德爱威云建材科技有限公司
   address: ''
   label: 杭州德爱威云建材科技有限公司
@@ -117,7 +121,7 @@ enterprises:
   lon: 119.408645
   geocode_level: 公交地铁站点
 - name: 杭州福斯特药业有限公司
-  address: ''
+  address: 梅城镇城南工业区南峰路177号
   label: 杭州福斯特药业有限公司
   data_source: ''
   source_type: official
@@ -128,8 +132,9 @@ enterprises:
   lat: 29.521861
   lon: 119.459517
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州建德污水处理有限公司
-  address: ''
+  address: 新华路248号
   label: 杭州建德污水处理有限公司
   data_source: ''
   source_type: official
@@ -140,8 +145,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州龙驹合成材料有限公司
-  address: ''
+  address: 高新技术产业园梅城姜山路9号
   label: 杭州龙驹合成材料有限公司
   data_source: ''
   source_type: official
@@ -152,8 +158,9 @@ enterprises:
   lat: 29.525778
   lon: 119.459548
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州茂元环保科技有限公司
-  address: ''
+  address: 梅城镇新胜路
   label: 杭州茂元环保科技有限公司
   data_source: ''
   source_type: official
@@ -164,8 +171,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州赛肯新材料技术有限公司
-  address: ''
+  address: 下涯镇青塘路8号
   label: 杭州赛肯新材料技术有限公司
   data_source: ''
   source_type: official
@@ -176,8 +184,9 @@ enterprises:
   lat: 29.520482
   lon: 119.432079
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州圣玛特毛绒有限公司
-  address: ''
+  address: 乾潭镇工业功能区振华路9号
   label: 杭州圣玛特毛绒有限公司
   data_source: ''
   source_type: official
@@ -188,8 +197,9 @@ enterprises:
   lat: 29.62692
   lon: 119.548255
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧宏康美盛铝业有限公司
-  address: ''
+  address: 乾潭安仁工业区萧宏康美盛厂内
   label: 杭州萧宏康美盛铝业有限公司
   data_source: ''
   source_type: official
@@ -200,8 +210,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州中策橡胶循环科技有限公司
-  address: ''
+  address: 乾潭镇安仁村安钦路2号
   label: 杭州中策橡胶循环科技有限公司
   data_source: ''
   source_type: official
@@ -212,8 +223,9 @@ enterprises:
   lat: 29.684296
   lon: 119.598704
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州中荷环境科技有限公司
-  address: ''
+  address: 大洋溪路6号
   label: 杭州中荷环境科技有限公司
   data_source: ''
   source_type: official
@@ -224,8 +236,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 建德加华牧业有限公司
-  address: ''
+  address: 徐七线
   label: 建德加华牧业有限公司
   data_source: ''
   source_type: official
@@ -236,8 +249,9 @@ enterprises:
   lat: 29.721503
   lon: 119.551248
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德建业资源再生技术有限公司
-  address: ''
+  address: 梅城镇南锋五马洲新胜路7号
   label: 建德建业资源再生技术有限公司
   data_source: ''
   source_type: official
@@ -248,8 +262,9 @@ enterprises:
   lat: 29.522899
   lon: 119.462474
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德锦成实业有限公司
-  address: ''
+  address: 雅鼎路668号一号厂房
   label: 建德锦成实业有限公司
   data_source: ''
   source_type: official
@@ -260,8 +275,9 @@ enterprises:
   lat: 29.526642
   lon: 119.347403
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德浦发热电能源有限公司
-  address: ''
+  address: 寿昌镇城中村夫衣垅山湾
   label: 建德浦发热电能源有限公司
   data_source: ''
   source_type: official
@@ -272,8 +288,9 @@ enterprises:
   lat: 29.353486
   lon: 119.237836
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市白沙化工有限公司
-  address: ''
+  address: 下河线丰和路9号
   label: 建德市白沙化工有限公司
   data_source: ''
   source_type: official
@@ -284,8 +301,9 @@ enterprises:
   lat: 29.526277
   lon: 119.429182
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市第一人民医院
-  address: ''
+  address: 新安江街道严州大道599号
   label: 建德市第一人民医院
   data_source: ''
   source_type: official
@@ -296,8 +314,9 @@ enterprises:
   lat: 29.472217
   lon: 119.290557
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市夫衣垅垃圾处理有限公司
-  address: ''
+  address: 320国道399号
   label: 建德市夫衣垅垃圾处理有限公司
   data_source: ''
   source_type: official
@@ -308,8 +327,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 建德市辉煌镀业有限公司
-  address: ''
+  address: 梅城镇五马洲开发区
   label: 建德市辉煌镀业有限公司
   data_source: ''
   source_type: official
@@ -320,6 +340,7 @@ enterprises:
   lat: 29.529264
   lon: 119.459137
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市垃圾处理有限公司
   address: ''
   label: 建德市垃圾处理有限公司
@@ -333,7 +354,7 @@ enterprises:
   lon: 119.281195
   geocode_level: 区县
 - name: 建德市马南镀业有限公司
-  address: ''
+  address: 梅城镇高新园区
   label: 建德市马南镀业有限公司
   data_source: ''
   source_type: official
@@ -344,8 +365,9 @@ enterprises:
   lat: 29.529876
   lon: 119.459997
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市三弟兄农业开发有限公司
-  address: ''
+  address: 梅城镇南峰严陵路358号
   label: 建德市三弟兄农业开发有限公司
   data_source: ''
   source_type: official
@@ -356,8 +378,9 @@ enterprises:
   lat: 29.518548
   lon: 119.489341
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市三江生态管理有限公司
-  address: ''
+  address: 梅城镇姜山村
   label: 建德市三江生态管理有限公司
   data_source: ''
   source_type: official
@@ -368,8 +391,9 @@ enterprises:
   lat: 29.53134
   lon: 119.466242
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市新盛镀业有限公司
-  address: ''
+  address: 梅城镇五马洲电镀产业园
   label: 建德市新盛镀业有限公司
   data_source: ''
   source_type: official
@@ -380,8 +404,9 @@ enterprises:
   lat: 29.530528
   lon: 119.460141
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市资产经营开发有限公司（寿昌污水处理厂）
-  address: ''
+  address: 广场东路67号建资商厦
   label: 建德市资产经营开发有限公司（寿昌污水处理厂）
   data_source: ''
   source_type: official
@@ -392,8 +417,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 建德云珍实业有限公司
-  address: ''
+  address: 乾潭镇建北北路101号
   label: 建德云珍实业有限公司
   data_source: ''
   source_type: official
@@ -404,8 +430,9 @@ enterprises:
   lat: 29.630339
   lon: 119.549117
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 青岛啤酒（杭州）有限公司
-  address: ''
+  address: 新安江街道艾溪路999号厂区三号楼包装区一楼
   label: 青岛啤酒（杭州）有限公司
   data_source: ''
   source_type: official
@@ -416,6 +443,7 @@ enterprises:
   lat: 29.435945
   lon: 119.256292
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 五马洲电镀废水集中处理站
   address: ''
   label: 五马洲电镀废水集中处理站
@@ -429,7 +457,7 @@ enterprises:
   lon: 119.462473
   geocode_level: 住宅区
 - name: 浙江大洋生物科技集团股份有限公司
-  address: ''
+  address: 大洋镇工业园区
   label: 浙江大洋生物科技集团股份有限公司
   data_source: ''
   source_type: official
@@ -440,8 +468,9 @@ enterprises:
   lat: 29.445149
   lon: 119.508061
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江东大特种材料有限公司
-  address: ''
+  address: 新盛镀业东北侧180米
   label: 浙江东大特种材料有限公司
   data_source: ''
   source_type: official
@@ -452,8 +481,9 @@ enterprises:
   lat: 29.532031
   lon: 119.46087
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江建业化工股份有限公司
-  address: ''
+  address: 梅城镇严东关路8号
   label: 浙江建业化工股份有限公司
   data_source: ''
   source_type: official
@@ -464,8 +494,9 @@ enterprises:
   lat: 29.539196
   lon: 119.514474
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江乾鑫帆纸业有限公司
-  address: ''
+  address: 梅城三都镇工业区
   label: 浙江乾鑫帆纸业有限公司
   data_source: ''
   source_type: official
@@ -476,8 +507,9 @@ enterprises:
   lat: 29.54048
   lon: 119.553454
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江赛立成生物科技有限公司
-  address: ''
+  address: 下涯镇马南园区丰和村丰和路16号
   label: 浙江赛立成生物科技有限公司
   data_source: ''
   source_type: official
@@ -488,8 +520,9 @@ enterprises:
   lat: 29.52381
   lon: 119.430492
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江深蓝新材料科技有限公司
-  address: ''
+  address: 梅城镇姜山路2号
   label: 浙江深蓝新材料科技有限公司
   data_source: ''
   source_type: official
@@ -500,8 +533,9 @@ enterprises:
   lat: 29.523929
   lon: 119.459541
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安化工集团股份有限公司硅酮密封胶厂
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安化工集团股份有限公司硅酮密封胶厂
   data_source: ''
   source_type: official
@@ -512,8 +546,9 @@ enterprises:
   lat: 29.47019
   lon: 119.284592
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安化工集团股份有限公司建德化工二厂
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安化工集团股份有限公司建德化工二厂
   data_source: ''
   source_type: official
@@ -524,8 +559,9 @@ enterprises:
   lat: 29.470725
   lon: 119.286701
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安化工集团股份有限公司建德农药厂
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安化工集团股份有限公司建德农药厂
   data_source: ''
   source_type: official
@@ -536,8 +572,9 @@ enterprises:
   lat: 29.470725
   lon: 119.286701
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安迈图有机硅有限责任公司
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安迈图有机硅有限责任公司
   data_source: ''
   source_type: official
@@ -548,8 +585,9 @@ enterprises:
   lat: 29.527496
   lon: 119.42251
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新化化工股份有限公司
-  address: ''
+  address: 新安江路909号
   label: 浙江新化化工股份有限公司
   data_source: ''
   source_type: official
@@ -560,8 +598,9 @@ enterprises:
   lat: 29.525579
   lon: 119.352772
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江英联锂能新能源科技有限公司
-  address: ''
+  address: 高铁新区五马洲工业园区科创北路
   label: 浙江英联锂能新能源科技有限公司
   data_source: ''
   source_type: official
@@ -572,8 +611,9 @@ enterprises:
   lat: 29.528255
   lon: 119.467377
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江远力健药业有限责任公司
-  address: ''
+  address: 新安江街道园区路117号
   label: 浙江远力健药业有限责任公司
   data_source: ''
   source_type: official
@@ -584,8 +624,9 @@ enterprises:
   lat: 29.437982
   lon: 119.278737
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江致中和实业有限公司
-  address: ''
+  address: 新安江路1915号
   label: 浙江致中和实业有限公司
   data_source: ''
   source_type: official
@@ -596,6 +637,7 @@ enterprises:
   lat: 29.520057
   lon: 119.316392
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 中策橡胶（建德）有限公司春秋厂区
   address: ''
   label: 中策橡胶（建德）有限公司春秋厂区
@@ -609,7 +651,7 @@ enterprises:
   lon: 119.367511
   geocode_level: 兴趣点
 - name: 杭州杭新固体废物处置有限公司
-  address: ''
+  address: 五马洲路8号
   label: 杭州杭新固体废物处置有限公司
   data_source: ''
   source_type: official
@@ -620,6 +662,7 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州建铜集团有限公司八家坞尾矿库
   address: ''
   label: 杭州建铜集团有限公司八家坞尾矿库
@@ -642,7 +685,7 @@ enterprises:
   lon: 119.286701
   geocode_level: 住宅区
 - name: 杭州高能时代新材料科技有限公司
-  address: ''
+  address: 下涯镇湖塘路1号
   label: 杭州高能时代新材料科技有限公司
   data_source: ''
   source_type: official
@@ -653,8 +696,9 @@ enterprises:
   lat: 29.511889
   lon: 119.404581
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华屹新材料有限公司
-  address: ''
+  address: 建德鑫鼎纤维材料有限公司西南门东南60米
   label: 杭州华屹新材料有限公司
   data_source: ''
   source_type: official
@@ -665,8 +709,9 @@ enterprises:
   lat: 29.412577
   lon: 119.261922
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州骏浩新材料有限公司
-  address: ''
+  address: 大同镇工业功能区
   label: 杭州骏浩新材料有限公司
   data_source: ''
   source_type: official
@@ -677,8 +722,9 @@ enterprises:
   lat: 29.296906
   lon: 119.087347
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州卡洛实业有限公司
-  address: ''
+  address: 寿昌镇大同镇野胡山
   label: 杭州卡洛实业有限公司
   data_source: ''
   source_type: official
@@ -689,8 +735,9 @@ enterprises:
   lat: 29.298663
   lon: 119.082269
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州日耀涂料有限公司
-  address: ''
+  address: 梅城镇五马洲开发区新盛镀业对面
   label: 杭州日耀涂料有限公司
   data_source: ''
   source_type: official
@@ -701,8 +748,9 @@ enterprises:
   lat: 29.531027
   lon: 119.458511
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州星宇炭素环保科技有限公司
-  address: ''
+  address: 梅城镇五马洲路10号
   label: 杭州星宇炭素环保科技有限公司
   data_source: ''
   source_type: official
@@ -713,8 +761,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州宇圣环境科技有限公司
-  address: ''
+  address: 大洋溪路6号
   label: 杭州宇圣环境科技有限公司
   data_source: ''
   source_type: official
@@ -725,8 +774,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州正和纳米科技有限公司
-  address: ''
+  address: 草张线与稻香路交叉口东420米
   label: 杭州正和纳米科技有限公司
   data_source: ''
   source_type: official
@@ -737,8 +787,9 @@ enterprises:
   lat: 29.29813
   lon: 119.090877
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德海螺水泥有限责任公司
-  address: ''
+  address: 李家镇海螺水泥
   label: 建德海螺水泥有限责任公司
   data_source: ''
   source_type: official
@@ -749,6 +800,7 @@ enterprises:
   lat: 29.331285
   lon: 119.05598
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德红狮环保科技有限公司
   address: ''
   label: 建德红狮环保科技有限公司
@@ -762,7 +814,7 @@ enterprises:
   lon: 119.286701
   geocode_level: 住宅区
 - name: 建德红狮水泥有限公司
-  address: ''
+  address: 寿昌镇西华村
   label: 建德红狮水泥有限公司
   data_source: ''
   source_type: official
@@ -773,8 +825,9 @@ enterprises:
   lat: 29.420886
   lon: 119.15744
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德南方水泥有限公司（绿色建材产业园）
-  address: ''
+  address: 更楼街道岩源村石马头
   label: 建德南方水泥有限公司（绿色建材产业园）
   data_source: ''
   source_type: official
@@ -785,8 +838,9 @@ enterprises:
   lat: 29.425941
   lon: 119.213288
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市东胜建材有限公司
-  address: ''
+  address: 梅城镇巽峰路37号
   label: 建德市东胜建材有限公司
   data_source: ''
   source_type: official
@@ -797,8 +851,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 建德市华宇纳米科技有限公司
-  address: ''
+  address: 李家镇工业区
   label: 建德市华宇纳米科技有限公司
   data_source: ''
   source_type: official
@@ -809,8 +864,9 @@ enterprises:
   lat: 29.314721
   lon: 119.029979
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市马目砖瓦厂
-  address: ''
+  address: 下涯马目高新园区
   label: 建德市马目砖瓦厂
   data_source: ''
   source_type: official
@@ -821,8 +877,9 @@ enterprises:
   lat: 29.500242
   lon: 119.393679
   geocode_level: 村庄
+  _address_source: auto_poi
 - name: 建德市双超钙业有限公司
-  address: ''
+  address: 李家镇长林村浙
   label: 建德市双超钙业有限公司
   data_source: ''
   source_type: official
@@ -833,8 +890,9 @@ enterprises:
   lat: 29.30019
   lon: 119.004166
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市旭阳新型墙材有限公司
-  address: ''
+  address: 大洋镇小洋村
   label: 建德市旭阳新型墙材有限公司
   data_source: ''
   source_type: official
@@ -845,8 +903,9 @@ enterprises:
   lat: 29.470534
   lon: 119.52759
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江布石新材料有限公司
-  address: ''
+  address: 航头镇石屏村石屏庄
   label: 浙江布石新材料有限公司
   data_source: ''
   source_type: official
@@ -857,6 +916,7 @@ enterprises:
   lat: 29.3766
   lon: 119.110828
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江嘉宁环保新材料科技有限公司
   address: ''
   label: 浙江嘉宁环保新材料科技有限公司
@@ -882,7 +942,7 @@ enterprises:
   lon: 119.286701
   geocode_level: 住宅区
 - name: 浙江坤孚智创科技有限公司
-  address: ''
+  address: 施家大道横一路
   label: 浙江坤孚智创科技有限公司
   data_source: ''
   source_type: official
@@ -893,6 +953,7 @@ enterprises:
   lat: 29.519742
   lon: 119.410046
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省建德市正发碳酸钙有限公司
   address: ''
   label: 浙江省建德市正发碳酸钙有限公司
@@ -906,7 +967,7 @@ enterprises:
   lon: 119.281195
   geocode_level: 区县
 - name: 浙江省建德市正发药业有限公司
-  address: ''
+  address: 大同镇工业功能区
   label: 浙江省建德市正发药业有限公司
   data_source: ''
   source_type: official
@@ -917,8 +978,9 @@ enterprises:
   lat: 29.297579
   lon: 119.10331
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江舜达材料科技有限公司
-  address: ''
+  address: 园区南路117号
   label: 浙江舜达材料科技有限公司
   data_source: ''
   source_type: official
@@ -929,8 +991,9 @@ enterprises:
   lat: 29.435197
   lon: 119.282706
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江天石纳米科技股份有限公司
-  address: ''
+  address: 下涯镇朗索路7号
   label: 浙江天石纳米科技股份有限公司
   data_source: ''
   source_type: official
@@ -941,8 +1004,9 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 浙江献驰环保科技有限公司
-  address: ''
+  address: 二桥路100号
   label: 浙江献驰环保科技有限公司
   data_source: ''
   source_type: official
@@ -953,8 +1017,9 @@ enterprises:
   lat: 29.352172
   lon: 119.236016
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安化工集团股份有限公司建德热电厂
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安化工集团股份有限公司建德热电厂
   data_source: ''
   source_type: official
@@ -965,8 +1030,9 @@ enterprises:
   lat: 29.470725
   lon: 119.286701
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江云峰纳米科技有限公司
-  address: ''
+  address: 下涯镇朗索路7号
   label: 浙江云峰纳米科技有限公司
   data_source: ''
   source_type: official
@@ -977,6 +1043,7 @@ enterprises:
   lat: 29.376455
   lon: 119.110936
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 表5  土壤污染重点监管单位
   address: ''
   label: 表5  土壤污染重点监管单位
@@ -1002,7 +1069,7 @@ enterprises:
   lon: 119.281195
   geocode_level: 区县
 - name: 杭州德邦检测技术有限公司
-  address: ''
+  address: 609县道附近
   label: 杭州德邦检测技术有限公司
   data_source: ''
   source_type: official
@@ -1013,8 +1080,9 @@ enterprises:
   lat: 29.53762
   lon: 119.559805
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州东方雨虹建筑材料有限公司
-  address: ''
+  address: 下涯镇五星路1号
   label: 杭州东方雨虹建筑材料有限公司
   data_source: ''
   source_type: official
@@ -1025,6 +1093,7 @@ enterprises:
   lat: 29.514081
   lon: 119.406909
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州海睦环保工程有限公司
   address: ''
   label: 杭州海睦环保工程有限公司
@@ -1050,7 +1119,7 @@ enterprises:
   lon: 119.281195
   geocode_level: 区县
 - name: 杭州沈氏节能科技股份有限公司
-  address: ''
+  address: 航头镇大店口工业园区
   label: 杭州沈氏节能科技股份有限公司
   data_source: ''
   source_type: official
@@ -1061,8 +1130,9 @@ enterprises:
   lat: 29.261597
   lon: 119.151734
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市第二人民医院
-  address: ''
+  address: 梅城大道120号
   label: 建德市第二人民医院
   data_source: ''
   source_type: official
@@ -1073,8 +1143,9 @@ enterprises:
   lat: 29.540287
   lon: 119.48134
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 建德市物产再生利用有限公司
-  address: ''
+  address: 园区路128号
   label: 建德市物产再生利用有限公司
   data_source: ''
   source_type: official
@@ -1085,6 +1156,7 @@ enterprises:
   lat: 29.474964
   lon: 119.281195
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 建德市新安江电焊条有限公司
   address: ''
   label: 建德市新安江电焊条有限公司
@@ -1098,7 +1170,7 @@ enterprises:
   lon: 119.283032
   geocode_level: 住宅区
 - name: 浙江铁凝汽车用品有限公司
-  address: ''
+  address: 梅城镇南峰高新技术产业园新胜路
   label: 浙江铁凝汽车用品有限公司
   data_source: ''
   source_type: official
@@ -1109,8 +1181,9 @@ enterprises:
   lat: 29.51979
   lon: 119.462872
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新安化工集团股份有限公司
-  address: ''
+  address: 下涯镇钟潭路111号马目有机硅基地
   label: 浙江新安化工集团股份有限公司
   data_source: ''
   source_type: official
@@ -1121,6 +1194,7 @@ enterprises:
   lat: 29.47019
   lon: 119.284592
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 抄送：西湖景区城管局。
   address: ''
   label: 抄送：西湖景区城管局。

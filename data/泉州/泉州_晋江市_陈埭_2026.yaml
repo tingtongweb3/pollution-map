@@ -4,7 +4,7 @@ meta:
   output_path: ./泉州_晋江市_陈埭_2026_output.png
 gaode:
   city: 泉州
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  cache_file: ./cache/geocode_cache_泉州.json
 enterprises:
 - name: 晋江市南港污水处理有限公司
   address: ''

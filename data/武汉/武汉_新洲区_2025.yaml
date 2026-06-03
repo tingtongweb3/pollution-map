@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/武汉/geocode_cache_武汉.json
+  cache_file: ./data/武汉/geocode_cache_武汉.json
   city: 武汉
   provider: gaode
 risk_zones:

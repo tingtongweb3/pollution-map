@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/杭州/geocode_cache_杭州.json
+  cache_file: ./data/杭州/geocode_cache_杭州.json
   city: 杭州
   provider: gaode
 risk_zones:
@@ -57,7 +57,7 @@ categories:
     marker: s
 enterprises:
 - name: 奥尔贝茨（杭州）有限公司
-  address: ''
+  address: 江东二路1646号(江东二路地铁站D口步行490米)
   label: 奥尔贝茨（杭州）有限公司
   data_source: ''
   source_type: official
@@ -68,8 +68,9 @@ enterprises:
   lat: 30.324924
   lon: 120.498822
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 百合花集团股份有限公司
-  address: ''
+  address: 经五路1768号
   label: 百合花集团股份有限公司
   data_source: ''
   source_type: official
@@ -80,8 +81,9 @@ enterprises:
   lat: 30.268753
   lon: 120.601724
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 拜耳作物科学（中国）有限公司
-  address: ''
+  address: 临江街道经七路839号
   label: 拜耳作物科学（中国）有限公司
   data_source: ''
   source_type: official
@@ -92,8 +94,9 @@ enterprises:
   lat: 30.281584
   lon: 120.615975
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 大田大明光学（杭州）有限公司
-  address: ''
+  address: 下沙经济技术开发区10号大街137号东大田
   label: 大田大明光学（杭州）有限公司
   data_source: ''
   source_type: official
@@ -104,6 +107,7 @@ enterprises:
   lat: 30.296509
   lon: 120.373666
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 东南新材料（杭州）股份有限公司
   address: ''
   label: 东南新材料（杭州）股份有限公司
@@ -117,7 +121,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 富丽达（杭州）纺织控股有限公司
-  address: ''
+  address: 临江工业园区纬六路1688号
   label: 富丽达（杭州）纺织控股有限公司
   data_source: ''
   source_type: official
@@ -128,8 +132,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州澳亚生物技术股份有限公司
-  address: ''
+  address: 1号大街与2号大街交叉口东南100米
   label: 杭州澳亚生物技术股份有限公司
   data_source: ''
   source_type: official
@@ -140,8 +145,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州百合辉柏赫颜料有限公司
-  address: ''
+  address: 新湾镇临江工业区经五路1888号
   label: 杭州百合辉柏赫颜料有限公司
   data_source: ''
   source_type: official
@@ -152,8 +158,9 @@ enterprises:
   lat: 30.270654
   lon: 120.599324
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州邦联氨纶股份有限公司
-  address: ''
+  address: 青六北路1115号
   label: 杭州邦联氨纶股份有限公司
   data_source: ''
   source_type: official
@@ -164,6 +171,7 @@ enterprises:
   lat: 30.336305
   lon: 120.492548
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州昌德实业有限公司
   address: ''
   label: 杭州昌德实业有限公司
@@ -177,7 +185,7 @@ enterprises:
   lon: 120.678292
   geocode_level: 跨区
 - name: 杭州辰泽新材料有限公司
-  address: ''
+  address: 新宏线与左十四线交叉口东北140米
   label: 杭州辰泽新材料有限公司
   data_source: ''
   source_type: official
@@ -188,8 +196,9 @@ enterprises:
   lat: 30.288404
   lon: 120.547582
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州大江东志明养殖有限公司
-  address: ''
+  address: 临江工业园区长风路3589号
   label: 杭州大江东志明养殖有限公司
   data_source: ''
   source_type: official
@@ -200,6 +209,7 @@ enterprises:
   lat: 30.330197
   lon: 120.462888
   geocode_level: 村庄
+  _address_source: auto_poi
 - name: 杭州电化集团有限公司
   address: ''
   label: 杭州电化集团有限公司
@@ -225,7 +235,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 杭州顶津食品有限公司
-  address: ''
+  address: 银海街535号
   label: 杭州顶津食品有限公司
   data_source: ''
   source_type: official
@@ -236,8 +246,9 @@ enterprises:
   lat: 30.336034
   lon: 120.356058
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州顶益食品有限公司
-  address: ''
+  address: 经济技术开发区银海街555号
   label: 杭州顶益食品有限公司
   data_source: ''
   source_type: official
@@ -248,8 +259,9 @@ enterprises:
   lat: 30.335976
   lon: 120.352962
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州东南毛纺织染整有限公司
-  address: ''
+  address: 大江东义蓬街道义蓬路272-16号
   label: 杭州东南毛纺织染整有限公司
   data_source: ''
   source_type: official
@@ -260,8 +272,9 @@ enterprises:
   lat: 30.255768
   lon: 120.487247
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州弗沃德精细化工有限公司
-  address: ''
+  address: 临江工业园新世纪大道1618号
   label: 杭州弗沃德精细化工有限公司
   data_source: ''
   source_type: official
@@ -272,8 +285,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州福莱蒽特股份有限公司
-  address: ''
+  address: 临江工业区经五路1919号
   label: 杭州福莱蒽特股份有限公司
   data_source: ''
   source_type: official
@@ -284,8 +298,9 @@ enterprises:
   lat: 30.27014
   lon: 120.596926
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州福莱蒽特科技有限公司
-  address: ''
+  address: 经四路1788号
   label: 杭州福莱蒽特科技有限公司
   data_source: ''
   source_type: official
@@ -296,8 +311,9 @@ enterprises:
   lat: 30.268823
   lon: 120.593139
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州富丽达环保科技有限公司
-  address: ''
+  address: 临江工业园区纬六路1688号
   label: 杭州富丽达环保科技有限公司
   data_source: ''
   source_type: official
@@ -308,6 +324,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州广绿养殖有限公司
   address: ''
   label: 杭州广绿养殖有限公司
@@ -321,7 +338,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 杭州国光药业股份有限公司
-  address: ''
+  address: 下沙经济技术开发区6号大街25号路口
   label: 杭州国光药业股份有限公司
   data_source: ''
   source_type: official
@@ -332,8 +349,9 @@ enterprises:
   lat: 30.293924
   lon: 120.374499
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州海潮橡胶有限公司
-  address: ''
+  address: 经济技术开发区1号大街1号(之江东路与智格路交叉口)
   label: 杭州海潮橡胶有限公司
   data_source: ''
   source_type: official
@@ -344,8 +362,9 @@ enterprises:
   lat: 30.287835
   lon: 120.319309
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州杭鼎锦纶科技有限公司
-  address: ''
+  address: 下沙经济开发区五号大街10号路
   label: 杭州杭鼎锦纶科技有限公司
   data_source: ''
   source_type: official
@@ -356,8 +375,9 @@ enterprises:
   lat: 30.297434
   lon: 120.349283
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州航民钱江染整有限公司
-  address: ''
+  address: 钱江印染化工有限公司(长五线)
   label: 杭州航民钱江染整有限公司
   data_source: ''
   source_type: official
@@ -368,8 +388,9 @@ enterprises:
   lat: 30.339533
   lon: 120.471735
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州浩然纺织科技有限公司
-  address: ''
+  address: 浙江省杭州市钱塘区青六线
   label: 杭州浩然纺织科技有限公司
   data_source: ''
   source_type: official
@@ -380,8 +401,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州红妍颜料化工有限公司
-  address: ''
+  address: 河庄镇蜀山闸东
   label: 杭州红妍颜料化工有限公司
   data_source: ''
   source_type: official
@@ -392,6 +414,7 @@ enterprises:
   lat: 30.315257
   lon: 120.474682
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华电江东热电有限公司
   address: ''
   label: 杭州华电江东热电有限公司
@@ -405,7 +428,7 @@ enterprises:
   lon: 120.462888
   geocode_level: 村庄
 - name: 杭州华牧养殖有限公司
-  address: ''
+  address: S9(钱江隧道)
   label: 杭州华牧养殖有限公司
   data_source: ''
   source_type: official
@@ -416,8 +439,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州华丝夏莎纺织科技有限公司
-  address: ''
+  address: 白杨街道18号大街919号
   label: 杭州华丝夏莎纺织科技有限公司
   data_source: ''
   source_type: official
@@ -428,8 +452,9 @@ enterprises:
   lat: 30.282118
   lon: 120.338939
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州汇云天丽实业有限公司
-  address: ''
+  address: 10号大街218号
   label: 杭州汇云天丽实业有限公司
   data_source: ''
   source_type: official
@@ -440,8 +465,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州吉华江东化工有限公司
-  address: ''
+  address: 临江街道临江工业园区新世纪大道1766号
   label: 杭州吉华江东化工有限公司
   data_source: ''
   source_type: official
@@ -452,8 +478,9 @@ enterprises:
   lat: 30.330197
   lon: 120.462888
   geocode_level: 村庄
+  _address_source: auto_poi
 - name: 杭州加多宝饮料有限公司
-  address: ''
+  address: 下沙经济技术开发区23号大街750号
   label: 杭州加多宝饮料有限公司
   data_source: ''
   source_type: official
@@ -464,8 +491,9 @@ enterprises:
   lat: 30.295848
   lon: 120.378089
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州嘉濠印花染整有限公司
-  address: ''
+  address: 纬六路1799号
   label: 杭州嘉濠印花染整有限公司
   data_source: ''
   source_type: official
@@ -476,8 +504,9 @@ enterprises:
   lat: 30.285991
   lon: 120.583345
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州金匀盛科技有限公司
-  address: ''
+  address: 经四路668号
   label: 杭州金匀盛科技有限公司
   data_source: ''
   source_type: official
@@ -488,8 +517,9 @@ enterprises:
   lat: 30.301338
   lon: 120.59155
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州九源基因工程股份有限公司
-  address: ''
+  address: 白杨街道8号大街23号(杭州经济技术开发区八号大街东)
   label: 杭州九源基因工程股份有限公司
   data_source: ''
   source_type: official
@@ -500,8 +530,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州聚合顺新材料股份有限公司
-  address: ''
+  address: 临江工业园区纬十路389号
   label: 杭州聚合顺新材料股份有限公司
   data_source: ''
   source_type: official
@@ -512,6 +543,7 @@ enterprises:
   lat: 30.259448
   lon: 120.597919
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州科利化工股份有限公司
   address: ''
   label: 杭州科利化工股份有限公司
@@ -537,7 +569,7 @@ enterprises:
   lon: 120.687875
   geocode_level: 跨区
 - name: 杭州立昂微电子股份有限公司
-  address: ''
+  address: 杭州经济开发区(下沙)20号大街199号
   label: 杭州立昂微电子股份有限公司
   data_source: ''
   source_type: official
@@ -548,8 +580,9 @@ enterprises:
   lat: 30.278347
   lon: 120.372318
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州利群环保纸业有限公司
-  address: ''
+  address: 11号大街18号杭州利群环保纸业有限公司
   label: 杭州利群环保纸业有限公司
   data_source: ''
   source_type: official
@@ -560,8 +593,9 @@ enterprises:
   lat: 30.291538
   lon: 120.354329
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州联发纤维有限公司
-  address: ''
+  address: 白杨街道22号大街48号
   label: 杭州联发纤维有限公司
   data_source: ''
   source_type: official
@@ -572,6 +606,7 @@ enterprises:
   lat: 30.274067
   lon: 120.352366
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州联丰养殖有限公司
   address: ''
   label: 杭州联丰养殖有限公司
@@ -585,7 +620,7 @@ enterprises:
   lon: 120.263539
   geocode_level: 跨区
 - name: 杭州临东农业开发有限公司
-  address: ''
+  address: 十工段
   label: 杭州临东农业开发有限公司
   data_source: ''
   source_type: official
@@ -596,6 +631,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州临江环保热电有限公司
   address: ''
   label: 杭州临江环保热电有限公司
@@ -633,7 +669,7 @@ enterprises:
   lon: 120.64222
   geocode_level: 跨区
 - name: 杭州默沙东制药有限公司
-  address: ''
+  address: 文海北路199号
   label: 杭州默沙东制药有限公司
   data_source: ''
   source_type: official
@@ -644,8 +680,9 @@ enterprises:
   lat: 30.331507
   lon: 120.378991
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州农元农业开发有限公司
-  address: ''
+  address: 围垦区十二工段万向农业车间东
   label: 杭州农元农业开发有限公司
   data_source: ''
   source_type: official
@@ -656,8 +693,9 @@ enterprises:
   lat: 30.281555
   lon: 120.633135
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州普罗星淀粉有限公司
-  address: ''
+  address: 钱塘区经济技术开发区下沙街道金乔街50号
   label: 杭州普罗星淀粉有限公司
   data_source: ''
   source_type: official
@@ -668,8 +706,9 @@ enterprises:
   lat: 30.328806
   lon: 120.347164
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州仟源保灵药业有限公司
-  address: ''
+  address: 23号大街668号
   label: 杭州仟源保灵药业有限公司
   data_source: ''
   source_type: official
@@ -680,8 +719,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州前进科技有限公司
-  address: ''
+  address: 江东大道4668号
   label: 杭州前进科技有限公司
   data_source: ''
   source_type: official
@@ -692,8 +732,9 @@ enterprises:
   lat: 30.302105
   lon: 120.565213
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州桥南实业有限公司
-  address: ''
+  address: 纬六路618号杭州桥南
   label: 杭州桥南实业有限公司
   data_source: ''
   source_type: official
@@ -704,8 +745,9 @@ enterprises:
   lat: 30.291361
   lon: 120.604909
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州青松印染有限公司
-  address: ''
+  address: 临江工业园区长风路3501号
   label: 杭州青松印染有限公司
   data_source: ''
   source_type: official
@@ -716,8 +758,9 @@ enterprises:
   lat: 30.29304
   lon: 120.598466
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州士兰集成电路有限公司
-  address: ''
+  address: 10号大街东308号
   label: 杭州士兰集成电路有限公司
   data_source: ''
   source_type: official
@@ -728,8 +771,9 @@ enterprises:
   lat: 30.299007
   lon: 120.36829
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州士兰集昕微电子有限公司
-  address: ''
+  address: 10号大街旁
   label: 杭州士兰集昕微电子有限公司
   data_source: ''
   source_type: official
@@ -740,8 +784,9 @@ enterprises:
   lat: 30.298638
   lon: 120.366933
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市第九人民医院
-  address: ''
+  address: 义蓬街道义隆路98号
   label: 杭州市第九人民医院
   data_source: ''
   source_type: official
@@ -752,8 +797,9 @@ enterprises:
   lat: 30.267582
   lon: 120.492446
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市排水有限公司净水分公司
-  address: ''
+  address: 七格路185号钱塘生态公园(东北角)
   label: 杭州市排水有限公司净水分公司
   data_source: ''
   source_type: official
@@ -764,6 +810,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州市钱塘医院
   address: ''
   label: 杭州市钱塘医院
@@ -789,7 +836,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 杭州腾鸿农业开发有限公司
-  address: ''
+  address: 前进街道外十工段
   label: 杭州腾鸿农业开发有限公司
   data_source: ''
   source_type: official
@@ -800,8 +847,9 @@ enterprises:
   lat: 30.373575
   lon: 120.601507
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州天创水务有限公司
-  address: ''
+  address: 杭州市浙江省钱塘区下沙路525号
   label: 杭州天创水务有限公司
   data_source: ''
   source_type: official
@@ -812,6 +860,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州同舟生物技术有限公司
   address: ''
   label: 杭州同舟生物技术有限公司
@@ -825,7 +874,7 @@ enterprises:
   lon: 120.30578
   geocode_level: 跨区
 - name: 杭州统一企业有限公司
-  address: ''
+  address: 三丰路301号(梅林大道江东六路上)
   label: 杭州统一企业有限公司
   data_source: ''
   source_type: official
@@ -836,8 +885,9 @@ enterprises:
   lat: 30.344957
   lon: 120.562966
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州娃哈哈启力营养食品有限公司
-  address: ''
+  address: 江干区经济技术开发区围垦街66-1号
   label: 杭州娃哈哈启力营养食品有限公司
   data_source: ''
   source_type: official
@@ -848,8 +898,9 @@ enterprises:
   lat: 30.331855
   lon: 120.364419
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州娃哈哈饮料有限公司
-  address: ''
+  address: 下沙经济开发区10号大街
   label: 杭州娃哈哈饮料有限公司
   data_source: ''
   source_type: official
@@ -860,8 +911,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州万事利丝绸数码印花有限公司
-  address: ''
+  address: 1号大街与幸福南路交叉口北180米
   label: 杭州万事利丝绸数码印花有限公司
   data_source: ''
   source_type: official
@@ -872,8 +924,9 @@ enterprises:
   lat: 30.291898
   lon: 120.330374
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州味全食品有限公司
-  address: ''
+  address: 下沙经济技术开发区银海街468号
   label: 杭州味全食品有限公司
   data_source: ''
   source_type: official
@@ -884,8 +937,9 @@ enterprises:
   lat: 30.337652
   lon: 120.364213
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山城市绿色能源有限公司
-  address: ''
+  address: 东区义篷街道围垦外六工段
   label: 杭州萧山城市绿色能源有限公司
   data_source: ''
   source_type: official
@@ -896,6 +950,7 @@ enterprises:
   lat: 30.37726
   lon: 120.519739
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山富春养殖有限公司
   address: ''
   label: 杭州萧山富春养殖有限公司
@@ -909,7 +964,7 @@ enterprises:
   lon: 120.442416
   geocode_level: 兴趣点
 - name: 杭州萧山瓜沥郑浩养殖场
-  address: ''
+  address: 杭州萧山东海养殖有限责任公司-萧山鸡品种资源场东侧
   label: 杭州萧山瓜沥郑浩养殖场
   data_source: ''
   source_type: official
@@ -920,8 +975,9 @@ enterprises:
   lat: 30.322838
   lon: 120.656977
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山红垦养殖有限公司
-  address: ''
+  address: 围垦区十七工段
   label: 杭州萧山红垦养殖有限公司
   data_source: ''
   source_type: official
@@ -932,6 +988,7 @@ enterprises:
   lat: 30.305551
   lon: 120.627243
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山江南养殖有限公司
   address: ''
   label: 杭州萧山江南养殖有限公司
@@ -957,7 +1014,7 @@ enterprises:
   lon: 120.442416
   geocode_level: 兴趣点
 - name: 杭州萧山牛奶有限公司
-  address: ''
+  address: 二线海塘001号
   label: 杭州萧山牛奶有限公司
   data_source: ''
   source_type: official
@@ -968,6 +1025,7 @@ enterprises:
   lat: 30.263956
   lon: 120.691806
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山钱江出口养殖实业有限公司
   address: ''
   label: 杭州萧山钱江出口养殖实业有限公司
@@ -993,7 +1051,7 @@ enterprises:
   lon: 120.690249
   geocode_level: 跨区
 - name: 杭州萧山义蓬观荣生猪养殖场
-  address: ''
+  address: 十九工段
   label: 杭州萧山义蓬观荣生猪养殖场
   data_source: ''
   source_type: official
@@ -1004,8 +1062,9 @@ enterprises:
   lat: 30.274631
   lon: 120.49353
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 杭州萧山永欣养殖有限公司
-  address: ''
+  address: 江东工业园区青东二路1999号
   label: 杭州萧山永欣养殖有限公司
   data_source: ''
   source_type: official
@@ -1016,8 +1075,9 @@ enterprises:
   lat: 30.344084
   lon: 120.633119
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州萧山之江养殖有限公司
-  address: ''
+  address: 观十五线附近
   label: 杭州萧山之江养殖有限公司
   data_source: ''
   source_type: official
@@ -1028,8 +1088,9 @@ enterprises:
   lat: 30.318509
   lon: 120.442416
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州协诚纺织印染有限公司
-  address: ''
+  address: 临江工业园区长风路3058号
   label: 杭州协诚纺织印染有限公司
   data_source: ''
   source_type: official
@@ -1040,8 +1101,9 @@ enterprises:
   lat: 30.295035
   lon: 120.605089
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州行诚生物科技有限公司
-  address: ''
+  address: 下沙医药港小镇三期15号楼
   label: 杭州行诚生物科技有限公司
   data_source: ''
   source_type: official
@@ -1052,8 +1114,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州兴发养殖有限公司
-  address: ''
+  address: 观十五线与梅林大道交叉口东南20米
   label: 杭州兴发养殖有限公司
   data_source: ''
   source_type: official
@@ -1064,8 +1127,9 @@ enterprises:
   lat: 30.372144
   lon: 120.573664
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州旭化成氨纶有限公司
-  address: ''
+  address: 杭州经济技术开发区11号大街20号路口
   label: 杭州旭化成氨纶有限公司
   data_source: ''
   source_type: official
@@ -1076,8 +1140,9 @@ enterprises:
   lat: 30.278092
   lon: 120.343431
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州旭化成纺织有限公司
-  address: ''
+  address: 10号大街26号
   label: 杭州旭化成纺织有限公司
   data_source: ''
   source_type: official
@@ -1088,8 +1153,9 @@ enterprises:
   lat: 30.295229
   lon: 120.349465
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州宜邦橡胶有限公司
-  address: ''
+  address: 临江街道工业园经六路1388号杭州宜邦橡胶有限公司
   label: 杭州宜邦橡胶有限公司
   data_source: ''
   source_type: official
@@ -1100,8 +1166,9 @@ enterprises:
   lat: 30.264589
   lon: 120.615185
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州奕安济世生物药业有限公司
-  address: ''
+  address: 下沙街道福城路291号3号楼
   label: 杭州奕安济世生物药业有限公司
   data_source: ''
   source_type: official
@@ -1112,6 +1179,7 @@ enterprises:
   lat: 30.331272
   lon: 120.331131
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州颖泰生物科技有限公司
   address: ''
   label: 杭州颖泰生物科技有限公司
@@ -1125,7 +1193,7 @@ enterprises:
   lon: 120.638748
   geocode_level: 跨区
 - name: 杭州佑本动物疫苗有限公司
-  address: ''
+  address: 下沙街道杭州经济技术开发区10号大街266号
   label: 杭州佑本动物疫苗有限公司
   data_source: ''
   source_type: official
@@ -1136,8 +1204,9 @@ enterprises:
   lat: 30.296743
   lon: 120.369523
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州域农农业发展有限公司
-  address: ''
+  address: 围垦区惠丰蔬菜加工厂西南300米
   label: 杭州域农农业发展有限公司
   data_source: ''
   source_type: official
@@ -1148,6 +1217,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州赞宇油脂科技有限公司
   address: ''
   label: 杭州赞宇油脂科技有限公司
@@ -1161,7 +1231,7 @@ enterprises:
   lon: 120.637487
   geocode_level: 跨区
 - name: 杭州之江新材料有限公司
-  address: ''
+  address: 临江街道临江工业园区新世纪大道1717号
   label: 杭州之江新材料有限公司
   data_source: ''
   source_type: official
@@ -1172,8 +1242,9 @@ enterprises:
   lat: 30.294288
   lon: 120.615337
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州中纺胶管制造有限公司
-  address: ''
+  address: 下沙街道下沙开发区18号大街385号英格斯模具制造有限公司
   label: 杭州中纺胶管制造有限公司
   data_source: ''
   source_type: official
@@ -1184,8 +1255,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州中粮制罐有限公司
-  address: ''
+  address: 经济技术开发区白杨街道围垦街160号8幢
   label: 杭州中粮制罐有限公司
   data_source: ''
   source_type: official
@@ -1196,8 +1268,9 @@ enterprises:
   lat: 30.333229
   lon: 120.360356
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州中美华东制药江东有限公司
-  address: ''
+  address: 梅林大道7278号
   label: 杭州中美华东制药江东有限公司
   data_source: ''
   source_type: official
@@ -1208,8 +1281,9 @@ enterprises:
   lat: 30.352037
   lon: 120.561933
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 可口可乐装瓶商生产（杭州）有限公司
-  address: ''
+  address: 10号大街29号
   label: 可口可乐装瓶商生产（杭州）有限公司
   data_source: ''
   source_type: official
@@ -1220,8 +1294,9 @@ enterprises:
   lat: 30.297176
   lon: 120.353574
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 美町宝植物科技（中国）有限公司
-  address: ''
+  address: 19号大街566-568
   label: 美町宝植物科技（中国）有限公司
   data_source: ''
   source_type: official
@@ -1232,8 +1307,9 @@ enterprises:
   lat: 30.294989
   lon: 120.366992
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 诗华动保科技（杭州）有限公司
-  address: ''
+  address: 下沙经济技术开发区23号大街401号
   label: 诗华动保科技（杭州）有限公司
   data_source: ''
   source_type: official
@@ -1244,8 +1320,9 @@ enterprises:
   lat: 30.29522
   lon: 120.374506
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 泰尔茂医疗产品（杭州）有限公司
-  address: ''
+  address: 6号大街498号
   label: 泰尔茂医疗产品（杭州）有限公司
   data_source: ''
   source_type: official
@@ -1256,6 +1333,7 @@ enterprises:
   lat: 30.303341
   lon: 120.356637
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 天境生物科技（杭州）有限公司
   address: ''
   label: 天境生物科技（杭州）有限公司
@@ -1269,7 +1347,7 @@ enterprises:
   lon: 120.334138
   geocode_level: 兴趣点
 - name: 兴纶（杭州）染整有限公司
-  address: ''
+  address: 临江工业园区纬六路888号
   label: 兴纶（杭州）染整有限公司
   data_source: ''
   source_type: official
@@ -1280,8 +1358,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 旭化成医疗器械（杭州）有限公司
-  address: ''
+  address: 下沙开发区10号大街19号路口
   label: 旭化成医疗器械（杭州）有限公司
   data_source: ''
   source_type: official
@@ -1292,8 +1371,9 @@ enterprises:
   lat: 30.29656
   lon: 120.367107
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 易纳纬（杭州）智能科技有限公司
-  address: ''
+  address: 下沙经济开发区10号大街25号路
   label: 易纳纬（杭州）智能科技有限公司
   data_source: ''
   source_type: official
@@ -1304,8 +1384,9 @@ enterprises:
   lat: 30.298742
   lon: 120.374764
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 长安福特汽车有限公司杭州分公司
-  address: ''
+  address: 长福杭路135号
   label: 长安福特汽车有限公司杭州分公司
   data_source: ''
   source_type: official
@@ -1316,6 +1397,7 @@ enterprises:
   lat: 30.378117
   lon: 120.400701
   geocode_level: 乡镇
+  _address_source: auto_poi
 - name: 浙江巴陵恒逸己内酰胺有限责任公司
   address: ''
   label: 浙江巴陵恒逸己内酰胺有限责任公司
@@ -1329,7 +1411,7 @@ enterprises:
   lon: 120.683419
   geocode_level: 跨区
 - name: 浙江传化功能新材料有限公司
-  address: ''
+  address: 新世纪大道1836号
   label: 浙江传化功能新材料有限公司
   data_source: ''
   source_type: official
@@ -1340,8 +1422,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 浙江传化化学品有限公司
-  address: ''
+  address: 萧山经济技术开发区建设1号
   label: 浙江传化化学品有限公司
   data_source: ''
   source_type: official
@@ -1352,8 +1435,9 @@ enterprises:
   lat: 30.269361
   lon: 120.605999
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江鼎龙科技股份有限公司
-  address: ''
+  address: 纬十路169-115号
   label: 浙江鼎龙科技股份有限公司
   data_source: ''
   source_type: official
@@ -1364,8 +1448,9 @@ enterprises:
   lat: 30.259803
   lon: 120.604362
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江东南新材科技有限公司
-  address: ''
+  address: 江东工业园江东一路7068号
   label: 浙江东南新材科技有限公司
   data_source: ''
   source_type: official
@@ -1376,8 +1461,9 @@ enterprises:
   lat: 30.320131
   lon: 120.50572
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江杭康药业有限公司
-  address: ''
+  address: 江干经济技术开发区12号大街266号
   label: 浙江杭康药业有限公司
   data_source: ''
   source_type: official
@@ -1388,6 +1474,7 @@ enterprises:
   lat: 30.294833
   lon: 120.3721
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江禾田化工有限公司
   address: ''
   label: 浙江禾田化工有限公司
@@ -1413,7 +1500,7 @@ enterprises:
   lon: 120.682144
   geocode_level: 跨区
 - name: 浙江华海生物科技有限公司
-  address: ''
+  address: 呈瑞街278号
   label: 浙江华海生物科技有限公司
   data_source: ''
   source_type: official
@@ -1424,8 +1511,9 @@ enterprises:
   lat: 30.333787
   lon: 120.321705
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江汇丽印染整理有限公司
-  address: ''
+  address: 临江街道临江工业园长风路3333号
   label: 浙江汇丽印染整理有限公司
   data_source: ''
   source_type: official
@@ -1436,8 +1524,9 @@ enterprises:
   lat: 30.291828
   lon: 120.60128
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江嘉豪农业有限公司
-  address: ''
+  address: 对外综合开发区十七工段
   label: 浙江嘉豪农业有限公司
   data_source: ''
   source_type: official
@@ -1448,8 +1537,9 @@ enterprises:
   lat: 30.30892
   lon: 120.665949
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江锦盛控股集团有限公司
-  address: ''
+  address: 河西弄与春益二路交叉口东南80米
   label: 浙江锦盛控股集团有限公司
   data_source: ''
   source_type: official
@@ -1460,6 +1550,7 @@ enterprises:
   lat: 30.268341
   lon: 120.495598
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江九洲药物科技有限公司
   address: ''
   label: 浙江九洲药物科技有限公司
@@ -1473,7 +1564,7 @@ enterprises:
   lon: 120.282883
   geocode_level: 跨区
 - name: 浙江省中医院钱塘院区
-  address: ''
+  address: 下沙街道9号大街9号
   label: 浙江省中医院钱塘院区
   data_source: ''
   source_type: official
@@ -1484,8 +1575,9 @@ enterprises:
   lat: 30.304008
   lon: 120.353573
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江圣山科纺有限公司
-  address: ''
+  address: 临江街道云霓路69号
   label: 浙江圣山科纺有限公司
   data_source: ''
   source_type: official
@@ -1496,8 +1588,9 @@ enterprises:
   lat: 30.287705
   lon: 120.607433
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江圣山染整有限公司
-  address: ''
+  address: 临江街道云霓路69号
   label: 浙江圣山染整有限公司
   data_source: ''
   source_type: official
@@ -1508,8 +1601,9 @@ enterprises:
   lat: 30.285968
   lon: 120.607744
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江双兔新材料有限公司
-  address: ''
+  address: 左十四线与舟萧路交叉口北300米
   label: 浙江双兔新材料有限公司
   data_source: ''
   source_type: official
@@ -1520,8 +1614,9 @@ enterprises:
   lat: 30.28551
   lon: 120.578503
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江苏可安药业有限公司
-  address: ''
+  address: 前进街道长福杭路829号
   label: 浙江苏可安药业有限公司
   data_source: ''
   source_type: official
@@ -1532,8 +1627,9 @@ enterprises:
   lat: 30.349253
   lon: 120.563863
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江太古可口可乐饮料有限公司
-  address: ''
+  address: 8号大街18号
   label: 浙江太古可口可乐饮料有限公司
   data_source: ''
   source_type: official
@@ -1544,8 +1640,9 @@ enterprises:
   lat: 30.297214
   lon: 120.354551
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江天原农牧科技有限公司
-  address: ''
+  address: 浙江天原农牧科技有限公司
   label: 浙江天原农牧科技有限公司
   data_source: ''
   source_type: official
@@ -1556,8 +1653,9 @@ enterprises:
   lat: 30.327326
   lon: 120.660996
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江五丰冷食有限公司
-  address: ''
+  address: 下沙14号大街368号
   label: 浙江五丰冷食有限公司
   data_source: ''
   source_type: official
@@ -1568,8 +1666,9 @@ enterprises:
   lat: 30.288444
   lon: 120.37846
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新东湾农业开发有限公司
-  address: ''
+  address: 围垦十八工段
   label: 浙江新东湾农业开发有限公司
   data_source: ''
   source_type: official
@@ -1580,8 +1679,9 @@ enterprises:
   lat: 30.317966
   lon: 120.658751
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江新中纺实业有限公司
-  address: ''
+  address: 长风路3089号
   label: 浙江新中纺实业有限公司
   data_source: ''
   source_type: official
@@ -1592,8 +1692,9 @@ enterprises:
   lat: 30.292829
   lon: 120.604771
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江药明生物医药有限公司
-  address: ''
+  address: 乔新路525号
   label: 浙江药明生物医药有限公司
   data_source: ''
   source_type: official
@@ -1604,8 +1705,9 @@ enterprises:
   lat: 30.333907
   lon: 120.32753
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江永杰铝业有限公司
-  address: ''
+  address: 江东工业园区青东二路1999号
   label: 浙江永杰铝业有限公司
   data_source: ''
   source_type: official
@@ -1616,8 +1718,9 @@ enterprises:
   lat: 30.343847
   lon: 120.503671
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江永田汽车配件有限公司
-  address: ''
+  address: 大江东产业集聚区东垦路777号
   label: 浙江永田汽车配件有限公司
   data_source: ''
   source_type: official
@@ -1628,8 +1731,9 @@ enterprises:
   lat: 30.348623
   lon: 120.490129
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江驭远生物科技有限公司
-  address: ''
+  address: 临江街道经五路1288-86号
   label: 浙江驭远生物科技有限公司
   data_source: ''
   source_type: official
@@ -1640,8 +1744,9 @@ enterprises:
   lat: 30.256125
   lon: 120.601425
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江兆奕科技有限公司
-  address: ''
+  address: 江东二路2799号
   label: 浙江兆奕科技有限公司
   data_source: ''
   source_type: official
@@ -1652,8 +1757,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 浙江中海印染有限公司
-  address: ''
+  address: 临江工业园区纬五路3588号
   label: 浙江中海印染有限公司
   data_source: ''
   source_type: official
@@ -1664,8 +1770,9 @@ enterprises:
   lat: 30.29852
   lon: 120.596004
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 中肽生化有限公司
-  address: ''
+  address: 下沙经济技术开发区12号大街69号
   label: 中肽生化有限公司
   data_source: ''
   source_type: official
@@ -1676,8 +1783,9 @@ enterprises:
   lat: 30.293103
   lon: 120.367329
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 广汽乘用车（杭州）有限公司
-  address: ''
+  address: 江东工业园江东四路6188号
   label: 广汽乘用车（杭州）有限公司
   data_source: ''
   source_type: official
@@ -1688,8 +1796,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭华油墨股份有限公司
-  address: ''
+  address: 下沙经济开发区五号大街南2号
   label: 杭华油墨股份有限公司
   data_source: ''
   source_type: official
@@ -1700,8 +1809,9 @@ enterprises:
   lat: 30.276023
   lon: 120.338912
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州奥泰生物技术股份有限公司
-  address: ''
+  address: 乔新路383号
   label: 杭州奥泰生物技术股份有限公司
   data_source: ''
   source_type: official
@@ -1712,8 +1822,9 @@ enterprises:
   lat: 30.337478
   lon: 120.356649
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州巴逸能源有限公司
-  address: ''
+  address: 河庄镇江东开发区江东二路2728号
   label: 杭州巴逸能源有限公司
   data_source: ''
   source_type: official
@@ -1724,8 +1835,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州诚洁环保有限公司
-  address: ''
+  address: 临江工业园区经七路1459号附近
   label: 杭州诚洁环保有限公司
   data_source: ''
   source_type: official
@@ -1736,8 +1848,9 @@ enterprises:
   lat: 30.293024
   lon: 120.615447
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州创丽聚氨酯有限公司
-  address: ''
+  address: 新世纪大道1766号吉华南门
   label: 杭州创丽聚氨酯有限公司
   data_source: ''
   source_type: official
@@ -1748,8 +1861,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州大和江东新材料科技有限公司
-  address: ''
+  address: 江东三路6515号
   label: 杭州大和江东新材料科技有限公司
   data_source: ''
   source_type: official
@@ -1760,6 +1874,7 @@ enterprises:
   lat: 30.328827
   lon: 120.496803
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州电化集团助剂化工有限公司
   address: ''
   label: 杭州电化集团助剂化工有限公司
@@ -1773,7 +1888,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 杭州顶正包材有限公司
-  address: ''
+  address: 下沙经济开发区4号大街29号杭州顶正包材有限公司
   label: 杭州顶正包材有限公司
   data_source: ''
   source_type: official
@@ -1784,8 +1899,9 @@ enterprises:
   lat: 30.307542
   lon: 120.36191
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州顶正包材有限公司（三分厂）
-  address: ''
+  address: 下沙经济开发区4号大街29号杭州顶正包材有限公司
   label: 杭州顶正包材有限公司（三分厂）
   data_source: ''
   source_type: official
@@ -1796,8 +1912,9 @@ enterprises:
   lat: 30.307542
   lon: 120.36191
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州东灵塑胶有限公司
-  address: ''
+  address: 河庄工业园区
   label: 杭州东灵塑胶有限公司
   data_source: ''
   source_type: official
@@ -1808,8 +1925,9 @@ enterprises:
   lat: 30.287368
   lon: 120.455213
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州富丽达热电有限公司
-  address: ''
+  address: 新湾镇
   label: 杭州富丽达热电有限公司
   data_source: ''
   source_type: official
@@ -1820,8 +1938,9 @@ enterprises:
   lat: 30.286142
   lon: 120.586677
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州杭联热电有限公司
-  address: ''
+  address: 下沙开发区1号大街30号
   label: 杭州杭联热电有限公司
   data_source: ''
   source_type: official
@@ -1832,8 +1951,9 @@ enterprises:
   lat: 30.289866
   lon: 120.330207
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州航民江东热电有限公司
-  address: ''
+  address: 青西三路
   label: 杭州航民江东热电有限公司
   data_source: ''
   source_type: official
@@ -1844,8 +1964,9 @@ enterprises:
   lat: 30.340442
   lon: 120.47664
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州和昇塑料制品有限公司
-  address: ''
+  address: 下沙经济开发区围垦街425号
   label: 杭州和昇塑料制品有限公司
   data_source: ''
   source_type: official
@@ -1856,8 +1977,9 @@ enterprises:
   lat: 30.330061
   lon: 120.347833
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州宏图锦纶有限公司
-  address: ''
+  address: 江东四路5528号
   label: 杭州宏图锦纶有限公司
   data_source: ''
   source_type: official
@@ -1868,8 +1990,9 @@ enterprises:
   lat: 30.335301
   lon: 120.500306
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州华电下沙热电有限公司
-  address: ''
+  address: 下沙五洋路288号中国华电
   label: 杭州华电下沙热电有限公司
   data_source: ''
   source_type: official
@@ -1880,8 +2003,9 @@ enterprises:
   lat: 30.338283
   lon: 120.355822
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州环翔环保科技有限公司
-  address: ''
+  address: 临江街道纬二路137号
   label: 杭州环翔环保科技有限公司
   data_source: ''
   source_type: official
@@ -1892,8 +2016,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州惠力化纤有限公司
-  address: ''
+  address: 新世纪大道与纬十路交叉口西南400米
   label: 杭州惠力化纤有限公司
   data_source: ''
   source_type: official
@@ -1904,8 +2029,9 @@ enterprises:
   lat: 30.258037
   lon: 120.604342
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州吉华高分子材料股份有限公司
-  address: ''
+  address: 临江街道临江工业园区新世纪大道1766号
   label: 杭州吉华高分子材料股份有限公司
   data_source: ''
   source_type: official
@@ -1916,8 +2042,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州金越晟重型机械有限公司
-  address: ''
+  address: 河庄街道同一村35号
   label: 杭州金越晟重型机械有限公司
   data_source: ''
   source_type: official
@@ -1928,8 +2055,9 @@ enterprises:
   lat: 30.286063
   lon: 120.465694
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州名鑫双氧水有限公司
-  address: ''
+  address: 临江工业园区红十五路9936号
   label: 杭州名鑫双氧水有限公司
   data_source: ''
   source_type: official
@@ -1940,8 +2068,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州普络飞新材料科技有限公司
-  address: ''
+  address: 围垦街159号
   label: 杭州普络飞新材料科技有限公司
   data_source: ''
   source_type: official
@@ -1952,6 +2081,7 @@ enterprises:
   lat: 30.329145
   lon: 120.360718
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州三隆新材料有限公司
   address: ''
   label: 杭州三隆新材料有限公司
@@ -1965,7 +2095,7 @@ enterprises:
   lon: 120.686467
   geocode_level: 跨区
 - name: 杭州万豪家私有限公司
-  address: ''
+  address: 同一村河庄镇工业园
   label: 杭州万豪家私有限公司
   data_source: ''
   source_type: official
@@ -1976,8 +2106,9 @@ enterprises:
   lat: 30.286588
   lon: 120.455559
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州幄肯新材料科技有限公司
-  address: ''
+  address: 江东工业园江东六路5588号
   label: 杭州幄肯新材料科技有限公司
   data_source: ''
   source_type: official
@@ -1988,8 +2119,9 @@ enterprises:
   lat: 30.345692
   lon: 120.50274
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州亚星环境污染物处理厂
-  address: ''
+  address: 临江村东升一组21号
   label: 杭州亚星环境污染物处理厂
   data_source: ''
   source_type: official
@@ -2000,8 +2132,9 @@ enterprises:
   lat: 30.303001
   lon: 120.569455
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州一牛化纤有限公司
-  address: ''
+  address: 临江工业园区第一农垦场纬十路289号
   label: 杭州一牛化纤有限公司
   data_source: ''
   source_type: official
@@ -2012,6 +2145,7 @@ enterprises:
   lat: 30.259965
   lon: 120.601128
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州逸科实业有限公司
   address: ''
   label: 杭州逸科实业有限公司
@@ -2025,7 +2159,7 @@ enterprises:
   lon: 120.677803
   geocode_level: 跨区
 - name: 杭州纸友科技有限公司
-  address: ''
+  address: 下沙经济技术开发区三号大街18号路口
   label: 杭州纸友科技有限公司
   data_source: ''
   source_type: official
@@ -2036,8 +2170,9 @@ enterprises:
   lat: 30.283359
   lon: 120.336154
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州中粮美特容器有限公司
-  address: ''
+  address: 10号大街29号
   label: 杭州中粮美特容器有限公司
   data_source: ''
   source_type: official
@@ -2048,8 +2183,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州朱养心药业有限公司
-  address: ''
+  address: 11号大街10号
   label: 杭州朱养心药业有限公司
   data_source: ''
   source_type: official
@@ -2060,8 +2196,9 @@ enterprises:
   lat: 30.29909
   lon: 120.358538
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 麦格纳光能汽车饰件系统（杭州）有限公司
-  address: ''
+  address: 大江东前进工业园丰悦路1918号2号厂房
   label: 麦格纳光能汽车饰件系统（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2072,8 +2209,9 @@ enterprises:
   lat: 30.347054
   lon: 120.548091
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 延锋彼欧（杭州）汽车外饰系统有限公司
-  address: ''
+  address: 江东五路5105号
   label: 延锋彼欧（杭州）汽车外饰系统有限公司
   data_source: ''
   source_type: official
@@ -2084,8 +2222,9 @@ enterprises:
   lat: 30.334725
   lon: 120.541825
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江爱生药业有限公司
-  address: ''
+  address: 白杨街道2号大街8号
   label: 浙江爱生药业有限公司
   data_source: ''
   source_type: official
@@ -2096,8 +2235,9 @@ enterprises:
   lat: 30.309259
   lon: 120.340867
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江邦翔化纤有限公司
-  address: ''
+  address: 临江工业区经五路与纬十路交叉口
   label: 浙江邦翔化纤有限公司
   data_source: ''
   source_type: official
@@ -2108,8 +2248,9 @@ enterprises:
   lat: 30.261811
   lon: 120.598435
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江赤龙水泥有限公司
-  address: ''
+  address: 新湾镇共建村14组赤龙水泥
   label: 浙江赤龙水泥有限公司
   data_source: ''
   source_type: official
@@ -2120,8 +2261,9 @@ enterprises:
   lat: 30.285508
   lon: 120.559829
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江恒百华化纤有限公司
-  address: ''
+  address: 纬十路188号
   label: 浙江恒百华化纤有限公司
   data_source: ''
   source_type: official
@@ -2132,8 +2274,9 @@ enterprises:
   lat: 30.262109
   lon: 120.601056
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江恒逸锦纶有限公司
-  address: ''
+  address: 码头辅路
   label: 浙江恒逸锦纶有限公司
   data_source: ''
   source_type: official
@@ -2144,8 +2287,9 @@ enterprises:
   lat: 30.27185
   lon: 120.690221
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江吉利汽车有限公司杭州分公司
-  address: ''
+  address: 丰悦路1555号
   label: 浙江吉利汽车有限公司杭州分公司
   data_source: ''
   source_type: official
@@ -2156,8 +2300,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 浙江亚欣包装材料有限公司
-  address: ''
+  address: 临江工业园纬八路3222号
   label: 浙江亚欣包装材料有限公司
   data_source: ''
   source_type: official
@@ -2168,8 +2313,9 @@ enterprises:
   lat: 30.276187
   lon: 120.610246
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江中财型材有限责任公司
-  address: ''
+  address: 杭州经济技术开发区11号大街6号
   label: 浙江中财型材有限责任公司
   data_source: ''
   source_type: official
@@ -2180,8 +2326,9 @@ enterprises:
   lat: 30.304177
   lon: 120.359786
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 真珠乐器（杭州）有限公司
-  address: ''
+  address: 菜鸟网络杭州下沙园区
   label: 真珠乐器（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2192,8 +2339,9 @@ enterprises:
   lat: 30.279209
   lon: 120.359459
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州艾美依航空制造装备有限公司
-  address: ''
+  address: 江东一路8058号杭州艾美依航空制造装备有限公司
   label: 杭州艾美依航空制造装备有限公司
   data_source: ''
   source_type: official
@@ -2204,6 +2352,7 @@ enterprises:
   lat: 30.320278
   lon: 120.490814
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州格林达电子材料股份有限公司
   address: ''
   label: 杭州格林达电子材料股份有限公司
@@ -2217,7 +2366,7 @@ enterprises:
   lon: 120.646831
   geocode_level: 跨区
 - name: 萧山太阳机械有限公司
-  address: ''
+  address: 大江东产业集聚区江东六路6188号
   label: 萧山太阳机械有限公司
   data_source: ''
   source_type: official
@@ -2228,8 +2377,9 @@ enterprises:
   lat: 30.318509
   lon: 120.442416
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江西子势必锐航空工业有限公司
-  address: ''
+  address: 新垦路277号浙江西子航空制造有限公司
   label: 浙江西子势必锐航空工业有限公司
   data_source: ''
   source_type: official
@@ -2240,8 +2390,9 @@ enterprises:
   lat: 30.342472
   lon: 120.55202
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 德沃尔无纺布（杭州）有限公司
-  address: ''
+  address: 下沙经济开发区20号大街552号
   label: 德沃尔无纺布（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2252,8 +2403,9 @@ enterprises:
   lat: 30.277548
   lon: 120.353493
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 电装（杭州）有限公司
-  address: ''
+  address: 大江东产业集聚区江东三路7277号
   label: 电装（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2264,8 +2416,9 @@ enterprises:
   lat: 30.327715
   lon: 120.480943
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 格力电器（杭州）有限公司
-  address: ''
+  address: 2江东一路2345号
   label: 格力电器（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2276,8 +2429,9 @@ enterprises:
   lat: 30.321369
   lon: 120.607238
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州安费诺飞凤通信部品有限公司
-  address: ''
+  address: 杭州经济技术开发区东部厂区(江干区)
   label: 杭州安费诺飞凤通信部品有限公司
   data_source: ''
   source_type: official
@@ -2288,8 +2442,9 @@ enterprises:
   lat: 30.297956
   lon: 120.363769
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州贝普泰生物医药有限公司
-  address: ''
+  address: 12号大街198号
   label: 杭州贝普泰生物医药有限公司
   data_source: ''
   source_type: official
@@ -2300,8 +2455,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州秉信环保包装有限公司
-  address: ''
+  address: 围垦街439号
   label: 杭州秉信环保包装有限公司
   data_source: ''
   source_type: official
@@ -2312,8 +2468,9 @@ enterprises:
   lat: 30.329531
   lon: 120.344885
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州朝阳橡胶有限公司
-  address: ''
+  address: 1号大街与10号大街交叉口西北80米
   label: 杭州朝阳橡胶有限公司
   data_source: ''
   source_type: official
@@ -2324,8 +2481,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州创威实业股份有限公司
-  address: ''
+  address: 临江街道临琼巷159号
   label: 杭州创威实业股份有限公司
   data_source: ''
   source_type: official
@@ -2336,8 +2494,9 @@ enterprises:
   lat: 30.300961
   lon: 120.587554
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州富尔顿热能设备有限公司
-  address: ''
+  address: 白杨街道杭州经济技术开发区5号大街19号恒泰纺织内
   label: 杭州富尔顿热能设备有限公司
   data_source: ''
   source_type: official
@@ -2348,8 +2507,9 @@ enterprises:
   lat: 30.285789
   lon: 120.334514
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州富通电工有限公司
-  address: ''
+  address: 圆通科技东南门旁
   label: 杭州富通电工有限公司
   data_source: ''
   source_type: official
@@ -2360,8 +2520,9 @@ enterprises:
   lat: 30.28409
   lon: 120.342531
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州耕德电子有限公司
-  address: ''
+  address: 银海街670号
   label: 杭州耕德电子有限公司
   data_source: ''
   source_type: official
@@ -2372,8 +2533,9 @@ enterprises:
   lat: 30.336446
   lon: 120.349598
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州固拓生物科技有限公司
-  address: ''
+  address: 杭州下沙经济技术开发区银海街600号1幢5层501
   label: 杭州固拓生物科技有限公司
   data_source: ''
   source_type: official
@@ -2384,6 +2546,7 @@ enterprises:
   lat: 30.337653
   lon: 120.354319
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州昊肽生物科技有限公司
   address: ''
   label: 杭州昊肽生物科技有限公司
@@ -2397,7 +2560,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 杭州鸿泉环境服务有限责任公司
-  address: ''
+  address: 经七路1459号
   label: 杭州鸿泉环境服务有限责任公司
   data_source: ''
   source_type: official
@@ -2408,8 +2571,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州积海半导体有限公司
-  address: ''
+  address: 东垦路811号
   label: 杭州积海半导体有限公司
   data_source: ''
   source_type: official
@@ -2420,8 +2584,9 @@ enterprises:
   lat: 30.349572
   lon: 120.48272
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州金松优诺电器有限公司
-  address: ''
+  address: 下沙3号大街19号
   label: 杭州金松优诺电器有限公司
   data_source: ''
   source_type: official
@@ -2432,8 +2597,9 @@ enterprises:
   lat: 30.298302
   lon: 120.343962
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州冷拉型钢有限公司
-  address: ''
+  address: 临江开发区纬六路88号
   label: 杭州冷拉型钢有限公司
   data_source: ''
   source_type: official
@@ -2444,8 +2610,9 @@ enterprises:
   lat: 30.291609
   lon: 120.615476
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州力龙液压有限公司
-  address: ''
+  address: 萧山经济技术开发区江东大道与新世纪广场交叉口
   label: 杭州力龙液压有限公司
   data_source: ''
   source_type: official
@@ -2456,8 +2623,9 @@ enterprises:
   lat: 30.306889
   lon: 120.597971
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州立昂东芯微电子有限公司
-  address: ''
+  address: 杭州经济开发区(下沙)20号大街199号
   label: 杭州立昂东芯微电子有限公司
   data_source: ''
   source_type: official
@@ -2468,8 +2636,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州临江前进齿轮箱有限公司
-  address: ''
+  address: 纬五路3399号
   label: 杭州临江前进齿轮箱有限公司
   data_source: ''
   source_type: official
@@ -2480,8 +2649,9 @@ enterprises:
   lat: 30.294651
   lon: 120.601435
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州龙耀电力配件有限公司
-  address: ''
+  address: 临江新城
   label: 杭州龙耀电力配件有限公司
   data_source: ''
   source_type: official
@@ -2492,8 +2662,9 @@ enterprises:
   lat: 30.270687
   lon: 120.588793
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州诺泰诺和生物医药科技有限公司
-  address: ''
+  address: 下沙街道福城路501号银海科创中心14幢
   label: 杭州诺泰诺和生物医药科技有限公司
   data_source: ''
   source_type: official
@@ -2504,8 +2675,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州三花微通道换热器有限公司
-  address: ''
+  address: 下沙经济技术开发区12号大街289号8栋
   label: 杭州三花微通道换热器有限公司
   data_source: ''
   source_type: official
@@ -2516,8 +2688,9 @@ enterprises:
   lat: 30.289975
   lon: 120.373675
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州三花研究院有限公司
-  address: ''
+  address: 23号大街与14号大街交叉口北140米
   label: 杭州三花研究院有限公司
   data_source: ''
   source_type: official
@@ -2528,8 +2701,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州圣奥控股有限公司
-  address: ''
+  address: 松湾路9号
   label: 杭州圣奥控股有限公司
   data_source: ''
   source_type: official
@@ -2540,8 +2714,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州矢崎配件有限公司
-  address: ''
+  address: 12号大街出口加工区内
   label: 杭州矢崎配件有限公司
   data_source: ''
   source_type: official
@@ -2552,8 +2727,9 @@ enterprises:
   lat: 30.284685
   lon: 120.363347
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州世宝汽车方向机有限公司
-  address: ''
+  address: 下沙经济开发区17号大街6号
   label: 杭州世宝汽车方向机有限公司
   data_source: ''
   source_type: official
@@ -2564,8 +2740,9 @@ enterprises:
   lat: 30.274999
   lon: 120.363424
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州市萧山区环境卫生保障中心（围垦外六工段垃圾填埋场）
-  address: ''
+  address: 围垦街439号
   label: 杭州市萧山区环境卫生保障中心（围垦外六工段垃圾填埋场）
   data_source: ''
   source_type: official
@@ -2576,8 +2753,9 @@ enterprises:
   lat: 30.344447
   lon: 120.439671
   geocode_level: 村庄
+  _address_source: auto_poi
 - name: 杭州松下家用电器有限公司
-  address: ''
+  address: 松乔街2号松下电化住宅设备机器有限公司
   label: 杭州松下家用电器有限公司
   data_source: ''
   source_type: official
@@ -2588,8 +2766,9 @@ enterprises:
   lat: 30.32682
   lon: 120.365854
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州泰谷诺石英有限公司
-  address: ''
+  address: 钱塘新区白杨街道14号大街401号
   label: 杭州泰谷诺石英有限公司
   data_source: ''
   source_type: official
@@ -2600,8 +2779,9 @@ enterprises:
   lat: 30.286817
   lon: 120.364453
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州沃德汽车部件制造有限公司
-  address: ''
+  address: 青六北路辅路与临鸿东路交叉口西南220米
   label: 杭州沃德汽车部件制造有限公司
   data_source: ''
   source_type: official
@@ -2612,8 +2792,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州协合医疗用品有限公司
-  address: ''
+  address: 杭州协合医疗用品有限公司(23号大街)内部地面停车场
   label: 杭州协合医疗用品有限公司
   data_source: ''
   source_type: official
@@ -2624,8 +2805,9 @@ enterprises:
   lat: 30.296799
   lon: 120.375916
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州优科豪马轮胎有限公司
-  address: ''
+  address: 白杨街道3号大街55号
   label: 杭州优科豪马轮胎有限公司
   data_source: ''
   source_type: official
@@ -2636,8 +2818,9 @@ enterprises:
   lat: 30.282387
   lon: 120.333666
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 杭州元禾医疗器械有限公司
-  address: ''
+  address: 银海街与福城路交叉口东南220米
   label: 杭州元禾医疗器械有限公司
   data_source: ''
   source_type: official
@@ -2648,8 +2831,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 杭州中宏聚能新能源科技有限公司
-  address: ''
+  address: 绿荫路98号
   label: 杭州中宏聚能新能源科技有限公司
   data_source: ''
   source_type: official
@@ -2660,8 +2844,9 @@ enterprises:
   lat: 30.326881
   lon: 120.555966
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 华东医药股份有限公司
-  address: ''
+  address: 幸福北路468号药闻科技园内
   label: 华东医药股份有限公司
   data_source: ''
   source_type: official
@@ -2672,6 +2857,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 克雷登热能设备（浙江）有限公司
   address: ''
   label: 克雷登热能设备（浙江）有限公司
@@ -2685,7 +2871,7 @@ enterprises:
   lon: 120.364309
   geocode_level: 兴趣点
 - name: 明峰医疗系统股份有限公司
-  address: ''
+  address: 银海街851号
   label: 明峰医疗系统股份有限公司
   data_source: ''
   source_type: official
@@ -2696,8 +2882,9 @@ enterprises:
   lat: 30.334326
   lon: 120.335771
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 普思信（杭州）机械部件有限公司
-  address: ''
+  address: 下沙银海街707号
   label: 普思信（杭州）机械部件有限公司
   data_source: ''
   source_type: official
@@ -2708,8 +2895,9 @@ enterprises:
   lat: 30.33459
   lon: 120.341634
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 瑞博（杭州）医药科技有限公司
-  address: ''
+  address: 幸福北路468号药闻科技园内
   label: 瑞博（杭州）医药科技有限公司
   data_source: ''
   source_type: official
@@ -2720,6 +2908,7 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 赛德光电材料（浙江）有限责任公司
   address: ''
   label: 赛德光电材料（浙江）有限责任公司
@@ -2733,7 +2922,7 @@ enterprises:
   lon: 120.493941
   geocode_level: 区县
 - name: 西卡豪马泰特汽车（浙江）有限公司
-  address: ''
+  address: 三丰路89号
   label: 西卡豪马泰特汽车（浙江）有限公司
   data_source: ''
   source_type: official
@@ -2744,8 +2933,9 @@ enterprises:
   lat: 30.342943
   lon: 120.550949
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 易纳纬斯图沃特精密元器件（杭州）有限公司
-  address: ''
+  address: 杭州银海街600号二号楼1-2层
   label: 易纳纬斯图沃特精密元器件（杭州）有限公司
   data_source: ''
   source_type: official
@@ -2756,8 +2946,9 @@ enterprises:
   lat: 30.32304
   lon: 120.493941
   geocode_level: 区县
+  _address_source: auto_poi
 - name: 英格斯模具制造（中国）有限公司
-  address: ''
+  address: 下沙街道下沙开发区18号大街385号英格斯模具制造有限公司
   label: 英格斯模具制造（中国）有限公司
   data_source: ''
   source_type: official
@@ -2768,8 +2959,9 @@ enterprises:
   lat: 30.279027
   lon: 120.353487
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 永杰新材料股份有限公司
-  address: ''
+  address: 江东二路1288号
   label: 永杰新材料股份有限公司
   data_source: ''
   source_type: official
@@ -2780,8 +2972,9 @@ enterprises:
   lat: 30.325352
   lon: 120.505068
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江安布雷拉新材料制造有限公司
-  address: ''
+  address: 元成路135号
   label: 浙江安布雷拉新材料制造有限公司
   data_source: ''
   source_type: official
@@ -2792,8 +2985,9 @@ enterprises:
   lat: 30.328369
   lon: 120.342651
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江东南绿建集成科技有限公司
-  address: ''
+  address: 河庄街道青西三路5799号
   label: 浙江东南绿建集成科技有限公司
   data_source: ''
   source_type: official
@@ -2804,8 +2998,9 @@ enterprises:
   lat: 30.352548
   lon: 120.476988
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江方圆检测集团股份有限公司
-  address: ''
+  address: 西斗门路3号国家软件基地大楼
   label: 浙江方圆检测集团股份有限公司
   data_source: ''
   source_type: official
@@ -2816,8 +3011,9 @@ enterprises:
   lat: 30.300808
   lon: 120.321186
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江航峰铁塔有限公司
-  address: ''
+  address: 临江工业园区经六路1501号
   label: 浙江航峰铁塔有限公司
   data_source: ''
   source_type: official
@@ -2828,8 +3024,9 @@ enterprises:
   lat: 30.264839
   lon: 120.611316
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江和泽医药科技股份有限公司
-  address: ''
+  address: 幸福北路468号药闻科技园内
   label: 浙江和泽医药科技股份有限公司
   data_source: ''
   source_type: official
@@ -2840,8 +3037,9 @@ enterprises:
   lat: 30.329911
   lon: 120.318512
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江三花汽车零部件有限公司
-  address: ''
+  address: 杭州经济技术开发区12号大街标准厂房b区8号中日龙电器
   label: 浙江三花汽车零部件有限公司
   data_source: ''
   source_type: official
@@ -2852,8 +3050,9 @@ enterprises:
   lat: 30.289941
   lon: 120.371221
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省特种设备科学研究院
-  address: ''
+  address: 下沙和茂大厦1幢(幸福南路1116号)
   label: 浙江省特种设备科学研究院
   data_source: ''
   source_type: official
@@ -2864,8 +3063,9 @@ enterprises:
   lat: 30.316432
   lon: 120.319478
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江省质量科学研究院
-  address: ''
+  address: 海通街580号
   label: 浙江省质量科学研究院
   data_source: ''
   source_type: official
@@ -2876,8 +3076,9 @@ enterprises:
   lat: 30.303114
   lon: 120.321704
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江亿桥工程技术研究有限公司
-  address: ''
+  address: 河庄街道同一村8组48号
   label: 浙江亿桥工程技术研究有限公司
   data_source: ''
   source_type: official
@@ -2888,8 +3089,9 @@ enterprises:
   lat: 30.290232
   lon: 120.460035
   geocode_level: 兴趣点
+  _address_source: auto_poi
 - name: 浙江元利江东铁塔有限公司
-  address: ''
+  address: 青东一路与江东三路交叉口东南200米
   label: 浙江元利江东铁塔有限公司
   data_source: ''
   source_type: official
@@ -2900,3 +3102,4 @@ enterprises:
   lat: 30.327475
   lon: 120.501675
   geocode_level: 兴趣点
+  _address_source: auto_poi

@@ -24,3 +24,10 @@ build/
 # Virtual environments
 venv/
 .env
+
+# Geocode caches
+data/*/geocode_cache_*.json
+
+# Runtime working dirs
+.agents/
+data/*/data/

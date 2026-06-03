@@ -14,7 +14,7 @@ gaode:
   key: ''
   rate_limit: 0.15
   city: 泉州
-  cache_file: /Users/wong/.hermes/code/map2image/cache/geocode_cache_泉州.json
+  cache_file: ./cache/geocode_cache_泉州.json
 risk_zones:
   enabled: true
   radius_meters: 1000

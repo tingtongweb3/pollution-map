@@ -13,7 +13,7 @@ map:
 gaode:
   key: ''
   rate_limit: 0.15
-  cache_file: /Users/wong/.hermes/code/map2image/data/福州/data/福州/geocode_cache_福州.json
+  cache_file: ./data/福州/data/福州/geocode_cache_福州.json
   city: 福州
 risk_zones:
   enabled: true
